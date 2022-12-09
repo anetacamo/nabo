@@ -22,13 +22,13 @@ export default function CategoryList({
   return (
     <>
       <div className='tags'>
-        {tagsonce.map((tag, index) => {
+        {tagsonce.map((tag: string, index) => {
           return (
             <div
               key={index}
-              className={`type bg-${
-                categoryColors[camelize(tag as keyof CategoryColorsType)]
-              } ${category == tag && 'bg-chosen'}`}
+              className={`type bg-${categoryColors[camelize(tag as string)]} ${
+                category == tag && 'bg-chosen'
+              }`}
               aria-label={`${tag} - ${category == tag ? 'checked' : ''}`}
               style={{ transitionDuration: '350ms' }}
               onClick={() => onTagClick(tag)}
