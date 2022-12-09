@@ -1,0 +1,33 @@
+.half {
+  min-width: 440px;
+}
+
+.third {
+  width: 330px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.desktop {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+section {
+  padding: 4rem 2rem;
+  // border-bottom: 2px solid $salmon;
+  @media (max-width: 700px) {
+    padding: 3rem 1.5rem;
+  }
+}
+
+.max-width {
+  max-width: 1100px;
+  margin: auto;
+}

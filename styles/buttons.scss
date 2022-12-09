@@ -1,0 +1,62 @@
+.tags {
+  max-width: 900px;
+  margin: 24px auto;
+  .bg-chosen {
+    background-color: $blue;
+  }
+}
+
+.type {
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 12px 3px 12px;
+  &:hover {
+    background-color: $purple;
+    transition-duration: 350ms;
+    cursor: pointer;
+  }
+}
+
+button,
+input {
+  background-color: black;
+  padding: 0.75rem 2rem;
+  padding-bottom: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 0.75rem;
+  border-style: none;
+  font-family: "Violet Sans";
+  box-shadow: 3px 3px 0px $purple;
+  border: 2px solid black;
+  cursor: pointer;
+  &:hover {
+    color: $yellow;
+    transition-duration: 350ms;
+  }
+  svg {
+    vertical-align: middle;
+  }
+}
+
+input {
+  background-color: white;
+  padding: 12px 20px;
+  min-width: 240px;
+  letter-spacing: 1px;
+  color: black;
+  outline: none;
+  text-transform: none;
+  font-size: 16px;
+  font-weight: 900;
+  &:hover {
+    background-color: lightgray;
+    color: $purple;
+  }
+}

@@ -1,0 +1,35 @@
+.container {
+  background-color: #f4f4f4;
+  padding: 6px;
+  padding-bottom: 0;
+  padding-right: 0;
+  margin-left: 6px;
+  margin-bottom: 6px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  cursor: pointer;
+  &.active {
+    background-color: #e6a2ed;
+    cursor: default;
+  }
+}
+.container:last-of-type {
+  flex-direction: row;
+}
+
+.line,
+.square {
+  background-color: #4f18d9;
+  width: 42px;
+  height: 6px;
+  margin-bottom: 6px;
+}
+
+.square {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}

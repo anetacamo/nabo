@@ -1,0 +1,13 @@
+.menu {
+  position: fixed;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  height: 100vh;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-align: center;
+  li {
+    padding: 48px 16px;
+    letter-spacing: 4px;
+  }
+}

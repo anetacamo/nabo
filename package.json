@@ -1,0 +1,33 @@
+{
+  "name": "aarhus nabo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "@types/lodash": "^4.14.183",
+    "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
+    "mapbox-gl": "^2.11.1",
+    "marked": "^4.0.16",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-icons": "^4.4.0",
+    "react-map-gl": "^7.0.20",
+    "sass": "^1.51.0"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.35",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.4",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "typescript": "4.6.4"
+  }
+}

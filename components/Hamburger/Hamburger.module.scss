@@ -1,0 +1,19 @@
+.hamburger {
+  width: 52px;
+  cursor: pointer;
+  transition-duration: 350ms;
+  &:hover .line {
+    background-color: blueviolet;
+  }
+  @media (min-width: 700px) {
+    display: none;
+  }
+}
+
+.line {
+  background-color: white;
+  width: 40px;
+  height: 3px;
+  margin: 6px;
+  transition: 350ms ease-in;
+}

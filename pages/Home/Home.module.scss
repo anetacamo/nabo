@@ -1,0 +1,15 @@
+.largeTitle {
+  font-size: 3rem;
+  line-height: 1;
+  max-width: 900;
+  margin: auto;
+  @media (max-width: 700px) {
+    font-size: 2rem;
+  }
+}
+
+.mainTitle {
+  text-transform: none;
+  max-width: 800px;
+  margin: auto;
+}

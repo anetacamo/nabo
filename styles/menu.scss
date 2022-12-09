@@ -1,0 +1,47 @@
+@import url('https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap');
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  @media (max-width: 700px) {
+    padding: 0 1.5rem;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  input,
+  button,
+  .li,
+  li,
+  .logo {
+    margin: 12px;
+  }
+  .li,
+  .logo {
+    cursor: pointer;
+    //color: white;
+    transition-duration: 350ms;
+    &:hover {
+      text-decoration: none;
+      color: blueviolet;
+    }
+  }
+  .logo {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 4rem);
+  min-height: 30px;
+  transition: 350ms ease-in;
+}

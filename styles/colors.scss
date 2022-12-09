@@ -1,0 +1,108 @@
+$pink: #ff5252;
+$salmon: #f87a7a;
+$yellow: #ffc200;
+$blue: #000639;
+$green: #72ffd2;
+$purple: #6220fc;
+$purplelight: #e6a2ed;
+$black: black;
+$gray: #f4f4f4;
+
+:root {
+  --gray: #f4f4f4;
+  --pink: #ff5252;
+  --salmon: #f87a7a;
+  --yellow: #ffc200;
+  --blue: #000639;
+  --green: #72ffd2;
+  --purple: #4f18d9;
+  --purplelight: #e6a2ed;
+  --black: black;
+}
+
+$menu-border-color: #a40d9c;
+
+$colors: 'pink', 'salmon', 'yellow', 'blue', 'purple', 'purplelight', 'black',
+  'gray';
+
+@each $color in $colors {
+  .#{$color} {
+    color: var(--#{$color});
+  }
+}
+
+@each $color in $colors {
+  .bg-#{$color} {
+    background-color: var(--#{$color});
+  }
+}
+
+@each $color in $colors {
+  .border-#{$color} {
+    border-color: var(--#{$color}) !important;
+  }
+}
+
+.bg-black,
+.bg-blue,
+.bg-purple,
+.bg-pink {
+  color: white;
+}
+.bg-pink {
+  color: white;
+  //background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+}
+
+.bg-white {
+  //background-image: url("https://www.transparenttextures.com/patterns/clean-gray-paper.png");
+}
+
+.bg-yellow,
+.bg-gray,
+.bg-white {
+  color: black;
+}
+
+.filter-white {
+  filter: invert(100%);
+}
+
+.filter-pink {
+  filter: invert(42%) sepia(14%) saturate(7471%) hue-rotate(333deg)
+    brightness(104%) contrast(102%);
+}
+
+.filter-yellow {
+  filter: invert(70%) sepia(90%) saturate(1002%) hue-rotate(358deg)
+    brightness(101%) contrast(105%);
+}
+
+.filter-salmon {
+  filter: invert(69%) sepia(57%) saturate(1199%) hue-rotate(308deg)
+    brightness(95%) contrast(104%);
+}
+
+.filter-purple {
+  filter: invert(16%) sepia(88%) saturate(5991%) hue-rotate(260deg)
+    brightness(97%) contrast(105%);
+}
+
+.grid {
+  background-image: conic-gradient(
+    at calc(100% - 2px) calc(100% - 2px),
+    $menu-border-color 270deg,
+    rgba(228, 228, 228, 0) 0deg
+  );
+  background-size: 42px 42px;
+}
+
+.bg-blue-gradient {
+  background-image: linear-gradient(135deg, $blue, $purple);
+  color: white;
+}
+
+.bg-blue-yellow-gradient {
+  background-image: linear-gradient(135deg, $yellow, $purple);
+  color: white;
+}
