@@ -17,9 +17,7 @@ interface CardProps extends CardType {
 export default function CardRegular({ post, children }: CardProps) {
   return (
     <div
-      className={`card bg-${
-        categoryColors[camelize(post?.type as keyof CategoryColorsType)]
-      }`}
+      className={`card bg-${categoryColors[camelize(post?.type as string)]}`}
     >
       {post?.image && (
         <div
