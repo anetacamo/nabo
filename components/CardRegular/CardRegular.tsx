@@ -11,16 +11,20 @@ import styles from './CardRegular.module.scss';
 interface CardProps extends CardType {
   post?: CardType;
   children?: ReactNode;
-  categoryColors?: CategoryColorsType;
+  categoryColors?: any | CategoryColorsType;
 }
 
 export default function CardRegular({ post, children }: CardProps) {
   return (
+    //@ts-expect-error
     <div
-      className={`card bg-${categoryColors[camelize(post?.type as string)]}`}
+      className={`${styles.card} bg-${
+        categoryColors[camelize(post?.type as keyof CategoryColorsType)]
+      }`}
     >
       {post?.image && (
         <div
+          className={styles.image}
           style={{
             padding: 48,
             backgroundColor: 'black',
@@ -50,7 +54,7 @@ export default function CardRegular({ post, children }: CardProps) {
       {post?.text && <h5 style={{ marginTop: 12 }}>{post?.text}</h5>}
       {post?.opening && (
         <h5 style={{ marginTop: 12 }}>
-          <span className=' bolded'>open </span>
+          <span className='bolded'>open </span>
           {post?.opening}
         </h5>
       )}

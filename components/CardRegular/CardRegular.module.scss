@@ -1,8 +1,35 @@
-.special {
-  font-family: 'brutalismregular';
-  margin-bottom: 8px !important;
-}
+@import '../../styles/colors-def.scss';
 
-.link {
-  text-decoration: underline;
+.card {
+  margin: 8px;
+  padding: 24px;
+  text-align: left;
+  text-decoration: none;
+  min-width: 200px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  h4 {
+    margin-top: 48px;
+  }
+  h5 {
+    margin: 0;
+    font-size: 12px;
+  }
+  .image {
+    padding: 48px;
+    background-color: black;
+    margin: -24px;
+    opacity: 0.2;
+    text-align: center;
+  }
+  .special {
+    font-family: 'brutalismregular';
+    margin-bottom: 8px !important;
+  }
+
+  .link {
+    text-decoration: underline;
+  }
 }

@@ -1,3 +1,5 @@
+@import '../../styles/colors-def.scss';
+
 .listContainer {
   max-width: 900;
   margin: auto;
@@ -16,7 +18,7 @@
   }
 }
 .type {
-  color: #6220fc;
+  color: $purple;
   margin: 16px 0;
   margin-left: 8px;
   line-height: 1.4;
@@ -33,7 +35,7 @@
     font-size: 1.5rem;
   }
   &:hover {
-    color: lightpink;
+    color: $lightpink;
     transition-duration: 350ms;
     cursor: pointer;
   }

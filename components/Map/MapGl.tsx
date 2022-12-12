@@ -40,6 +40,7 @@ export default function MapGl({ posts }: MapGiProps) {
                 latitude={post.frontmatter.latitude}
                 longitude={post.frontmatter.longitude}
               >
+                {/* // @ts-expect-error */}
                 <div
                   className={`${styles.point} bg-${
                     categoryColors[
@@ -56,6 +57,7 @@ export default function MapGl({ posts }: MapGiProps) {
                     alt={`icon`}
                     className={styles.icon}
                   />
+                  {/* // @ts-expect-error */}
                   <div
                     className={`${styles.title} bg-${
                       categoryColors[camelize(post?.frontmatter.type)]

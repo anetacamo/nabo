@@ -1,45 +1,40 @@
-$pink: #ff5252;
-$salmon: #f87a7a;
-$yellow: #ffc200;
-$blue: #000639;
-$green: #72ffd2;
-$purple: #6220fc;
-$purplelight: #e6a2ed;
-$black: black;
-$gray: #f4f4f4;
+@import './colors-def.scss';
 
-:root {
-  --gray: #f4f4f4;
-  --pink: #ff5252;
-  --salmon: #f87a7a;
-  --yellow: #ffc200;
-  --blue: #000639;
-  --green: #72ffd2;
-  --purple: #4f18d9;
-  --purplelight: #e6a2ed;
-  --black: black;
+$colors: (
+  'gray': #f4f4f4,
+  'yellow': #ffc200,
+  'pink': #b222bd,
+  'salmon': #f87a7a,
+  'lightblue': #56b2d6,
+  'blue': #137ced,
+  'darkblue': #00067a,
+  'turqoise': #03a5ab,
+  'green': #03521f,
+  'purple': #4f18d9,
+  'purplelight': #9c46f2,
+  'lightpink': #e6a2ed,
+  'black': black,
+);
+
+@function color($color-name) {
+  @return var(--color-#{$color-name});
 }
 
-$menu-border-color: #a40d9c;
-
-$colors: 'pink', 'salmon', 'yellow', 'blue', 'purple', 'purplelight', 'black',
-  'gray';
-
-@each $color in $colors {
-  .#{$color} {
-    color: var(--#{$color});
+@each $name, $value in $colors {
+  .#{$name} {
+    color: $value;
   }
 }
 
-@each $color in $colors {
-  .bg-#{$color} {
-    background-color: var(--#{$color});
+@each $name, $value in $colors {
+  .bg-#{$name} {
+    background-color: $value;
   }
 }
 
-@each $color in $colors {
-  .border-#{$color} {
-    border-color: var(--#{$color}) !important;
+@each $name, $value in $colors {
+  .border-#{$name} {
+    border-color: $value !important;
   }
 }
 
@@ -86,15 +81,6 @@ $colors: 'pink', 'salmon', 'yellow', 'blue', 'purple', 'purplelight', 'black',
 .filter-purple {
   filter: invert(16%) sepia(88%) saturate(5991%) hue-rotate(260deg)
     brightness(97%) contrast(105%);
-}
-
-.grid {
-  background-image: conic-gradient(
-    at calc(100% - 2px) calc(100% - 2px),
-    $menu-border-color 270deg,
-    rgba(228, 228, 228, 0) 0deg
-  );
-  background-size: 42px 42px;
 }
 
 .bg-blue-gradient {

@@ -1,9 +1,11 @@
+@import '../../styles/colors-def.scss';
+
 .hamburger {
   width: 52px;
   cursor: pointer;
   transition-duration: 350ms;
   &:hover .line {
-    background-color: blueviolet;
+    background-color: $purple;
   }
   @media (min-width: 700px) {
     display: none;

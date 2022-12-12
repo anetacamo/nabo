@@ -1,5 +1,5 @@
 ---
-type: studio
+type: house
 title: Lydhaven
 tags: [music, studio]
 image: music.png

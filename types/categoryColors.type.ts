@@ -8,6 +8,7 @@ type CategoryColorsType = {
   gallery: string;
   socialMovement: string;
   sport: string;
+  house: string;
 };
 
 export default CategoryColorsType;

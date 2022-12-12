@@ -1,6 +1,8 @@
+@import '../../styles/colors-def.scss';
+
 .open {
   min-height: calc(100vh - 4rem);
-  background-color: blueviolet;
+  background-color: $purple;
   padding: 2rem;
   transition: 350ms ease-in;
   display: block;

@@ -1,5 +1,7 @@
+@import '../../styles/colors-def.scss';
+
 .container {
-  background-color: #f4f4f4;
+  background-color: $gray;
   padding: 6px;
   padding-bottom: 0;
   padding-right: 0;
@@ -12,7 +14,7 @@
   flex-wrap: wrap;
   cursor: pointer;
   &.active {
-    background-color: #e6a2ed;
+    background-color: $pink;
     cursor: default;
   }
 }
@@ -22,7 +24,7 @@
 
 .line,
 .square {
-  background-color: #4f18d9;
+  background-color: $purple;
   width: 42px;
   height: 6px;
   margin-bottom: 6px;

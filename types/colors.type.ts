@@ -6,5 +6,6 @@ export const categoryColors = {
   studio: 'pink',
   gallery: 'black',
   socialMovement: 'blue',
-  sport: 'gray',
+  sport: 'lightblue',
+  house: 'turqoise',
 };
