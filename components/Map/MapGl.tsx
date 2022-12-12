@@ -40,7 +40,6 @@ export default function MapGl({ posts }: MapGiProps) {
                 latitude={post.frontmatter.latitude}
                 longitude={post.frontmatter.longitude}
               >
-                {/* // @ts-expect-error */}
                 <div
                   className={`${styles.point} bg-${
                     categoryColors[
