@@ -59,19 +59,13 @@ export default function Footer() {
         <div className={styles.column}>
           <h3>Partners</h3>
           <li className={styles.li}>
-            <Link href='https://www.sydhavnenskvarteret.dk'>
-              Sydhavens Kvarteret
-            </Link>
+            <Link href='www.sydhavnenskvarteret.dk'>Sydhavens Kvarteret</Link>
           </li>
           <li className={styles.li}>
-            <Link href='https://www.sydhavnensfestival.dk'>
-              Sydhavens Festival
-            </Link>
+            <Link href='www.sydhavnensfestival.dk'>Sydhavens Festival</Link>
           </li>
           <li className={styles.li}>
-            <Link href='https://www.sammenomsydhaven.dk'>
-              Sydhavens Festival
-            </Link>
+            <Link href='www.sammenomsydhaven.dk'>Sydhavens Festival</Link>
           </li>
         </div>
       </div>

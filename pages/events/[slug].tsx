@@ -2,10 +2,8 @@ import { SinglePageLayout } from '../../layouts/SinglePageLayout/SinglePageLayou
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Image from 'next/image';
 import Link from 'next/link';
 import TagsList from '../../components/TagsList';
-import CardsList from '../../components/CardsList/CardsList';
 import { slugify } from '../../utils/slugify';
 import { SimpleLayout } from '../../layouts/SimpleLayout/SimpleLayout';
 
@@ -30,14 +28,6 @@ export default function EventPage({ frontmatter, posts }: EventPageProps) {
     <>
       <SimpleLayout title={title} />
       <section className='bg-black'>
-        {/* <Image
-          src={`/cards/${image}`}
-          alt='blue'
-          className={`half filter-yellow`}
-          height={80}
-          width={80}
-          objectFit='contain'
-        /> */}
         <div>
           <Link href={`/types/${type}`}>
             <h4 className='type bg-purple'>{type}</h4>
@@ -69,20 +59,12 @@ export default function EventPage({ frontmatter, posts }: EventPageProps) {
             </Link>
           ))}
         </ul>
-        {/* <ul className='links'>
-          {events?.map((space: string, index: number) => (
-            <Link href={`/events/${slugify(space)}`} key={index}>
-              <div className='type bg-salmon'>{space}</div>
-            </Link>
-          ))}
-        </ul> */}
       </section>
       <section className='center'>
         <h3 style={{ marginTop: '-16px', marginBottom: '-4px' }}>
           All tags & Related Cards
         </h3>
         <TagsList posts={posts} />
-        <CardsList posts={posts} tag='space' background='gray' />
       </section>
     </>
   );

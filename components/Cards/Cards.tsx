@@ -1,6 +1,6 @@
 import CardRegular from '../CardRegular/CardRegular';
 
-interface CardsListProps {
+interface CardsProps {
   tag?: string;
   posts: any[];
   background?: string;
@@ -12,7 +12,7 @@ interface CardsListProps {
   all?: boolean;
 }
 
-export default function CardsList({ posts, background }: CardsListProps) {
+export default function Cards({ posts, background }: CardsProps) {
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.map((post, index) => (
