@@ -23,7 +23,8 @@
 }
 
 button,
-input {
+input,
+textarea {
   background-color: black;
   padding: 0.75rem 2rem;
   padding-bottom: 10px;
@@ -32,7 +33,7 @@ input {
   color: white;
   font-size: 0.75rem;
   border-style: none;
-  font-family: "Violet Sans";
+  font-family: 'Violet Sans';
   box-shadow: 3px 3px 0px $purple;
   border: 2px solid black;
   cursor: pointer;
@@ -45,10 +46,11 @@ input {
   }
 }
 
-input {
+input,
+textarea {
   background-color: white;
   padding: 12px 20px;
-  min-width: 240px;
+  min-width: 380px;
   letter-spacing: 1px;
   color: black;
   outline: none;
@@ -59,4 +61,8 @@ input {
     background-color: lightgray;
     color: $purple;
   }
+}
+textarea {
+  padding: 20px;
+  min-height: 120px;
 }

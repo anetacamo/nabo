@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: 'Brutalist';
-  src: url('/fonts/BRUTALISM-Regular.otf') format('otf');
+  src: url('/fonts/BRUTALISM-Regular.otf');
 }
 
 @font-face {
   font-family: 'Violet Sans';
-  src: url('/fonts/violet-sans/OTF/VioletSans-Regular.otf') format('otf');
+  src: url('/fonts/violet-sans/OTF/VioletSans-Regular.otf');
 }
 
 @font-face {
@@ -65,7 +65,7 @@ p {
 }
 
 button {
-  font-family: 'brutalismregular';
+  //  font-family: 'brutalismregular';
 }
 
 .paragraph {
@@ -119,7 +119,7 @@ h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 800;
-  font-family: 'Brutalist', 'brutalismregular', sans-serif;
+  //font-family: 'Brutalist', 'brutalismregular', sans-serif;
   font-family: 'violet_sansregular';
   //font-family: 'brutalismregular';
   //  font-family: 'Violet Sans';

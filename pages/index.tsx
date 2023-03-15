@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+
 import Cards from '../components/Cards/Cards';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import styles from './Home/Home.module.scss';
@@ -64,8 +65,8 @@ export default function Home({ posts }: HomeProps) {
       <section className='bg-black center'>
         {' '}
         <h2 className={styles.mainTitle}>
-          <span className='purple'>Nåbo map</span> is an interactive guide to
-          help you organise all spheres of your cultural event and match you
+          <span className='purple'>Nåbo maphaha</span> is an interactive guide
+          to help you organise all spheres of your cultural event and match you
           with the right people and facilities you might havent even know
           existed
         </h2>
@@ -122,7 +123,6 @@ export default function Home({ posts }: HomeProps) {
         </div>
         <TagsList posts={posts} />
       </section>
-
       <section className='bg-purple'>
         <h2 style={{ maxWidth: 600 }}>
           Are you looking to organise a festival?

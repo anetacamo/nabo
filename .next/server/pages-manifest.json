@@ -1,15 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/gallery": "pages/gallery.html",
-  "/newMember": "pages/newMember.html",
-  "/vision": "pages/vision.html",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/members": "pages/members.js",
-  "/tag/[slug]": "pages/tag/[slug].js",
-  "/events/[slug]": "pages/events/[slug].js",
-  "/calendar": "pages/calendar.js",
-  "/association": "pages/association.js",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js"
 }

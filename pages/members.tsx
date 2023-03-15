@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+
 import CategoryList from '../components/CategoryList';
 import ListDisplay from '../components/ListDisplay/ListDisplay';
 import { SinglePageLayout } from '../layouts/SinglePageLayout/SinglePageLayout';
