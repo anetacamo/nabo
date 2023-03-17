@@ -11,6 +11,9 @@ import CategoryList from '../components/CategoryList';
 import ListDisplay from '../components/ListDisplay/ListDisplay';
 import Filters from '../components/Filters/Filters';
 import MapGl from '../components/Map/MapGl';
+import SearchField from '../components/SearchField/SearchField';
+
+//1CcVMefdFG0qmtOozhDDLid01clijMH8zbJem78Kw1yo
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join('pages/posts'));
@@ -48,7 +51,8 @@ export default function Home({ posts }: HomeProps) {
     const results = postsToRender.filter((post) =>
       searchQuery === ''
         ? true
-        : post.frontmatter.title.toLowerCase().includes(searchQuery)
+        : post.frontmatter.title?.toLowerCase().includes(searchQuery) ||
+          post.frontmatter.text?.toLowerCase().includes(searchQuery)
     );
     setBlogs(results);
   }, [searchQuery, category]);
@@ -65,8 +69,8 @@ export default function Home({ posts }: HomeProps) {
       <section className='bg-black center'>
         {' '}
         <h2 className={styles.mainTitle}>
-          <span className='purple'>Nåbo maphaha</span> is an interactive guide
-          to help you organise all spheres of your cultural event and match you
+          <span className='purple'>Nåbo map</span> is an interactive guide to
+          help you organise all spheres of your cultural event and match you
           with the right people and facilities you might havent even know
           existed
         </h2>
@@ -80,7 +84,12 @@ export default function Home({ posts }: HomeProps) {
           category={category}
         />
       </div>
+
       <section style={{ marginTop: -80 }}>
+        <SearchField
+          searchQuery={searchQuery}
+          onSearchQueryChange={setSearchQuery}
+        />
         <div className={styles.listContainer}>
           <div className='flex' style={{ justifyContent: 'space-between' }}>
             <h4>

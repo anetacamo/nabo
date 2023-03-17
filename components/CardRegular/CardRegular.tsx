@@ -14,6 +14,12 @@ interface CardProps extends CardType {
   categoryColors?: any | CategoryColorsType;
 }
 
+function truncate(str: string, n: number) {
+  var shortenedString = str.slice(0, n - 1);
+  var lastIndex = shortenedString.lastIndexOf(' ');
+  return str.length > n ? shortenedString.substring(0, lastIndex) + '...' : str;
+}
+
 export default function CardRegular({ post, children }: CardProps) {
   return (
     //@ts-expect-error
@@ -51,12 +57,15 @@ export default function CardRegular({ post, children }: CardProps) {
           website <span className={styles.link}>{post?.link}</span>
         </h5>
       )}
-      {post?.text && <h5 style={{ marginTop: 12 }}>{post?.text}</h5>}
-      {post?.opening && (
-        <h5 style={{ marginTop: 12 }}>
-          <span className='bolded'>open </span>
-          {post?.opening}
-        </h5>
+      {post?.text && (
+        <h5 style={{ marginTop: 12 }}>{truncate(post?.text, 150)}</h5>
+      )}
+      {post?.tags && (
+        <div style={{ marginTop: 16 }}>
+          {post?.tags.map((tag) => (
+            <p className={styles.type}>{tag}</p>
+          ))}
+        </div>
       )}
       {children}
     </div>

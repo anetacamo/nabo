@@ -32,4 +32,15 @@
   .link {
     text-decoration: underline;
   }
+  .type {
+    font-size: 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 6px;
+    background-color: $blue;
+    letter-spacing: 1.2px;
+    margin: 0;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
 }

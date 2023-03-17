@@ -147,7 +147,19 @@ const NewMember = () => {
         </div>
         <div>
           <label htmlFor='text' className={styles.label}>
-            Text
+            Description
+          </label>
+          <textarea
+            id='text'
+            name='text'
+            value={member.text}
+            onChange={(e) => setMember({ ...member, text: e.target.value })}
+            className={styles.textArea}
+          ></textarea>
+        </div>
+        <div>
+          <label htmlFor='text' className={styles.label}>
+            How can you use it?
           </label>
           <textarea
             id='text'
