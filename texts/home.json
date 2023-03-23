@@ -1,42 +1,26 @@
 {
-  "intro": {
-    "text": "South Harbour is an area in Aarhus west. To see the exact date and all sorts of upcoming activities, check the facebook site of"
-  },
-  "members": {
-    "subtitle": "",
-    "title": "sydhaven landmarks",
-    "text": "South Harbour is an area in Aarhus west. To see the exact date and all sorts of upcoming activities, check the facebook site of",
-    "button": "See all members"
-  },
-  "next": {
-    "subtitle": "coming up next",
-    "title": "SYDHAVNENS FESTIVAL 2022",
-    "date": "20. - 22.8.",
-    "text": "Sydhavnens Festival er en bydelsfestival, hvor områdets aktører åbner op for hele byen og for hinanden i fællesskab. Festivalen afholdes i Sydhavnskvarteret. Startende fra Dokk1 ved Mindet, den nordlige del ved Kulbroen, den sydlige del ved Slagteriet og helt ned ad Sydhavnsgade til Soya Huset.",
-    "button": "facebook event"
-  },
-  "values": {
-    "subtitle": "",
-    "title": "Vision & Values",
-    "text": "Each one teach one is a series of small workshops organised by anybody who has anything to bring to the table. The idea behind is that each of us has a skill or know-how that many of us could benefit from learning. Hold in Frontloberne. Check website for the upcoming events. Link.",
-    "button": "see all members"
-  },
-  "open": {
-    "subtitle": "Open for public",
-    "title": "Vision & Values",
-    "text": "Many initiatives in Sydhaven offer different creative workshops open for public some of them free of charge, courses, cultural events, provide a space for connecting or developing ones skills or simply just having a chat. To see the exact date and all sorts of upcoming activities, check the facebook site of Sydhaven or browse the list of members",
-    "button": "see all members"
-  },
-  "second": {
-    "subtitle": "Vulnarable communities",
-    "title": "community & sustainability",
-    "text": "placement at the border of very noisy industrial neighbourhood and city center, Sydhaven is also an important place where many initiatives that may not be able to survive elsewhere are located. recycle and redistribute, trying to make a difference, help vulnerable communities and collect and redistribute resources in more sustainable way",
-    "button": ""
-  },
-  "third": {
-    "subtitle": "Creative businesses",
-    "title": "Culture makers & value creators",
-    "text": "Sydhaven is home to many social and creative initiatives or platform that are trying to help young & creative people to become connected, develop their skills and inspire each other. Often centered around meaningful activities and purposes",
-    "button": ""
-  }
+  "sections": [
+    {
+      "title": "Are you looking to organise a festival?",
+      "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+      "buttons": ["catering", "accomodation"],
+      "background": "purple",
+      "orientation": "left"
+    },
+    {
+      "title": "Or looking for a venue to host your event?",
+      "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+      "buttons": ["venue"],
+      "background": "salmon",
+      "orientation": "right"
+    },
+    {
+      "title": "Or just an individual wanting to attend some workshop?",
+      "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+
+      "buttons": ["workshops", "workspaces"],
+      "background": "yellow",
+      "orientation": "center"
+    }
+  ]
 }

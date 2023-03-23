@@ -1,0 +1,33 @@
+.title {
+  max-width: 600px;
+}
+.text {
+  max-width: 800px;
+  margin-bottom: 12px;
+}
+.button {
+  margin-right: 12px;
+}
+
+.left {
+  h2 {
+    margin-right: auto;
+  }
+}
+
+.right {
+  text-align: right;
+  h2,
+  p {
+    margin-left: auto;
+  }
+}
+
+.center {
+  text-align: center;
+  h2,
+  p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

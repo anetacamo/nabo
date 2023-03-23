@@ -12,8 +12,9 @@ import ListDisplay from '../components/ListDisplay/ListDisplay';
 import Filters from '../components/Filters/Filters';
 import MapGl from '../components/Map/MapGl';
 import SearchField from '../components/SearchField/SearchField';
-
-//1CcVMefdFG0qmtOozhDDLid01clijMH8zbJem78Kw1yo
+import { sections } from '../texts/home.json';
+import Section from '../components/Section/Section';
+import CsvUploader from '../components/CsvUploader/CsvUploader';
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join('pages/posts'));
@@ -129,50 +130,16 @@ export default function Home({ posts }: HomeProps) {
           ) : (
             <ListDisplay posts={blogs} />
           )}
+          <CsvUploader />
         </div>
         <TagsList posts={posts} />
       </section>
-      <section className='bg-purple'>
-        <h2 style={{ maxWidth: 600 }}>
-          Are you looking to organise a festival?
-        </h2>
-        <p style={{ maxWidth: 800, marginBottom: 12 }}>
-          Skateducate er en frivillig forening, der primært arbejder for at få
-          flere kvinder, piger og non-binære til at blive en del af
-          skateboardmiljøet. Skateducate er en frivillig forening, der primært
-          arbejder for at få flere kvinder, piger og non-binære til at blive en
-          del af skateboardmiljøet.
-        </p>
-        <button style={{ marginRight: 12 }}>accomodation</button>
-        <button>catering</button>
-      </section>
-      <section className='bg-salmon right'>
-        <h2 style={{ maxWidth: 600, textAlign: 'right', marginLeft: 'auto' }}>
-          Or looking for a venue to host your event?
-        </h2>
-        <p style={{ maxWidth: 800, marginLeft: 'auto', marginBottom: 12 }}>
-          Skateducate er en frivillig forening, der primært arbejder for at få
-          flere kvinder, piger og non-binære til at blive en del af
-          skateboardmiljøet. Skateducate er en frivillig forening, der primært
-          arbejder for at få flere kvinder, piger og non-binære til at blive en
-          del af skateboardmiljøet.
-        </p>
-        <button>venue</button>
-      </section>
-      <section className='center bg-yellow'>
-        <h2 style={{ maxWidth: 600, margin: 'auto' }}>
-          Or just an individual wanting to attend some workshop?
-        </h2>
-        <p style={{ maxWidth: 800, margin: 'auto', marginTop: 12 }}>
-          Skateducate er en frivillig forening, der primært arbejder for at få
-          flere kvinder, piger og non-binære til at blive en del af
-          skateboardmiljøet. Skateducate er en frivillig forening, der primært
-          arbejder for at få flere kvinder, piger og non-binære til at blive en
-          del af skateboardmiljøet.
-        </p>
-        <button style={{ marginRight: 12 }}>workshops</button>
-        <button>workspaces</button>
-      </section>
+
+      {sections.map((section: any, index: number) => (
+        <>
+          <Section key={index} {...section} />
+        </>
+      ))}
     </DefaultLayout>
   );
 }

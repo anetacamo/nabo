@@ -1,38 +1,26 @@
-// import { useState } from 'react';
-// import Papa from 'papaparse';
-// import users from '../../texts/aarhus.csv';
+import { useState, useEffect } from 'react';
+import Papa from 'papaparse';
 
-// // Allowed extensions for input file
-// const allowedExtensions = ["csv"];
+import CardsSheets from '../CardsSheets/CardsSheets';
 
-// function CsvUploader() {
-//   const [parsedData, setParsedData] = useState([]);
+const CsvUploader = () => {
+  const [data, setData] = useState({});
+  const [entries, setEntries] = useState([]);
 
-//   const changeHandler = (event) => {
-//     // Passing file data (event.target.files[0]) to parse using Papa.parse
-//     Papa.parse(event.target.files[0], {
-//       header: true,
-//       skipEmptyLines: true,
-//       complete: function (results) {
-//         const shortenedArray = [];
-//         results.data.map((d) => {
-//           //rowsArray.push(Object.keys(d));
-//           //valuesArray.push(Object.values(d));
-//           //mobilePayArray.push([d.Date, d.Who, d.Amount.slice(0, -3)]);
-//           //nordeaArray
-//         });
-//         setParsedData(results.data);
-//       },
-//     });
-//   };
+  useEffect(() => {
+    Papa.parse(
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv',
+      {
+        download: true,
+        header: true,
+        complete: (results) => {
+          setData(results.data);
+          setEntries(results.data.filter((d) => d?.title));
+        },
+      }
+    );
+  }, []); //
 
-//   console.log(parsedData);
-
-//   return (
-//     <div>
-//       <p>parsed data</p>
-//     </div>
-//   );
-// }
-
-// export default CsvUploader;
+  return <CardsSheets posts={entries} />;
+};
+export default CsvUploader;

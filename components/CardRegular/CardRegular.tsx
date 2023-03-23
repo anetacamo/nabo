@@ -29,16 +29,7 @@ export default function CardRegular({ post, children }: CardProps) {
       }`}
     >
       {post?.image && (
-        <div
-          className={styles.image}
-          style={{
-            padding: 48,
-            backgroundColor: 'black',
-            margin: -24,
-            opacity: 0.2,
-            textAlign: 'center',
-          }}
-        >
+        <div className={styles.image}>
           <Image
             src={`/cards/${post?.image}`}
             alt='blue'
@@ -62,8 +53,10 @@ export default function CardRegular({ post, children }: CardProps) {
       )}
       {post?.tags && (
         <div style={{ marginTop: 16 }}>
-          {post?.tags.map((tag) => (
-            <p className={styles.type}>{tag}</p>
+          {post?.tags.map((tag: any, index: number) => (
+            <p className={styles.type} key={index}>
+              {tag}
+            </p>
           ))}
         </div>
       )}

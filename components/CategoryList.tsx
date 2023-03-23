@@ -22,7 +22,7 @@ export default function CategoryList({
   return (
     <>
       <div className='tags'>
-        {tagsonce.map((tag: string, index) => {
+        {tagsonce.map((tag: string, index: number) => {
           return (
             <div
               key={index}
