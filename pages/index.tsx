@@ -7,7 +7,7 @@ import ListDisplay from '../components/ListDisplay/ListDisplay';
 import Filters from '../components/Filters/Filters';
 import MapGl from '../components/Map/MapGl';
 import SearchField from '../components/SearchField/SearchField';
-import { sections } from '../texts/home.json';
+import sections from '../texts/home.json';
 import Section from '../components/Section/Section';
 import Papa from 'papaparse';
 

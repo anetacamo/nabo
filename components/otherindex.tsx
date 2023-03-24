@@ -3,18 +3,17 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import Cards from '../components/Cards/Cards';
+import Cards from './Cards/Cards';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import styles from './Home/Home.module.scss';
-import TagsList from '../components/TagsList';
-import CategoryList from '../components/CategoryList';
-import ListDisplay from '../components/ListDisplay/ListDisplay';
-import Filters from '../components/Filters/Filters';
-import MapGl from '../components/Map/MapGl';
-import SearchField from '../components/SearchField/SearchField';
-import { sections } from '../texts/home.json';
-import Section from '../components/Section/Section';
-import CsvUploader from '../components/CsvUploader/CsvUploader';
+import TagsList from './TagsList';
+import CategoryList from './CategoryList';
+import ListDisplay from './ListDisplay/ListDisplay';
+import Filters from './Filters/Filters';
+import MapGl from './Map/MapGl';
+import SearchField from './SearchField/SearchField';
+import Section from './Section/Section';
+import CsvUploader from './CsvUploader/CsvUploader';
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join('pages/posts'));
@@ -136,12 +135,6 @@ export default function Home({ posts }: HomeProps) {
         </div>
         <TagsList posts={posts} />
       </section>
-
-      {sections.map((section: any, index: number) => (
-        <>
-          <Section key={index} {...section} />
-        </>
-      ))}
     </DefaultLayout>
   );
 }
