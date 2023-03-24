@@ -41,6 +41,7 @@ $colors: (
 .bg-black,
 .bg-blue,
 .bg-purple,
+.bg-darkblue,
 .bg-pink {
   color: white;
 }
@@ -81,6 +82,11 @@ $colors: (
 .filter-purple {
   filter: invert(16%) sepia(88%) saturate(5991%) hue-rotate(260deg)
     brightness(97%) contrast(105%);
+}
+
+.filter-blue {
+  filter: invert(69%) sepia(73%) saturate(7498%) hue-rotate(197deg)
+    brightness(95%) contrast(94%);
 }
 
 .bg-blue-gradient {

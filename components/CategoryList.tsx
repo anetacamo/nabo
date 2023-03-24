@@ -17,7 +17,7 @@ export default function CategoryList({
   category,
 }: CategoryProps) {
   let allTags: any[] = [];
-  const tags = posts.map((item) => allTags.push(item.frontmatter.type));
+  const tags = posts.map((item) => allTags.push(item.type.trim()));
   let tagsonce = [...new Set(allTags)];
   return (
     <>
@@ -26,9 +26,11 @@ export default function CategoryList({
           return (
             <div
               key={index}
-              className={`type bg-${categoryColors[camelize(tag as string)]} ${
-                category == tag && 'bg-chosen'
-              }`}
+              // className={`type bg-${categoryColors[camelize(tag as string)]} ${
+              //   category == tag && 'bg-chosen'
+              // }`}
+
+              className={`type bg-purple ${category == tag && 'bg-chosen'}`}
               aria-label={`${tag} - ${category == tag ? 'checked' : ''}`}
               style={{ transitionDuration: '350ms' }}
               onClick={() => onTagClick(tag)}
