@@ -7,11 +7,10 @@ import LargeMenu from '../LargeMenu/LargeMenu';
 
 export default function Menu() {
   const menuItems = [
-    { name: 'how to use', link: '/', color: 'lightblue' },
-    { name: 'about', link: '/', color: 'yellow' },
-    { name: 'join the map', link: '/', color: 'salmon' },
-    { name: 'map view', link: '/', color: 'purplelight' },
-    { name: 'community', link: '/', color: 'turqoise' },
+    { name: 'how to use', link: '/how-to-use', color: 'lightblue' },
+    { name: 'about', link: '/about', color: 'yellow' },
+    { name: 'join the map', link: '/new-member', color: 'salmon' },
+    { name: 'map view', link: '/map-view', color: 'purplelight' },
   ];
   const [open, setOpen] = useState(false);
   return (

@@ -29,7 +29,7 @@ export default function CardsSheets(posts: any) {
       {posts.posts.map((post: CardProp, index: number) => (
         <div
           className={`${styles.card} bg-${
-            typeColors[post?.type.toLowerCase().trim() as any]
+            typeColors[post?.type?.toLowerCase().trim() as any]
           }`}
           key={index}
         >
