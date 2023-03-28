@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
-import TagsList from '../../components/TagsList';
+import TagsList from '../../components/TagsList/TagsList';
 import { slugify } from '../../utils/slugify';
 import { SimpleLayout } from '../../layouts/SimpleLayout/SimpleLayout';
 

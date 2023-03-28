@@ -1,16 +1,15 @@
-@import '../../styles/colors-def.scss';
-
-.open {
-  min-height: calc(100vh - 4rem);
-  background-color: $purple;
-  padding: 2rem;
-  transition: 350ms ease-in;
-  display: block;
-  flex-direction: column;
-  z-index: 4;
-}
-
 .footer {
   display: flex;
-  align-content: space-between;
+  //align-content: space-between;
+  justify-content: space-between;
+}
+.column {
+  max-width: 300px;
+  min-width: 300px;
+  padding-right: 120px;
+}
+
+.icon {
+  width: 16px;
+  color: purple;
 }

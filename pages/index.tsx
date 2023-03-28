@@ -5,20 +5,15 @@ import styles from './Home/Home.module.scss';
 import CategoryList from '../components/CategoryList';
 import ListDisplay from '../components/ListDisplay/ListDisplay';
 import Filters from '../components/Filters/Filters';
-import MapGl from '../components/Map/MapGl';
 import SearchField from '../components/SearchField/SearchField';
-import sections from '../texts/home.json';
-import Section from '../components/Section/Section';
 import Papa from 'papaparse';
-
 import CardsSheets from '../components/CardsSheets/CardsSheets';
-
-interface HomeProps {
-  posts: any[];
-}
+import TagsList from '../components/TagsList/TagsList';
+import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   const [category, setCategory] = useState<string | string[]>([]);
+  const [tag, setTag] = useState<string | string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   const [cardDisplay, setCardDisplay] = useState<boolean>(true);
@@ -67,6 +62,17 @@ export default function Home() {
     }
   };
 
+  const onTagSet = (t: string) => {
+    const previousTag = tag;
+    if (previousTag === t) {
+      setTag([]);
+      setBlogs(posts);
+    } else {
+      setTag(t);
+      setBlogs(posts.filter((blog: any) => blog.tags.includes(t)));
+    }
+  };
+
   const onSearchChange = (query: string) => {
     setSearchQuery(query);
     if (query === '') {
@@ -102,10 +108,13 @@ export default function Home() {
       <div className='center'>
         <CategoryList
           posts={posts}
-          onTagClick={onCategorySet}
+          onCategoryClick={onCategorySet}
           category={category}
         />
       </div>
+      {blogs.length != posts.length && (
+        <TagsList posts={blogs} onTagClick={onTagSet} tag={tag} />
+      )}
 
       <section style={{ marginTop: -80 }}>
         <SearchField
@@ -124,6 +133,18 @@ export default function Home() {
                   >
                     {category}
                   </span>{' '}
+                </>
+              )}
+              {tag.length === 0 || (
+                <>
+                  {' '}
+                  tagged{' '}
+                  <span
+                    className={`${styles.searchQuery} turqoise`}
+                    onClick={() => setTag([])}
+                  >
+                    {tag}
+                  </span>
                 </>
               )}
               {searchQuery && (
@@ -152,14 +173,8 @@ export default function Home() {
             <ListDisplay posts={blogs} />
           )}
         </div>
-        {/* <TagsList posts={posts} /> */}
       </section>
-
-      {sections.map((section: any, index: number) => (
-        <>
-          <Section key={index} {...section} />
-        </>
-      ))}
+      <Footer />
     </DefaultLayout>
   );
 }

@@ -6,6 +6,7 @@ import styles from './MapGl.module.scss';
 import { camelize } from '../../utils/camelize';
 import { categoryColors } from '../../types/colors.type';
 import CategoryColorsType from '../../types/categoryColors.type';
+import { typeColors } from '../../types/typeColors';
 
 interface MapGiProps {
   posts?: any;
@@ -16,7 +17,7 @@ export default function MapGl({ posts }: MapGiProps) {
   const [viewState, setViewState] = useState({
     latitude: 56.14788383454515,
     longitude: 10.210058485187,
-    zoom: 14,
+    zoom: 12,
   });
 
   return (
@@ -26,7 +27,7 @@ export default function MapGl({ posts }: MapGiProps) {
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         maxZoom={17}
-        minZoom={13}
+        minZoom={12}
         scrollZoom={false}
         mapStyle='mapbox://styles/anetahaha/clbeb4ftc002e14p79cgh7e6t'
         mapboxAccessToken='pk.eyJ1IjoiYW5ldGFoYWhhIiwiYSI6ImNsYmU3MXVpbDAyZ2ozcXBnbmhmZDc4aXUifQ.27PW9H2rbmyeI44A7pgcEQ'
@@ -34,21 +35,18 @@ export default function MapGl({ posts }: MapGiProps) {
         <NavigationControl />
         {posts.map(
           (post: any, index: number) =>
-            post.frontmatter.longitude && (
+            !isNaN(post?.longitude) &&
+            !isNaN(post?.latitude) && (
               <Marker
                 key={index}
-                latitude={post.frontmatter.latitude}
-                longitude={post.frontmatter.longitude}
+                latitude={post.latitude}
+                longitude={post.longitude}
               >
                 <div
                   className={`${styles.point} bg-${
-                    categoryColors[
-                      camelize(
-                        post?.frontmatter.type as keyof CategoryColorsType
-                      )
-                    ]
+                    typeColors[post?.type?.toLowerCase().trim() as any]
                   }`}
-                  onMouseEnter={() => setName(post.frontmatter.title)}
+                  onMouseEnter={() => setName(post.title)}
                   onMouseLeave={() => setName('')}
                 >
                   <img
@@ -59,15 +57,13 @@ export default function MapGl({ posts }: MapGiProps) {
                   {/* // @ts-expect-error */}
                   <div
                     className={`${styles.title} bg-${
-                      categoryColors[camelize(post?.frontmatter.type)]
-                    } ${name === post.frontmatter.title ? styles.opened : ''}`}
+                      typeColors[post?.type?.toLowerCase().trim() as any]
+                    } ${name === post.title ? styles.opened : ''}`}
                   >
-                    {name === post.frontmatter.title ? name : ''}
+                    {name === post.title ? name : ''}
                     <span className='gray'>
                       {' '}
-                      {name === post.frontmatter.title
-                        ? post.frontmatter.address
-                        : ''}
+                      {name === post.title ? post.address : ''}
                     </span>
                   </div>
                 </div>

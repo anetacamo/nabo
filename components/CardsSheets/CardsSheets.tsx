@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import styles from './CardsSheets.module.scss';
-import CategoryColorsType from '../../types/categoryColors.type';
 import { typeColors } from '../../types/typeColors';
-import { camelize } from '../../utils/camelize';
 
 interface CardProp {
   title?: string;

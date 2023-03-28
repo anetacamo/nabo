@@ -6,7 +6,7 @@ import path from 'path';
 import Cards from './Cards/Cards';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import styles from './Home/Home.module.scss';
-import TagsList from './TagsList';
+import TagsList from './TagsList/TagsList';
 import CategoryList from './CategoryList';
 import ListDisplay from './ListDisplay/ListDisplay';
 import Filters from './Filters/Filters';

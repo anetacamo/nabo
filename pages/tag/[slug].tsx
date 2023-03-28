@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Image from 'next/image';
 import Link from 'next/link';
-import TagsList from '../../components/TagsList';
+import TagsList from '../../components/TagsList/TagsList';
 import Cards from '../../components/Cards/Cards';
 
 interface TagsPageProps {

@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import SkipNav from '../SkipNav/SkipNav';
 import styles from './Menu.module.scss';
-import Hamburger from '../Hamburger/Hamburger';
 import { useState } from 'react';
-import LargeMenu from '../LargeMenu/LargeMenu';
 
 export default function Menu() {
   const menuItems = [
@@ -34,13 +32,10 @@ export default function Menu() {
             </Link>
           ))}
         </div>
-        <Hamburger onButtonClick={() => setOpen(!open)} />
         {/* <Link href='/'>
         <a className={`${styles.logo} h2`}>D</a>
       </Link> */}
       </nav>
-
-      {open && <LargeMenu />}
     </>
   );
 }
