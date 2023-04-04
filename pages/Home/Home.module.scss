@@ -13,3 +13,15 @@
   max-width: 800px;
   margin: auto;
 }
+
+.searchQuery {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.icon {
+  width: 16px;
+  padding-left: 12px;
+}

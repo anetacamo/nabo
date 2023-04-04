@@ -10,6 +10,9 @@ import Papa from 'papaparse';
 import CardsSheets from '../components/CardsSheets/CardsSheets';
 import TagsList from '../components/TagsList/TagsList';
 import Footer from '../components/Footer/Footer';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const [category, setCategory] = useState<string | string[]>([]);
@@ -100,11 +103,14 @@ export default function Home() {
           with the right people and facilities you might havent even know
           existed
         </h2>
-        <button>how to use it?</button>
-        <button>map view</button>
+        <Link href='/how-to-use'>
+          <button>how to use it?</button>
+        </Link>
+        <Link href='/map-view'>
+          <button>map view</button>
+        </Link>
       </section>
-      {/* <MapGl posts={posts} /> */}
-      {/* <ImageSection background='/aarhus.png' /> */}
+
       <div className='center'>
         <CategoryList
           posts={posts}
@@ -128,10 +134,11 @@ export default function Home() {
               {category.length === 0 || (
                 <>
                   <span
-                    className={`${styles.searchQuery} purplelight`}
+                    className={`${styles.searchQuery} bg-purplelight highligted`}
                     onClick={() => setCategory([])}
                   >
                     {category}
+                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
                   </span>{' '}
                 </>
               )}
@@ -140,10 +147,11 @@ export default function Home() {
                   {' '}
                   tagged{' '}
                   <span
-                    className={`${styles.searchQuery} turqoise`}
+                    className={`${styles.searchQuery} bg-turqoise highligted`}
                     onClick={() => setTag([])}
                   >
                     {tag}
+                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
                   </span>
                 </>
               )}
@@ -152,10 +160,11 @@ export default function Home() {
                   {' '}
                   including{' '}
                   <span
-                    className={`${styles.searchQuery} purplelight`}
+                    className={`${styles.searchQuery} bg-blue highligted`}
                     onClick={() => setSearchQuery('')}
                   >
                     {searchQuery}
+                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
                   </span>
                 </>
               )}

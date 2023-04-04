@@ -1,18 +1,11 @@
-import Link from 'next/link';
 import styles from './Footer.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faMailForward } from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+import IconHolder from '../IconHolder/IconHolder';
 
 export default function Footer() {
   return (
     <footer className='bg-black'>
       <section className={styles.footer}>
-        <div className={styles.column} style={{ maxWidth: 600 }}>
+        <div className={styles.column}>
           <h3>About Nabø</h3>
           <p>
             <span className='purplelight'>Nabø </span>is an interactive guide to
@@ -20,20 +13,11 @@ export default function Footer() {
             with the right people and facilities you might havent even know
             existed
           </p>
-          <div className='flex' style={{ alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-            <Link href='/about'>
-              <li>about</li>
-            </Link>
-          </div>
-
-          <div className='flex' style={{ alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-            <Link href='/how-to-use'>
-              <li>how to use</li>
-            </Link>
-          </div>
+          <IconHolder name='about' />
+          <IconHolder name='how to use' />
+          <div className='divider' style={{ marginLeft: 0 }}></div>
         </div>
+
         <div className={styles.column}>
           <h3>contact</h3>
           <p className='purplelight' style={{ margin: 0 }}>
@@ -48,27 +32,15 @@ export default function Footer() {
           <p style={{ margin: 0 }}>Liam</p>
           <p style={{ margin: 0 }}>Liam@ftontloberne.com</p>
           <div className='divider' style={{ marginLeft: 0 }}></div>
+
           <h3>Partnered cities</h3>
-          <div className='flex' style={{ alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-            <Link href='/how-to-use'>
-              <li>Nabø Tromsø</li>
-            </Link>
-          </div>{' '}
-          <div className='flex' style={{ alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-            <Link href='/how-to-use'>
-              <li>Nabø Ribe</li>
-            </Link>
-          </div>
-          <div className='flex' style={{ alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
-            <Link href='/how-to-use'>
-              <li>Nabø Tromsø</li>
-            </Link>
-          </div>
+          <IconHolder name='Nabo Trømso' />
+          <IconHolder name='Nabo Aarhus' />
+          <IconHolder name='Nabo Skandeborg' />
+
+          <div className='divider' style={{ marginLeft: 0 }}></div>
         </div>
-        <div style={{ paddingRight: 120 }} className={styles.column}>
+        <div className={styles.column}>
           <h3>Engage</h3>
 
           <p className='purplelight' style={{ margin: 0 }}>

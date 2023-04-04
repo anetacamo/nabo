@@ -9,40 +9,43 @@ interface ListDisplayProps {
 }
 
 const ListDisplay = ({ posts }: ListDisplayProps) => {
-  const [extended, setExtended] = useState(false);
+  const [extended, setExtended] = useState({});
+  console.log(extended);
   return (
     <>
       {posts.map((post, index) => (
         <div
           className={styles.listContainer}
-          onClick={() => setExtended(!extended)}
+          onClick={() =>
+            setExtended(Object.keys(extended).length === 0 ? post : {})
+          }
           tabIndex={0}
-          onKeyPress={() => setExtended(!extended)}
+          onKeyPress={() => (Object.keys(extended).length === 0 ? post : {})}
           role='button'
           key={index}
         >
           <div className={`flex-center ${styles.flexName}`}>
             <div>
               <h2 className={styles.title}>
-                {post.frontmatter.title}{' '}
-                <span className={styles.address}>
-                  {post.frontmatter.address}
-                </span>
+                {post.title}{' '}
+                <span className={styles.address}>{post.address}</span>
               </h2>
             </div>
-            <h4 className={styles.type}>{post.frontmatter.type}</h4>
+            <h4 className={styles.type}>{post.type}</h4>
           </div>
-          <div className={`${styles.moreInfo} ${extended || 'hidden'}`}>
-            <p className={styles.text}>{post.frontmatter.text}</p>
-            <ul className='links'>
-              {post.frontmatter.tags?.map((tag: string, index: number) => (
+          <div
+            className={`${styles.moreInfo} ${extended === post || 'hidden'}`}
+          >
+            <p className={styles.text}>{post.description}</p>
+            {/* <ul className='links'>
+              {post.tags?.map((tag: string, index: number) => (
                 <Link href={`/events/${slugify(tag)}`} key={index}>
                   <div className='type bg-purple'>{tag}</div>
                 </Link>
               ))}
-            </ul>
-            {post.frontmatter.link && (
-              <Link href={post.frontmatter.link}>
+            </ul> */}
+            {post.link && (
+              <Link href={post.link}>
                 <p className={styles.link}>
                   <FaArrowRight />{' '}
                   <span style={{ marginLeft: 8 }}> visit website</span>

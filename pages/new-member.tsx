@@ -102,9 +102,9 @@ const NewMember = () => {
           />
         </div>
         <p style={{ marginTop: 0, fontSize: 12 }}>
-          to get longitude and longitude find yourself at any map ap, right
-          click and fill in the coordinates here. latitude: 56.15738409999999,
-          longitude:10.2007413
+          to get longitude and longitude find yourself at any map app, right
+          click and fill in the coordinates here. center of our map latitude:
+          56.15738409999999, longitude:10.2007413
         </p>
         <div>
           <label htmlFor='type' className={styles.label}>
