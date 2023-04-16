@@ -33,8 +33,12 @@ export default function Home() {
         header: true,
         complete: (results: any) => {
           setData(results.data);
-          setPosts(results.data.filter((d: any) => d?.title));
-          setBlogs(results.data.filter((d: any) => d?.title));
+          setPosts(
+            results.data.filter((d: any, index) => index > 0 && d?.title)
+          );
+          setBlogs(
+            results.data.filter((d: any, index) => index > 0 && d?.title)
+          );
         },
       }
     );
@@ -43,25 +47,25 @@ export default function Home() {
   console.log('posts', posts);
 
   // //
-  // const postsToRender = posts.filter((post: any) =>
-  //   category === [] ? true : post.type.includes(category)
-  // );
-  // const organized = postsToRender.filter((post: any) =>
-  //   searchQuery === ''
-  //     ? true
-  //     : post.title?.toLowerCase().includes(searchQuery) ||
-  //       post.description?.toLowerCase().includes(searchQuery)
-  // );
-  // setBlogs(organized);
+  useEffect(() => {
+    setBlogs(
+      posts
+        .filter((blog: any) => blog.tags.includes(tag))
+        .filter(
+          (post: any) =>
+            post.title?.toLowerCase().includes(searchQuery) ||
+            post.description?.toLowerCase().includes(searchQuery)
+        )
+        .filter((blog: any) => blog.type.includes(category))
+    );
+  }, [category, searchQuery, tag]);
 
   const onCategorySet = (cat: string) => {
     const previousCategory = category;
     if (previousCategory === cat) {
       setCategory([]);
-      setBlogs(posts);
     } else {
       setCategory(cat);
-      setBlogs(posts.filter((blog: any) => blog.type.includes(cat)));
     }
   };
 
@@ -69,26 +73,13 @@ export default function Home() {
     const previousTag = tag;
     if (previousTag === t) {
       setTag([]);
-      setBlogs(posts);
     } else {
       setTag(t);
-      setBlogs(posts.filter((blog: any) => blog.tags.includes(t)));
     }
   };
 
   const onSearchChange = (query: string) => {
     setSearchQuery(query);
-    if (query === '') {
-      setBlogs(posts);
-    } else {
-      setBlogs(
-        posts.filter(
-          (post: any) =>
-            post.title?.toLowerCase().includes(query) ||
-            post.description?.toLowerCase().includes(query)
-        )
-      );
-    }
   };
 
   const title = 'Home';

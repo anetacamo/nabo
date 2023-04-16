@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SimpleLayout } from '../layouts/SimpleLayout/SimpleLayout';
 import styles from './NewMember/NewMember.module.scss';
 import axios from 'axios';
+import Papa from 'papaparse';
 
 const NewMember = () => {
   const [member, setMember] = useState({
@@ -14,11 +15,45 @@ const NewMember = () => {
     type: '',
     tags: '',
   });
+  const [data, setData] = useState({});
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    Papa.parse(
+      'https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv',
+      {
+        download: true,
+        header: true,
+        complete: (results: any) => {
+          setData(results.data);
+          setBlogs(
+            results.data.filter((d: any, index) => index > 0 && d?.title)
+          );
+        },
+      }
+    );
+  }, []);
+
+  let allCategories: any[] = [];
+  blogs.map((item: any) =>
+    item.type
+      .trim()
+      .split(',')
+      .map((cate: string) => cate != '' && allCategories.push(cate.trim()))
+  );
+  let categoriesOnce = [...new Set(allCategories)];
+
+  let allTags: any[] = [];
+  blogs.map((item: any) =>
+    item.tags
+      ?.split(',')
+      .map((t: string) => t != '' && t != ' ' && allTags.push(t.trim()))
+  );
+  let tagsOnce = [...new Set(allTags)];
 
   //submit event
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const data = {
       name: member.name,
       text: member.text,
@@ -74,6 +109,19 @@ const NewMember = () => {
           />
         </div>
         <div>
+          <label htmlFor='address' className={styles.label}>
+            Address
+          </label>
+          <input
+            type='text'
+            name='address'
+            id='address'
+            value={member.address}
+            onChange={(e) => setMember({ ...member, address: e.target.value })}
+            className={styles.input}
+          />
+        </div>
+        <div>
           <label htmlFor='longitude' className={styles.label}>
             Longitude
           </label>
@@ -110,18 +158,35 @@ const NewMember = () => {
           <label htmlFor='type' className={styles.label}>
             Type
           </label>
-          <input
-            type='text'
+          <select
             name='type'
             id='type'
-            value={member.type}
             onChange={(e) => setMember({ ...member, type: e.target.value })}
             className={styles.input}
-          />
+          >
+            {categoriesOnce.map((c) => (
+              <option value={c}>{c}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label htmlFor='tags' className={styles.label}>
+            Visible Tags
+          </label>
+          <select
+            name='tags'
+            id='tags'
+            onChange={(e) => setMember({ ...member, tags: e.target.value })}
+            className={styles.input}
+          >
+            {tagsOnce.map((c) => (
+              <option value={c}>{c}</option>
+            ))}
+          </select>
         </div>
         <div>
           <label htmlFor='link' className={styles.label}>
-            Link
+            website
           </label>
           <input
             type='text'
@@ -129,19 +194,6 @@ const NewMember = () => {
             id='link'
             value={member.link}
             onChange={(e) => setMember({ ...member, link: e.target.value })}
-            className={styles.input}
-          />
-        </div>
-        <div>
-          <label htmlFor='address' className={styles.label}>
-            Address
-          </label>
-          <input
-            type='text'
-            name='address'
-            id='address'
-            value={member.address}
-            onChange={(e) => setMember({ ...member, address: e.target.value })}
             className={styles.input}
           />
         </div>

@@ -27,7 +27,7 @@ export default function CardsSheets(posts: any) {
       {posts.posts.map((post: CardProp, index: number) => (
         <div
           className={`${styles.card} bg-${
-            typeColors[post?.type?.toLowerCase().trim() as any]
+            typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]
           }`}
           key={index}
         >
@@ -45,26 +45,15 @@ export default function CardsSheets(posts: any) {
           {/* {post?.type && <h4 className='type'>{post?.type}</h4>} */}
 
           {post?.type && (
-            <p
-              className={styles.type}
-              style={{
-                marginTop: 46,
-                marginBottom: -42,
-                minWidth: 20,
-                backgroundColor: 'transparent',
-                color: 'salmon',
-                fontWeight: 900,
-                paddingLeft: 0,
-              }}
-            >
-              {post?.supertag && post.supertag} {post?.type}
+            <p className={`${styles.colored} colored`}>
+              {post?.supertag && post.supertag} {post?.type.split(',')[0]}
             </p>
           )}
           {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
           {post?.address && <h5 className='bolded '>{post?.address}</h5>}
           {post?.link && (
             <a href={post?.link} target='_blank'>
-              <h5 className={styles.link}>website</h5>
+              <h5 className={styles.link}>hjemmeside</h5>
             </a>
           )}
           {post?.description && (
@@ -79,7 +68,9 @@ export default function CardsSheets(posts: any) {
                 .map(
                   (tag) =>
                     tag != '' &&
-                    tag != ' ' && <p className={styles.type}>{tag}</p>
+                    tag != ' ' && (
+                      <p className={`${styles.type} bg-colored`}>{tag}</p>
+                    )
                 )}
             </div>
           )}

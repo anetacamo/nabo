@@ -10,7 +10,13 @@ export default function CategoryList({
   category,
 }: CategoryProps) {
   let allCategories: any[] = [];
-  posts.map((item) => allCategories.push(item.type.trim()));
+  posts.map((item) =>
+    item.type
+      .trim()
+      .split(',')
+      .map((cate: string) => cate != '' && allCategories.push(cate.trim()))
+  );
+
   let categoriesOnce = [...new Set(allCategories)];
   return (
     <>
