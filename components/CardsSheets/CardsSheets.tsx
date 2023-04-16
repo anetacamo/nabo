@@ -21,7 +21,6 @@ function truncate(str: string, n: number) {
 }
 
 export default function CardsSheets(posts: any) {
-  console.log('entries', posts);
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (

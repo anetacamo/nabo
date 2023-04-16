@@ -10,7 +10,7 @@ interface ListDisplayProps {
 
 const ListDisplay = ({ posts }: ListDisplayProps) => {
   const [extended, setExtended] = useState({});
-  console.log(extended);
+
   return (
     <>
       {posts.map((post, index) => (

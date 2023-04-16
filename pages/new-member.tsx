@@ -71,7 +71,6 @@ const NewMember = () => {
       )
       .then((response) => {
         console.log(response);
-
         setMember({
           name: '',
           text: '',

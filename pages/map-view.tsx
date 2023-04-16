@@ -26,7 +26,6 @@ export default function HowToUse() {
     );
   }, []);
 
-  console.log('posts', posts);
   return (
     <DefaultLayout title={title}>
       <MapGl posts={blogs} />

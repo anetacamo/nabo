@@ -34,17 +34,19 @@ export default function Home() {
         complete: (results: any) => {
           setData(results.data);
           setPosts(
-            results.data.filter((d: any, index) => index > 0 && d?.title)
+            results.data.filter(
+              (d: any, index: number) => index > 0 && d?.title
+            )
           );
           setBlogs(
-            results.data.filter((d: any, index) => index > 0 && d?.title)
+            results.data.filter(
+              (d: any, index: number) => index > 0 && d?.title
+            )
           );
         },
       }
     );
   }, []);
-
-  console.log('posts', posts);
 
   // //
   useEffect(() => {
@@ -54,7 +56,8 @@ export default function Home() {
         .filter(
           (post: any) =>
             post.title?.toLowerCase().includes(searchQuery) ||
-            post.description?.toLowerCase().includes(searchQuery)
+            post.description?.toLowerCase().includes(searchQuery) ||
+            post.invisible?.toLowerCase().includes(searchQuery)
         )
         .filter((blog: any) => blog.type.includes(category))
     );
