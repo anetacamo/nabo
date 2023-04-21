@@ -30,6 +30,7 @@ $colors: (
 @each $name, $value in $colors {
   .bg-#{$name} {
     background-color: $value;
+    //background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png');
   }
 }
 
@@ -46,10 +47,6 @@ $colors: (
 .bg-pink,
 .bg-turqoise {
   color: white;
-}
-.bg-pink {
-  color: white;
-  //background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
 }
 
 .bg-yellow,

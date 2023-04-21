@@ -15,13 +15,33 @@ interface MapGiProps {
 export default function MapGl({ posts }: MapGiProps) {
   const [name, setName] = useState('');
   const [viewState, setViewState] = useState({
-    latitude: 56.14788383454515,
-    longitude: 10.210058485187,
+    latitude: 56.15520483651387,
+    longitude: 10.245000205993804,
     zoom: 12,
   });
 
   return (
-    <>
+    <div className={styles.mapwhole}>
+      <h2
+        className={styles.mainTitle}
+        style={{
+          position: 'absolute',
+          color: 'black',
+          top: 185,
+          zIndex: 4,
+          textTransform: 'lowercase',
+          maxWidth: 500,
+          right: 42,
+          textAlign: 'right',
+          fontSize: 28,
+          letterSpacing: 1,
+          lineHeight: 1.2,
+        }}
+      >
+        <span className='purple'>Nåbo map</span> is an interactive guide here to
+        help you organise all spheres of your cultural event and match you with
+        the right people and facilities you might havent even know existed
+      </h2>
       <Map
         style={{ width: '100vw', height: '500px' }}
         {...viewState}
@@ -50,7 +70,11 @@ export default function MapGl({ posts }: MapGiProps) {
                   onMouseLeave={() => setName('')}
                 >
                   <img
-                    src={`/cards/star.png`}
+                    src={`/categories/${
+                      typeColors[
+                        post?.type?.split(',')[0].toLowerCase().trim() as any
+                      ]
+                    }.png`}
                     alt={`icon`}
                     className={styles.icon}
                   />
@@ -71,6 +95,6 @@ export default function MapGl({ posts }: MapGiProps) {
             )
         )}
       </Map>
-    </>
+    </div>
   );
 }

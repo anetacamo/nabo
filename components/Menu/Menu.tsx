@@ -6,9 +6,9 @@ import { useState } from 'react';
 export default function Menu() {
   const menuItems = [
     { name: 'how to use', link: '/how-to-use', color: 'lightblue' },
-    { name: 'about', link: '/about', color: 'yellow' },
-    { name: 'join the map', link: '/new-member', color: 'salmon' },
-    { name: 'map view', link: '/map-view', color: 'purplelight' },
+    { name: 'about', link: '/about', color: 'lightblue' },
+    { name: 'join the map', link: '/new-member', color: 'lightblue' },
+    { name: 'map view', link: '/map-view', color: 'lightblue' },
   ];
   const [open, setOpen] = useState(false);
   return (

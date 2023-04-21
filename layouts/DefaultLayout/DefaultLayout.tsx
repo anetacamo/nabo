@@ -6,9 +6,10 @@ import Menu from '../../components/Menu/Menu';
 interface LayoutProps {
   title?: string;
   children?: ReactNode;
+  css?: string;
 }
 
-export const DefaultLayout = ({ children, title }: LayoutProps) => {
+export const DefaultLayout = ({ children, title, css }: LayoutProps) => {
   return (
     <>
       <Head>
@@ -18,7 +19,9 @@ export const DefaultLayout = ({ children, title }: LayoutProps) => {
       </Head>
 
       <Menu />
-      <div id='content'>{children}</div>
+      <div id='content' className={css}>
+        {children}
+      </div>
       {/* <Footer /> */}
     </>
   );

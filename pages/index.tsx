@@ -10,9 +10,9 @@ import Papa from 'papaparse';
 import CardsSheets from '../components/CardsSheets/CardsSheets';
 import TagsList from '../components/TagsList/TagsList';
 import Footer from '../components/Footer/Footer';
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
+import MapGl from '../components/Map/MapGl';
 
 export default function Home() {
   const [category, setCategory] = useState<string | string[]>([]);
@@ -88,23 +88,8 @@ export default function Home() {
   const title = 'Home';
 
   return (
-    <DefaultLayout title={title}>
-      <section className='bg-black center'>
-        {' '}
-        <h2 className={styles.mainTitle}>
-          <span className='purple'>Nåbo map</span> is an interactive guide to
-          help you organise all spheres of your cultural event and match you
-          with the right people and facilities you might havent even know
-          existed
-        </h2>
-        <Link href='/how-to-use'>
-          <button>how to use it?</button>
-        </Link>
-        <Link href='/map-view'>
-          <button>map view</button>
-        </Link>
-      </section>
-
+    <DefaultLayout title={title} css='bg-black'>
+      <MapGl posts={blogs} />
       <div className='center'>
         <CategoryList
           posts={posts}
@@ -112,9 +97,11 @@ export default function Home() {
           category={category}
         />
       </div>
-      {blogs.length != posts.length && (
-        <TagsList posts={blogs} onTagClick={onTagSet} tag={tag} />
-      )}
+      <div className='center' style={{ marginTop: -24 }}>
+        {blogs.length != posts.length && (
+          <TagsList posts={blogs} onTagClick={onTagSet} tag={tag} />
+        )}
+      </div>
 
       <section style={{ marginTop: -80 }}>
         <SearchField

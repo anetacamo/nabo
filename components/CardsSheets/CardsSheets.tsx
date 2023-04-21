@@ -32,7 +32,11 @@ export default function CardsSheets(posts: any) {
         >
           <div className={styles.image}>
             <Image
-              src={`/cards/airplane.png`}
+              src={`/categories/${
+                typeColors[
+                  post?.type?.split(',')[0].toLowerCase().trim() as any
+                ]
+              }.png`}
               alt='blue'
               className={`half filter-yellow`}
               height={80}
