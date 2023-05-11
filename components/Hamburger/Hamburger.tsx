@@ -1,4 +1,4 @@
-import styles from "./Hamburger.module.scss";
+import styles from './Hamburger.module.scss';
 
 interface HamburgerProps {
   open?: boolean;
@@ -7,7 +7,10 @@ interface HamburgerProps {
 
 export default function Hamburger({ open, onButtonClick }: HamburgerProps) {
   return (
-    <div className={styles.hamburger} onClick={onButtonClick}>
+    <div
+      className={`${styles.hamburger} ${open && styles.open}`}
+      onClick={onButtonClick}
+    >
       <div className={styles.line}></div>
       <div className={styles.line}></div>
       <div className={styles.line}></div>

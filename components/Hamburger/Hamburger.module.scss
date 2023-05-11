@@ -1,8 +1,11 @@
 @import '../../styles/colors-def.scss';
 
+$line-margin: 6px;
+$line-thickness: 4px;
+
 .hamburger {
-  width: 52px;
   cursor: pointer;
+  margin-right: -$line-margin;
   transition-duration: 350ms;
   &:hover .line {
     background-color: $purple;
@@ -10,12 +13,24 @@
   @media (min-width: 700px) {
     display: none;
   }
+  &.open {
+    .line:first-of-type {
+      rotate: 45deg;
+    }
+    .line:nth-child(2) {
+      display: none;
+    }
+    .line:last-of-type {
+      rotate: -45deg;
+      margin-top: -10px;
+    }
+  }
 }
 
 .line {
   background-color: white;
-  width: 40px;
-  height: 3px;
-  margin: 6px;
+  width: 36px;
+  height: $line-thickness;
+  margin: $line-margin;
   transition: 350ms ease-in;
 }

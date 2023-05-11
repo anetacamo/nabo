@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import styles from './CardsSheets.module.scss';
 import { typeColors } from '../../types/typeColors';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
+import Tags from '../Tags/Tags';
+import IconHolder from '../IconHolder/IconHolder';
 
 interface CardProp {
   title?: string;
@@ -24,60 +29,47 @@ export default function CardsSheets(posts: any) {
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <div
-          className={`${styles.card} bg-${
-            typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]
-          }`}
-          key={index}
-        >
-          <div className={styles.image}>
-            <Image
-              src={`/categories/${
-                typeColors[
-                  post?.type?.split(',')[0].toLowerCase().trim() as any
-                ]
-              }.png`}
-              alt='blue'
-              className={`half filter-yellow`}
-              height={80}
-              width={80}
-              objectFit='contain'
-            />
-          </div>
-
-          {/* {post?.type && <h4 className='type'>{post?.type}</h4>} */}
-
-          {post?.type && (
-            <p className={`${styles.colored} colored`}>
-              {post?.supertag && post.supertag} {post?.type.split(',')[0]}
-            </p>
-          )}
-          {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
-          {post?.address && <h5 className='bolded '>{post?.address}</h5>}
-          {post?.link && (
-            <a href={post?.link} target='_blank'>
-              <h5 className={styles.link}>hjemmeside</h5>
-            </a>
-          )}
-          {post?.description && (
-            <h5 style={{ marginTop: 12 }}>
-              {truncate(post?.description, 150)}
-            </h5>
-          )}
-          {post?.tags && (
-            <div style={{ marginTop: 16 }}>
-              {post?.tags
-                .split(',')
-                .map(
-                  (tag) =>
-                    tag != '' &&
-                    tag != ' ' && (
-                      <p className={`${styles.type} bg-colored`}>{tag}</p>
-                    )
-                )}
+        <Link href={`cards/${index}`} target='_blank'>
+          <div
+            className={`${styles.card} bg-${
+              typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]
+            }`}
+            key={index}
+          >
+            <div className={styles.image}>
+              <Image
+                src={`/categories/${
+                  typeColors[
+                    post?.type?.split(',')[0].toLowerCase().trim() as any
+                  ]
+                }.png`}
+                alt='blue'
+                layout='fill'
+                quality='7'
+                objectFit='cover'
+              />
             </div>
-          )}
-        </div>
+
+            {post?.type && (
+              <p className={`${styles.colored} colored`}>
+                {post?.supertag && post.supertag} {post?.type.split(',')[0]}
+              </p>
+            )}
+            {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
+
+            {post?.address && <IconHolder name={post?.address} nolink />}
+            {post?.link && (
+              <IconHolder name='hjemmeside' link={post?.link} small />
+            )}
+
+            {post?.description && (
+              <h5 style={{ marginTop: 12 }}>
+                {truncate(post?.description, 150)}
+              </h5>
+            )}
+            {post?.tags && <Tags tags={post?.tags} />}
+          </div>
+        </Link>
       ))}
     </div>
   );

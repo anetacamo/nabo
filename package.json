@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
@@ -35,6 +36,17 @@
     "@types/react-dom": "18.0.4",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
+    "next-unused": "^0.0.6",
     "typescript": "4.6.4"
+  },
+  "next-unused": {
+    "alias": {},
+    "include": [
+      "components",
+      "layouts",
+      "public"
+    ],
+    "exclude": [],
+    "entrypoints": []
   }
 }

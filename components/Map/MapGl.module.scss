@@ -36,17 +36,21 @@
   }
 }
 .title {
-  width: 0;
+  min-width: 100px;
   opacity: 0;
+  background-color: black;
+  border-radius: 4px;
+  z-index: 2;
   &.opened {
     font-size: 0.9rem;
     transition-duration: 150ms;
-    padding: 8px;
+    padding: 12px;
     margin-left: 3px;
     width: auto;
     opacity: 1;
-    z-index: 3;
+    z-index: 999;
     line-height: 1;
+    position: relative;
     span {
       opacity: 0.6;
       font-size: 0.75rem;

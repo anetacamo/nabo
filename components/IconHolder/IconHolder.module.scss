@@ -6,6 +6,14 @@
 }
 
 .icon {
-  width: 16px;
-  color: purple;
+  width: 1rem;
+  min-width: 1rem;
+  margin-top: 0.125rem;
+  margin-bottom: 0.125rem;
+  margin-right: 0.5rem;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
 }

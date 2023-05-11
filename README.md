@@ -32,3 +32,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### TODO
+
+search in the bar
+separated pages for each
+
+fix mobile map
+fix mobile width
+
+form: suggest a tag
+form: choose multiple tags
+form: add hidden tags
+
+add texts for each page and footer
+remove unused items
+fix list of items open on click
+
+remove s under the bar
+
+add the tags down
+map: fix overlaying info
+
+on click show overlapping items in a row
+show slider on page
+
+### DONE
+
+images added
+add hamburger menu
+deleted bunch of things
+updated icon holders,
+added images to cards
+created separated pages

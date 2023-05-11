@@ -64,7 +64,9 @@ export default function MapGl({ posts }: MapGiProps) {
               >
                 <div
                   className={`${styles.point} bg-${
-                    typeColors[post?.type?.toLowerCase().trim() as any]
+                    typeColors[
+                      post?.type?.split(',')[0].toLowerCase().trim() as any
+                    ]
                   }`}
                   onMouseEnter={() => setName(post.title)}
                   onMouseLeave={() => setName('')}
@@ -74,18 +76,20 @@ export default function MapGl({ posts }: MapGiProps) {
                       typeColors[
                         post?.type?.split(',')[0].toLowerCase().trim() as any
                       ]
-                    }.png`}
+                    }2.png`}
                     alt={`icon`}
                     className={styles.icon}
                   />
                   {/* // @ts-expect-error */}
                   <div
-                    className={`${styles.title} bg-${
-                      typeColors[post?.type?.toLowerCase().trim() as any]
+                    className={`${styles.title}  ${
+                      typeColors[
+                        post?.type?.split(',')[0].toLowerCase().trim() as any
+                      ]
                     } ${name === post.title ? styles.opened : ''}`}
                   >
                     {name === post.title ? name : ''}
-                    <span className='gray'>
+                    <span style={{ color: '#dddddd' }}>
                       {' '}
                       {name === post.title ? post.address : ''}
                     </span>

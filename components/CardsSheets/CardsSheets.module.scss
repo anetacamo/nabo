@@ -4,6 +4,12 @@
 
 @import '../../styles/colors-def.scss';
 
+.icon {
+  width: 16px;
+  margin-right: 6px;
+  min-width: 16px;
+}
+
 .card {
   margin: 8px;
   padding: 24px;
@@ -24,11 +30,13 @@
     font-size: 12px;
   }
   .image {
-    padding: 48px;
     background-color: black;
     margin: -24px;
-    opacity: 0.2;
+    opacity: 0.7;
     text-align: center;
+    position: relative;
+
+    height: 160px;
   }
   .special {
     // font-family: 'brutalismregular';
@@ -47,7 +55,6 @@
     text-transform: uppercase;
     display: inline-block;
     padding: 3px 6px;
-    //background-color: $blue;
     letter-spacing: 1.2px;
     margin: 0;
     margin-right: 4px;
