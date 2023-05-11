@@ -4,6 +4,7 @@ import Papa from 'papaparse';
 import styles from './card.module.scss';
 import Tags from '../../components/Tags/Tags';
 import IconHolder from '../../components/IconHolder/IconHolder';
+import { DefaultLayout } from '../../layouts/DefaultLayout/DefaultLayout';
 
 export default function SinglePage() {
   const router = useRouter();
@@ -25,7 +26,7 @@ export default function SinglePage() {
   }, []);
 
   return (
-    <>
+    <DefaultLayout>
       <div className={`${styles.header} flex bg-blue`}>
         <div className={styles.textholder}>
           <p className={`${styles.colored} colored`}>
@@ -54,6 +55,6 @@ export default function SinglePage() {
         <h4>how to use</h4>
         <p>{blog?.howtouse}</p>
       </section>
-    </>
+    </DefaultLayout>
   );
 }

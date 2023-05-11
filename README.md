@@ -57,6 +57,14 @@ map: fix overlaying info
 on click show overlapping items in a row
 show slider on page
 
+icon needs space on left
+add version
+menu needs background
+add location icon
+add colors to separated pages
+maybe add a suggestion
+tags need right margin
+
 ### DONE
 
 images added

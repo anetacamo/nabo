@@ -1,6 +1,6 @@
 @import url('https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap');
 
-.menu {
+.men {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,6 @@
   .li,
   .logo {
     cursor: pointer;
-    //color: white;
     transition-duration: 350ms;
     &:hover {
       text-decoration: none;

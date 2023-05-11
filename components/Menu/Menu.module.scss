@@ -1,16 +1,53 @@
 @import '../../styles/colors-def.scss';
 
 .nav {
+  padding: 0 2rem;
   position: fixed;
+  z-index: 22;
+  height: 0vh;
   top: 0;
   width: calc(100% - 4rem);
-  z-index: 3;
+  -moz-transition-duration: 350ms;
+  .mobmenu {
+    display: none;
+  }
+  &.open {
+    background-color: black;
+    //   background-image: url('/cards/brasna.png');
+    height: 100vh;
+    transition-duration: 350ms;
+    .desktop {
+      flex-direction: column;
+      li {
+        margin: 0 24px;
+      }
+    }
+    .mobmenu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: calc(100vh - 124px);
+      .li {
+        margin: 8px;
+        font-size: 18px;
+      }
+    }
+  }
   @media (max-width: 700px) {
     width: calc(100% - 3rem);
   }
-  &.open {
-    background-color: $purple;
-    z-index: 4;
-    height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  z-index: 22;
+
+  .logo,
+  .li {
+    font-size: 16px;
+    margin: 20px 0;
   }
 }
