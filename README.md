@@ -73,3 +73,4 @@ deleted bunch of things
 updated icon holders,
 added images to cards
 created separated pages
+hid map in mobile

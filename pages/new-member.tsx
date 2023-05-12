@@ -3,6 +3,7 @@ import { SimpleLayout } from '../layouts/SimpleLayout/SimpleLayout';
 import styles from './NewMember/NewMember.module.scss';
 import axios from 'axios';
 import Papa from 'papaparse';
+import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 
 const NewMember = () => {
   const [member, setMember] = useState({
@@ -85,7 +86,7 @@ const NewMember = () => {
   };
 
   return (
-    <SimpleLayout>
+    <DefaultLayout>
       <form className={styles.form} onSubmit={handleSubmit}>
         <br />
         <br /> <br />
@@ -231,7 +232,7 @@ const NewMember = () => {
           mail
         </p>
       </form>
-    </SimpleLayout>
+    </DefaultLayout>
   );
 };
 

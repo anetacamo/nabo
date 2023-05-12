@@ -21,7 +21,7 @@ export default function MapGl({ posts }: MapGiProps) {
   });
 
   return (
-    <div className={styles.mapwhole}>
+    <div className={`${styles.mapwhole} desktop`}>
       <h2
         className={styles.mainTitle}
         style={{
