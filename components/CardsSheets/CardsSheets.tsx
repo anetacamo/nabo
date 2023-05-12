@@ -2,8 +2,6 @@ import Image from 'next/image';
 import styles from './CardsSheets.module.scss';
 import { typeColors } from '../../types/typeColors';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
 import Tags from '../Tags/Tags';
 import IconHolder from '../IconHolder/IconHolder';
 

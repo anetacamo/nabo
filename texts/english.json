@@ -1,0 +1,15 @@
+[
+  {
+    "title": "some about info",
+    "text": "Contains some about info, Contains some about info. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+    "background": "black",
+    "orientation": "left"
+  },
+  {
+    "title": "translations of each of the category terms",
+    "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+    "buttons": ["venue"],
+
+    "orientation": "right"
+  }
+]

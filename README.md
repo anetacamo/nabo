@@ -36,20 +36,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### TODO
 
 search in the bar
-separated pages for each
 
-fix mobile map
 fix mobile width
 
 form: suggest a tag
 form: choose multiple tags
 form: add hidden tags
 
-add texts for each page and footer
+double check if texts for each page and footer are editable
 remove unused items
 fix list of items open on click
-
-remove s under the bar
 
 add the tags down
 map: fix overlaying info
@@ -65,12 +61,44 @@ add colors to separated pages
 maybe add a suggestion
 tags need right margin
 
+Mini-map showing the location of the resource (if applicable)
+Make map icons click-through to resource card pages
+Move “super tag” and “type” to underneath “title” and increase readability through using same text color.
+Aneta - dithering algorithm for coloring images
+
+menu:
+needs background
+items need margins
+
+insend:
+missing margins
+
 ### DONE
+
+#### main page
+
+hid map in mobile
+updated icon holders
+fix mobile map
+
+#### site wise
 
 images added
 add hamburger menu
 deleted bunch of things
-updated icon holders,
 added images to cards
 created separated pages
-hid map in mobile
+remove s under the bar
+
+updated pages
+
+#### footer
+
+updated menu pages here, created one source type
+added takedown edit request
+
+#### english and about page
+
+created list of types that can be edited in file /types/types.type.ts
+assigned color and english and danish descriptions here
+also displayed on english page and danish page om

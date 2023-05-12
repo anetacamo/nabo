@@ -2,15 +2,10 @@ import Link from 'next/link';
 import SkipNav from '../SkipNav/SkipNav';
 import styles from './Menu.module.scss';
 import { useState } from 'react';
-import SearchField from '../SearchField/SearchField';
 import Hamburger from '../Hamburger/Hamburger';
+import { menuItems } from '../../types/menu.type';
 
 export default function Menu() {
-  const menuItems = [
-    { name: 'how to use', link: 'how-to-use' },
-    { name: 'about', link: 'about' },
-    { name: 'join the map', link: 'new-member' },
-  ];
   const [open, setOpen] = useState(false);
   return (
     <>

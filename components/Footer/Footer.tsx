@@ -1,5 +1,6 @@
 import styles from './Footer.module.scss';
 import IconHolder from '../IconHolder/IconHolder';
+import { menuItems } from '../../types/menu.type';
 
 export default function Footer() {
   return (
@@ -13,9 +14,18 @@ export default function Footer() {
             with the right people and facilities you might havent even know
             existed
           </p>
-          <IconHolder name='about' />
-          <IconHolder name='how to use' />
+
+          {menuItems.map((item) => (
+            <IconHolder name={item.name} link={item.link} />
+          ))}
           <div className='divider' style={{ marginLeft: 0 }}></div>
+
+          <h3>REQUEST TAKEDOWN / EDIT</h3>
+          <p>
+            If this map contains information about your project that you would
+            like changed or removed, please contact us.
+          </p>
+          <IconHolder name='some_email_address@frontloberne.dk' />
         </div>
 
         <div className={styles.column}>
