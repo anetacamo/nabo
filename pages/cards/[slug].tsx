@@ -9,6 +9,7 @@ import CrookedImage from '../../components/CrookedImage/CrookedImage';
 import { typeColors } from '../../types/typeColors';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
 import CardsSheets from '../../components/CardsSheets/CardsSheets';
+import { slugify } from '../../utils/slugify';
 
 export default function SinglePage() {
   const router = useRouter();
@@ -19,7 +20,6 @@ export default function SinglePage() {
     typeColors[blog?.type?.split(',')[0].toLowerCase().trim() as any];
 
   const relatedBlogs = blogs.filter((b) => b.type === blog?.type);
-  console.log(relatedBlogs);
 
   useEffect(() => {
     Papa.parse(
@@ -29,7 +29,11 @@ export default function SinglePage() {
         header: true,
         complete: (results: any) => {
           setBlogs(results.data.filter((d: any) => d?.title));
-          setBlog(results.data.filter((d: any) => d?.title)[router.query.slug]);
+          setBlog(
+            results.data.filter(
+              (d: any) => slugify(d?.title) === router.query.slug
+            )[0]
+          );
         },
       }
     );

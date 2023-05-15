@@ -5,6 +5,10 @@ import Papa from 'papaparse';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import FormItem from '../components/FormItem/FormItem';
 import { types } from '../types/types.type';
+import { slugify } from '../utils/slugify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
+import TagWithX from '../components/TagWithX/TagWithX';
 
 const NewMember = () => {
   const title = 'New Member';
@@ -18,7 +22,8 @@ const NewMember = () => {
     longitude: '',
     link: '',
     type: '',
-    tags: '',
+    tags: [],
+    hidtags: [],
   });
   const [data, setData] = useState({});
   const [blogs, setBlogs] = useState([]);
@@ -56,6 +61,14 @@ const NewMember = () => {
   );
   let tagsOnce = [...new Set(allTags)];
 
+  let allHiddenTags: any[] = [];
+  blogs.map((item: any) =>
+    item.invisible
+      ?.split(',')
+      .map((t: string) => t != '' && t != ' ' && allHiddenTags.push(t.trim()))
+  );
+  let hiddenOnce = [...new Set(allHiddenTags)];
+
   //submit event
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -84,7 +97,7 @@ const NewMember = () => {
           longitude: '',
           link: '',
           type: '',
-          tags: '',
+          tags: [],
         });
       });
   };
@@ -140,8 +153,8 @@ const NewMember = () => {
           }
         />
         <p style={{ marginTop: 0, fontSize: 12 }}>
-          to get longitude and longitude find yourself at any map app, right
-          click and fill in the coordinates here. center of our map latitude:
+          to get longitude and latitude find yourself at any map app, right
+          click and fill in the coordinates here. center of our map. latitude:
           56.15738409999999, longitude:10.2007413
         </p>
         <div>
@@ -161,19 +174,18 @@ const NewMember = () => {
         </div>
         <div
           className='flex-center'
-          style={{ alignItems: 'unset', margin: -4 }}
+          style={{ alignItems: 'unset', margin: '0 -120px' }}
         >
           {types.map((type: any, index: number) => (
             <div
-              className={`${styles.card} bg-${type.color}`}
-              style={{
-                margin: 4,
-                padding: 12,
-                minWidth: 120,
-                maxWidth: 180,
-                borderRadius: 4,
-              }}
-              onClick={(e) => setMember({ ...member, type: e.target.value })}
+              className={`${styles.card} border-${type.color} ${
+                slugify(member.type) === slugify(type?.name)
+                  ? type.color
+                  : `bg-${type.color}`
+              } `}
+              onClick={(e) =>
+                setMember({ ...member, type: slugify(type?.name) })
+              }
               key={index}
             >
               {type?.name && (
@@ -194,7 +206,9 @@ const NewMember = () => {
           <select
             name='tags'
             id='tags'
-            onChange={(e) => setMember({ ...member, tags: e.target.value })}
+            onChange={(e) =>
+              setMember({ ...member, tags: [...member.tags, e.target.value] })
+            }
             className={styles.input}
           >
             {tagsOnce.map((c) => (
@@ -202,6 +216,63 @@ const NewMember = () => {
             ))}
           </select>
         </div>
+        <div>
+          {member.tags != [] &&
+            member.tags.map((tag: string) => (
+              <TagWithX
+                name={tag}
+                onCloseClick={() =>
+                  setMember({
+                    ...member,
+                    tags: member.tags.filter((t) => tag !== t),
+                  })
+                }
+              />
+            ))}
+        </div>
+        <p style={{ marginTop: 0, fontSize: 12 }}>
+          Visible tags should be around three, no more then five. use those to
+          become as descriptive as possible. they can help provide context and
+          specific information.
+        </p>
+        <div>
+          <label htmlFor='hidtags' className={styles.label}>
+            Hidden Tags
+          </label>
+          <select
+            name='hidtags'
+            id='hidtags'
+            onChange={(e) =>
+              setMember({
+                ...member,
+                hidtags: [...member.hidtags, e.target.value],
+              })
+            }
+            className={styles.input}
+          >
+            {hiddenOnce.map((c) => (
+              <option value={c}>{c}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          {member.hidtags != [] &&
+            member.hidtags.map((tag: string) => (
+              <TagWithX
+                name={tag}
+                onCloseClick={() =>
+                  setMember({
+                    ...member,
+                    tags: member.hidtags.filter((t) => tag !== t),
+                  })
+                }
+              />
+            ))}
+        </div>
+        <p style={{ marginTop: 0, fontSize: 12 }}>
+          Those tags won't be visible anywhere, but they will be searchable. Try
+          to limit them up to 5.
+        </p>
         <div>
           <label htmlFor='link' className={styles.label}>
             website

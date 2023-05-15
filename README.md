@@ -74,6 +74,10 @@ missing margins
 form: update to get source localy
 change pixels to rem everywhere
 
+change colors
+move search to top
+add images
+
 ### DONE
 
 today
@@ -85,6 +89,14 @@ add meta titles and texts
 fix menu spacing
 fix the issue with showing the wrong number when clicked
 add smoooth menu animation to menu
+new member taken from the local
+
+today:
+created an list of tags in new member
+displayed them nicely
+add remove on click
+renamed the generated pages slugs
+fix bug on mobile phone
 
 #### main page
 

@@ -11,3 +11,20 @@
   max-width: 500px;
   margin: auto;
 }
+
+.chosen {
+  background-color: black;
+}
+
+.card {
+  margin: 4px;
+  padding: 12px;
+  transition-duration: 350ms;
+  cursor: pointer;
+  min-width: 160px;
+  max-width: 240px;
+  flex: 1;
+  width: 120px;
+  border-radius: 8px;
+  border: 3px solid black;
+}

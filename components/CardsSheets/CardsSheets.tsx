@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Tags from '../Tags/Tags';
 import IconHolder from '../IconHolder/IconHolder';
 import { faLocation } from '@fortawesome/free-solid-svg-icons';
+import { slugify } from '../../utils/slugify';
 
 interface CardProp {
   title?: string;
@@ -28,7 +29,7 @@ export default function CardsSheets(posts: any) {
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <Link href={`cards/${index + 1}`} target='_blank' key={index}>
+        <Link href={`cards/${slugify(post.title)}`} target='_blank' key={index}>
           <div
             className={`${styles.card} bg-${
               typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]

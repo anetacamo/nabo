@@ -25,7 +25,7 @@ export default function Footer() {
             If this map contains information about your project that you would
             like changed or removed, please contact us.
           </p>
-          <IconHolder name='some_email_address@frontloberne.dk' />
+          <IconHolder name='Liam@ftontloberne.com' />
         </div>
 
         <div className={styles.column}>
