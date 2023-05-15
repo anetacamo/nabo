@@ -22,7 +22,7 @@ export default function MapGl({ posts }: MapGiProps) {
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
-      <h2
+      {/* <h2
         className={styles.mainTitle}
         style={{
           position: 'absolute',
@@ -41,7 +41,7 @@ export default function MapGl({ posts }: MapGiProps) {
         <span className='purple'>Nåbo map</span> is an interactive guide here to
         help you organise all spheres of your cultural event and match you with
         the right people and facilities you might havent even know existed
-      </h2>
+      </h2> */}
       <Map
         style={{ width: '100vw', height: '500px' }}
         {...viewState}

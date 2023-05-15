@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Are you looking to organise a festival?",
+    "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+    "buttons": ["catering", "accomodation"],
+    "background": "purple",
+    "orientation": "left"
+  },
+  {
+    "title": "Or looking for a venue to host your event?",
+    "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+    "buttons": ["venue"],
+    "background": "salmon",
+    "orientation": "right"
+  },
+  {
+    "title": "Or just an individual wanting to attend some workshop?",
+    "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
+    "buttons": ["workshops", "workspaces"],
+    "background": "yellow",
+    "orientation": "center"
+  }
+]

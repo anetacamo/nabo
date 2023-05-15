@@ -9,7 +9,6 @@ export default function Menu() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className='menu'></div>
       <nav
         role='navigation'
         className={`bg-black menu ${styles.nav} ${open && styles.open} `}

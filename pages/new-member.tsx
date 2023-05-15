@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react';
-import { SimpleLayout } from '../layouts/SimpleLayout/SimpleLayout';
 import styles from './NewMember/NewMember.module.scss';
 import axios from 'axios';
 import Papa from 'papaparse';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
+import FormItem from '../components/FormItem/FormItem';
+import { types } from '../types/types.type';
 
 const NewMember = () => {
+  const title = 'New Member';
+  const description = 'something about page';
+
   const [member, setMember] = useState({
     name: '',
     text: '',
@@ -86,7 +90,7 @@ const NewMember = () => {
   };
 
   return (
-    <DefaultLayout>
+    <DefaultLayout title={title} description={description}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <br />
         <br /> <br />
@@ -121,34 +125,20 @@ const NewMember = () => {
             className={styles.input}
           />
         </div>
-        <div>
-          <label htmlFor='longitude' className={styles.label}>
-            Longitude
-          </label>
-          <input
-            type='text'
-            name='longitude'
-            id='longitude'
-            value={member.longitude}
-            onChange={(e) =>
-              setMember({ ...member, longitude: e.target.value })
-            }
-            className={styles.input}
-          />
-        </div>
-        <div>
-          <label htmlFor='latitude' className={styles.label}>
-            Latitude
-          </label>
-          <input
-            type='text'
-            name='latitude'
-            id='latitude'
-            value={member.latitude}
-            onChange={(e) => setMember({ ...member, latitude: e.target.value })}
-            className={styles.input}
-          />
-        </div>
+        <FormItem
+          name='longitude'
+          value={member.longitude}
+          onFieldChange={(e) =>
+            setMember({ ...member, longitude: e.target.value })
+          }
+        />
+        <FormItem
+          name='latitude'
+          value={member.latitude}
+          onFieldChange={(e) =>
+            setMember({ ...member, latitude: e.target.value })
+          }
+        />
         <p style={{ marginTop: 0, fontSize: 12 }}>
           to get longitude and longitude find yourself at any map app, right
           click and fill in the coordinates here. center of our map latitude:
@@ -168,6 +158,34 @@ const NewMember = () => {
               <option value={c}>{c}</option>
             ))}
           </select>
+        </div>
+        <div
+          className='flex-center'
+          style={{ alignItems: 'unset', margin: -4 }}
+        >
+          {types.map((type: any, index: number) => (
+            <div
+              className={`${styles.card} bg-${type.color}`}
+              style={{
+                margin: 4,
+                padding: 12,
+                minWidth: 120,
+                maxWidth: 180,
+                borderRadius: 4,
+              }}
+              onClick={(e) => setMember({ ...member, type: e.target.value })}
+              key={index}
+            >
+              {type?.name && (
+                <h4 style={{ margin: '4px 0', marginBottom: -6 }}>
+                  {type?.name}
+                </h4>
+              )}
+              {type?.about && (
+                <h5 style={{ marginTop: 12, fontSize: 12 }}>{type?.about}</h5>
+              )}
+            </div>
+          ))}
         </div>
         <div>
           <label htmlFor='tags' className={styles.label}>

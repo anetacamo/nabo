@@ -13,7 +13,9 @@
   }
   &.open {
     background-color: black;
-    //   background-image: url('/cards/brasna.png');
+    background-image: url('/bgs/05.jpg');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     transition-duration: 350ms;
     .desktop {
@@ -28,7 +30,7 @@
       justify-content: center;
       height: calc(100vh - 124px);
       .li {
-        margin: 8px;
+        margin: 8px 0;
         font-size: 18px;
       }
     }
@@ -44,10 +46,16 @@
   align-items: center;
   width: 100%;
   z-index: 22;
-
   .logo,
   .li {
-    font-size: 16px;
+    font-size: 1rem;
     margin: 20px 0;
+    &:hover {
+      transition-duration: 350ms;
+      color: white;
+    }
+  }
+  .li {
+    margin-left: 1rem;
   }
 }

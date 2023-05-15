@@ -5,9 +5,10 @@ import Section from '../components/Section/Section';
 
 export default function About() {
   const title = 'About';
+  const description = 'something about page';
 
   return (
-    <DefaultLayout title={title}>
+    <DefaultLayout title={title} description={description}>
       <section className='bg-black center'>
         {' '}
         <h2 className={styles.mainTitle}>

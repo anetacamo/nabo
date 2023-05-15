@@ -56,8 +56,7 @@ show slider on page
 icon needs space on left
 add version
 menu needs background
-add location icon
-add colors to separated pages
+
 maybe add a suggestion
 tags need right margin
 
@@ -68,12 +67,24 @@ Aneta - dithering algorithm for coloring images
 
 menu:
 needs background
-items need margins
 
 insend:
 missing margins
 
+form: update to get source localy
+change pixels to rem everywhere
+
 ### DONE
+
+today
+add location icon
+items need margins
+add colors to separated pages
+add related items to separated pages
+add meta titles and texts
+fix menu spacing
+fix the issue with showing the wrong number when clicked
+add smoooth menu animation to menu
 
 #### main page
 

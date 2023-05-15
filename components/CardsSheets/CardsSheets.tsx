@@ -4,6 +4,7 @@ import { typeColors } from '../../types/typeColors';
 import Link from 'next/link';
 import Tags from '../Tags/Tags';
 import IconHolder from '../IconHolder/IconHolder';
+import { faLocation } from '@fortawesome/free-solid-svg-icons';
 
 interface CardProp {
   title?: string;
@@ -27,7 +28,7 @@ export default function CardsSheets(posts: any) {
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <Link href={`cards/${index}`} target='_blank'>
+        <Link href={`cards/${index + 1}`} target='_blank' key={index}>
           <div
             className={`${styles.card} bg-${
               typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]
@@ -55,7 +56,9 @@ export default function CardsSheets(posts: any) {
             )}
             {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
 
-            {post?.address && <IconHolder name={post?.address} nolink />}
+            {post?.address && (
+              <IconHolder name={post?.address} nolink icon={faLocation} />
+            )}
             {post?.link && (
               <IconHolder name='hjemmeside' link={post?.link} small />
             )}

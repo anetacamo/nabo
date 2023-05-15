@@ -9,12 +9,14 @@ import SearchField from '../components/SearchField/SearchField';
 import Papa from 'papaparse';
 import CardsSheets from '../components/CardsSheets/CardsSheets';
 import TagsList from '../components/TagsList/TagsList';
-import Footer from '../components/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import MapGl from '../components/Map/MapGl';
 
 export default function Home() {
+  const title = 'Nabø Map';
+  const description = 'something about page';
+
   const [category, setCategory] = useState<string | string[]>([]);
   const [tag, setTag] = useState<string | string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -48,7 +50,6 @@ export default function Home() {
     );
   }, []);
 
-  // //
   useEffect(() => {
     setBlogs(
       posts
@@ -85,10 +86,20 @@ export default function Home() {
     setSearchQuery(query);
   };
 
-  const title = 'Home';
-
   return (
-    <DefaultLayout title={title} css='bg-black'>
+    <DefaultLayout title={title} description={description} css={'bg-black'}>
+      <h3
+        className='center'
+        style={{
+          textTransform: 'lowercase',
+          maxWidth: 600,
+          margin: '3rem auto',
+        }}
+      >
+        <span className='purple'>Nåbo map</span> is an interactive guide here to
+        help you organise all spheres of your cultural event and match you with
+        the right people and facilities you might havent even know existed
+      </h3>
       <MapGl posts={blogs} />
       <div className='center'>
         <CategoryList

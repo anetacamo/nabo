@@ -2,9 +2,10 @@ import styles from './Tags.module.scss';
 
 interface TagsProps {
   tags: any[];
+  color: string;
 }
 
-export default function Tags({ tags }: TagsProps) {
+export default function Tags({ tags, color }: TagsProps) {
   return (
     <div style={{ marginTop: 16 }}>
       {tags
@@ -12,7 +13,9 @@ export default function Tags({ tags }: TagsProps) {
         .map(
           (tag) =>
             tag != '' &&
-            tag != ' ' && <p className={`${styles.type} bg-colored`}>{tag}</p>
+            tag != ' ' && (
+              <p className={`${styles.type} bg-colored bg-${color}`}>{tag}</p>
+            )
         )}
     </div>
   );

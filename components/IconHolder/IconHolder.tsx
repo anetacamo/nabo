@@ -9,6 +9,7 @@ interface IconHolderProps {
   link?: string;
   nolink?: boolean;
   small?: boolean;
+  icon?: any;
 }
 
 export default function IconHolder({
@@ -16,11 +17,12 @@ export default function IconHolder({
   link,
   nolink,
   small,
+  icon,
 }: IconHolderProps) {
   return (
     <div className={styles.iconcontainer}>
       <FontAwesomeIcon
-        icon={faArrowRight}
+        icon={icon ?? faArrowRight}
         className={`${styles.icon} colored`}
       />
       {nolink ? (
