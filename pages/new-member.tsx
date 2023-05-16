@@ -263,7 +263,7 @@ const NewMember = () => {
                 onCloseClick={() =>
                   setMember({
                     ...member,
-                    tags: member.hidtags.filter((t) => tag !== t),
+                    hidtags: member.hidtags.filter((t) => tag !== t),
                   })
                 }
               />

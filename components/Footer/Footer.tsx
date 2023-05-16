@@ -66,9 +66,10 @@ export default function Footer() {
           <div className='divider' style={{ marginLeft: 0 }}></div>
 
           <p>
-            <span className='purplelight'>Fund by</span> organise all spheres of
-            your cultural event and match you with the right people and fa
+            <span className='purplelight'>Made possible by</span> ERASMUS+ and
+            the European Union
           </p>
+          <p style={{ margin: 0 }}>logo</p>
 
           <p style={{ marginBottom: 0 }}>
             © <span className='purplelight'>Nabø Aarhus </span>| 2023
