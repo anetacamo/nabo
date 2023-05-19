@@ -1,21 +1,30 @@
 @import './colors-def.scss';
 
 $colors: (
-  'lightgray': #f4f4f4,
-  'gray': #a7a7a7,
-  'yellow': #ffc200,
-  'pink': #b222bd,
-  'salmon': #f87a7a,
-  'lightblue': #56b2d6,
-  'blue': #137ced,
-  'darkblue': #00067a,
-  'turqoise': #03a5ab,
-  'green': #03521f,
-  'purple': #4f18d9,
-  'purplelight': #9c46f2,
-  'lightpink': #e6a2ed,
-  'black': black,
+  'lightgray': $lightgray,
+  'gray': $gray,
+  'yellow': $yellow,
+  'pink': $pink,
+  'salmon': $salmon,
+  'lightblue': $lightblue,
+  'blue': $blue,
+  'darkblue': $darkblue,
+  'turqoise': $turqoise,
+  'green': $green,
+  'purple': $purple,
+  'purplelight': $purplelight,
+  'lightpink': $lightpink,
+  'black': $black,
 );
+
+// $colours: $lightgray, $gray, $yellow, $pink, $salmon, $lightblue, $blue,
+//   $darkblue, $turqoise, $green, $purple, $purplelight, $lightpink, $black;
+
+// @for $i from 1 through length($colours) {
+//   #cp#{$i} {
+//     background-color: rgba(nth($colors, $i), 0.6);
+//   }
+// }
 
 @function color($color-name) {
   @return var(--color-#{$color-name});

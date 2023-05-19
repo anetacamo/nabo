@@ -6,7 +6,7 @@ import CrookedImage from '../components/CrookedImage/CrookedImage';
 export default function About() {
   return (
     <DefaultLayout title={pagedata.title} description={pagedata.description}>
-      <CrookedImage image={`/categories/blue.png`}>
+      <CrookedImage image={pagedata.image}>
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>
         <button>read more</button>

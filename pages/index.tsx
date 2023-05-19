@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import CategoryList from '../components/CategoryList/CategoryList';
 import ListDisplay from '../components/ListDisplay/ListDisplay';
-import Filters from '../components/Filters/Filters';
+// import Filters from '../components/Filters/Filters';
 import SearchField from '../components/SearchField/SearchField';
 import Papa from 'papaparse';
 import CardsSheets from '../components/CardsSheets/CardsSheets';
@@ -150,10 +150,10 @@ export default function Home() {
               )}
               <span className='gray'> {blogs.length} results</span>
             </h4>
-            <Filters
+            {/* <Filters
               cardDisplay={cardDisplay}
               onButtonClick={() => setCardDisplay(!cardDisplay)}
-            />
+            /> */}
           </div>
 
           {cardDisplay ? (

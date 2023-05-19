@@ -1,37 +1,48 @@
 [
   {
     "title": "About Nabø",
-    "text": "is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed"
-  },
-  {
-    "title": "REQUEST TAKEDOWN / EDIT",
-    "text": "If this map contains information about your project that you would like changed or removed, please contact us.",
-    "mail": "Liam@ftontloberne.com"
+    "text": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed"
   },
   {
     "title": "Contact",
-    "address": [
-      "frontloberne",
-      "Jægegårdsgade 154",
-      "Liam",
-      "Liam@ftontloberne.com"
-    ],
-    "address": ["Liam@ftontloberne.com"]
-  },
-  {
-    "title": "Partnered cities"
+    "addresses": [
+      ["Frontloberne", "Jægegårdsgade 154", "Liam", "Liam@ftontloberne.com"]
+    ]
   },
   {
     "title": "engage",
-    "address": ["Should you be on the map?", "Fill this form to join"],
-    "address": [
-      "Do you want this in your city?",
-      "Fork this repo",
-      "Help us set it up"
+    "addresses": [
+      ["Should you be on the map?", "Fill this form to join"],
+      ["Do you want this in your city?", "Fork this repo", "Help us set it up"]
+    ]
+  },
+
+  {
+    "title": "REQUEST TAKEDOWN / EDIT",
+    "text": "If this map contains information about your project that you would like changed or removed, please contact us.",
+    "links": [
+      { "name": "liam@frontloberne.dk", "link": "mailto:liam@frontloberne.dk" }
+    ]
+  },
+  {
+    "title": "Partnered cities",
+    "links": [
+      { "name": "Nabo Trømso", "link": "www.google.com" },
+      { "name": "Nabo Skandeborg", "link": "www.google.com" },
+      { "name": "Nabo Silkeborg", "link": "www.google.com" }
     ]
   },
   {
     "title": "credits",
-    "address": ["Made possible by", "ERASMUS+ and the European Union"]
+    "addresses": [
+      ["Made possible by", "ERASMUS+ and the European Union"],
+      ["Logo"],
+      [
+        "© Nabø Aarhus | 2023",
+        "Photo by somebody",
+        "something by somebody",
+        "Code by Aneta Camo"
+      ]
+    ]
   }
 ]

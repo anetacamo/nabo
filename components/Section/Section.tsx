@@ -8,7 +8,7 @@ export default function section(section: any) {
       <p className={styles.text}>{text}</p>
       {buttons?.map((b: any, i: number) => (
         <button key={i} className={styles.button}>
-          {b}
+          {b.name}
         </button>
       ))}
     </section>

@@ -1,6 +1,7 @@
 {
   "title": "Add New Member",
   "description": "Do you think you should be on the map? Fill in the form and we will get back to you or post you directly in our Aarhus guide",
+  "meta": "this short text is optional if above description is short enough. should be no longer then 155 characters long. usd for google seacg results",
   "helper": "note that by pressing above button, submited data will be reviewed and solely used for purpose of public display on this page. therefore be warned to not share any kind of sensitive information. Please inform us if you would like your data to be deleted or changed on this mail",
   "inputs": [
     {

@@ -42,8 +42,6 @@ search in the bar
 fix mobile width
 
 form: suggest a tag
-form: choose multiple tags
-form: add hidden tags
 
 double check if texts for each page and footer are editable
 remove unused items
@@ -65,7 +63,6 @@ tags need right margin
 Mini-map showing the location of the resource (if applicable)
 Make map icons click-through to resource card pages
 Move “super tag” and “type” to underneath “title” and increase readability through using same text color.
-Aneta - dithering algorithm for coloring images
 
 menu:
 needs background
@@ -79,6 +76,10 @@ change pixels to rem everywhere
 change colors
 move search to top
 add images
+
+images has overlapping color on the corners
+colors merge one source place
+page names merge?
 
 ### DONE
 
@@ -137,3 +138,8 @@ added takedown edit request
 created list of types that can be edited in file /types/types.type.ts
 assigned color and english and danish descriptions here
 also displayed on english page and danish page om
+
+## new member
+
+form: choose multiple tags
+form: add hidden tags

@@ -1,12 +1,14 @@
 {
   "title": "English",
+  "image": "/categories/blue.png",
   "description": "We run a project house located at the South Habour District in Aarhus. All members have their own key to the house to make sure that culture creation takes place 24-7. In our project house you will find a common area, project offices, studios/ateliers and our culture venue Det 3. Rum.",
+  "meta": "this short text is optional if above description is short enough. should be no longer then 155 characters long. usd for google seacg results",
   "sections": [
     {
       "title": "some about info",
       "text": "CWe offer sparring, create non-formal learning spaces and formats and do external workshops/consulting. We have collected all our best methods, tips and tricks in our book HACK DET - Projekthåndbogen til unge kulturskabere (in Danish).",
       "orientation": "right",
-      "buttons": ["venue"]
+      "buttons": [{ "name": "venue" }, { "name": "accomodation" }]
     },
     {
       "title": "translations of each of the category",
