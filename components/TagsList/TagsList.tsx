@@ -1,4 +1,6 @@
 import styles from './TagsList.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 
 interface TagsProps {
   posts: any[];
@@ -14,12 +16,8 @@ export default function TagsList({ posts, onTagClick, tag }: TagsProps) {
       .map((t: string) => t != '' && t != ' ' && allTags.push(t.trim()))
   );
   let tagsOnce = [...new Set(allTags)];
-  console.log('tagsonce', tagsOnce);
   return (
     <>
-      {/* <h6 className="salmon" style={{ marginBottom: "-16px" }}>
-        filter by:
-      </h6> */}
       <div className={styles.tags}>
         {tagsOnce.map((t, index) => (
           <div
@@ -33,7 +31,9 @@ export default function TagsList({ posts, onTagClick, tag }: TagsProps) {
             onKeyPress={() => onTagClick(t)}
           >
             {t}
-            {t == tag && <span style={{ paddingLeft: 8 }}> x</span>}
+            {t == tag && (
+              <FontAwesomeIcon icon={faClose} className={styles.icon} />
+            )}
           </div>
         ))}
       </div>

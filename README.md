@@ -35,6 +35,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### TODO
 
+active tag should be always visisble
+
 search in the bar
 
 fix mobile width
@@ -97,6 +99,16 @@ displayed them nicely
 add remove on click
 renamed the generated pages slugs
 fix bug on mobile phone
+
+today:
+made all the form items into separated components
+made them be read from texts/file
+
+today
+updated texts
+dynamically fetched meta title and descs
+unified button and input stylings
+merged homepage styles
 
 #### main page
 

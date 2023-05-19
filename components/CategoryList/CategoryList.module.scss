@@ -1,20 +1,24 @@
 @import '../../styles/colors-def.scss';
 
 .icon {
-  width: 16px;
+  width: 12px;
   padding-left: 12px;
+  margin-top: -4px;
+  margin-bottom: -2px;
 }
 
-.searchQuery {
+.tag {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  color: white;
   margin-right: 4px;
   margin-bottom: 4px;
+  background-color: transparent;
+  border: 2px solid $blue;
+  color: $blue;
   &:hover {
-    background-color: $purple;
     color: white;
-    transition-duration: 350ms;
+    background-color: $turqoise;
+    border-color: $turqoise;
   }
 }

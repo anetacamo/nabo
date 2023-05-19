@@ -1,33 +1,38 @@
-import styles from './FormItem.module.scss';
+import styles from './FormSelect.module.scss';
 
-interface FormItemProps {
+interface FormSelectProps {
   name?: string;
-  onFieldChange: () => void;
-  value?: string;
+  onFieldChange?: (e: any) => void;
+  tags?: any[];
   label?: string;
   helper?: string;
 }
 
-export default function FormItem({
+export default function FormSelect({
   name,
   onFieldChange,
-  value,
+  tags,
   label,
   helper,
-}: FormItemProps) {
+}: FormSelectProps) {
   return (
     <div>
       <label htmlFor={name} className={styles.label}>
         {label ? label : name}
       </label>
-      <input
-        type='text'
+
+      <select
         name={name}
         id={name}
-        value={value}
         onChange={onFieldChange}
         className={styles.input}
-      />
+      >
+        {tags?.map((c, index: number) => (
+          <option key={index} value={c.name}>
+            {c.name}
+          </option>
+        ))}
+      </select>
       {helper && <p className={styles.helper}>{helper}</p>}
     </div>
   );

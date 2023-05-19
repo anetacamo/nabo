@@ -1,14 +1,18 @@
-[
-  {
-    "title": "some about info",
-    "text": "Contains some about info, Contains some about info. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
-    "background": "black",
-    "orientation": "left"
-  },
-  {
-    "title": "translations of each of the category terms",
-    "text": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet.",
-    "buttons": ["venue"],
-    "orientation": "right"
-  }
-]
+{
+  "title": "English",
+  "description": "We run a project house located at the South Habour District in Aarhus. All members have their own key to the house to make sure that culture creation takes place 24-7. In our project house you will find a common area, project offices, studios/ateliers and our culture venue Det 3. Rum.",
+  "sections": [
+    {
+      "title": "some about info",
+      "text": "CWe offer sparring, create non-formal learning spaces and formats and do external workshops/consulting. We have collected all our best methods, tips and tricks in our book HACK DET - Projekthåndbogen til unge kulturskabere (in Danish).",
+      "orientation": "right",
+      "buttons": ["venue"]
+    },
+    {
+      "title": "translations of each of the category",
+      "text": "Frontløberne have loads of experience with project management and there are many project makers on the team, who are all talented and inspiring teachers. To us, a project isn’t just a project, but something that is rooted in a need to create change. ",
+      "background": "black",
+      "orientation": "left"
+    }
+  ]
+}

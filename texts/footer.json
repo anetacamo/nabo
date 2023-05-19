@@ -1,0 +1,37 @@
+[
+  {
+    "title": "About Nabø",
+    "text": "is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed"
+  },
+  {
+    "title": "REQUEST TAKEDOWN / EDIT",
+    "text": "If this map contains information about your project that you would like changed or removed, please contact us.",
+    "mail": "Liam@ftontloberne.com"
+  },
+  {
+    "title": "Contact",
+    "address": [
+      "frontloberne",
+      "Jægegårdsgade 154",
+      "Liam",
+      "Liam@ftontloberne.com"
+    ],
+    "address": ["Liam@ftontloberne.com"]
+  },
+  {
+    "title": "Partnered cities"
+  },
+  {
+    "title": "engage",
+    "address": ["Should you be on the map?", "Fill this form to join"],
+    "address": [
+      "Do you want this in your city?",
+      "Fork this repo",
+      "Help us set it up"
+    ]
+  },
+  {
+    "title": "credits",
+    "address": ["Made possible by", "ERASMUS+ and the European Union"]
+  }
+]

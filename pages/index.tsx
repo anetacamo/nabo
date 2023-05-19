@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
-
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
-import styles from './Home/Home.module.scss';
-import CategoryList from '../components/CategoryList';
+import CategoryList from '../components/CategoryList/CategoryList';
 import ListDisplay from '../components/ListDisplay/ListDisplay';
 import Filters from '../components/Filters/Filters';
 import SearchField from '../components/SearchField/SearchField';
 import Papa from 'papaparse';
 import CardsSheets from '../components/CardsSheets/CardsSheets';
 import TagsList from '../components/TagsList/TagsList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
 import MapGl from '../components/Map/MapGl';
+import pagedata from '../texts/home.json';
+import TagWithX from '../components/TagWithX/TagWithX';
 
 export default function Home() {
-  const title = 'Nabø Map';
-  const description = 'something about page';
-
   const [category, setCategory] = useState<string | string[]>([]);
   const [tag, setTag] = useState<string | string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -87,7 +82,11 @@ export default function Home() {
   };
 
   return (
-    <DefaultLayout title={title} description={description} css={'bg-black'}>
+    <DefaultLayout
+      title={pagedata.title}
+      description={pagedata.descriptionn}
+      css={'bg-black'}
+    >
       <h3
         className='center'
         style={{
@@ -96,9 +95,7 @@ export default function Home() {
           margin: '3rem auto',
         }}
       >
-        <span className='purple'>Nåbo map</span> is an interactive guide here to
-        help you organise all spheres of your cultural event and match you with
-        the right people and facilities you might havent even know existed
+        <span className='purple'>{pagedata.title}</span> {pagedata.description}
       </h3>
       <MapGl posts={blogs} />
       <div className='center'>
@@ -119,45 +116,36 @@ export default function Home() {
           searchQuery={searchQuery}
           onSearchQueryChange={onSearchChange}
         />
-        <div className={styles.listContainer}>
+        <div>
           <div className='flex' style={{ justifyContent: 'space-between' }}>
             <h4>
               showing all{' '}
               {category.length === 0 || (
-                <>
-                  <span
-                    className={`${styles.searchQuery} bg-purplelight highligted`}
-                    onClick={() => setCategory([])}
-                  >
-                    {category}
-                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
-                  </span>{' '}
-                </>
+                <TagWithX
+                  name={category}
+                  color='purplelight'
+                  onCloseClick={() => setCategory([])}
+                />
               )}
               {tag.length === 0 || (
                 <>
                   {' '}
                   tagged{' '}
-                  <span
-                    className={`${styles.searchQuery} bg-turqoise highligted`}
-                    onClick={() => setTag([])}
-                  >
-                    {tag}
-                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
-                  </span>
+                  <TagWithX
+                    name={tag}
+                    color='turqoise'
+                    onCloseClick={() => setTag([])}
+                  />
                 </>
               )}
               {searchQuery && (
                 <>
                   {' '}
                   including{' '}
-                  <span
-                    className={`${styles.searchQuery} bg-blue highligted`}
-                    onClick={() => setSearchQuery('')}
-                  >
-                    {searchQuery}
-                    <FontAwesomeIcon icon={faClose} className={styles.icon} />
-                  </span>
+                  <TagWithX
+                    name={searchQuery}
+                    onCloseClick={() => setSearchQuery('')}
+                  />
                 </>
               )}
               <span className='gray'> {blogs.length} results</span>

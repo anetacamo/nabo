@@ -1,34 +1,30 @@
-import styles from './FormItem.module.scss';
+import styles from './FormArea.module.scss';
 
-interface FormItemProps {
+interface FormAreaProps {
   name?: string;
   onFieldChange: () => void;
   value?: string;
   label?: string;
-  helper?: string;
 }
 
-export default function FormItem({
+export default function FormArea({
   name,
+  label,
   onFieldChange,
   value,
-  label,
-  helper,
-}: FormItemProps) {
+}: FormAreaProps) {
   return (
     <div>
       <label htmlFor={name} className={styles.label}>
         {label ? label : name}
       </label>
-      <input
-        type='text'
+      <textarea
         name={name}
         id={name}
         value={value}
         onChange={onFieldChange}
-        className={styles.input}
+        className={styles.textArea}
       />
-      {helper && <p className={styles.helper}>{helper}</p>}
     </div>
   );
 }

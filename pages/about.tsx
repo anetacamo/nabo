@@ -1,24 +1,18 @@
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
-import styles from './HowToUse/HowToUse.module.scss';
-import sections from '../texts/home.json';
+import pagedata from '../texts/about.json';
 import Section from '../components/Section/Section';
+import CrookedImage from '../components/CrookedImage/CrookedImage';
 
 export default function About() {
-  const title = 'About';
-  const description = 'something about page';
-
   return (
-    <DefaultLayout title={title} description={description}>
-      <section className='bg-black center'>
-        {' '}
-        <h2 className={styles.mainTitle}>
-          <span className='purple'>How to use this map?</span>
-        </h2>
-      </section>
-      {sections.map((section: any, index: number) => (
-        <>
-          <Section key={index} {...section} />
-        </>
+    <DefaultLayout title={pagedata.title} description={pagedata.description}>
+      <CrookedImage image={`/categories/blue.png`}>
+        <h1>{pagedata.title}</h1>
+        <p>{pagedata.description}</p>
+        <button>read more</button>
+      </CrookedImage>
+      {pagedata.sections.map((section: any, index: number) => (
+        <Section key={index} {...section} />
       ))}
     </DefaultLayout>
   );

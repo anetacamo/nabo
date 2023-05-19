@@ -1,26 +1,25 @@
 import styles from './Footer.module.scss';
 import IconHolder from '../IconHolder/IconHolder';
 import { menuItems } from '../../types/menu.type';
+import sections from '../../texts/footer.json';
 
 export default function Footer() {
   return (
     <footer className='bg-black'>
       <section className={styles.footer}>
         <div className={styles.column}>
-          <h3>About Nabø</h3>
+          <h3>{sections[0].title}</h3>
           <p>
-            <span className='purplelight'>Nabø </span>is an interactive guide to
-            help you organise all spheres of your cultural event and match you
-            with the right people and facilities you might havent even know
-            existed
+            <span className='purplelight'>Nabø </span>
+            {sections[0].text}
           </p>
 
-          {menuItems.map((item) => (
-            <IconHolder name={item.name} link={item.link} />
+          {menuItems.map((item, index: number) => (
+            <IconHolder name={item.name} link={item.link} key={index} />
           ))}
           <div className='divider' style={{ marginLeft: 0 }}></div>
 
-          <h3>REQUEST TAKEDOWN / EDIT</h3>
+          <h3>{sections[1].title}</h3>
           <p>
             If this map contains information about your project that you would
             like changed or removed, please contact us.
@@ -29,7 +28,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.column}>
-          <h3>contact</h3>
+          <h3>{sections[2].title}</h3>
           <p className='purplelight' style={{ margin: 0 }}>
             Frontloberne
           </p>
@@ -43,7 +42,7 @@ export default function Footer() {
           <p style={{ margin: 0 }}>Liam@ftontloberne.com</p>
           <div className='divider' style={{ marginLeft: 0 }}></div>
 
-          <h3>Partnered cities</h3>
+          <h3>{sections[3].title}</h3>
           <IconHolder name='Nabo Trømso' />
           <IconHolder name='Nabo Aarhus' />
           <IconHolder name='Nabo Skandeborg' />
@@ -51,7 +50,7 @@ export default function Footer() {
           <div className='divider' style={{ marginLeft: 0 }}></div>
         </div>
         <div className={styles.column}>
-          <h3>Engage</h3>
+          <h3>{sections[4].title}</h3>
 
           <p className='purplelight' style={{ margin: 0 }}>
             Should you be on the map?
@@ -65,6 +64,7 @@ export default function Footer() {
 
           <div className='divider' style={{ marginLeft: 0 }}></div>
 
+          <h3>{sections[5].title}</h3>
           <p>
             <span className='purplelight'>Made possible by</span> ERASMUS+ and
             the European Union

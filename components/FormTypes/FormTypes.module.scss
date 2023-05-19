@@ -1,0 +1,22 @@
+.card {
+  margin: 4px;
+  padding: 12px;
+  transition-duration: 350ms;
+  cursor: pointer;
+  min-width: 160px;
+  max-width: 240px;
+  flex: 1;
+  width: 120px;
+  border-radius: 8px;
+  border: 3px solid black;
+}
+.container {
+  align-items: unset;
+  margin: 0 -120px;
+}
+.title {
+  margin: 4px 0;
+}
+.text {
+  font-size: 12px;
+}
