@@ -27,7 +27,10 @@ export default function HowToUse() {
   }, []);
 
   return (
-    <DefaultLayout title={title}>
+    <DefaultLayout
+      title={title}
+      description={pagedata.meta ?? pagedata.description}
+    >
       <MapGl posts={blogs} />
     </DefaultLayout>
   );

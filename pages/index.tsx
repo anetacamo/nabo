@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <DefaultLayout
       title={pagedata.title}
-      description={pagedata.descriptionn}
+      description={pagedata.meta ?? pagedata.description}
       css={'bg-black'}
     >
       <h3

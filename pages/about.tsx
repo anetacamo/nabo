@@ -5,7 +5,10 @@ import CrookedImage from '../components/CrookedImage/CrookedImage';
 
 export default function About() {
   return (
-    <DefaultLayout title={pagedata.title} description={pagedata.description}>
+    <DefaultLayout
+      title={pagedata.title}
+      description={pagedata.meta ?? pagedata.description}
+    >
       <CrookedImage image={pagedata.image}>
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>

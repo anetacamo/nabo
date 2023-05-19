@@ -1,6 +1,6 @@
 import styles from './FormTypes.module.scss';
 import { slugify } from '../../utils/slugify';
-import { types } from '../../types/types.type';
+import types from '../../texts/types.json';
 
 interface FormTypesProps {
   onMemberSet: (type: any) => void;

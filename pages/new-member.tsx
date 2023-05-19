@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './NewMember/NewMember.module.scss';
 import axios from 'axios';
 import Papa from 'papaparse';
-import { types } from '../types/types.type';
 import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import FormItem from '../components/FormItem/FormItem';
 import FormTag from '../components/FormTag/FormTag';
@@ -10,6 +9,7 @@ import FormSelect from '../components/FormSelect/FormSelect';
 import FormArea from '../components/FormArea/FormArea';
 import FormTypes from '../components/FormTypes/FormTypes';
 import pagedata from '../texts/new-member.json';
+import types from '../texts/types.json';
 
 const NewMember = () => {
   const emptyMember = {
@@ -64,7 +64,10 @@ const NewMember = () => {
   };
 
   return (
-    <DefaultLayout title={pagedata.title} description={pagedata.description}>
+    <DefaultLayout
+      title={pagedata.title}
+      description={pagedata.meta ?? pagedata.description}
+    >
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>

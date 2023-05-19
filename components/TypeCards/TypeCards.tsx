@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './TypeCards.module.scss';
-import { types } from '../../types/types.type';
+import types from '../../texts/types.json';
 
 export default function TypeCards() {
   return (
