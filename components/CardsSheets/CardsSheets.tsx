@@ -26,44 +26,36 @@ function truncate(str: string, n: number) {
 }
 
 export default function CardsSheets(posts: any) {
+  const getColor = (post) =>
+    typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any];
+
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <Link href={`cards/${slugify(post.title)}`} target='_blank' key={index}>
-          <div
-            className={`${styles.card} bg-${
-              typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any]
-            }`}
-            key={index}
-          >
+        <Link href={`cards/${slugify(post.title)}`} key={index}>
+          <div className={`${styles.card} bg-${getColor(post)}`} key={index}>
             <div className={styles.image}>
               <Image
-                src={`/categories/${
-                  typeColors[
-                    post?.type?.split(',')[0].toLowerCase().trim() as any
-                  ]
-                }.png`}
+                src={`/categories/${getColor(post)}.png`}
                 alt='blue'
                 layout='fill'
-                quality='7'
+                quality='1'
                 objectFit='cover'
               />
             </div>
 
             {post?.type && (
-              <p className={`${styles.colored} colored`}>
+              <p className={`${styles.type} bg-${getColor(post)}`}>
                 {post?.supertag && post.supertag} {post?.type.split(',')[0]}
               </p>
             )}
             {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
-
             {post?.address && (
               <IconHolder name={post?.address} nolink icon={faLocation} />
             )}
             {post?.link && (
               <IconHolder name='hjemmeside' link={post?.link} small />
             )}
-
             {post?.description && (
               <h5 style={{ marginTop: 12 }}>
                 {truncate(post?.description, 150)}

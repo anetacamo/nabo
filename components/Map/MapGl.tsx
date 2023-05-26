@@ -20,6 +20,9 @@ export default function MapGl({ posts }: MapGiProps) {
     zoom: 12,
   });
 
+  const getColor = (post) =>
+    typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any];
+
   return (
     <div className={`${styles.mapwhole} desktop`}>
       {/* <h2
@@ -63,30 +66,20 @@ export default function MapGl({ posts }: MapGiProps) {
                 longitude={post.longitude}
               >
                 <div
-                  className={`${styles.point} bg-${
-                    typeColors[
-                      post?.type?.split(',')[0].toLowerCase().trim() as any
-                    ]
-                  }`}
+                  className={`${styles.point} bg-${getColor(post)}`}
                   onMouseEnter={() => setName(post.title)}
                   onMouseLeave={() => setName('')}
                 >
                   <img
-                    src={`/categories/${
-                      typeColors[
-                        post?.type?.split(',')[0].toLowerCase().trim() as any
-                      ]
-                    }2.png`}
+                    src={`/categories/${getColor(post)}2.png`}
                     alt={`icon`}
                     className={styles.icon}
                   />
                   {/* // @ts-expect-error */}
                   <div
-                    className={`${styles.title}  ${
-                      typeColors[
-                        post?.type?.split(',')[0].toLowerCase().trim() as any
-                      ]
-                    } ${name === post.title ? styles.opened : ''}`}
+                    className={`${styles.title} ${getColor(post)} ${
+                      name === post.title ? styles.opened : ''
+                    }`}
                   >
                     {name === post.title ? name : ''}
                     <span style={{ color: '#dddddd' }}>

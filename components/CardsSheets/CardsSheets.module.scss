@@ -1,76 +1,45 @@
 @import '../../styles/colors-def.scss';
 
-.flexcenter {
-  align-items: unset;
-}
-
-.icon {
-  width: 16px;
-  margin-right: 6px;
-  min-width: 16px;
-}
-
 .card {
   margin: 8px;
-  padding: 24px;
-  text-align: left;
-  text-decoration: none;
+  padding: 20px;
   min-width: 200px;
   max-width: 300px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   flex: 1;
-
-  border-radius: 12px;
-  h4 {
-    margin-top: 48px;
-  }
+  border-radius: 16px;
   h5 {
     margin: 0;
     font-size: 12px;
   }
-  .image {
-    background-color: black;
-    margin: -24px;
-    opacity: 0.7;
-    text-align: center;
-    position: relative;
-
-    height: 160px;
-  }
-  .special {
-    // font-family: 'brutalismregular';
-    margin-bottom: 8px !important;
-  }
-
   .link {
     text-decoration: underline;
-    font-weight: 900;
   }
   a {
     color: inherit;
   }
-  .type {
-    font-size: 10px;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 3px 6px;
-    letter-spacing: 1.2px;
-    margin: 0;
-    margin-right: 4px;
-    margin-bottom: 4px;
-  }
-  .colored {
-    font-size: 10px;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 3px 6px;
-    letter-spacing: 1.2px;
-    margin-top: 46px;
-    margin-bottom: -42px;
-    min-width: 20px;
-    background-color: transparent;
-    font-weight: 900;
-    padding-left: 0;
-  }
+}
+.image {
+  text-align: center;
+  margin: -20px;
+  position: relative;
+  height: 160px;
+  border-radius: 12px;
+  opacity: 0.7;
+}
+.special {
+  margin-bottom: 8px !important;
+  margin-top: 8px !important;
+}
+.type {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  margin-left: -6px;
+  padding: 2px 6px;
+  display: inline-block;
+  z-index: 6;
+  position: relative;
 }

@@ -2,8 +2,8 @@
   max-width: 1000px;
   margin: 24px auto;
   .bg-chosen {
-    background-color: $blue;
-    color: white;
+    color: $blue;
+    background-color: transparent;
   }
 }
 
@@ -17,6 +17,7 @@
   letter-spacing: 1.4px;
   padding: 7px 8px 5px 8px;
   border-radius: 4px;
+  background-color: $purple;
   &:hover {
     background-color: $turqoise;
     transition-duration: 350ms;

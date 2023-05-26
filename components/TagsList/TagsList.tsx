@@ -22,7 +22,7 @@ export default function TagsList({ posts, onTagClick, tag }: TagsProps) {
         {tagsOnce.map((t, index) => (
           <div
             key={index}
-            className={`type bg-purplelight ${tag == t && 'bg-chosen'}`}
+            className={`type ${tag == t && 'bg-chosen'}`}
             aria-label={`${t} - ${tag == t ? 'checked' : ''}`}
             style={{ transitionDuration: '350ms' }}
             onClick={() => onTagClick(t)}
