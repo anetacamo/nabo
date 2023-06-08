@@ -36,8 +36,8 @@ export default function CardsSheets(posts: any) {
           <div className={`${styles.card} bg-${getColor(post)}`} key={index}>
             <div className={styles.image}>
               <Image
-                src={`/categories/${getColor(post)}.png`}
-                alt='blue'
+                src={`/images/${slugify(post?.title)}.jpg`}
+                alt={`${slugify(post?.title)}.jpg`}
                 layout='fill'
                 quality='1'
                 objectFit='cover'
