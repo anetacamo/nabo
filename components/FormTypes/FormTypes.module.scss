@@ -12,7 +12,10 @@
 }
 .container {
   align-items: unset;
-  margin: 0 -120px;
+  margin: 0 -4px;
+  @media (min-width: 900px) {
+    margin: 0 -120px;
+  }
 }
 .title {
   margin: 4px 0;

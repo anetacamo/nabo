@@ -13,9 +13,9 @@
   cursor: pointer;
   margin-right: 4px;
   margin-bottom: 4px;
-  background-color: transparent;
+  background-color: $blue;
   border: 2px solid $blue;
-  color: $blue;
+  //color: $blue;
   &:hover {
     color: white;
     background-color: $turqoise;

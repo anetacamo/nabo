@@ -3,12 +3,17 @@
   align-self: center;
   width: 35%;
   padding: 0 2rem;
+  min-width: 320px;
+  @media (max-width: 700px) {
+    padding: 0 1.5rem;
+  }
 }
 
 .imageholder {
   position: relative;
   height: 400px;
   width: 65%;
+  min-width: 200px;
 }
 
 .border {

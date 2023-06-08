@@ -68,77 +68,79 @@ const NewMember = () => {
       title={pagedata.title}
       description={pagedata.meta ?? pagedata.description}
     >
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1>{pagedata.title}</h1>
-        <p>{pagedata.description}</p>
+      <section>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h1>{pagedata.title}</h1>
+          <p>{pagedata.description}</p>
 
-        {pagedata.inputs.map((item) => (
-          <FormItem
-            name={item.name}
-            label={item.label}
-            helper={item.helper}
-            value={member[item.name]}
-            onFieldChange={(e) =>
-              setMember({ ...member, [item.name]: e.target.value })
-            }
+          {pagedata.inputs.map((item) => (
+            <FormItem
+              name={item.name}
+              label={item.label}
+              helper={item.helper}
+              value={member[item.name]}
+              onFieldChange={(e) =>
+                setMember({ ...member, [item.name]: e.target.value })
+              }
+            />
+          ))}
+
+          {pagedata.selects.map((item) => (
+            <FormSelect
+              tags={types}
+              name={item.name}
+              label={item.label}
+              helper={item.helper}
+              onFieldChange={(e) =>
+                setMember({ ...member, [item.name]: e.target.value })
+              }
+            />
+          ))}
+
+          <FormTypes
+            memberType={member.type}
+            onMemberSet={(type: any) => setMember({ ...member, type: type })}
           />
-        ))}
 
-        {pagedata.selects.map((item) => (
-          <FormSelect
-            tags={types}
-            name={item.name}
-            label={item.label}
-            helper={item.helper}
-            onFieldChange={(e) =>
-              setMember({ ...member, [item.name]: e.target.value })
-            }
-          />
-        ))}
+          {pagedata.multiselects.map((item) => (
+            <FormTag
+              name={item.name}
+              memberTags={member[item.name]}
+              label={item.label}
+              helper={item.helper}
+              onSelectChange={(e: any) =>
+                setMember({
+                  ...member,
+                  [item.name]: [...member[item.name], e.target.value],
+                })
+              }
+              onCloseClick={(tag: string) =>
+                setMember({
+                  ...member,
+                  [item.name]: member[item.name].filter((t) => tag !== t),
+                })
+              }
+              blogs={blogs}
+            />
+          ))}
 
-        <FormTypes
-          memberType={member.type}
-          onMemberSet={(type: any) => setMember({ ...member, type: type })}
-        />
+          {pagedata.textAreas.map((item) => (
+            <FormArea
+              name={item.name}
+              label={item.label}
+              value={member[item.name]}
+              onFieldChange={(e) =>
+                setMember({ ...member, [item.name]: e.target.value })
+              }
+            />
+          ))}
 
-        {pagedata.multiselects.map((item) => (
-          <FormTag
-            name={item.name}
-            memberTags={member[item.name]}
-            label={item.label}
-            helper={item.helper}
-            onSelectChange={(e: any) =>
-              setMember({
-                ...member,
-                [item.name]: [...member[item.name], e.target.value],
-              })
-            }
-            onCloseClick={(tag: string) =>
-              setMember({
-                ...member,
-                [item.name]: member[item.name].filter((t) => tag !== t),
-              })
-            }
-            blogs={blogs}
-          />
-        ))}
-
-        {pagedata.textAreas.map((item) => (
-          <FormArea
-            name={item.name}
-            label={item.label}
-            value={member[item.name]}
-            onFieldChange={(e) =>
-              setMember({ ...member, [item.name]: e.target.value })
-            }
-          />
-        ))}
-
-        <div>
-          <button type='submit'>submit *</button>
-        </div>
-        <p className={styles.helper}>{pagedata.helper}</p>
-      </form>
+          <div>
+            <button type='submit'>submit *</button>
+          </div>
+          <p className={styles.helper}>{pagedata.helper}</p>
+        </form>
+      </section>
     </DefaultLayout>
   );
 };

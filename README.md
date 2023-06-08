@@ -39,16 +39,7 @@ active tag should be always visisble
 
 search in the bar
 
-fix mobile width
-
 form: suggest a tag
-
-double check if texts for each page and footer are editable
-remove unused items
-fix list of items open on click
-
-add the tags down
-map: fix overlaying info
 
 on click show overlapping items in a row
 show slider on page
@@ -58,19 +49,13 @@ add version
 menu needs background
 
 maybe add a suggestion
-tags need right margin
 
 Mini-map showing the location of the resource (if applicable)
-Make map icons click-through to resource card pages
 Move “super tag” and “type” to underneath “title” and increase readability through using same text color.
 
 menu:
 needs background
 
-insend:
-missing margins
-
-form: update to get source localy
 change pixels to rem everywhere
 
 change colors
@@ -81,7 +66,31 @@ images has overlapping color on the corners
 colors merge one source place
 page names merge?
 
+open link on a new page
+
 ### DONE
+
+27.5
+double check if texts for each page and footer are editable
+remove unused items
+fix list of items open on click
+
+fixed menu mobile width
+fixed margin on a front page
+add the tags down
+map: fix overlaying info
+
+form: update to get source localy
+
+create two columns on a small scale
+fixed the margins on submit page
+
+tags need right margin
+
+31.5
+fixed menu widths
+margins on the crooked image
+Make map icons click-through to resource card pages
 
 today
 add location icon

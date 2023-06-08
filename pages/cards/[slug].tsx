@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Papa from 'papaparse';
 import styles from './card.module.scss';
 import Tags from '../../components/Tags/Tags';
@@ -29,15 +29,16 @@ export default function SinglePage() {
         header: true,
         complete: (results: any) => {
           setBlogs(results.data.filter((d: any) => d?.title));
-          setBlog(
-            results.data.filter(
-              (d: any) => slugify(d?.title) === router.query.slug
-            )[0]
-          );
         },
       }
     );
   }, []);
+
+  const getBlogs = useMemo(() => {
+    setBlog(
+      blogs.filter((d: any) => slugify(d?.title) === router.query.slug)[0]
+    );
+  }, [blogs]);
 
   return (
     <DefaultLayout>

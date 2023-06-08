@@ -7,15 +7,16 @@
   height: 0vh;
   top: 0;
   width: calc(100% - 4rem);
-  -moz-transition-duration: 350ms;
+  transition-duration: 350ms;
+  @media (max-width: 700px) {
+    padding: 0 1.5rem;
+    width: calc(100% - 3rem);
+  }
   .mobmenu {
     display: none;
   }
   &.open {
     background-color: black;
-    background-image: url('/bgs/05.jpg');
-    background-size: cover;
-    background-position: center;
     height: 100vh;
     transition-duration: 350ms;
     .desktop {

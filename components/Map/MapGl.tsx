@@ -3,10 +3,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker, NavigationControl } from 'react-map-gl';
 import styles from './MapGl.module.scss';
 
-import { camelize } from '../../utils/camelize';
-import { categoryColors } from '../../types/colors.type';
-import CategoryColorsType from '../../types/categoryColors.type';
 import { typeColors } from '../../types/typeColors';
+import Link from 'next/link';
+import { slugify } from '../../utils/slugify';
 
 interface MapGiProps {
   posts?: any;
@@ -65,29 +64,36 @@ export default function MapGl({ posts }: MapGiProps) {
                 latitude={post.latitude}
                 longitude={post.longitude}
               >
-                <div
-                  className={`${styles.point} bg-${getColor(post)}`}
-                  onMouseEnter={() => setName(post.title)}
-                  onMouseLeave={() => setName('')}
+                <Link
+                  href={`cards/${slugify(post?.title)}`}
+                  key={index}
+                  rel='noopener noreferrer'
+                  target='_blank'
                 >
-                  <img
-                    src={`/categories/${getColor(post)}2.png`}
-                    alt={`icon`}
-                    className={styles.icon}
-                  />
-                  {/* // @ts-expect-error */}
                   <div
-                    className={`${styles.title} ${getColor(post)} ${
-                      name === post.title ? styles.opened : ''
-                    }`}
+                    className={`${styles.point} bg-${getColor(post)}`}
+                    onMouseEnter={() => setName(post.title)}
+                    onMouseLeave={() => setName('')}
                   >
-                    {name === post.title ? name : ''}
-                    <span style={{ color: '#dddddd' }}>
-                      {' '}
-                      {name === post.title ? post.address : ''}
-                    </span>
+                    <img
+                      src={`/categories/${getColor(post)}2.png`}
+                      alt={`icon`}
+                      className={styles.icon}
+                    />
+                    {/* // @ts-expect-error */}
+                    <div
+                      className={`${styles.title} ${getColor(post)} ${
+                        name === post.title ? styles.opened : ''
+                      }`}
+                    >
+                      {name === post.title ? name : ''}
+                      <span style={{ color: '#dddddd' }}>
+                        {' '}
+                        {name === post.title ? post.address : ''}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </Marker>
             )
         )}

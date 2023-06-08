@@ -12,7 +12,7 @@ export default function About() {
       <CrookedImage image={pagedata.image}>
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>
-        <button>read more</button>
+        {pagedata.button && <button>{pagedata.button}</button>}
       </CrookedImage>
       {pagedata.sections.map((section: any, index: number) => (
         <Section key={index} {...section} />

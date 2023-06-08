@@ -87,16 +87,13 @@ export default function Home() {
       description={pagedata.meta ?? pagedata.description}
       css={'bg-black'}
     >
-      <h3
-        className='center'
-        style={{
-          textTransform: 'lowercase',
-          maxWidth: 600,
-          margin: '3rem auto',
-        }}
-      >
-        <span className='purple'>{pagedata.title}</span> {pagedata.description}
-      </h3>
+      <section className='center'>
+        <h3
+          style={{ maxWidth: 600, textTransform: 'lowercase', margin: 'auto' }}
+        >
+          {pagedata.description}
+        </h3>
+      </section>
       <MapGl posts={blogs} />
       <div className='center'>
         <CategoryList
@@ -105,7 +102,7 @@ export default function Home() {
           category={category}
         />
       </div>
-      <div className='center' style={{ marginTop: -24 }}>
+      <div className='center' style={{ marginTop: -28 }}>
         {blogs.length != posts.length && (
           <TagsList posts={blogs} onTagClick={onTagSet} tag={tag} />
         )}
