@@ -20,7 +20,7 @@ export default function Menu() {
             <a className={`${styles.logo} logo h2`}>Nåbø Map</a>
           </Link>
 
-          <SearchField />
+          {/* <SearchField /> */}
 
           <div className='flex desktop'>
             {menuItems.map((item, index) => (
