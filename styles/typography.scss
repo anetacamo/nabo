@@ -42,13 +42,14 @@ body {
   letter-spacing: 0.4px;
   font-weight: 500;
   font-size: 1rem;
+  overflow-x: hidden;
 }
 
 ::selection {
-  background: $purplelight; /* WebKit/Blink Browsers */
+  background: $purple; /* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  background: $purplelight; /* Gecko Browsers */
+  background: $purple; /* Gecko Browsers */
 }
 
 b {
@@ -216,7 +217,7 @@ a {
   text-decoration: none;
   position: relative;
   font-weight: 300;
-  color: $purplelight;
+  color: $purple;
   cursor: pointer;
   &:hover {
     text-decoration: underline;

@@ -3,17 +3,21 @@
 $colors: (
   'lightgray': $lightgray,
   'gray': $gray,
-  'yellow': $yellow,
-  'pink': $pink,
-  'salmon': $salmon,
-  'lightblue': $lightblue,
-  'blue': $blue,
   'darkblue': $darkblue,
+  'blue': $blue,
+  'lightblue': $lightblue,
   'turqoise': $turqoise,
   'green': $green,
+  'greenlight': $greenlight,
+  'yellowgreen': $yellowgreen,
+  'yellow': $yellow,
+  'orange': $orange,
+  'salmon': $salmon,
+  'red': $red,
+  'pink': $pink,
+  'pinkdark': $pinkdark,
   'purple': $purple,
-  'purplelight': $purplelight,
-  'lightpink': $lightpink,
+  'purpledark': $purpledark,
   'black': $black,
 );
 
@@ -46,6 +50,7 @@ $colors: (
 @each $name, $value in $colors {
   .border-#{$name} {
     border-color: $value !important;
+    border: 2px solid $value !important;
   }
 }
 
@@ -106,11 +111,11 @@ $colors: (
 .bg-darkblue .colored {
   color: $pink;
 }
-.bg-purplelight .colored {
-  color: $lightpink;
+.bg-purple .colored {
+  color: $pink;
 }
 .bg-turqoise .colored {
-  color: $purplelight;
+  color: $purple;
 }
 .bg-pink .colored {
   color: $lightblue;
@@ -135,10 +140,10 @@ $colors: (
   background-color: $pink;
 }
 .bg-purplelight .bg-colored {
-  background-color: $lightpink;
+  background-color: $pink;
 }
 .bg-turqoise .bg-colored {
-  background-color: $purplelight;
+  background-color: $purple;
 }
 .bg-pink .bg-colored {
   background-color: $lightblue;

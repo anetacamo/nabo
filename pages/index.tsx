@@ -120,7 +120,7 @@ export default function Home() {
               {category.length === 0 || (
                 <TagWithX
                   name={category}
-                  color='purplelight'
+                  color='purple'
                   onCloseClick={() => setCategory([])}
                 />
               )}
