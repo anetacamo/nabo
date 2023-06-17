@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import styles from './TypeCards.module.scss';
 import types from '../../texts/types.json';
+import categories from '../../texts/types.json';
 
 export default function TypeCards() {
   return (
-    <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
+    <div className={`${styles.container} flex-center`}>
       {types.map((type: any, index: number) => (
         <div className={`${styles.card} bg-${type.color}`} key={index}>
           <div className={styles.image}>
@@ -17,7 +18,7 @@ export default function TypeCards() {
             />
           </div>
           {type?.name && <h4 className={styles.special}>{type?.name}</h4>}
-          {type?.about && <h5 style={{ marginTop: 12 }}>{type?.about}</h5>}
+          {type?.about && <h5 className={styles.small}>{type?.about}</h5>}
         </div>
       ))}
     </div>

@@ -152,3 +152,11 @@ also displayed on english page and danish page om
 
 form: choose multiple tags
 form: add hidden tags
+
+fixed the category images and colors everywhere
+fixed broken links
+changed colors
+organized colors into one source
+changed the names to reflect the menu
+moved search to the right
+other design fixes

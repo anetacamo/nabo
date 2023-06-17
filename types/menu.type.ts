@@ -1,5 +1,5 @@
 export const menuItems = [
-  { name: 'om', link: 'about' },
-  { name: 'insend', link: 'new-member' },
+  { name: 'om', link: 'om' },
+  { name: 'insend', link: 'insend' },
   { name: 'english', link: 'english' },
 ];

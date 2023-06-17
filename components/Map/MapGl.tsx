@@ -6,6 +6,7 @@ import styles from './MapGl.module.scss';
 import { typeColors } from '../../types/typeColors';
 import Link from 'next/link';
 import { slugify } from '../../utils/slugify';
+import categories from '../../texts/types.json';
 
 interface MapGiProps {
   posts?: any;
@@ -19,8 +20,12 @@ export default function MapGl({ posts }: MapGiProps) {
     zoom: 12,
   });
 
-  const getColor = (post) =>
-    typeColors[post?.type?.split(',')[0].toLowerCase().trim() as any];
+  const getColor = (post) => {
+    const category = categories?.filter(
+      (item) => item.name === post?.type?.split(',')[0].toLowerCase().trim()
+    );
+    return category[0] && category[0].color;
+  };
 
   return (
     <div className={`${styles.mapwhole} desktop`}>

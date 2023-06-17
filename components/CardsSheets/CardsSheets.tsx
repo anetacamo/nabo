@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from './CardsSheets.module.scss';
-import { typeColors } from '../../types/typeColors';
 import Link from 'next/link';
 import Tags from '../Tags/Tags';
 import IconHolder from '../IconHolder/IconHolder';
@@ -37,7 +36,7 @@ export default function CardsSheets(posts: any) {
   return (
     <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <Link href={`cards/${slugify(post.title)}`} key={index}>
+        <Link href={`/cards/${slugify(post.title)}`} key={index}>
           <div
             className={`${styles.card} border-${getColor(post)}`}
             key={index}
@@ -53,7 +52,11 @@ export default function CardsSheets(posts: any) {
             </div>
 
             {post?.type && (
-              <p className={`${styles.type} border-${getColor(post)} bg-black`}>
+              <p
+                className={`${styles.type} border-${getColor(post)} ${getColor(
+                  post
+                )} bg-black`}
+              >
                 {post?.supertag && post.supertag} {post?.type.split(',')[0]}
               </p>
             )}

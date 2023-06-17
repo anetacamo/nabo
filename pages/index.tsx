@@ -109,10 +109,6 @@ export default function Home() {
       </div>
 
       <section style={{ marginTop: -80 }}>
-        <SearchField
-          searchQuery={searchQuery}
-          onSearchQueryChange={onSearchChange}
-        />
         <div>
           <div className='flex' style={{ justifyContent: 'space-between' }}>
             <h4>
@@ -147,6 +143,10 @@ export default function Home() {
               )}
               <span className='gray'> {blogs.length} results</span>
             </h4>
+            <SearchField
+              searchQuery={searchQuery}
+              onSearchQueryChange={onSearchChange}
+            />
             {/* <Filters
               cardDisplay={cardDisplay}
               onButtonClick={() => setCardDisplay(!cardDisplay)}

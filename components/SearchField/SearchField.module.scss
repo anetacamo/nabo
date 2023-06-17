@@ -16,12 +16,23 @@
   padding: 0;
   font-size: 14px;
   align-items: center;
-  border-bottom: 2px solid white;
-  min-width: 200px;
-  margin-bottom: 12px;
+  //border-bottom: 2px solid white;
+  //min-width: 200px;
+
+  min-width: 280px;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 29px;
+  margin-right: 0;
 
   &:hover {
     background-color: transparent;
     color: white;
+  }
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
   }
 }
