@@ -72,7 +72,9 @@ input,
 textarea {
   background-color: white;
   padding: 12px 20px;
-  min-width: 380px;
+  //  min-width: 380px;
+  width: calc(100% - 44px);
+  max-width: 100%;
   letter-spacing: 1px;
   color: black;
   outline: none;

@@ -4,6 +4,17 @@
 // @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Noto+Serif:wght@400;700&family=Quicksand:wght@300;500;600&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Bungee+Hairline&family=Bungee+Shade&family=Flamenco&family=Fredericka+the+Great&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Nixie+One&family=Noto+Serif:wght@400;700&family=Quicksand:wght@300;500;600&family=Readex+Pro:wght@200;300;400;500;600;700&family=Rock+3D&family=Shizuru&family=Underdog&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+section,
+footer {
+  overflow: hidden;
+  white-space: wrap;
+  word-break: break-word;
+}
+
 @font-face {
   font-family: 'Brutalist';
   src: url('/fonts/BRUTALISM-Regular.otf');
@@ -63,10 +74,9 @@ em {
 
 p {
   line-height: 1.6;
-}
-
-button {
-  //  font-family: 'brutalismregular';
+  @media (max-width: 400px) {
+    margin-top: 0.75rem;
+  }
 }
 
 .paragraph {
@@ -92,6 +102,12 @@ button {
     margin-bottom: 1.25rem;
   }
 }
+
+button {
+  @media (max-width: 700px) {
+    margin-bottom: 0rem;
+  }
+}
 h1 {
   line-height: 1;
 }
@@ -113,7 +129,10 @@ li {
   line-height: 1.8;
   position: relative;
   @media (max-width: 700px) {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 1rem;
   }
 }
 
@@ -127,16 +146,13 @@ h1 {
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 800;
-  //font-family: 'Brutalist', 'brutalismregular', sans-serif;
   font-family: 'violet_sansregular';
-  //font-family: 'brutalismregular';
-  //  font-family: 'Violet Sans';
-  // font-family: "Barriecito", cursive;
-  // font-family: "Bungee Hairline", cursive;
-  // font-family: "Bungee Shade", cursive;
   @media (max-width: 700px) {
     font-size: 2rem;
     letter-spacing: 1px;
+  }
+  @media (max-width: 400px) {
+    margin-top: 1.25rem;
   }
 }
 
@@ -161,7 +177,10 @@ h2,
   font-size: 2.25rem;
   font-weight: 400;
   @media (max-width: 700px) {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: 1.5rem;
   }
 }
 
@@ -177,7 +196,8 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 2.4px;
   @media (max-width: 700px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
   }
 }
 
@@ -187,6 +207,9 @@ h4 {
   font-weight: 600;
   @media (max-width: 700px) {
     font-size: 1rem;
+  }
+  @media (max-width: 400px) {
+    margin-top: 0.875rem;
   }
 }
 

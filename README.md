@@ -160,3 +160,11 @@ organized colors into one source
 changed the names to reflect the menu
 moved search to the right
 other design fixes
+
+fixed the line in mobile
+adjusted search to be responsive
+pages made fully responsive in the phone view
+fixed issue on the item pages
+fixed overlaying on mobile icons
+added a speak bubble
+reposnsivness for crooked image

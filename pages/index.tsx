@@ -10,6 +10,7 @@ import TagsList from '../components/TagsList/TagsList';
 import MapGl from '../components/Map/MapGl';
 import pagedata from '../texts/home.json';
 import TagWithX from '../components/TagWithX/TagWithX';
+import styles from './Home/Home.module.scss';
 
 export default function Home() {
   const [category, setCategory] = useState<string | string[]>([]);
@@ -110,7 +111,7 @@ export default function Home() {
 
       <section style={{ marginTop: -80 }}>
         <div>
-          <div className='flex' style={{ justifyContent: 'space-between' }}>
+          <div className={`flex ${styles.searchContainer}`}>
             <h4>
               showing all{' '}
               {category.length === 0 || (

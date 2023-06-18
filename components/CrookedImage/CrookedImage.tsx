@@ -8,7 +8,7 @@ interface CrookedImageProps {
 
 export default function CrookedImage({ children, image }: CrookedImageProps) {
   return (
-    <div className='flex bg-black'>
+    <div className={`flex bg-black ${styles.holder}`}>
       <div className={styles.textholder}>{children}</div>
       <div className={styles.imageholder}>
         <div className={styles.border}></div>

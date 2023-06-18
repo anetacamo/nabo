@@ -2,8 +2,6 @@ import { useState } from 'react';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Marker, NavigationControl } from 'react-map-gl';
 import styles from './MapGl.module.scss';
-
-import { typeColors } from '../../types/typeColors';
 import Link from 'next/link';
 import { slugify } from '../../utils/slugify';
 import categories from '../../texts/types.json';
@@ -50,7 +48,7 @@ export default function MapGl({ posts }: MapGiProps) {
         the right people and facilities you might havent even know existed
       </h2> */}
       <Map
-        style={{ width: '100vw', height: '500px' }}
+        style={{ width: '100vw', height: '500px', position: 'relative' }}
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
         maxZoom={17}
@@ -68,6 +66,7 @@ export default function MapGl({ posts }: MapGiProps) {
                 key={index}
                 latitude={post.latitude}
                 longitude={post.longitude}
+                style={name === post.title ? { zIndex: 5 } : { zIndex: 1 }}
               >
                 <Link
                   href={`cards/${slugify(post?.title)}`}
@@ -76,15 +75,17 @@ export default function MapGl({ posts }: MapGiProps) {
                   target='_blank'
                 >
                   <div
-                    className={`${styles.point} bg-${getColor(post)}`}
+                    className={`${styles.point} bg-${getColor(post)} ${
+                      name === post.title ? styles.pointed : ''
+                    }`}
                     onMouseEnter={() => setName(post.title)}
                     onMouseLeave={() => setName('')}
                   >
-                    <img
+                    {/* <img
                       src={`/categories/${getColor(post)}2.png`}
                       alt={`icon`}
                       className={styles.icon}
-                    />
+                    /> */}
                     {/* // @ts-expect-error */}
                     <div
                       className={`${styles.title} ${getColor(post)} ${

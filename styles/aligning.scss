@@ -30,7 +30,7 @@
   display: none;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -48,6 +48,8 @@ input[type="checkbox"] {
   background: #fff;
   border: 2px #ddd solid;
   margin-right: 4px;
+  max-width: 100%;
+  min-width: calc(100% - 44px);
 }
 
 .checkbox--active,

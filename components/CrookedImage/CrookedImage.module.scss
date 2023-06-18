@@ -1,32 +1,45 @@
+.holder {
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
 .textholder {
-  flex-direction: column;
-  align-self: center;
-  width: 35%;
-  padding: 0 2rem;
-  min-width: 320px;
-  @media (max-width: 700px) {
-    padding: 0 1.5rem;
+  padding: 2rem 1.5rem;
+  @media (min-width: 599px) {
+    flex-direction: column;
+    align-self: center;
+    width: 35%;
+    padding: 0 2rem;
+    min-width: 320px;
   }
 }
 
 .imageholder {
-  position: relative;
-  height: 400px;
-  width: 65%;
-  min-width: 200px;
+  @media (min-width: 599px) {
+    position: relative;
+    height: 400px;
+    width: 65%;
+    min-width: 200px;
+  }
 }
 
 .border {
-  border-top: 400px solid transparent;
-  border-left: 120px solid black;
-  z-index: 5;
-  position: absolute;
-  left: 0;
-  top: 0;
+  @media (min-width: 599px) {
+    border-top: 400px solid transparent;
+    border-left: 120px solid black;
+    z-index: 5;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
 
 .image {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  @media (max-width: 600px) {
+    height: 220px;
+  }
 }

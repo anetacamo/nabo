@@ -42,7 +42,7 @@ export default function SinglePage() {
     setBlog(
       blogs.filter((d: any) => slugify(d?.title) === router.query.slug)[0]
     );
-  }, [blogs]);
+  }, [blogs, router]);
 
   return (
     <DefaultLayout>

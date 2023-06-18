@@ -28,7 +28,7 @@ $line-thickness: 4px;
 }
 
 .line {
-  background-color: white;
+  background-color: $purple;
   width: 36px;
   height: $line-thickness;
   margin: $line-margin;
