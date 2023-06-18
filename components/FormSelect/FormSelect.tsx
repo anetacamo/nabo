@@ -6,6 +6,7 @@ interface FormSelectProps {
   tags?: any[];
   label?: string;
   helper?: string;
+  chosen?: string;
 }
 
 export default function FormSelect({
@@ -14,6 +15,7 @@ export default function FormSelect({
   tags,
   label,
   helper,
+  chosen,
 }: FormSelectProps) {
   return (
     <div>
@@ -28,7 +30,7 @@ export default function FormSelect({
         className={styles.input}
       >
         {tags?.map((c, index: number) => (
-          <option key={index} value={c.name}>
+          <option key={index} value={c.name} selected={chosen == c.name}>
             {c.name}
           </option>
         ))}

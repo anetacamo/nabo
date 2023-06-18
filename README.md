@@ -168,3 +168,6 @@ fixed issue on the item pages
 fixed overlaying on mobile icons
 added a speak bubble
 reposnsivness for crooked image
+made links clickabele and openable in new page
+form select is now editable by clicking on a category
+hamburger is not invisible

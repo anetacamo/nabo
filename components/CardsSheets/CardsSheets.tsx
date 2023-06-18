@@ -34,58 +34,61 @@ export default function CardsSheets(posts: any) {
   };
 
   return (
-    <div className='flex-center' style={{ alignItems: 'unset', margin: -8 }}>
+    <div className={`flex-center ${styles.container}`}>
       {posts.posts.map((post: CardProp, index: number) => (
-        <Link href={`/cards/${slugify(post.title)}`} key={index}>
-          <div
-            className={`${styles.card} border-${getColor(post)}`}
-            key={index}
-          >
-            <div className={styles.image}>
-              <Image
-                src={`/images/${slugify(post?.title)}.jpg`}
-                alt={`${slugify(post?.title)}.jpg`}
-                layout='fill'
-                quality='1'
-                objectFit='cover'
-              />
-            </div>
+        // <Link href={`/cards/${slugify(post.title)}`} key={index}>
 
-            {post?.type && (
-              <p
-                className={`${styles.type} border-${getColor(post)} ${getColor(
-                  post
-                )} bg-black`}
-              >
-                {post?.supertag && post.supertag} {post?.type.split(',')[0]}
-              </p>
-            )}
-            {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
-            {post?.address && (
-              <IconHolder
-                name={post?.address}
-                nolink
-                icon={faLocation}
-                color={getColor(post)}
-              />
-            )}
-
-            {post?.link && (
-              <IconHolder
-                name='hjemmeside'
-                link={post?.link}
-                small
-                color={getColor(post)}
-              />
-            )}
-            {post?.description && (
-              <h5 style={{ marginTop: 12 }}>
-                {truncate(post?.description, 150)}
-              </h5>
-            )}
-            {post?.tags && <Tags tags={post?.tags} color={getColor(post)} />}
+        <a
+          target='_blank'
+          href={`/cards/${slugify(post.title)}`}
+          key={index}
+          rel='noopener noreferrer'
+          className={`${styles.link} border-${getColor(post)}`}
+        >
+          <div className={styles.image}>
+            <Image
+              src={`/images/${slugify(post?.title)}.jpg`}
+              alt={`${slugify(post?.title)}.jpg`}
+              layout='fill'
+              quality='1'
+              objectFit='cover'
+            />
           </div>
-        </Link>
+
+          {post?.type && (
+            <p
+              className={`${styles.type} border-${getColor(post)} ${getColor(
+                post
+              )} bg-black`}
+            >
+              {post?.supertag && post.supertag} {post?.type.split(',')[0]}
+            </p>
+          )}
+          {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
+          {post?.address && (
+            <IconHolder
+              name={post?.address}
+              nolink
+              icon={faLocation}
+              color={getColor(post)}
+            />
+          )}
+
+          {post?.link && (
+            <IconHolder
+              name='hjemmeside'
+              link={post?.link}
+              small
+              color={getColor(post)}
+            />
+          )}
+          {post?.description && (
+            <h5 style={{ marginTop: 12 }}>
+              {truncate(post?.description, 150)}
+            </h5>
+          )}
+          {post?.tags && <Tags tags={post?.tags} color={getColor(post)} />}
+        </a>
       ))}
     </div>
   );

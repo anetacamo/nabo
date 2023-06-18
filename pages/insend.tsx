@@ -26,8 +26,8 @@ const NewMember = () => {
   };
 
   const [member, setMember] = useState(emptyMember);
-  const [data, setData] = useState({});
   const [blogs, setBlogs] = useState([]);
+  const [formSent, setFormSent] = useState(false);
 
   useEffect(() => {
     Papa.parse(
@@ -36,7 +36,6 @@ const NewMember = () => {
         download: true,
         header: true,
         complete: (results: any) => {
-          setData(results.data);
           setBlogs(
             results.data.filter(
               (d: any, index: number) => index > 0 && d?.title
@@ -51,15 +50,14 @@ const NewMember = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = member;
-    console.log('data', data);
     axios
       .post(
         'https://sheet.best/api/sheets/fcf501b9-9c62-4b8a-8188-900ed153fa38',
         data
       )
       .then((response) => {
-        console.log(response);
         setMember(emptyMember);
+        setFormSent(true);
       });
   };
 
@@ -91,6 +89,7 @@ const NewMember = () => {
               name={item.name}
               label={item.label}
               helper={item.helper}
+              chosen={member.type}
               onFieldChange={(e) =>
                 setMember({ ...member, [item.name]: e.target.value })
               }
@@ -136,8 +135,14 @@ const NewMember = () => {
           ))}
 
           <div>
-            <button type='submit'>submit *</button>
+            <button type='submit' className={`${formSent && 'lightgreen'}`}>
+              submit *
+            </button>
           </div>
+          {formSent && (
+            <p className='lightgreen'>Succes! your form was submitted.</p>
+          )}
+
           <p className={styles.helper}>{pagedata.helper}</p>
         </form>
       </section>

@@ -11,19 +11,31 @@ import CardsSheets from '../../components/CardsSheets/CardsSheets';
 import { slugify } from '../../utils/slugify';
 import categories from '../../texts/types.json';
 
+type Blog = {
+  title: string;
+  type?: string;
+  supertag?: string;
+  link?: string;
+  address?: string;
+  tags?: string[];
+  invisible?: string[];
+  description?: string;
+  howtouse?: string;
+};
+
 export default function SinglePage() {
   const router = useRouter();
   const [blogs, setBlogs] = useState([]);
-  const [blog, setBlog] = useState([]);
+  const [blog, setBlog] = useState<Blog>();
 
-  const getColor = (post) => {
+  const getColor = (post: Blog | undefined) => {
     const category = categories?.filter(
       (item) => item.name === post?.type?.split(',')[0].toLowerCase().trim()
     );
     return category[0] && category[0].color;
   };
 
-  const relatedBlogs = blogs.filter((b) => b.type === blog?.type);
+  const relatedBlogs = blogs.filter((b: Blog) => b.type === blog?.type);
 
   useEffect(() => {
     Papa.parse(
@@ -48,7 +60,7 @@ export default function SinglePage() {
     <DefaultLayout>
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
-          <p className={`${styles.colored} ${getColor(blog)}`}>
+          <p className={`${getColor(blog)}`}>
             {blog?.supertag} {blog?.type}
           </p>
           <h1>{blog?.title}</h1>
