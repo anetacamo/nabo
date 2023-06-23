@@ -1,11 +1,13 @@
-import { slugify } from '../../utils/slugify';
+import { useState } from 'react';
 import Link from 'next/link';
+
 import { FaArrowRight } from 'react-icons/fa';
 import styles from './ListDisplay.module.scss';
-import { useState } from 'react';
+
+import Blog from '../../types/card.type';
 
 interface ListDisplayProps {
-  posts: any[];
+  posts: Blog[];
 }
 
 const ListDisplay = ({ posts }: ListDisplayProps) => {

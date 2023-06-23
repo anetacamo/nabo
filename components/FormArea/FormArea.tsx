@@ -1,8 +1,9 @@
-import styles from './FormArea.module.scss';
+import styles from "./FormArea.module.scss";
+import { ChangeEvent } from "react";
 
 interface FormAreaProps {
   name?: string;
-  onFieldChange: () => void;
+  onFieldChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   value?: string;
   label?: string;
 }

@@ -1,15 +1,17 @@
-import styles from './IconHolder.module.scss';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { slugify } from '../../utils/slugify';
+import styles from "./IconHolder.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
+import { slugify } from "../../utils/slugify";
 
 interface IconHolderProps {
   name: string;
   link?: string;
   nolink?: boolean;
   small?: boolean;
-  icon?: any;
+  icon?: IconDefinition;
   color?: string;
 }
 
@@ -30,13 +32,17 @@ export default function IconHolder({
       {nolink ? (
         <h5>{name}</h5>
       ) : (
-        <Link href={link ?? slugify(name)}>
+        <a
+          href={link ?? slugify(name)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {small ? (
             <h5 className={styles.link}>{name}</h5>
           ) : (
             <li className={styles.link}>{name}</li>
           )}
-        </Link>
+        </a>
       )}
     </div>
   );

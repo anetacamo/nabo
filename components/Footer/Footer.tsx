@@ -13,8 +13,8 @@ export default function Footer() {
             {s.text && <p>{s.text}</p>}
 
             {s.links &&
-              s.links.map((line) => (
-                <IconHolder name={line.name} link={line.link} />
+              s.links.map((line, index: number) => (
+                <IconHolder name={line.name} link={line.link} key={index} />
               ))}
 
             {index === 0 &&
@@ -24,8 +24,9 @@ export default function Footer() {
 
             {s.addresses &&
               s.addresses.map((adress) =>
-                adress.map((line, index) => (
+                adress.map((line, index: number) => (
                   <p
+                    key={index}
                     className={`${styles.line} ${
                       index === 0 && styles.highlighted
                     }`}

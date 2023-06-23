@@ -3,6 +3,8 @@ import pagedata from '../texts/about.json';
 import Section from '../components/Section/Section';
 import CrookedImage from '../components/CrookedImage/CrookedImage';
 
+import SectionType from '../types/section.type';
+
 export default function About() {
   return (
     <DefaultLayout
@@ -12,9 +14,8 @@ export default function About() {
       <CrookedImage image={pagedata.image}>
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>
-        {pagedata.button && <button>{pagedata.button}</button>}
       </CrookedImage>
-      {pagedata.sections.map((section: any, index: number) => (
+      {pagedata.sections.map((section: SectionType, index: number) => (
         <Section key={index} {...section} />
       ))}
     </DefaultLayout>

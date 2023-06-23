@@ -1,8 +1,8 @@
-import styles from './SearchField.module.scss';
+import styles from "./SearchField.module.scss";
 
 interface SearchFieldProps {
   searchQuery?: string;
-  onSearchQueryChange?: any;
+  onSearchQueryChange: (e: string) => void;
 }
 
 export default function SearchField({
@@ -12,7 +12,7 @@ export default function SearchField({
   return (
     <input
       className={styles.search}
-      placeholder='search'
+      placeholder="search"
       onChange={(e) => onSearchQueryChange(e.target.value.toLowerCase())}
       value={searchQuery}
     />

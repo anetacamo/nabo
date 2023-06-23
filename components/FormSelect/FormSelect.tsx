@@ -1,9 +1,10 @@
-import styles from './FormSelect.module.scss';
+import styles from "./FormSelect.module.scss";
+import types from "../../texts/types.json";
+import CategoryType from "../../types/category.type";
 
 interface FormSelectProps {
   name?: string;
   onFieldChange?: (e: any) => void;
-  tags?: any[];
   label?: string;
   helper?: string;
   chosen?: string;
@@ -12,7 +13,6 @@ interface FormSelectProps {
 export default function FormSelect({
   name,
   onFieldChange,
-  tags,
   label,
   helper,
   chosen,
@@ -22,14 +22,13 @@ export default function FormSelect({
       <label htmlFor={name} className={styles.label}>
         {label ? label : name}
       </label>
-
       <select
         name={name}
         id={name}
         onChange={onFieldChange}
         className={styles.input}
       >
-        {tags?.map((c, index: number) => (
+        {types?.map((c: CategoryType, index: number) => (
           <option key={index} value={c.name} selected={chosen == c.name}>
             {c.name}
           </option>

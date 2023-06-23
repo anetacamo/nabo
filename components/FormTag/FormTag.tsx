@@ -1,12 +1,15 @@
-import styles from './FormTag.module.scss';
-import TagWithX from '../TagWithX/TagWithX';
+import styles from "./FormTag.module.scss";
+import TagWithX from "../TagWithX/TagWithX";
+
+import CardType from "../../types/card.type";
+import { ChangeEvent } from "react";
 
 interface FormTagProps {
   name: string;
-  onSelectChange?: (e: any) => void;
+  onSelectChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   onCloseClick: (tag: string) => void;
-  blogs?: any[];
-  memberTags?: any[];
+  blogs?: CardType[];
+  memberTags?: string;
   label?: string;
   helper?: string;
 }
@@ -20,13 +23,14 @@ export default function FormTag({
   label,
   helper,
 }: FormTagProps) {
-  let allTags: any[] = [];
-  blogs?.map((item: any) =>
-    item[name]
-      ?.split(',')
-      .map((t: string) => t != '' && t != ' ' && allTags.push(t.trim()))
+  console.log("membertags", memberTags);
+  const allTags: string[] = [];
+  blogs?.map((item) =>
+    item[name as keyof CardType]
+      ?.split(",")
+      .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
-  let tagsOnce = [...new Set(allTags)];
+  const tagsOnce = [...new Set(allTags)];
 
   return (
     <>
@@ -40,7 +44,7 @@ export default function FormTag({
           onChange={onSelectChange}
           className={styles.input}
         >
-          {tagsOnce?.map((c, index: number) => (
+          {tagsOnce?.map((c: string, index: number) => (
             <option value={c} key={index}>
               {c}
             </option>
@@ -48,9 +52,14 @@ export default function FormTag({
         </select>
       </div>
       <div>
-        {memberTags?.map((tag: string, index: number) => (
-          <TagWithX name={tag} onCloseClick={onCloseClick} key={index} />
-        ))}
+        {memberTags
+          ?.split(",")
+          .map(
+            (tag: string, index: number) =>
+              index != 0 && (
+                <TagWithX name={tag} onCloseClick={onCloseClick} key={index} />
+              )
+          )}
       </div>
       {helper && <p className={styles.helper}>{helper}</p>}
     </>

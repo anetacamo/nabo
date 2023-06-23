@@ -1,16 +1,17 @@
-import styles from './FormTypes.module.scss';
-import { slugify } from '../../utils/slugify';
-import types from '../../texts/types.json';
+import styles from "./FormTypes.module.scss";
+import { slugify } from "../../utils/slugify";
+import types from "../../texts/types.json";
+import CategoryType from "../../types/category.type";
 
 interface FormTypesProps {
-  onMemberSet: (type: any) => void;
-  memberType: string;
+  onMemberSet: (type: CategoryType) => void;
+  memberType?: string;
 }
 
 export default function FormTypes({ onMemberSet, memberType }: FormTypesProps) {
   return (
     <div className={`${styles.container} flex-center`}>
-      {types.map((type: any, index: number) => (
+      {types.map((type: CategoryType, index: number) => (
         <div
           className={`${styles.card} border-${type.color} ${
             slugify(memberType) === slugify(type?.name)

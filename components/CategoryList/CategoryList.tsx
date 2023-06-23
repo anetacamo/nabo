@@ -1,12 +1,14 @@
-import styles from './CategoryList.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
-import categories from '../../texts/types.json';
+import styles from "./CategoryList.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import categories from "../../texts/types.json";
+
+import CardType from "../../types/card.type";
 
 interface CategoryProps {
-  posts: any[];
+  posts: CardType[];
   onCategoryClick: any;
-  category: string[] | string;
+  category: string;
 }
 
 export default function CategoryList({
@@ -14,34 +16,35 @@ export default function CategoryList({
   onCategoryClick,
   category,
 }: CategoryProps) {
-  let allCategories: any[] = [];
-  posts.map((item) =>
-    item.type
-      .trim()
-      .split(',')
-      .map((cate: string) => cate != '' && allCategories.push(cate.trim()))
+  const allCategories: string[] = [];
+  posts.map(
+    (item) =>
+      item.type &&
+      item.type
+        .split(",")
+        .map((cate: string) => cate != "" && allCategories.push(cate.trim()))
   );
-  let categoriesOnce = [...new Set(allCategories)];
+  const categoriesOnce = [...new Set(allCategories)];
 
-  const getColor = (post) => {
+  const getColor = (tag: string) => {
     const category = categories?.filter(
-      (item) => item.name === post?.toLowerCase().trim()
+      (item) => item.name.toLowerCase().trim() === tag.toLowerCase().trim()
     );
     return category[0] && category[0].color;
   };
 
   return (
     <>
-      <div className='tags'>
+      <div className="tags">
         {categoriesOnce.map((tag: string, index: number) => (
           <div
             key={index}
             className={`type bg-${getColor(tag)} ${
-              category == tag && 'bg-chosen'
+              category == tag && "bg-chosen"
             } ${styles.tag}`}
-            aria-label={`${tag} - ${category == tag ? 'checked' : ''}`}
+            aria-label={`${tag} - ${category == tag ? "checked" : ""}`}
             onClick={() => onCategoryClick(tag)}
-            role='button'
+            role="button"
             tabIndex={0}
             onKeyPress={() => onCategoryClick(tag)}
           >

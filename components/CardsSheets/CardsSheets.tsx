@@ -1,57 +1,45 @@
-import Image from 'next/image';
-import styles from './CardsSheets.module.scss';
-import Link from 'next/link';
-import Tags from '../Tags/Tags';
-import IconHolder from '../IconHolder/IconHolder';
-import { faLocation } from '@fortawesome/free-solid-svg-icons';
-import { slugify } from '../../utils/slugify';
-import categories from '../../texts/types.json';
+import Image from "next/image";
+import styles from "./CardsSheets.module.scss";
 
-interface CardProp {
-  title?: string;
-  description: string;
-  link?: string;
-  address?: string;
-  latitude?: number;
-  longitude?: number;
-  tags?: string;
-  supertag?: string;
-  type?: string;
-}
+import Tags from "../Tags/Tags";
+import IconHolder from "../IconHolder/IconHolder";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { slugify } from "../../utils/slugify";
+import categories from "../../texts/types.json";
+
+import Blog from "../../types/card.type";
 
 function truncate(str: string, n: number) {
-  var shortenedString = str.slice(0, n - 1);
-  var lastIndex = shortenedString.lastIndexOf(' ');
-  return str.length > n ? shortenedString.substring(0, lastIndex) + '...' : str;
+  const shortenedString = str.slice(0, n - 1);
+  const lastIndex = shortenedString.lastIndexOf(" ");
+  return str.length > n ? shortenedString.substring(0, lastIndex) + "..." : str;
 }
 
-export default function CardsSheets(posts: any) {
-  const getColor = (post) => {
+export default function CardsSheets(members: { members: Blog[] }) {
+  const getColor = (post: Blog) => {
     const category = categories?.filter(
-      (item) => item.name === post?.type?.split(',')[0].toLowerCase().trim()
+      (item) => item.name === post?.type?.split(",")[0].toLowerCase().trim()
     );
     return category[0] && category[0].color;
   };
 
   return (
     <div className={`flex-center ${styles.container}`}>
-      {posts.posts.map((post: CardProp, index: number) => (
-        // <Link href={`/cards/${slugify(post.title)}`} key={index}>
-
+      {members.members.map((post: Blog, index: number) => (
         <a
-          target='_blank'
+          target="_blank"
           href={`/cards/${slugify(post.title)}`}
           key={index}
-          rel='noopener noreferrer'
+          rel="noopener noreferrer"
           className={`${styles.link} border-${getColor(post)}`}
         >
           <div className={styles.image}>
             <Image
               src={`/images/${slugify(post?.title)}.jpg`}
               alt={`${slugify(post?.title)}.jpg`}
-              layout='fill'
-              quality='1'
-              objectFit='cover'
+              layout="fill"
+              quality="1"
+              objectFit="cover"
             />
           </div>
 
@@ -61,7 +49,8 @@ export default function CardsSheets(posts: any) {
                 post
               )} bg-black`}
             >
-              {post?.supertag && post.supertag} {post?.type.split(',')[0]}
+              {post?.supertag && post.supertag}{" "}
+              {post?.type.split(",")[0].trim()}
             </p>
           )}
           {post?.title && <h4 className={styles.special}>{post?.title}</h4>}
@@ -76,7 +65,7 @@ export default function CardsSheets(posts: any) {
 
           {post?.link && (
             <IconHolder
-              name='hjemmeside'
+              name="hjemmeside"
               link={post?.link}
               small
               color={getColor(post)}

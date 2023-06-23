@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import styles from './CrookedImage.module.scss';
+import { ReactNode } from "react";
+import styles from "./CrookedImage.module.scss";
 
 interface CrookedImageProps {
   children?: ReactNode;
-  image?: any;
+  image: string;
 }
 
 export default function CrookedImage({ children, image }: CrookedImageProps) {
@@ -12,7 +12,7 @@ export default function CrookedImage({ children, image }: CrookedImageProps) {
       <div className={styles.textholder}>{children}</div>
       <div className={styles.imageholder}>
         <div className={styles.border}></div>
-        <img src={image} alt='blue' className={styles.image} />
+        <img src={image} alt="blue" className={styles.image} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@
   "inputs": [
     {
       "label": "Navn",
-      "name": "name"
+      "name": "title"
     },
     {
       "label": "Adresse",
@@ -23,7 +23,7 @@
     {
       "label": "Latitude",
       "name": "latitude",
-      "helper": "to get longitude and latitude find yourself at any map app, right click and fill in the coordinates here. center of our map. latitude: 56.15738409999999, longitude:10.2007413"
+      "helper": "to get longitude and latitude find yourself at any map app, right click and fill in the coordinates here. center of our map. latitude: 56.1573840, longitude:10.2007413"
     }
   ],
 
@@ -48,7 +48,7 @@
   "textAreas": [
     {
       "label": "Om",
-      "name": "text"
+      "name": "description"
     },
     {
       "label": "Hvordan kan vi bruger det?",

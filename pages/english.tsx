@@ -3,6 +3,7 @@ import pagedata from '../texts/english.json';
 import Section from '../components/Section/Section';
 import TypeCards from '../components/TypeCards/TypeCards';
 import CrookedImage from '../components/CrookedImage/CrookedImage';
+import SectionType from '../types/section.type.ts';
 
 export default function English() {
   return (
@@ -14,10 +15,8 @@ export default function English() {
         <h1>{pagedata.title}</h1>
         <p>{pagedata.description}</p>
       </CrookedImage>
-      {pagedata.sections.map((section: any, index: number) => (
-        <>
-          <Section key={index} {...section} />
-        </>
+      {pagedata.sections.map((section: SectionType, index: number) => (
+        <Section key={index} {...section} />
       ))}
       <section>
         <TypeCards />
