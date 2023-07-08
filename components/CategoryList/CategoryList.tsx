@@ -1,9 +1,8 @@
 import styles from "./CategoryList.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-import categories from "../../texts/types.json";
-
 import CardType from "../../types/card.type";
+import { getColor } from "../../utils/getColor";
 
 interface CategoryProps {
   posts: CardType[];
@@ -25,13 +24,6 @@ export default function CategoryList({
         .map((cate: string) => cate != "" && allCategories.push(cate.trim()))
   );
   const categoriesOnce = [...new Set(allCategories)];
-
-  const getColor = (tag: string) => {
-    const category = categories?.filter(
-      (item) => item.name.toLowerCase().trim() === tag.toLowerCase().trim()
-    );
-    return category[0] && category[0].color;
-  };
 
   return (
     <>

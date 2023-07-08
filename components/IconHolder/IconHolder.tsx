@@ -27,7 +27,7 @@ export default function IconHolder({
     <div className={styles.iconcontainer}>
       <FontAwesomeIcon
         icon={icon ?? faArrowRight}
-        className={`${styles.icon} ${color} colored`}
+        className={`${styles.icon} ${color}`}
       />
       {nolink ? (
         <h5>{name}</h5>

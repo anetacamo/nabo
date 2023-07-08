@@ -1,35 +1,26 @@
-import { useState, useEffect } from "react";
-
-import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
+import { faClose, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Papa, { ParseResult } from "papaparse";
+import { useEffect, useMemo, useState } from "react";
 import FormArea from "../components/FormArea/FormArea";
 import FormItem from "../components/FormItem/FormItem";
 import FormSelect from "../components/FormSelect/FormSelect";
 import FormTag from "../components/FormTag/FormTag";
 import FormTypes from "../components/FormTypes/FormTypes";
-
-import styles from "./NewMember/NewMember.module.scss";
-import axios from "axios";
-import Papa, { ParseResult } from "papaparse";
+import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/new-member.json";
-import CardType from "../types/card.type";
+import CardType, { emptyMember, Multiselects } from "../types/card.type";
 import FormUnit from "../types/form.type";
+import styles from "./NewMember/NewMember.module.scss";
 
 const NewMember = () => {
-  const emptyMember = {
-    title: "",
-    address: "",
-    link: "",
-    latitude: "",
-    longitude: "",
-    type: "",
-    tags: "",
-    invisible: "",
-    description: "",
-    howtouse: "",
-  };
   const [member, setMember] = useState<CardType>(emptyMember);
   const [blogs, setBlogs] = useState<CardType[]>([]);
   const [formSent, setFormSent] = useState(false);
+  const [spam, setSpam] = useState("");
+  const [formReady, setFormReady] = useState(false);
+
+  console.log(member);
 
   useEffect(() => {
     Papa.parse(
@@ -48,22 +39,39 @@ const NewMember = () => {
     );
   }, []);
 
+  useMemo(() => {
+    if (
+      member.title !== "" &&
+      member.description !== "" &&
+      member.type !== ""
+    ) {
+      setFormReady(true);
+    } else {
+      setFormReady(false);
+    }
+  }, [member.title, member.description, member.type]);
+
   //submit event
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = member;
-    axios
-      .post(
-        "https://sheet.best/api/sheets/fcf501b9-9c62-4b8a-8188-900ed153fa38",
-        data
-      )
-      .then((response) => {
-        setMember({});
-        setFormSent(true);
-      });
-  };
+    if (spam !== "") {
+      console.log("watch out spambot");
+    } else {
+      // axios
+      //   .post(
+      //     "https://sheet.best/api/sheets/fcf501b9-9c62-4b8a-8188-900ed153fa38",
+      //     member
+      //   )
+      //   .then((response) => {
 
-  console.log(member.invisible, member.tags);
+      setFormSent(true);
+      console.log(member);
+    }
+
+    setSpam("");
+    setMember(emptyMember);
+    //});
+  };
 
   return (
     <DefaultLayout
@@ -79,19 +87,31 @@ const NewMember = () => {
             <FormItem
               key={index}
               name={item.name}
+              required={item.required}
               label={item.label}
               helper={item.helper}
-              value={member[item.name]}
+              value={member[item.name as keyof CardType] || ""}
               onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setMember({ ...member, [item.name]: e.target.value })
               }
             />
           ))}
 
+          <FormItem
+            name="email"
+            value={spam}
+            error={spam != ""}
+            success={spam === ""}
+            onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setSpam(e.target.value)
+            }
+          />
+
           {pagedata.selects.map((item: FormUnit, index: number) => (
             <FormSelect
               key={index}
               name={item.name}
+              required={item.required}
               label={item.label}
               helper={item.helper}
               chosen={member.type}
@@ -110,19 +130,22 @@ const NewMember = () => {
             <FormTag
               key={index}
               name={item.name}
-              memberTags={member[item.name]}
+              required={item.required}
+              memberTags={member[item.name as keyof Multiselects]}
               label={item.label}
               helper={item.helper}
               onSelectChange={(e) =>
                 setMember({
                   ...member,
-                  [item.name]: `${member[item.name]}, ${e.target.value}`,
+                  [item.name]: `${member[item.name as keyof CardType]}, ${
+                    e.target.value
+                  }`,
                 })
               }
               onCloseClick={(tag: string) =>
                 setMember({
                   ...member,
-                  [item.name]: `${member[item.name]
+                  [item.name]: `${member[item.name as keyof Multiselects]
                     .split(",")
                     .filter((t: string) => tag !== t)}`,
                 })
@@ -135,8 +158,9 @@ const NewMember = () => {
             <FormArea
               key={index}
               name={item.name}
+              required={item.required}
               label={item.label}
-              value={member[item.name]}
+              value={member[item.name as keyof CardType] || ""}
               onFieldChange={(e) =>
                 setMember({ ...member, [item.name]: e.target.value })
               }
@@ -144,15 +168,31 @@ const NewMember = () => {
           ))}
 
           <div>
-            <button type="submit" className={`${formSent && "lightgreen"}`}>
+            <button
+              type="submit"
+              disabled={!formReady}
+              className={`${formSent && "greenlight"} ${
+                formReady ? "button-greenlight" : "button-salmon"
+              }`}
+            >
               submit *
             </button>
           </div>
-          {formSent && (
-            <p className="lightgreen">Succes! your entry was submitted.</p>
-          )}
-
-          <p className={styles.helper}>{pagedata.helper}</p>
+          <div style={{ marginTop: "-1rem" }}>
+            {!formReady && (
+              <div className="salmon flex-center-hor">
+                <FontAwesomeIcon icon={faClose} className={styles.icon} />
+                <p>Fields with star are required.</p>
+              </div>
+            )}
+            {formSent && (
+              <div className="green flex-center-hor">
+                <FontAwesomeIcon icon={faCheck} className={styles.icon} />
+                <p>Succes! your entry was submitted.</p>
+              </div>
+            )}
+            <p className={styles.helper}>{pagedata.helper}</p>
+          </div>
         </form>
       </section>
     </DefaultLayout>

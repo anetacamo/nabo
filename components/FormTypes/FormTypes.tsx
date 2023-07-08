@@ -4,7 +4,7 @@ import types from "../../texts/types.json";
 import CategoryType from "../../types/category.type";
 
 interface FormTypesProps {
-  onMemberSet: (type: CategoryType) => void;
+  onMemberSet: (type: string) => void;
   memberType?: string;
 }
 

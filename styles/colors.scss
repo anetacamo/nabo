@@ -1,24 +1,24 @@
-@import './colors-def.scss';
+@import "./colors-def.scss";
 
 $colors: (
-  'lightgray': $lightgray,
-  'gray': $gray,
-  'darkblue': $darkblue,
-  'blue': $blue,
-  'lightblue': $lightblue,
-  'turqoise': $turqoise,
-  'green': $green,
-  'greenlight': $greenlight,
-  'yellowgreen': $yellowgreen,
-  'yellow': $yellow,
-  'orange': $orange,
-  'salmon': $salmon,
-  'red': $red,
-  'pink': $pink,
-  'pinkdark': $pinkdark,
-  'purple': $purple,
-  'purpledark': $purpledark,
-  'black': $black,
+  "lightgray": $lightgray,
+  "gray": $gray,
+  "darkblue": $darkblue,
+  "blue": $blue,
+  "lightblue": $lightblue,
+  "turqoise": $turqoise,
+  "green": $green,
+  "greenlight": $greenlight,
+  "yellowgreen": $yellowgreen,
+  "yellow": $yellow,
+  "orange": $orange,
+  "salmon": $salmon,
+  "red": $red,
+  "pink": $pink,
+  "pinkdark": $pinkdark,
+  "purple": $purple,
+  "purpledark": $purpledark,
+  "black": $black,
 );
 
 // $colours: $lightgray, $gray, $yellow, $pink, $salmon, $lightblue, $blue,
@@ -41,16 +41,42 @@ $colors: (
 }
 
 @each $name, $value in $colors {
+  .button-#{$name} {
+    background-color: $value;
+    border-color: $value;
+    color: white;
+  }
+}
+
+@each $name, $value in $colors {
   .bg-#{$name} {
     background-color: $value;
     //background-image: url('https://www.transparenttextures.com/patterns/concrete-wall-2.png');
   }
 }
+@each $name, $value in $colors {
+  .bg-hover-#{$name} {
+    &:hover {
+      background-color: $value;
+      transition-duration: 350ms;
+      background-image: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.3)
+      );
+    }
+  }
+}
 
 @each $name, $value in $colors {
   .border-#{$name} {
-    border-color: $value !important;
     border: 2px solid $value !important;
+  }
+}
+
+@each $name, $value in $colors {
+  .border-bottom-#{$name} {
+    border-bottom: 2px solid $value !important;
   }
 }
 
@@ -72,31 +98,6 @@ $colors: (
 
 .filter-white {
   filter: invert(100%);
-}
-
-.filter-pink {
-  filter: invert(42%) sepia(14%) saturate(7471%) hue-rotate(333deg)
-    brightness(104%) contrast(102%);
-}
-
-.filter-yellow {
-  filter: invert(70%) sepia(90%) saturate(1002%) hue-rotate(358deg)
-    brightness(101%) contrast(105%);
-}
-
-.filter-salmon {
-  filter: invert(69%) sepia(57%) saturate(1199%) hue-rotate(308deg)
-    brightness(95%) contrast(104%);
-}
-
-.filter-purple {
-  filter: invert(16%) sepia(88%) saturate(5991%) hue-rotate(260deg)
-    brightness(97%) contrast(105%);
-}
-
-.filter-blue {
-  filter: invert(69%) sepia(73%) saturate(7498%) hue-rotate(197deg)
-    brightness(95%) contrast(94%);
 }
 
 .bg-blue-gradient {

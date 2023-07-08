@@ -1,12 +1,13 @@
-import styles from "./FormItem.module.scss";
 import { ChangeEvent } from "react";
+import FormType from "../../types/form.type";
+import FormLabel from "../FormLabel/FormLabel";
+import styles from "./FormItem.module.scss";
 
-interface FormItemProps {
-  name?: string;
+interface FormItemProps extends FormType {
   onFieldChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
-  label?: string;
-  helper?: string;
+  value: string | number;
+  success?: boolean;
+  error?: boolean;
 }
 
 export default function FormItem({
@@ -15,20 +16,24 @@ export default function FormItem({
   value,
   label,
   helper,
+  success,
+  required,
+  error,
 }: FormItemProps) {
   return (
-    <div>
-      <label htmlFor={name} className={styles.label}>
-        {label ? label : name}
-      </label>
+    <div className={`${name === "email" && styles.dark}`}>
+      <FormLabel name={name} label={label} required={required} />
       <input
         type="text"
         name={name}
+        required={required}
         id={name}
         value={value}
         onChange={onFieldChange}
         placeholder={`skriv dit ${name}`}
-        className={styles.input}
+        className={`${styles.input} ${error && styles.error} ${
+          success && styles.success
+        } `}
       />
       {helper && <p className={styles.helper}>{helper}</p>}
     </div>

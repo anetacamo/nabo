@@ -1,14 +1,14 @@
 import styles from "./Tags.module.scss";
 
 interface TagsProps {
-  tags: string;
+  tags?: string;
   color: string;
 }
 
 export default function Tags({ tags, color }: TagsProps) {
   return (
     <div style={{ marginTop: 16 }}>
-      {tags.split(",").map(
+      {tags?.split(",").map(
         (tag, index: number) =>
           tag != "" &&
           tag != " " && (

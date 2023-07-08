@@ -1,56 +1,21 @@
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-// @import url('https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto+Condensed:300,400,700|Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Noto+Serif:wght@400;700&family=Quicksand:wght@300;500;600&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Bungee+Hairline&family=Bungee+Shade&family=Flamenco&family=Fredericka+the+Great&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Nixie+One&family=Noto+Serif:wght@400;700&family=Quicksand:wght@300;500;600&family=Readex+Pro:wght@200;300;400;500;600;700&family=Rock+3D&family=Shizuru&family=Underdog&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-section,
-footer {
-  overflow: hidden;
-  white-space: wrap;
-  word-break: break-word;
+@font-face {
+  font-family: "Violet Sans";
+  src: url("/fonts/violet-sans/OTF/VioletSans-Regular.otf");
 }
 
 @font-face {
-  font-family: 'Brutalist';
-  src: url('/fonts/BRUTALISM-Regular.otf');
-}
-
-@font-face {
-  font-family: 'Violet Sans';
-  src: url('/fonts/violet-sans/OTF/VioletSans-Regular.otf');
-}
-
-@font-face {
-  font-family: 'brutalismregular';
-  src: url('/fonts/brutalism-regular-webfont.woff2') format('woff2'),
-    url('/fonts/brutalism-regular-webfont.woff') format('woff');
+  font-family: "violet_sansregular";
+  src: url("/fonts/violetsans-regular-webfont.woff2") format("woff2"),
+    url("/fonts/violetsans-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'violet_sansregular';
-  src: url('/fonts/violetsans-regular-webfont.woff2') format('woff2'),
-    url('/fonts/violetsans-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-* {
-  margin: 0;
-  padding: 0;
 }
 
 body {
-  font-family: 'Violet Sans', 'violet_sansregular', -apple-system,
+  font-family: "Violet Sans", "violet_sansregular", -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.025rem;
   font-weight: 500;
   font-size: 1rem;
   overflow-x: hidden;
@@ -65,6 +30,7 @@ body {
 
 b {
   font-weight: 700;
+  letter-spacing: 0.05rem;
 }
 
 i,
@@ -77,18 +43,17 @@ p {
   @media (max-width: 400px) {
     margin-top: 0.75rem;
   }
-}
-
-.paragraph {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  &.large {
+    font-size: 1.25rem;
+    @media (max-width: 700px) {
+      font-size: 1rem;
+    }
+  }
 }
 
 p,
 h1,
 h2,
-.h2,
 h3,
 h4,
 h5,
@@ -108,21 +73,6 @@ button {
     margin-bottom: 0rem;
   }
 }
-h1 {
-  line-height: 1;
-}
-
-h5 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-}
-
-p.large {
-  font-size: 1.25rem;
-  @media (max-width: 700px) {
-    font-size: 1rem;
-  }
-}
 
 li {
   list-style: none;
@@ -136,17 +86,13 @@ li {
   }
 }
 
-b {
-  letter-spacing: 0.8px;
-  font-weight: 600;
-}
-
 h1 {
+  line-height: 1;
   letter-spacing: 4px;
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 800;
-  font-family: 'violet_sansregular';
+  font-family: "violet_sansregular";
   @media (max-width: 700px) {
     font-size: 2rem;
     letter-spacing: 1px;
@@ -156,21 +102,7 @@ h1 {
   }
 }
 
-// font-family: 'Barriecito', cursive;
-// font-family: 'Bungee Hairline', cursive;
-// font-family: 'Bungee Shade', cursive;
-// font-family: 'Fredericka the Great', cursive;
-// font-family: 'Josefin Sans', sans-serif;
-// font-family: 'Nixie One', cursive;
-// font-family: 'Noto Serif', serif;
-// font-family: 'Quicksand', sans-serif;
-// font-family: 'Readex Pro', sans-serif;
-// font-family: 'Rock 3D', cursive;
-// font-family: 'Shizuru', cursive;
-// font-family: 'Underdog', cursive;
-
-h2,
-.h2 {
+h2 {
   letter-spacing: 3px;
   //font-family: 'brutalismregular';
   text-transform: uppercase;
@@ -183,12 +115,6 @@ h2,
     margin-top: 1.5rem;
   }
 }
-
-// h3 {
-//   font-size: 24px;
-//   font-weight: 600;
-//   font-family: Roboto Slab;
-// }
 
 h3 {
   font-size: 1.25rem;
@@ -217,6 +143,8 @@ h5 {
   font-size: 0.875rem;
   letter-spacing: 0.6px;
   font-weight: 500;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 h6 {
@@ -224,16 +152,6 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.125rem;
-}
-
-.underlined {
-  text-decoration: underline;
-}
-.uppercase {
-  text-transform: uppercase;
-}
-.bolded {
-  font-weight: 600;
 }
 
 a {
@@ -245,40 +163,4 @@ a {
   &:hover {
     text-decoration: underline;
   }
-}
-
-.animation:after,
-a:after {
-  bottom: 0;
-  content: '';
-  display: inline;
-  height: 0.125rem;
-  position: absolute;
-  background: $pink;
-  transition: width 0.3s ease 0s, left 0.3s ease;
-  width: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.a:hover:after {
-  width: 100%;
-  left: 0;
-}
-
-.divider {
-  background-color: $pink;
-  margin: 3rem auto 3rem;
-  width: 60px;
-  height: 0.25rem;
-}
-
-.fully-covering-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.right {
-  text-align: right;
 }

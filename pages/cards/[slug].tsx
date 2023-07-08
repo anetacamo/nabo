@@ -13,20 +13,14 @@ import styles from "./card.module.scss";
 
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
-import categories from "../../texts/types.json";
+
 import Blog from "../../types/card.type";
+import { getColor } from "../../utils/getColor";
 
 export default function SinglePage() {
   const router = useRouter();
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [blog, setBlog] = useState<Blog>();
-
-  const getColor = (post: Blog | undefined) => {
-    const category = categories?.filter(
-      (item) => item.name === post?.type?.split(",")[0].toLowerCase().trim()
-    );
-    return category[0] && category[0].color;
-  };
 
   const relatedBlogs = blogs.filter((b: Blog) => b.type === blog?.type);
 
@@ -55,7 +49,7 @@ export default function SinglePage() {
     <DefaultLayout>
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
-          <p className={`${getColor(blog)}`}>
+          <p className={`${getColor(blog?.type)}`}>
             {blog?.supertag} {blog?.type}
           </p>
           <h1>{blog?.title}</h1>
@@ -66,7 +60,7 @@ export default function SinglePage() {
             <IconHolder name="hjemmeside" link={blog?.link} small />
           )}
           {blog?.invisible && (
-            <Tags tags={blog?.invisible} color={getColor(blog)} />
+            <Tags tags={blog?.invisible} color={getColor(blog?.type)} />
           )}
         </div>
       </CrookedImage>

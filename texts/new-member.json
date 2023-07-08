@@ -6,7 +6,8 @@
   "inputs": [
     {
       "label": "Navn",
-      "name": "title"
+      "name": "title",
+      "required": true
     },
     {
       "label": "Adresse",
@@ -30,7 +31,8 @@
   "selects": [
     {
       "label": "Type",
-      "name": "type"
+      "name": "type",
+      "required": true
     }
   ],
   "multiselects": [
@@ -48,11 +50,27 @@
   "textAreas": [
     {
       "label": "Om",
-      "name": "description"
+      "name": "description",
+      "required": true
     },
     {
       "label": "Hvordan kan vi bruger det?",
       "name": "howtouse"
     }
-  ]
+  ],
+
+  "formContents": {
+    "name": {
+      "label": "Navn"
+    },
+    "adresse": {
+      "label": "Addresse"
+    },
+    "description": {
+      "label": "Om"
+    },
+    "howtouse": {
+      "label": "Hvordan kan vi bruger det?"
+    }
+  }
 }

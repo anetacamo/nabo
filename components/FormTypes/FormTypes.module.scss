@@ -1,25 +1,27 @@
+$card-margin: 0.25rem;
+
 .card {
-  margin: 4px;
-  padding: 12px;
+  margin: $card-margin;
+  padding: 0.75rem;
   transition-duration: 350ms;
   cursor: pointer;
-  min-width: 160px;
-  max-width: 240px;
+  min-width: 11.25rem;
+  max-width: 15rem;
   flex: 1;
-  width: 120px;
-  border-radius: 8px;
+  width: 7.5rem;
+  border-radius: 0.5rem;
   border: 3px solid black;
 }
 .container {
   align-items: unset;
-  margin: 0 -4px;
+  margin: 0 -$card-margin;
   @media (min-width: 900px) {
-    margin: 0 -120px;
+    margin: 0 -7.5rem;
   }
 }
 .title {
-  margin: 4px 0;
+  margin: 0.25rem 0;
 }
 .text {
-  font-size: 12px;
+  font-size: 0.75rem;
 }

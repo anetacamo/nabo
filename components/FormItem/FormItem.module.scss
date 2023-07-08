@@ -1,13 +1,28 @@
-.label {
-  display: block;
-  margin-top: 1rem;
-}
-.input,
-.textArea {
+@import "../../styles/colors-def.scss";
+
+.input {
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
 }
 .helper {
   margin-top: 0px;
   font-size: 12px;
+}
+
+.dark {
+  display: none;
+}
+.error {
+  &:not(:hover) {
+    border-color: $salmon;
+    color: $salmon;
+    transition-duration: 350ms;
+  }
+}
+.success {
+  &:not(:hover) {
+    border-color: green;
+    color: green;
+    transition-duration: 350ms;
+  }
 }

@@ -8,21 +8,15 @@ import { slugify } from "../../utils/slugify";
 import categories from "../../texts/types.json";
 
 import Blog from "../../types/card.type";
+import { getColor } from "../../utils/getColor";
 
-function truncate(str: string, n: number) {
+function truncate(str: string, n: number): string {
   const shortenedString = str.slice(0, n - 1);
   const lastIndex = shortenedString.lastIndexOf(" ");
   return str.length > n ? shortenedString.substring(0, lastIndex) + "..." : str;
 }
 
 export default function CardsSheets(members: { members: Blog[] }) {
-  const getColor = (post: Blog) => {
-    const category = categories?.filter(
-      (item) => item.name === post?.type?.split(",")[0].toLowerCase().trim()
-    );
-    return category[0] && category[0].color;
-  };
-
   return (
     <div className={`flex-center ${styles.container}`}>
       {members.members.map((post: Blog, index: number) => (
@@ -31,9 +25,13 @@ export default function CardsSheets(members: { members: Blog[] }) {
           href={`/cards/${slugify(post.title)}`}
           key={index}
           rel="noopener noreferrer"
-          className={`${styles.link} border-${getColor(post)}`}
+          className={`${styles.link} border-${getColor(
+            post.type
+          )}  bg-hover-${getColor(post.type)}`}
         >
-          <div className={styles.image}>
+          <div
+            className={`${styles.image} border-bottom-${getColor(post.type)}`}
+          >
             <Image
               src={`/images/${slugify(post?.title)}.jpg`}
               alt={`${slugify(post?.title)}.jpg`}
@@ -45,9 +43,9 @@ export default function CardsSheets(members: { members: Blog[] }) {
 
           {post?.type && (
             <p
-              className={`${styles.type} border-${getColor(post)} ${getColor(
-                post
-              )} bg-black`}
+              className={`${styles.type} border-${getColor(
+                post.type
+              )} ${getColor(post.type)} bg-black`}
             >
               {post?.supertag && post.supertag}{" "}
               {post?.type.split(",")[0].trim()}
@@ -59,7 +57,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
               name={post?.address}
               nolink
               icon={faLocation}
-              color={getColor(post)}
+              color={getColor(post.type)}
             />
           )}
 
@@ -68,7 +66,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
               name="hjemmeside"
               link={post?.link}
               small
-              color={getColor(post)}
+              color={getColor(post.type)}
             />
           )}
           {post?.description && (
@@ -76,7 +74,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
               {truncate(post?.description, 150)}
             </h5>
           )}
-          {post?.tags && <Tags tags={post?.tags} color={getColor(post)} />}
+          {post?.tags && <Tags tags={post?.tags} color={getColor(post.type)} />}
         </a>
       ))}
     </div>

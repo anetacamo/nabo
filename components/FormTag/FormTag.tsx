@@ -1,17 +1,15 @@
-import styles from "./FormTag.module.scss";
-import TagWithX from "../TagWithX/TagWithX";
-
-import CardType from "../../types/card.type";
 import { ChangeEvent } from "react";
+import CardType, { Multiselects } from "../../types/card.type";
+import FormType from "../../types/form.type";
+import TagWithX from "../TagWithX/TagWithX";
+import styles from "./FormTag.module.scss";
+import FormLabel from "../FormLabel/FormLabel";
 
-interface FormTagProps {
-  name: string;
+interface FormTagProps extends FormType {
   onSelectChange: (event: ChangeEvent<HTMLSelectElement>) => void;
   onCloseClick: (tag: string) => void;
   blogs?: CardType[];
   memberTags?: string;
-  label?: string;
-  helper?: string;
 }
 
 export default function FormTag({
@@ -22,11 +20,11 @@ export default function FormTag({
   blogs,
   label,
   helper,
+  required,
 }: FormTagProps) {
-  console.log("membertags", memberTags);
   const allTags: string[] = [];
   blogs?.map((item) =>
-    item[name as keyof CardType]
+    item[name as keyof Multiselects]
       ?.split(",")
       .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
@@ -35,9 +33,7 @@ export default function FormTag({
   return (
     <>
       <div>
-        <label htmlFor={name} className={styles.label}>
-          {label ? label : name}
-        </label>
+        <FormLabel name={name} label={label} required={required} />
         <select
           name={name}
           id={name}

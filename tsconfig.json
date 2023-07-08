@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "target": "es5", //generates the code in that ecmascript version. for older browsers
+    "lib": ["dom", "dom.iterable", "esnext"], //default objects like document and dom api are already known to ts. important to run in browser.
+    "allowJs": true, // js files will be compiled by ts
+    // "sourceMap": true,  // enables typescript files to be visible when checking in browser
+    // "outDir": "./dist" location of compiled js files usually in folder called dist. Also replicates the folder structure
+    // "rootDir": "./src" default root location for ts files. helps to organise
+    //"removeComment": true comments wont be in compiled files
     "skipLibCheck": true,
-    "strict": true,
+    "strict": true, //enables all strict rules at once : noImplicitAny, strictNullChecks, strictFunctioTypes,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": true, //transcript only checks the files, doesnt output actual tranpiled js files
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -16,6 +20,12 @@
     "incremental": true,
     "downlevelIteration": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/*",
+    "constants/formNames.js"
+  ],
+  "exclude": ["node_modules"] //excludes files, also from the includes
 }

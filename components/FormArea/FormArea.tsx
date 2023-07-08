@@ -1,11 +1,11 @@
-import styles from "./FormArea.module.scss";
 import { ChangeEvent } from "react";
+import FormType from "../../types/form.type";
+import FormLabel from "../FormLabel/FormLabel";
+import styles from "./FormArea.module.scss";
 
-interface FormAreaProps {
-  name?: string;
+interface FormAreaProps extends FormType {
   onFieldChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  value?: string;
-  label?: string;
+  value: string | number;
 }
 
 export default function FormArea({
@@ -13,19 +13,21 @@ export default function FormArea({
   label,
   onFieldChange,
   value,
+  helper,
+  required,
 }: FormAreaProps) {
   return (
     <div>
-      <label htmlFor={name} className={styles.label}>
-        {label ? label : name}
-      </label>
+      <FormLabel name={name} label={label} required={required} />
       <textarea
         name={name}
         id={name}
+        required={required}
         value={value}
         onChange={onFieldChange}
         className={styles.textArea}
       />
+      {helper && <p className={styles.helper}>{helper}</p>}
     </div>
   );
 }

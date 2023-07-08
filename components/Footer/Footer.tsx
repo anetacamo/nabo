@@ -1,11 +1,11 @@
-import styles from './Footer.module.scss';
-import IconHolder from '../IconHolder/IconHolder';
-import { menuItems } from '../../types/menu.type';
-import sections from '../../texts/footer.json';
+import styles from "./Footer.module.scss";
+import IconHolder from "../IconHolder/IconHolder";
+import menuItems from "../../texts/menu.json";
+import sections from "../../texts/footer.json";
 
 export default function Footer() {
   return (
-    <footer className='bg-black'>
+    <footer className="bg-black">
       <section className={styles.footer}>
         {sections.map((s, index) => (
           <div className={styles.column} key={index}>
@@ -35,7 +35,7 @@ export default function Footer() {
                   </p>
                 ))
               )}
-            <div className='divider' style={{ marginLeft: 0 }}></div>
+            <div className="divider" style={{ marginLeft: 0 }}></div>
           </div>
         ))}
       </section>

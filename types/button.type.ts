@@ -1,5 +1,5 @@
 type ButtonType = {
-  name?: string;
+  name: string;
 };
 
 export default ButtonType;

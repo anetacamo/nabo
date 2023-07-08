@@ -1,8 +1,10 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
+
+$card-border: 6px;
 
 .container {
   align-items: unset;
-  margin: -6px;
+  margin: -$card-border;
 }
 
 .link {
@@ -12,43 +14,44 @@
   &:hover {
     text-decoration: none;
   }
-
-  margin: 6px;
-  padding: 20px;
-  min-width: 200px;
-  max-width: 320px;
+  a {
+    color: white;
+  }
+  margin: $card-border;
+  padding: 1.25rem;
+  min-width: 12.5rem;
+  max-width: 20rem;
   position: relative;
   flex: 1;
-  border-radius: 16px;
+  border-radius: 1rem;
   h5 {
     margin: 0;
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 .image {
   text-align: center;
-  margin: -20px;
+  margin: -1.25rem;
   position: relative;
-  height: 160px;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  height: 10rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   opacity: 1;
   overflow: hidden;
 }
 .special {
-  margin-bottom: 8px !important;
-  margin-top: 8px !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0.5rem !important;
 }
 .type {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: 8px;
-  margin-top: 8px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   margin-left: -6px;
   padding: 3px 6px 2px;
   border-radius: 6px;
   display: inline-block;
-  z-index: 6;
   position: relative;
 }

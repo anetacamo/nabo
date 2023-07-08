@@ -25,37 +25,50 @@
   }
 }
 
-.highligted {
-  border-radius: 4px;
-  padding: 6px 8px;
-  padding-bottom: 4px;
-  border-width: 2px;
-}
-
-button,
-input,
-textarea {
+button {
   background-color: black;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 1.5rem;
   padding-bottom: 10px;
-  letter-spacing: 4px;
+  letter-spacing: 0.125rem;
   text-transform: uppercase;
   color: white;
-  font-size: 0.75rem;
-  border-style: none;
-  font-family: 'Violet Sans';
-  // box-shadow: 3px 3px 0px $purple;
-  border: 2px solid black;
-  border-radius: 8px;
   cursor: pointer;
   &:hover {
     color: black;
     background: transparent;
     transition-duration: 350ms;
   }
-  svg {
-    vertical-align: middle;
+}
+
+button,
+input,
+textarea {
+  font-size: 0.75rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+}
+
+input,
+textarea {
+  background-color: white;
+  padding: 0.75rem 1.25rem;
+  font-family: "Violet Sans";
+  width: 100%;
+  max-width: 100%;
+  letter-spacing: 1px;
+  color: black;
+  outline: none;
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 900;
+  &:hover {
+    background-color: lightgray;
+    color: $purple;
   }
+}
+textarea {
+  padding: 1.25rem;
+  min-height: 7.5rem;
 }
 
 .bg-black {
@@ -66,27 +79,4 @@ textarea {
       background-color: white;
     }
   }
-}
-
-input,
-textarea {
-  background-color: white;
-  padding: 12px 20px;
-  //  min-width: 380px;
-  width: calc(100% - 44px);
-  max-width: 100%;
-  letter-spacing: 1px;
-  color: black;
-  outline: none;
-  text-transform: none;
-  font-size: 16px;
-  font-weight: 900;
-  &:hover {
-    background-color: lightgray;
-    color: $purple;
-  }
-}
-textarea {
-  padding: 20px;
-  min-height: 120px;
 }
