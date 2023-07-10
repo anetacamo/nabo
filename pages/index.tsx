@@ -139,11 +139,7 @@ export default function Home() {
         </div>
       </section>
       <section className="center">
-        <h3
-          style={{ maxWidth: 600, textTransform: "lowercase", margin: "auto" }}
-        >
-          {pagedata.description}
-        </h3>
+        <h3 className={styles.mainText}>{pagedata.description}</h3>
       </section>
       <MapGl posts={blogs} />
       <div className="center">
@@ -159,7 +155,7 @@ export default function Home() {
         )}
       </div>
 
-      <section style={{ marginTop: -80 }}>
+      <section style={{ marginTop: -54 }}>
         <CardsSheets members={blogs} />
       </section>
     </DefaultLayout>

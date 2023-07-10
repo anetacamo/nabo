@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./Footer.module.scss";
 import IconHolder from "../IconHolder/IconHolder";
 import menuItems from "../../texts/menu.json";
@@ -6,6 +7,25 @@ import sections from "../../texts/footer.json";
 export default function Footer() {
   return (
     <footer className="bg-black">
+      {/* <div
+        style={{
+          width: "100%",
+          height: 380,
+          position: "relative",
+
+          overflow: "hidden",
+          backgroundColor: "black",
+        }}
+      >
+        <Image
+          src={`/bgs/bg.png`}
+          alt="illustrated background with houses"
+          layout="fill"
+          quality="1"
+          objectFit="cover"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      </div> */}
       <section className={styles.footer}>
         {sections.map((s, index) => (
           <div className={styles.column} key={index}>

@@ -17,6 +17,7 @@ export default function TagsList({ posts, onTagClick, tag }: TagsProps) {
       .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
   const tagsOnce = [...new Set(allTags)];
+
   return (
     <div className={styles.tags}>
       {tagsOnce.map((t, index) => (

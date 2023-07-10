@@ -22,7 +22,9 @@ export default function SinglePage() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [blog, setBlog] = useState<Blog>();
 
-  const relatedBlogs = blogs.filter((b: Blog) => b.type === blog?.type);
+  const relatedBlogs = blogs.filter(
+    (b: Blog) => b.type.split(",")[0] === blog?.type.split(",")[0]
+  );
 
   useEffect(() => {
     Papa.parse(
@@ -73,7 +75,7 @@ export default function SinglePage() {
       </section>
 
       <section className={`bg-black`}>
-        <h2>other {blog?.type}</h2>
+        <h2>other {blog?.type.split(",")[0]}</h2>
         {relatedBlogs && <CardsSheets members={relatedBlogs.slice(0, 5)} />}
       </section>
     </DefaultLayout>

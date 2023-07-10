@@ -6,7 +6,7 @@ import { getColor } from "../../utils/getColor";
 
 interface CategoryProps {
   posts: CardType[];
-  onCategoryClick: any;
+  onCategoryClick: (t: string) => void;
   category: string;
 }
 
@@ -16,19 +16,15 @@ export default function CategoryList({
   category,
 }: CategoryProps) {
   const allCategories: string[] = [];
-  posts.map(
-    (item) =>
-      item.type &&
-      item.type
-        .split(",")
-        .map((cate: string) => cate != "" && allCategories.push(cate.trim()))
-  );
-  const categoriesOnce = [...new Set(allCategories)];
+  posts.map((item) => {
+    const singleType = item.type.split(",")[0].toLowerCase().trim();
+    !allCategories.includes(singleType) && allCategories.push(singleType);
+  });
 
   return (
     <>
       <div className="tags">
-        {categoriesOnce.map((tag: string, index: number) => (
+        {allCategories.map((tag: string, index: number) => (
           <div
             key={index}
             className={`type bg-${getColor(tag)} ${
