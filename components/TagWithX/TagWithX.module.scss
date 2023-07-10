@@ -1,4 +1,4 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
 
 .icon {
   width: 28px;
@@ -12,6 +12,8 @@
   color: white;
   margin-right: 4px;
   margin-bottom: 4px;
+  padding: 4px 8px;
+  border-radius: 3px;
   &:hover {
     background-color: $purple;
     color: white;
