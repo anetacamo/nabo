@@ -20,8 +20,6 @@ const NewMember = () => {
   const [spam, setSpam] = useState("");
   const [formReady, setFormReady] = useState(false);
 
-  console.log(member);
-
   useEffect(() => {
     Papa.parse(
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
@@ -65,7 +63,6 @@ const NewMember = () => {
       //   .then((response) => {
 
       setFormSent(true);
-      console.log(member);
     }
 
     setSpam("");

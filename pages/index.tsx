@@ -18,36 +18,48 @@ export default function Home() {
   const [tag, setTag] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
+  const [entryPerPage, setEntryPerPage] = useState<number>(36);
+
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [posts, setPosts] = useState<Blog[]>([]);
+  const [filtered, setFiltered] = useState<Blog[]>([]);
 
   useEffect(() => {
-    console.log("download stuff");
+    console.log("home download stuff");
+    let unsubscribed = false;
+
     Papa.parse(
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
       {
         download: true,
         header: true,
         complete: (results: ParseResult<Blog>) => {
-          setPosts(
-            results.data.filter(
-              (card: Blog, index: number) => index > 0 && card?.title
-            )
-          );
-          setBlogs(
-            results.data.filter(
-              (card: Blog, index: number) => index > 0 && card?.title
-            )
-          );
+          if (!unsubscribed) {
+            setBlogs(
+              results.data.filter(
+                (card: Blog, index: number) => index > 0 && card?.title
+              )
+            );
+            setFiltered(
+              results.data.filter(
+                (card: Blog, index: number) => index > 0 && card?.title
+              )
+            );
+          }
         },
       }
     );
+
+    return () => {
+      unsubscribed = true;
+    };
   }, []);
 
+  console.log("filtered: ", filtered.length);
+  console.log("blogs: ", blogs.length);
   useEffect(() => {
     console.log("filter through");
-    setBlogs(
-      posts
+    setFiltered(
+      blogs
         .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
         .filter(
           (blog: Blog) =>
@@ -88,17 +100,7 @@ export default function Home() {
       description={pagedata.meta ?? pagedata.description}
       css={"bg-black"}
     >
-      <section
-        style={{
-          marginTop: -96,
-          position: "fixed",
-          width: "100%",
-          zIndex: 5,
-          backgroundColor: "black",
-          marginBottom: 0,
-          paddingBottom: 0,
-        }}
-      >
+      <section className={styles.topMenu}>
         <div className={`flex ${styles.searchContainer}`}>
           <p>
             showing all{" "}
@@ -130,33 +132,38 @@ export default function Home() {
                 />
               </>
             )}
-            <span className="gray"> {blogs.length} results</span>
+            <span className="gray"> {filtered.length} results</span>
           </p>
           <SearchField
             searchQuery={searchQuery}
-            onSearchQueryChange={onSearchChange}
+            onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
           />
         </div>
       </section>
       <section className="center">
         <h3 className={styles.mainText}>{pagedata.description}</h3>
       </section>
-      <MapGl posts={blogs} />
+      <MapGl posts={filtered} />
       <div className="center">
         <CategoryList
-          posts={posts}
+          posts={blogs}
           onCategoryClick={onCategorySet}
           category={category}
         />
       </div>
       <div className="center" style={{ marginTop: -28 }}>
-        {blogs.length != posts.length && (
-          <TagsList posts={blogs} onTagClick={onTagSet} tag={tag} />
+        {blogs.length != filtered.length && (
+          <TagsList posts={filtered} onTagClick={onTagSet} tag={tag} />
         )}
       </div>
 
       <section style={{ marginTop: -54 }}>
-        <CardsSheets members={blogs} />
+        <CardsSheets members={filtered.slice(0, entryPerPage)} />
+        {entryPerPage < filtered.length && (
+          <button onClick={() => setEntryPerPage(200)}>
+            load all {filtered.length}
+          </button>
+        )}
       </section>
     </DefaultLayout>
   );

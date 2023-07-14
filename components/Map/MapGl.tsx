@@ -8,6 +8,7 @@ import styles from "./MapGl.module.scss";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
+import { debounce } from "lodash";
 
 interface MapGiProps {
   posts: Blog[];
@@ -20,6 +21,19 @@ export default function MapGl({ posts }: MapGiProps) {
     longitude: 10.245000205993804,
     zoom: 12,
   });
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const debouncedHandleMouseEnter = debounce((title) => {
+    setIsHovered(true);
+    setName(title);
+  }, 150);
+
+  const handlOnMouseLeave = () => {
+    setIsHovered(false);
+    debouncedHandleMouseEnter.cancel();
+    setName("");
+  };
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
@@ -74,8 +88,10 @@ export default function MapGl({ posts }: MapGiProps) {
                     className={`${styles.point} bg-${getColor(post.type)} ${
                       name === post.title ? styles.pointed : ""
                     }`}
-                    onMouseEnter={() => setName(post.title)}
-                    onMouseLeave={() => setName("")}
+                    // onMouseEnter={() => setName(post.title)}
+                    // onMouseLeave={() => setName("")}
+                    onMouseEnter={() => debouncedHandleMouseEnter(post?.title)}
+                    onMouseLeave={handlOnMouseLeave}
                   >
                     <img
                       src={`/categories/${getColor(post.type)}2.png`}
@@ -88,7 +104,7 @@ export default function MapGl({ posts }: MapGiProps) {
                       }`}
                     >
                       {name === post.title ? name : ""}
-                      <span style={{ color: "#dddddd" }}>
+                      <span style={{ color: "black" }}>
                         {" "}
                         {name === post.title ? post.address : ""}
                       </span>

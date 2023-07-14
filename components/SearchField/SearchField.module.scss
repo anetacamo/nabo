@@ -1,4 +1,4 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
 
 .absolute {
   justify-content: space-between;
@@ -26,7 +26,14 @@
   margin: 0;
 
   &:hover {
-    background-color: transparent;
+    background-color: $purple;
+    transition-duration: 350ms;
+    background-image: linear-gradient(
+      to top right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.9)
+    );
+    border-color: $purple;
     color: white;
   }
   &::placeholder {

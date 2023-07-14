@@ -5,7 +5,6 @@ import Tags from "../Tags/Tags";
 import IconHolder from "../IconHolder/IconHolder";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
-import categories from "../../texts/types.json";
 
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";

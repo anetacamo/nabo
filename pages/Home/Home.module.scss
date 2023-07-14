@@ -11,3 +11,12 @@
   text-transform: lowercase;
   margin: auto;
 }
+.topMenu {
+  margin-top: -96px;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: black;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
