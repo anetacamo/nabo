@@ -88,10 +88,10 @@ export default function MapGl({ posts }: MapGiProps) {
                     className={`${styles.point} bg-${getColor(post.type)} ${
                       name === post.title ? styles.pointed : ""
                     }`}
-                    // onMouseEnter={() => setName(post.title)}
-                    // onMouseLeave={() => setName("")}
-                    onMouseEnter={() => debouncedHandleMouseEnter(post?.title)}
-                    onMouseLeave={handlOnMouseLeave}
+                    onMouseEnter={() => setName(post.title)}
+                    onMouseLeave={() => setName("")}
+                    // onMouseEnter={() => debouncedHandleMouseEnter(post?.title)}
+                    // onMouseLeave={handlOnMouseLeave}
                   >
                     <img
                       src={`/categories/${getColor(post.type)}2.png`}
