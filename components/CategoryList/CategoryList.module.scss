@@ -16,7 +16,7 @@
   background-color: $blue;
   border: 2px solid $blue;
   //color: $blue;
-  &:hover {
+  &:hover:not(.chosen) {
     color: white;
     background-color: $turqoise;
     border-color: $turqoise;
