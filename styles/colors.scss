@@ -21,15 +21,6 @@ $colors: (
   "black": $black,
 );
 
-// $colours: $lightgray, $gray, $yellow, $pink, $salmon, $lightblue, $blue,
-//   $darkblue, $turqoise, $green, $purple, $purplelight, $lightpink, $black;
-
-// @for $i from 1 through length($colours) {
-//   #cp#{$i} {
-//     background-color: rgba(nth($colors, $i), 0.6);
-//   }
-// }
-
 @function color($color-name) {
   @return var(--color-#{$color-name});
 }
@@ -101,7 +92,11 @@ $colors: (
 }
 
 .bg-blue-gradient {
-  background-image: linear-gradient(135deg, $blue, $purple);
+  background-image: linear-gradient(
+    135deg,
+    map-get($colors, lightgray),
+    $purple
+  );
   color: white;
 }
 

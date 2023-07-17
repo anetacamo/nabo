@@ -54,8 +54,6 @@ export default function Home() {
     };
   }, []);
 
-  console.log("filtered: ", filtered.length);
-  console.log("blogs: ", blogs.length);
   useEffect(() => {
     console.log("filter through");
     setFiltered(
@@ -88,10 +86,6 @@ export default function Home() {
     } else {
       setTag(t.toLowerCase());
     }
-  };
-
-  const onSearchChange = (query: string) => {
-    setSearchQuery(query.toLowerCase());
   };
 
   return (
