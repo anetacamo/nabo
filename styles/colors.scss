@@ -60,6 +60,20 @@ $colors: (
 }
 
 @each $name, $value in $colors {
+  .bg-hover-full-#{$name} {
+    &:hover {
+      background-color: $value;
+      transition-duration: 350ms;
+      background-image: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0)
+      );
+    }
+  }
+}
+
+@each $name, $value in $colors {
   .border-#{$name} {
     border: 2px solid $value !important;
   }
@@ -83,7 +97,10 @@ $colors: (
 .bg-yellow,
 .bg-gray,
 .bg-greenlight,
-.bg-white {
+.bg-white,
+.bg-salmon,
+.bg-blue,
+.bg-pink {
   color: black;
 }
 

@@ -1,6 +1,10 @@
+$tag-margin: 0.25rem;
+$margin: 1.5rem;
+$max-width: 1000px;
+
 .tags {
-  max-width: 1000px;
-  margin: 24px auto;
+  max-width: $max-width;
+  margin: $margin - $tag-margin auto;
   // .bg-chosen {
   //   color: $blue;
   //   background-color: transparent;
@@ -8,18 +12,18 @@
 }
 
 .type {
-  color: white;
+  //color: white;
   display: inline-block;
   font-size: 12px;
-  margin: 4px;
+  margin: $tag-margin;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1.4px;
   padding: 7px 8px 5px 8px;
   border-radius: 4px;
-  background-color: $purple;
+  //background-color: $purple;
   &:hover {
-    background-color: $turqoise;
+    //background-color: $turqoise;
     transition-duration: 350ms;
     cursor: pointer;
   }

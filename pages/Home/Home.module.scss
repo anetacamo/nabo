@@ -1,9 +1,12 @@
 .searchContainer {
   justify-content: space-between;
   align-items: center;
+  margin-top: 2rem;
   @media (max-width: 700px) {
+    margin-top: 3.5rem;
     flex-direction: column;
-    margin-bottom: 24px;
+    margin-bottom: 0rem;
+    align-items: baseline;
   }
 }
 .mainText {
@@ -12,11 +15,15 @@
   margin: auto;
 }
 .topMenu {
-  margin-top: -96px;
+  top: 0;
   position: fixed;
   width: 100%;
   z-index: 5;
   background-color: black;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin: 0;
+  //padding: 0;
+  padding: 0 2rem;
+  @media (max-width: 700px) {
+    padding: 0 1.5rem;
+  }
 }

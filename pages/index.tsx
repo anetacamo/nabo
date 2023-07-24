@@ -12,6 +12,7 @@ import Papa, { ParseResult } from "papaparse";
 import pagedata from "../texts/home.json";
 import styles from "./Home/Home.module.scss";
 import Blog from "../types/card.type";
+import { getColor } from "../utils/getColor";
 
 export default function Home() {
   const [category, setCategory] = useState<string>("");
@@ -96,12 +97,16 @@ export default function Home() {
     >
       <section className={styles.topMenu}>
         <div className={`flex ${styles.searchContainer}`}>
+          <SearchField
+            searchQuery={searchQuery}
+            onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
+          />
           <p>
             showing all{" "}
             {category.length === 0 || (
               <TagWithX
                 name={category}
-                color="purple"
+                color={getColor(category)}
                 onCloseClick={() => setCategory("")}
               />
             )}
@@ -126,37 +131,43 @@ export default function Home() {
                 />
               </>
             )}
-            <span className="gray"> {filtered.length} results</span>
+            <span className="blue"> {filtered.length} results</span>
           </p>
-          <SearchField
-            searchQuery={searchQuery}
-            onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
-          />
         </div>
       </section>
-      <section className="center">
+      {/* <section className="center">
         <h3 className={styles.mainText}>{pagedata.description}</h3>
-      </section>
+      </section> */}
+      <div style={{ padding: 24 }}></div>
       <MapGl posts={filtered} />
-      <div className="center">
+      <div className="center" style={{ marginBottom: -20 }}>
         <CategoryList
           posts={blogs}
           onCategoryClick={onCategorySet}
           category={category}
         />
       </div>
-      <div className="center" style={{ marginTop: -28 }}>
+      <div className="center">
         {blogs.length != filtered.length && (
-          <TagsList posts={filtered} onTagClick={onTagSet} tag={tag} />
+          <TagsList
+            posts={filtered}
+            onTagClick={onTagSet}
+            tag={tag}
+            category={category}
+          />
         )}
       </div>
-
-      <section style={{ marginTop: -54 }}>
+      <section style={{ marginTop: -40 }}>
         <CardsSheets members={filtered.slice(0, entryPerPage)} />
         {entryPerPage < filtered.length && (
-          <button onClick={() => setEntryPerPage(200)}>
-            load all {filtered.length}
-          </button>
+          <div className="flex-center-hor">
+            <button onClick={() => setEntryPerPage(entryPerPage + 36)}>
+              load more
+            </button>
+            <p className="blue" style={{ marginLeft: 12 }}>
+              showing {entryPerPage} of {filtered.length}
+            </p>
+          </div>
         )}
       </section>
     </DefaultLayout>

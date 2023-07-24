@@ -13,12 +13,11 @@
   cursor: pointer;
   margin-right: 4px;
   margin-bottom: 4px;
-  background-color: $blue;
-  border: 2px solid $blue;
+  //background-color: $blue;
+  border: 2px solid inherit;
   //color: $blue;
   &:hover:not(.chosen) {
-    color: white;
-    background-color: $turqoise;
-    border-color: $turqoise;
+    //background-color: transparent;
+    //border-color: $turqoise;
   }
 }

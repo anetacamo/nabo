@@ -1,9 +1,5 @@
 @import "../../styles/colors-def.scss";
 
-.tags {
-  margin: 28px;
-}
-
 .icon {
   width: 20px;
   padding-left: 8px;
@@ -18,9 +14,10 @@
   margin-right: 4px;
   margin-bottom: 4px;
   border: 2px solid $purple;
+  //background-color: $purple;
   &:hover {
     color: white;
-    background-color: $turqoise;
-    border-color: $turqoise;
+    background-color: transparent;
+    //border-color: $turqoise;
   }
 }

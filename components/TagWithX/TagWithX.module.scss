@@ -1,19 +1,22 @@
 @import "../../styles/colors-def.scss";
 
 .icon {
-  width: 28px;
-  padding-left: 12px;
+  width: 20px;
+  padding-left: 8px;
 }
 
 .searchQuery {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  color: white;
+  //color: white;
   margin-right: 4px;
   margin-bottom: 4px;
-  padding: 4px 8px;
+  padding: 5px 8px 4px 8px;
+  font-size: 14px;
+  letter-spacing: 1.2px;
   border-radius: 3px;
+  //text-transform: uppercase;
   &:hover {
     background-color: $purple;
     color: white;

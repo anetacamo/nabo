@@ -22,27 +22,27 @@ export default function CategoryList({
   });
 
   return (
-    <>
-      <div className="tags">
-        {allCategories.map((tag: string, index: number) => (
-          <div
-            key={index}
-            className={`type bg-${getColor(tag)} ${
-              category == tag && "bg-chosen"
-            } ${styles.tag}`}
-            aria-label={`${tag} - ${category == tag ? "checked" : ""}`}
-            onClick={() => onCategoryClick(tag)}
-            role="button"
-            tabIndex={0}
-            onKeyPress={() => onCategoryClick(tag)}
-          >
-            {tag}
-            {category == tag && (
-              <FontAwesomeIcon icon={faClose} className={styles.icon} />
-            )}
-          </div>
-        ))}
-      </div>
-    </>
+    <div className="tags">
+      {allCategories.map((tag: string, index: number) => (
+        <div
+          key={index}
+          className={`type border-${getColor(tag)} bg-hover-full-${getColor(
+            tag
+          )} ${category == tag && "bg-chosen" && `bg-${getColor(tag)}`} ${
+            styles.tag
+          }`}
+          aria-label={`${tag} - ${category == tag ? "checked" : ""}`}
+          onClick={() => onCategoryClick(tag)}
+          role="button"
+          tabIndex={0}
+          onKeyPress={() => onCategoryClick(tag)}
+        >
+          {tag}
+          {category == tag && (
+            <FontAwesomeIcon icon={faClose} className={styles.icon} />
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
