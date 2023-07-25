@@ -66,6 +66,9 @@ export default function SinglePage() {
           )}
         </div>
       </CrookedImage>
+      <p style={{ position: "absolute", right: "2rem", top: 12 }}>
+        photo credit:{" "}
+      </p>
 
       <section style={{ maxWidth: 600, margin: "auto" }}>
         <h4>Description</h4>
