@@ -2,6 +2,7 @@ import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
 import pagedata from '../texts/about.json';
 import Section from '../components/Section/Section';
 import CrookedImage from '../components/CrookedImage/CrookedImage';
+import TypeCards from '../components/TypeCards/TypeCards';
 
 import SectionType from '../types/section.type';
 
@@ -18,6 +19,9 @@ export default function About() {
       {pagedata.sections.map((section: SectionType, index: number) => (
         <Section key={index} {...section} />
       ))}
+      <section>
+        <TypeCards />
+      </section>
     </DefaultLayout>
   );
 }
