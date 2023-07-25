@@ -1,9 +1,6 @@
 import styles from "./SearchField.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMagnifyingGlass,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface SearchFieldProps {
   searchQuery?: string;
@@ -22,7 +19,7 @@ export default function SearchField({
       />
       <input
         className={styles.search}
-        placeholder="| search"
+        placeholder="search"
         onChange={(e) => onSearchQueryChange(e.target.value.toLowerCase())}
         value={searchQuery}
       />

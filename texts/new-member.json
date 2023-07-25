@@ -1,11 +1,11 @@
 {
-  "title": "Add New Member",
-  "description": "Do you think you should be on the map? Fill in the form and we will get back to you or post you directly in our Aarhus guide",
+  "title": "Tilføj ny ressource",
+  "description": "Står du for, eller kender du til en ressource, du synes skal være på kortet? Udfyld formularen, så vender vi tilbage til dig eller poster dig direkte i kortet.",
   "meta": "this short text is optional if above description is short enough. should be no longer then 155 characters long. usd for google seacg results",
-  "helper": "note that by pressing above button, submited data will be reviewed and solely used for purpose of public display on this page. therefore be warned to not share any kind of sensitive information. Please inform us if you would like your data to be deleted or changed on this mail",
+  "helper": "Bemærk, at ved at trykke på ovenstående knap vil indsendte data blive gennemgået og udelukkende brugt til offentlig visning på denne side. Vær derfor advaret om ikke at dele nogen form for følsomme oplysninger. Giv os venligst besked, hvis du ønsker, at dine data skal slettes eller ændres via info@frontloberne.dk",
   "inputs": [
     {
-      "label": "Navn",
+      "label": "Navn på ressource",
       "name": "title",
       "required": true
     },
@@ -39,12 +39,12 @@
     {
       "label": "Visible Tags",
       "name": "tags",
-      "helper": "Visible tags should be around three, no more then five. use those as descriptive as possible. they will searchable and displayed to help provide context and specific information."
+      "helper": "Visible tags skal være omkring tre, ikke mere end fem. Brug dem så beskrivende som muligt. De kan søges og vises for at hjælpe med at give kontekst og specifik information."
     },
     {
       "label": "Hidden Tags",
       "name": "invisible",
-      "helper": "Those tags won't be visible anywhere, but they will be searchable. Try to limit them up to 5."
+      "helper": "Disse tags vil ikke være synlige nogen steder, men de vil komme frem i søgeresultater. Prøv at begrænse dem til 5."
     }
   ],
   "textAreas": [
@@ -67,10 +67,10 @@
       "label": "Addresse"
     },
     "description": {
-      "label": "Om"
+      "label": "Om ressourcen"
     },
     "howtouse": {
-      "label": "Hvordan kan vi bruger det?"
+      "label": "Hvordan kan man bruge denne ressource?"
     }
   }
 }
