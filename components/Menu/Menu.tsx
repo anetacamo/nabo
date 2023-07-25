@@ -27,7 +27,7 @@ export default function Menu({ searchQuery, onSearchQueryChange }: MenuProps) {
           <SkipNav />
           <div className="flex">
             <Link href="/">
-              <a className={`${styles.logo} logo h2`}>Århus Kultur Kort</a>
+              <a className={`${styles.logo} logo h2`}>Kultur-Kortet Århus</a>
             </Link>
 
             {/* <SearchField /> */}
