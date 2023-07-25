@@ -19,9 +19,9 @@
 
   {
     "title": "REQUEST TAKEDOWN / EDIT",
-    "text": "If this map contains information about your project that you would like changed or removed, please contact us.",
+    "text": "Hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os.",
     "links": [
-      { "name": "liam@frontloberne.dk", "link": "mailto:liam@frontloberne.dk" }
+      { "name": "info@frontloberne.dk", "link": "mailto:info@frontloberne.dk" }
     ]
   },
   {
