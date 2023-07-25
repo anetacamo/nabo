@@ -1,9 +1,9 @@
-import { DefaultLayout } from '../layouts/DefaultLayout/DefaultLayout';
-import pagedata from '../texts/english.json';
-import Section from '../components/Section/Section';
-import TypeCards from '../components/TypeCards/TypeCards';
-import CrookedImage from '../components/CrookedImage/CrookedImage';
-import SectionType from '../types/section.type.ts';
+import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
+import pagedata from "../texts/english.json";
+import Section from "../components/Section/Section";
+import TypeCards from "../components/TypeCards/TypeCards";
+import CrookedImage from "../components/CrookedImage/CrookedImage";
+import SectionType from "../types/section.type.ts";
 
 export default function English() {
   return (
@@ -19,7 +19,7 @@ export default function English() {
         <Section key={index} {...section} />
       ))}
       <section>
-        <TypeCards />
+        <TypeCards en />
       </section>
     </DefaultLayout>
   );

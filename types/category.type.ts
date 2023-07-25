@@ -1,7 +1,7 @@
 type CategoryType = {
   name: string;
   color: string;
+  about_en: string;
   about: string;
-  om: string;
 };
 export default CategoryType;
