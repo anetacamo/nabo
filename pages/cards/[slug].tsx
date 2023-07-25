@@ -71,7 +71,7 @@ export default function SinglePage() {
       </p>
 
       <section style={{ maxWidth: 600, margin: "auto" }}>
-        <h4>Description</h4>
+        <h4>Beskrivelse</h4>
         <p>{blog?.description}</p>
         <h4>Hvordan du kan benytte denne ressource</h4>
         <p>{blog?.howtouse}</p>
