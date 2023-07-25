@@ -17,6 +17,10 @@
       "label": "Hjemmeside",
       "name": "link"
     },
+     {
+      "label": "URL til billede",
+      "name": "billedlink"
+    },
     {
       "label": "Longitude",
       "name": "longitude"
