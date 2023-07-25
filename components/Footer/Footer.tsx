@@ -32,8 +32,8 @@ export default function Footer() {
             <h3>{s.title}</h3>
             {s.text && <p>{s.text}</p>}
 
-            {s.links &&
-              s.links.map((line, index: number) => (
+            {s.bulletlinks &&
+              s.bulletlinks.map((line, index: number) => (
                 <IconHolder name={line.name} link={line.link} key={index} />
               ))}
 

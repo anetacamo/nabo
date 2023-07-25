@@ -5,8 +5,14 @@ import { useState } from "react";
 import Hamburger from "../Hamburger/Hamburger";
 import menuItems from "../../texts/menu.json";
 import { useRouter } from "next/router";
+import SearchField from "../SearchField/SearchField";
 
-export default function Menu() {
+interface MenuProps {
+  searchQuery?: string;
+  onSearchQueryChange: (e: string) => void;
+}
+
+export default function Menu({ searchQuery, onSearchQueryChange }: MenuProps) {
   const [open, setOpen] = useState(false);
 
   const { asPath } = useRouter();
@@ -19,11 +25,17 @@ export default function Menu() {
       >
         <div className={styles.header}>
           <SkipNav />
-          <Link href="/">
-            <a className={`${styles.logo} logo h2`}> Nåbø Map</a>
-          </Link>
+          <div className="flex">
+            <Link href="/">
+              <a className={`${styles.logo} logo h2`}> Nåbø Map</a>
+            </Link>
 
-          {/* <SearchField /> */}
+            {/* <SearchField /> */}
+            <SearchField
+              searchQuery={searchQuery}
+              onSearchQueryChange={onSearchQueryChange}
+            />
+          </div>
 
           <div className="flex desktop">
             {menuItems.map((item, index) => (

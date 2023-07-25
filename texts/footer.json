@@ -20,13 +20,13 @@
   {
     "title": "REQUEST TAKEDOWN / EDIT",
     "text": "If this map contains information about your project that you would like changed or removed, please contact us.",
-    "links": [
+    "bulletlinks": [
       { "name": "liam@frontloberne.dk", "link": "mailto:liam@frontloberne.dk" }
     ]
   },
   {
     "title": "Partnered cities",
-    "links": [
+    "bulletlinks": [
       { "name": "Nabo Trømso", "link": "www.google.com" },
       { "name": "Nabo Skandeborg", "link": "www.google.com" },
       { "name": "Nabo Silkeborg", "link": "www.google.com" }

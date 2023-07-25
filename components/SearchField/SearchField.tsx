@@ -15,7 +15,7 @@ export default function SearchField({
   onSearchQueryChange,
 }: SearchFieldProps) {
   return (
-    <>
+    <div className={`flex-center-hor ${styles.container}`}>
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className={`${styles.icon} ${styles.searchIcon}`}
@@ -26,6 +26,6 @@ export default function SearchField({
         onChange={(e) => onSearchQueryChange(e.target.value.toLowerCase())}
         value={searchQuery}
       />
-    </>
+    </div>
   );
 }

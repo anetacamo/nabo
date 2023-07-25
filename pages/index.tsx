@@ -94,13 +94,15 @@ export default function Home() {
       title={pagedata.title}
       description={pagedata.meta ?? pagedata.description}
       css={"bg-black"}
+      searchQuery={searchQuery}
+      onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
     >
       <section className={styles.topMenu}>
+        {/* <SearchField
+          searchQuery={searchQuery}
+          onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
+        /> */}
         <div className={`flex ${styles.searchContainer}`}>
-          <SearchField
-            searchQuery={searchQuery}
-            onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
-          />
           <p>
             showing all{" "}
             {category.length === 0 || (

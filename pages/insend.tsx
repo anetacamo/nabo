@@ -168,16 +168,32 @@ const NewMember = () => {
             <button
               type="submit"
               disabled={!formReady}
-              className={`${formSent && "greenlight"} ${
-                formReady ? "button-greenlight" : "button-salmon"
+              className={`${styles.submit} ${formSent && "greenlight"} ${
+                formReady ? "button-greenlight" : "button-green"
               }`}
             >
-              submit *
+              <span className="flex-center-hor">
+                {formReady ? (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className={styles.icon}
+                    style={{ marginLeft: -12, marginRight: 16 }}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faClose}
+                    className={styles.icon}
+                    style={{ marginLeft: -12, marginRight: 16 }}
+                  />
+                )}
+                submit form
+              </span>
             </button>
           </div>
+
           <div style={{ marginTop: "-1rem" }}>
             {!formReady && (
-              <div className="salmon flex-center-hor">
+              <div className="green flex-center-hor">
                 <FontAwesomeIcon icon={faClose} className={styles.icon} />
                 <p>Fields with star are required.</p>
               </div>

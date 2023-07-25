@@ -48,14 +48,11 @@
 
 .icon {
   width: 1.25rem;
-  min-width: 1.25rem;
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
-  margin-right: 0.5rem;
   padding-left: 0.5rem;
   position: absolute;
   z-index: 4;
-  @media (max-width: 700px) {
-    margin-top: 0.65rem;
-  }
+}
+
+.container {
+  margin-left: 1rem;
 }

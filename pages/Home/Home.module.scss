@@ -1,9 +1,11 @@
 .searchContainer {
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  // align-items: center;
   margin-top: 2rem;
+  text-align: right;
+  flex-direction: column;
   @media (max-width: 700px) {
-    margin-top: 3.5rem;
+    margin-top: 2.25rem;
     flex-direction: column;
     margin-bottom: 0rem;
     align-items: baseline;
