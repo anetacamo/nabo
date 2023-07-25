@@ -42,6 +42,7 @@ p {
   line-height: 1.6;
   @media (max-width: 400px) {
     margin-top: 0.75rem;
+    font-size: 11px;
   }
   &.large {
     font-size: 1.25rem;
@@ -66,6 +67,10 @@ button {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
   }
+  @media (max-width: 400px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 button {
@@ -84,13 +89,16 @@ li {
   @media (max-width: 700px) {
     font-size: 1rem;
   }
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
 }
 
 h1 {
   line-height: 1;
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 800;
   font-family: "violet_sansregular";
   @media (max-width: 700px) {
@@ -99,6 +107,8 @@ h1 {
   }
   @media (max-width: 400px) {
     margin-top: 1.25rem;
+    font-weight: 400;
+    font-size: 1.5rem;
   }
 }
 
@@ -113,6 +123,7 @@ h2 {
   }
   @media (max-width: 400px) {
     margin-top: 1.5rem;
+    font-size: 18px;
   }
 }
 
@@ -132,10 +143,11 @@ h4 {
   letter-spacing: 1px;
   font-weight: 600;
   @media (max-width: 700px) {
-    font-size: 1rem;
+    font-size: 16px;
   }
   @media (max-width: 400px) {
     margin-top: 0.875rem;
+    font-size: 14px;
   }
 }
 
@@ -145,10 +157,15 @@ h5 {
   font-weight: 500;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+  @media (max-width: 400px) {
+    margin-top: 0.875rem;
+    font-size: 13px;
+    font-weight: 300;
+  }
 }
 
 h6 {
-  font-size: 0.75rem;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.125rem;

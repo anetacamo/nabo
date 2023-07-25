@@ -1,4 +1,4 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
 
 .iconcontainer {
   align-items: center;
@@ -11,6 +11,10 @@
   margin-top: 0.125rem;
   margin-bottom: 0.125rem;
   margin-right: 0.5rem;
+  @media (max-width: 400px) {
+    width: 0.75rem;
+    min-width: 0.75rem;
+  }
 }
 
 .link {

@@ -20,4 +20,7 @@
     background-color: transparent;
     //border-color: $turqoise;
   }
+  @media (max-width: 400px) {
+    border-width: 1.5px;
+  }
 }

@@ -3,18 +3,5 @@
   "image": "/categories/blue.png",
   "description": "This website lists and maps resources that culture creators in Århus can use to realize their projects. The resources on the map can be sorted in various ways, so that you see just a list of venues, galleries, event makers, etc. Most of the information is in Danish. Below you can find translations of each category. If you have a hard time reading the ressource descriptions, we recommend using a tool like google translate, or browsing with a Danish-reading friend.",
   "meta": "This website lists and maps resources that culture creators in Århus can use to realize their projects.",
-  "sections": [
-    {
-      "title": "some about info",
-      "text": "CWe offer sparring, create non-formal learning spaces and formats and do external workshops/consulting. We have collected all our best methods, tips and tricks in our book HACK DET - Projekthåndbogen til unge kulturskabere (in Danish).",
-      "orientation": "right",
-      "buttons": [{ "name": "venue" }, { "name": "accomodation" }]
-    },
-    {
-      "title": "translations of each of the category",
-      "text": "Frontløberne have loads of experience with project management and there are many project makers on the team, who are all talented and inspiring teachers. To us, a project isn’t just a project, but something that is rooted in a need to create change. ",
-      "background": "black",
-      "orientation": "left"
-    }
-  ]
+  "sections": []
 }

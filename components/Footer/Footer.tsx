@@ -1,8 +1,17 @@
-import Image from "next/image";
 import styles from "./Footer.module.scss";
 import IconHolder from "../IconHolder/IconHolder";
 import menuItems from "../../texts/menu.json";
 import sections from "../../texts/footer.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faCreativeCommons,
+  faCreativeCommonsBy,
+  faCreativeCommonsSa,
+  faCreativeCommonsNc,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (
@@ -29,7 +38,7 @@ export default function Footer() {
       <section className={styles.footer}>
         {sections.map((s, index) => (
           <div className={styles.column} key={index}>
-            <h3>{s.title}</h3>
+            <h3 className="pink">{s.title}</h3>
             {s.text && <p>{s.text}</p>}
 
             {s.bulletlinks &&
@@ -55,7 +64,33 @@ export default function Footer() {
                   </p>
                 ))
               )}
+
+            {index === sections.length - 1 && (
+              <div style={{ marginTop: 24 }}>
+                <FontAwesomeIcon
+                  icon={faCreativeCommons}
+                  className={styles.icon}
+                />
+                <FontAwesomeIcon
+                  icon={faCreativeCommonsSa}
+                  className={styles.icon}
+                />
+                <FontAwesomeIcon
+                  icon={faCreativeCommonsBy}
+                  className={styles.icon}
+                />
+                <FontAwesomeIcon
+                  icon={faCreativeCommonsNc}
+                  className={styles.icon}
+                />
+              </div>
+            )}
+
             <div className="divider" style={{ marginLeft: 0 }}></div>
+            {/* <div style={{ padding: "1.5rem" }}></div>
+            <FontAwesomeIcon icon={faClose} className={`${styles.icon} red `} />
+            <div style={{ padding: "1.5rem" }}></div> */}
+            {/* <FontAwesomeIcon icon={solid("creative-commons")} /> */}
           </div>
         ))}
       </section>

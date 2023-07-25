@@ -26,7 +26,10 @@ $card-border: 6px;
   border-radius: 1rem;
   h5 {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 12px;
+    @media (max-width: 400px) {
+      font-size: 11px;
+    }
   }
 }
 .image {

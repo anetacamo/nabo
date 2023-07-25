@@ -27,6 +27,13 @@ $max-width: 1000px;
     transition-duration: 350ms;
     cursor: pointer;
   }
+  @media (max-width: 400px) {
+    font-size: 10px;
+    padding: 4px 6px 3px;
+    border-width: 1px;
+    font-weight: 100;
+    margin: 2px;
+  }
 }
 
 button {
@@ -37,19 +44,28 @@ button {
   text-transform: uppercase;
   color: white;
   cursor: pointer;
+  font-size: 14px;
   &:hover {
     color: black;
     background: transparent;
     transition-duration: 350ms;
+  }
+  @media (max-width: 400px) {
+    font-size: 10px;
+    padding: 6px 12px 5px;
+    font-weight: 100;
+    margin: 2px;
   }
 }
 
 button,
 input,
 textarea {
-  font-size: 0.75rem;
   border: 2px solid black;
   border-radius: 0.5rem;
+  @media (max-width: 400px) {
+    border-width: 1.5px;
+  }
 }
 
 input,
@@ -63,12 +79,15 @@ textarea {
   color: black;
   outline: none;
   text-transform: none;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 900;
   transition-duration: 350ms;
   &:hover {
     background-color: lightgray;
     color: $purple;
+  }
+  @media (max-width: 400px) {
+    font-size: 11px;
   }
 }
 textarea {

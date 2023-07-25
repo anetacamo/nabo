@@ -1,4 +1,4 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
 
 $line-margin: 6px;
 $line-thickness: 4px;
@@ -33,4 +33,10 @@ $line-thickness: 4px;
   height: $line-thickness;
   margin: $line-margin;
   transition: 350ms ease-in;
+  @media (max-width: 400px) {
+    width: 24px;
+    height: 3px;
+    margin: 4px;
+    border-radius: 4px;
+  }
 }

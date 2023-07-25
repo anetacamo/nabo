@@ -3,13 +3,17 @@
 .nav {
   padding: 0 2rem;
   position: fixed;
-  z-index: 22;
+  z-index: 2;
   height: 0vh;
   top: 0;
   width: 100%;
+  z-index: 4;
   transition-duration: 350ms;
   @media (max-width: 700px) {
     padding: 0 1.5rem;
+  }
+  @media (max-width: 400px) {
+    padding: 0 1rem;
   }
   .mobmenu {
     display: none;
@@ -36,8 +40,6 @@
       }
     }
   }
-  @media (max-width: 700px) {
-  }
 }
 
 .chosen {
@@ -59,8 +61,18 @@
       transition-duration: 350ms;
       color: $pink;
     }
+    @media (max-width: 400px) {
+      font-size: 14px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
   }
   .li {
     margin-left: 1rem;
+  }
+  .logo {
+    @media (max-width: 400px) {
+      max-width: 40px;
+    }
   }
 }

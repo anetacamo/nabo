@@ -2,6 +2,7 @@ import Head from "next/head";
 import { ReactNode } from "react";
 import Footer from "../../components/Footer/Footer";
 import Menu from "../../components/Menu/Menu";
+import styles from "./DefaultLayout.module.scss";
 
 interface LayoutProps {
   title?: string;
@@ -32,7 +33,7 @@ export const DefaultLayout = ({
         searchQuery={searchQuery}
         onSearchQueryChange={onSearchQueryChange}
       />
-      <div id="content" className={css} style={{ paddingTop: 60 }}>
+      <div id="content" className={`${css} ${styles.content}`}>
         {children}
       </div>
       <Footer />

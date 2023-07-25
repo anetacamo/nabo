@@ -140,7 +140,7 @@ export default function Home() {
       {/* <section className="center">
         <h3 className={styles.mainText}>{pagedata.description}</h3>
       </section> */}
-      <div style={{ padding: 24 }}></div>
+      <div className={styles.menuSpace}></div>
       <MapGl posts={filtered} />
       <div className="center" style={{ marginBottom: -20 }}>
         <CategoryList

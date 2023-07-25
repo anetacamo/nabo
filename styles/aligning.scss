@@ -47,7 +47,7 @@ footer {
 }
 
 .desktop {
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: none;
   }
 }
@@ -56,5 +56,8 @@ section {
   padding: 4rem 2rem;
   @media (max-width: 700px) {
     padding: 3rem 1.5rem;
+  }
+  @media (max-width: 400px) {
+    padding: 2rem 1rem;
   }
 }
