@@ -5,7 +5,7 @@
   "helper": "note that by pressing above button, submited data will be reviewed and solely used for purpose of public display on this page. therefore be warned to not share any kind of sensitive information. Please inform us if you would like your data to be deleted or changed on this mail",
   "inputs": [
     {
-      "label": "Navn",
+      "label": "Navn på ressource",
       "name": "title",
       "required": true
     },
