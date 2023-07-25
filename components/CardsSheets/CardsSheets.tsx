@@ -20,7 +20,6 @@ export default function CardsSheets(members: { members: Blog[] }) {
     <div className={`flex-center ${styles.container}`}>
       {members.members.map((post: Blog, index: number) => (
         <a
-          target="_blank"
           href={`/cards/${slugify(post.title)}`}
           key={index}
           rel="noopener noreferrer"
