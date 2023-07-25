@@ -49,12 +49,12 @@
   ],
   "textAreas": [
     {
-      "label": "Om",
+      "label": "Om ressourcen",
       "name": "description",
       "required": true
     },
     {
-      "label": "Hvordan kan vi bruger det?",
+      "label": "Hvordan kan man bruge denne ressource?",
       "name": "howtouse"
     }
   ],
