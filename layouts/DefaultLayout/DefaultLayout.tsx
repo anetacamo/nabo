@@ -10,7 +10,8 @@ interface LayoutProps {
   css?: string;
   description?: string;
   searchQuery?: string;
-  onSearchQueryChange: (e: string) => void;
+  onSearchQueryChange?: (e: string) => void;
+  menu?: boolean;
 }
 
 export const DefaultLayout = ({
@@ -20,6 +21,7 @@ export const DefaultLayout = ({
   description,
   searchQuery,
   onSearchQueryChange,
+  menu,
 }: LayoutProps) => {
   return (
     <>
@@ -32,7 +34,9 @@ export const DefaultLayout = ({
       <Menu
         searchQuery={searchQuery}
         onSearchQueryChange={onSearchQueryChange}
+        menu={menu}
       />
+
       <div id="content" className={`${css} ${styles.content}`}>
         {children}
       </div>

@@ -1,4 +1,4 @@
-import { faClose, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Papa, { ParseResult } from "papaparse";
 import { useEffect, useMemo, useState } from "react";
@@ -53,7 +53,6 @@ const NewMember = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (spam !== "") {
-      console.log("watch out spambot");
     } else {
       // axios
       //   .post(
@@ -186,7 +185,7 @@ const NewMember = () => {
                     style={{ marginLeft: -12, marginRight: 16 }}
                   />
                 )}
-                submit form
+                {pagedata.submit_button}
               </span>
             </button>
           </div>
@@ -195,13 +194,13 @@ const NewMember = () => {
             {!formReady && (
               <div className="green flex-center-hor">
                 <FontAwesomeIcon icon={faClose} className={styles.icon} />
-                <p>Fields with star are required.</p>
+                <p>{pagedata.required_fields_message}</p>
               </div>
             )}
             {formSent && (
               <div className="green flex-center-hor">
                 <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-                <p>Succes! your entry was submitted.</p>
+                <p>{pagedata.form_submitted_message}</p>
               </div>
             )}
             <p className={styles.helper}>{pagedata.helper}</p>

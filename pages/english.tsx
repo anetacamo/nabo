@@ -1,8 +1,8 @@
-import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
-import pagedata from "../texts/english.json";
+import CrookedImage from "../components/CrookedImage/CrookedImage";
 import Section from "../components/Section/Section";
 import TypeCards from "../components/TypeCards/TypeCards";
-import CrookedImage from "../components/CrookedImage/CrookedImage";
+import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
+import pagedata from "../texts/english.json";
 import SectionType from "../types/section.type.ts";
 
 export default function English() {

@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
-
-import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
-import CategoryList from "../components/CategoryList/CategoryList";
-import SearchField from "../components/SearchField/SearchField";
-import CardsSheets from "../components/CardsSheets/CardsSheets";
-import TagsList from "../components/TagsList/TagsList";
-import MapGl from "../components/Map/MapGl";
-import TagWithX from "../components/TagWithX/TagWithX";
-
 import Papa, { ParseResult } from "papaparse";
+import React, { useEffect, useState } from "react";
+import CardsSheets from "../components/CardsSheets/CardsSheets";
+import CategoryList from "../components/CategoryList/CategoryList";
+import FilterDisplay from "../components/FilterDisplay/FilterDisplay";
+import MapGl from "../components/Map/MapGl";
+import TagsList from "../components/TagsList/TagsList";
+import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
-import styles from "./Home/Home.module.scss";
 import Blog from "../types/card.type";
-import { getColor } from "../utils/getColor";
+import styles from "./Home/Home.module.scss";
 
 export default function Home() {
   const [category, setCategory] = useState<string>("");
@@ -25,7 +21,6 @@ export default function Home() {
   const [filtered, setFiltered] = useState<Blog[]>([]);
 
   useEffect(() => {
-    console.log("home download stuff");
     let unsubscribed = false;
 
     Papa.parse(
@@ -56,7 +51,6 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log("filter through");
     setFiltered(
       blogs
         .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
@@ -71,7 +65,6 @@ export default function Home() {
   }, [category, tag, searchQuery]);
 
   const onCategorySet = (cat: string) => {
-    console.log("on category set");
     if (category === cat) {
       setCategory("");
       setTag("");
@@ -96,50 +89,23 @@ export default function Home() {
       css={"bg-black"}
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
+      menu
     >
-      <section className={styles.topMenu}>
-        {/* <SearchField
+      {/* <SearchField
+        category={category}
           searchQuery={searchQuery}
           onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
         /> */}
-        <div className={`flex ${styles.searchContainer}`}>
-          <p>
-            showing all{" "}
-            {category.length === 0 || (
-              <TagWithX
-                name={category}
-                color={getColor(category)}
-                onCloseClick={() => setCategory("")}
-              />
-            )}
-            {tag.length === 0 || (
-              <>
-                {" "}
-                tagged{" "}
-                <TagWithX
-                  name={tag}
-                  color="turqoise"
-                  onCloseClick={() => setTag("")}
-                />
-              </>
-            )}
-            {searchQuery && (
-              <>
-                {" "}
-                including{" "}
-                <TagWithX
-                  name={searchQuery}
-                  onCloseClick={() => setSearchQuery("")}
-                />
-              </>
-            )}
-            <span className="blue"> {filtered.length} results</span>
-          </p>
-        </div>
-      </section>
-      {/* <section className="center">
-        <h3 className={styles.mainText}>{pagedata.description}</h3>
-      </section> */}
+      <FilterDisplay
+        category={category}
+        onCloseCategoryClick={() => setCategory("")}
+        tag={tag}
+        onCloseTagClick={() => setTag("")}
+        searchQuery={searchQuery}
+        onCloseSearchClick={() => setSearchQuery("")}
+        filteredLength={filtered.length}
+      />
+
       <div className={styles.menuSpace}></div>
       <MapGl posts={filtered} />
       <div className="center" style={{ marginBottom: -20 }}>
@@ -164,7 +130,7 @@ export default function Home() {
         {entryPerPage < filtered.length && (
           <div className="flex-center-hor">
             <button onClick={() => setEntryPerPage(entryPerPage + 36)}>
-              load more
+              {pagedata.load_more_button}
             </button>
             <p className="blue" style={{ marginLeft: 12 }}>
               showing {entryPerPage} of {filtered.length}

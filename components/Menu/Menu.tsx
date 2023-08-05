@@ -9,10 +9,15 @@ import SearchField from "../SearchField/SearchField";
 
 interface MenuProps {
   searchQuery?: string;
+  menu?: boolean;
   onSearchQueryChange: (e: string) => void;
 }
 
-export default function Menu({ searchQuery, onSearchQueryChange }: MenuProps) {
+export default function Menu({
+  searchQuery,
+  onSearchQueryChange,
+  menu,
+}: MenuProps) {
   const [open, setOpen] = useState(false);
 
   const { asPath } = useRouter();
@@ -31,10 +36,12 @@ export default function Menu({ searchQuery, onSearchQueryChange }: MenuProps) {
             </Link>
 
             {/* <SearchField /> */}
-            <SearchField
-              searchQuery={searchQuery}
-              onSearchQueryChange={onSearchQueryChange}
-            />
+            {menu && (
+              <SearchField
+                searchQuery={searchQuery}
+                onSearchQueryChange={onSearchQueryChange}
+              />
+            )}
           </div>
 
           <div className="flex desktop">

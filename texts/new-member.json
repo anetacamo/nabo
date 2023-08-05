@@ -3,6 +3,9 @@
   "description": "Står du for, eller kender du til en ressource, du synes skal være på kortet? Udfyld formularen, så vender vi tilbage til dig eller poster dig direkte i kortet.",
   "meta": "this short text is optional if above description is short enough. should be no longer then 155 characters long. usd for google seacg results",
   "helper": "Bemærk, at ved at trykke på ovenstående knap vil indsendte data blive gennemgået og udelukkende brugt til offentlig visning på denne side. Vær derfor advaret om ikke at dele nogen form for følsomme oplysninger. Giv os venligst besked, hvis du ønsker, at dine data skal slettes eller ændres via info@frontloberne.dk",
+  "submit_button": "submit form",
+  "required_fields_message": "Fields with star are required.",
+  "form_submitted_message": "Succes! your entry was submitted.",
   "inputs": [
     {
       "label": "Navn på ressource",
@@ -17,7 +20,7 @@
       "label": "Hjemmeside",
       "name": "link"
     },
-     {
+    {
       "label": "URL til billede",
       "name": "billedlink"
     },
