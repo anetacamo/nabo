@@ -2,50 +2,50 @@
   {
     "name": "udstillingssted",
     "color": "green",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Exhibition spaces - these are places that show visual art. Start here if you're looking for a place to show sculptures, drawings, paintings, etc. Filter with subtags like gallery, museum, or cafe, to find places with different barriers-to-entry.",
+    "about": "Steder der udstiller visuel kunst, for eks; tegninger, malerier, skulpturer. Søg gennem sub-tags ligesom cafe, galleri, museum, til at spise ned. Husk at visuel kunst kan udstillets alle mulige stede, ligesom butikker og kulturhuse, også."
   },
   {
     "name": "arbejdsrum",
     "color": "salmon",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Workspaces - these are places to get your creative work done. Everything from metal working studios to co-working spaces.",
+    "about": "Disse er steder, hvor du kan få dit kreative arbejde gjort. Alt fra åbne værksteder til co-working spaces."
   },
   {
     "name": "venue",
     "color": "yellow",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Venues - these are places for exhibiting art on the stage, performance art, music, theater, etc. ",
+    "about": "det er steder for udstilling af kunst på scenen, performancekunst, musik, teater mv."
   },
   {
     "name": "fællesskab",
     "color": "pink",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "re kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Communities - these are groups and collectives, not always with a dedicated location, that meet around a shared interest. Find a crew to skateboard with, or a team of DJs to play at your event.",
+    "about": "disse er grupper og kollektiver, der mødes omkring en fælles interesse. Find et hold at skateboarde med eller et DJ kollektiv til at spille til dit arrangement."
   },
 
   {
     "name": "media",
     "color": "blue",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "re kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Media - these are print and online magazines, radio stations, and other media outlets. These are great places to publicize your own work, and find interesting goings on in the city.",
+    "about": "disse er trykte og online magasiner, radiostationer og andre medier. Disse er gode steder at offentliggøre dit eget arbejde og finde interessante ting, der foregår i byen."
   },
   {
     "name": "læring",
     "color": "darkblue",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "re kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Learning - these are places that have a focus on learning. Here you can find place to learn everything from pottery, to filmmaking, to welding, to fundraising. Some run years-long programs, and some host hour-long workshops.",
+    "about": "Disser er steder, der har fokus på læring. Her kan du finde steder at lære alt fra keramik, til filmproduktion, til svejsning, til fundraising. Nogle kører årelange programmer, og nogle afholder timelange workshops."
   },
   {
     "name": "events",
     "color": "greenlight",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "re kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Events - these are spaces and groups that put on events; some annual, some monthly, some weekly. This is a good place to find stages to perform on, and interesting events to attend.",
+    "about": "Her finder du grupper og rum, der laver arrangementer; nogle årlige, nogle månedlige, nogle ugentlige. Dette er et godt sted at finde scener at optræde på og interessante begivenheder at deltage i."
   },
   {
     "name": "ressource",
     "color": "pinkdark",
-    "about_en": "Nabø is an interactive guide to help you organise all spheres of your cultural event and match you with the right people and facilities you might havent even know existed",
-    "about": "re kvinder, piger og non-binære til at blive en del af skateboardmiljøet. Skateducate er en frivillig forening, der primært arbejder for at få flere kvinder, piger og non-binære til at blive en del af skateboardmiljøet."
+    "about_en": "Resources - these are places that offer things you might need when working in arts and culture. A free furniture store, a print shop, places to borrow clothes, etc.",
+    "about": "Disse er steder, der tilbyder ting, du måske har brug for, når du arbejder med kunst og kultur. En gratis møbelbutik, et trykkeri, steder at låne tøj mv."
   }
 ]
