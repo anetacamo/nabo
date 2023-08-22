@@ -60,7 +60,7 @@ const NewMember = () => {
       //     member
       //   )
       //   .then((response) => {
-
+      console.log(member);
       setFormSent(true);
     }
 

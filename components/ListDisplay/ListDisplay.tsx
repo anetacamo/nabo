@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
-import { FaArrowRight } from 'react-icons/fa';
-import styles from './ListDisplay.module.scss';
+import { FaArrowRight } from "react-icons/fa";
+import styles from "./ListDisplay.module.scss";
 
-import Blog from '../../types/card.type';
+import Blog from "../../types/card.type";
 
 interface ListDisplayProps {
   posts: Blog[];
@@ -23,20 +23,20 @@ const ListDisplay = ({ posts }: ListDisplayProps) => {
           }
           tabIndex={0}
           onKeyPress={() => (Object.keys(extended).length === 0 ? post : {})}
-          role='button'
+          role="button"
           key={index}
         >
           <div className={`flex-center ${styles.flexName}`}>
             <div>
               <h2 className={styles.title}>
-                {post.title}{' '}
+                {post.title}{" "}
                 <span className={styles.address}>{post.address}</span>
               </h2>
             </div>
             <h4 className={styles.type}>{post.type}</h4>
           </div>
           <div
-            className={`${styles.moreInfo} ${extended === post || 'hidden'}`}
+            className={`${styles.moreInfo} ${extended === post || "hidden"}`}
           >
             <p className={styles.text}>{post.description}</p>
             {/* <ul className='links'>
@@ -49,7 +49,7 @@ const ListDisplay = ({ posts }: ListDisplayProps) => {
             {post.link && (
               <Link href={post.link}>
                 <p className={styles.link}>
-                  <FaArrowRight />{' '}
+                  <FaArrowRight />{" "}
                   <span style={{ marginLeft: 8 }}> visit website</span>
                 </p>
               </Link>
