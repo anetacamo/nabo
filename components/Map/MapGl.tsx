@@ -31,11 +31,11 @@ export default function MapGl({ posts }: MapGiProps) {
     setName(title);
   }, 150);
 
-  const handlOnMouseLeave = () => {
-    setIsHovered(false);
-    debouncedHandleMouseEnter.cancel();
-    setName("");
-  };
+  // const handlOnMouseLeave = () => {
+  //   setIsHovered(false);
+  //   debouncedHandleMouseEnter.cancel();
+  //   setName("");
+  // };
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
