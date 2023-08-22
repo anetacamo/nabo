@@ -4,9 +4,8 @@ import menuItems from "../../texts/menu.json";
 import sections from "../../texts/footer.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faClose } from "@fortawesome/free-solid-svg-icons";
+// import { faClose } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
   faCreativeCommons,
   faCreativeCommonsBy,
   faCreativeCommonsSa,
