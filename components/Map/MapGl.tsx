@@ -26,10 +26,10 @@ export default function MapGl({ posts }: MapGiProps) {
 
   const [isHovered, setIsHovered] = useState(false);
 
-  const debouncedHandleMouseEnter = debounce((title) => {
-    setIsHovered(true);
-    setName(title);
-  }, 150);
+  // const debouncedHandleMouseEnter = debounce((title) => {
+  //   setIsHovered(true);
+  //   setName(title);
+  // }, 150);
 
   // const handlOnMouseLeave = () => {
   //   setIsHovered(false);
