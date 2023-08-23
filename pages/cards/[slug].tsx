@@ -67,16 +67,20 @@ export default function SinglePage() {
         </div>
       </CrookedImage>
 
-      {blog.credit && (
+      {blog?.credit && (
         <p
           style={{
             textAlign: "right",
             marginRight: 12,
-            marginTop: 8,
+            zIndex: 12,
+            position: "relative",
+            fontSize: 12,
+            color: "gray",
+            marginTop: -24,
             fontStyle: "italic",
           }}
         >
-          photo credit: {blog.credit}
+          Foto: {blog?.credit}
         </p>
       )}
 
