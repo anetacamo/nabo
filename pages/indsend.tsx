@@ -53,6 +53,7 @@ const NewMember = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (spam !== "") {
+      console.log("spam here");
     } else {
       // axios
       //   .post(
