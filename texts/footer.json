@@ -1,11 +1,12 @@
 [
   {
-    "title": "About Nabø",
+    "title": "Om Kultur Kortet",
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter."
     "addresses": [
+      ["Læs mer", "<a href='/om'>her</a>"],
       ["", "Skabt of vedligeholdtaf"],
-      ["FL-Logo"],
     ]
+     "image": "/public/page-images/fl-logo.png",    
     
   },
   {
@@ -43,9 +44,10 @@
   {
     "title": "credits",
     "addresses": [
+      ["Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>"]
       ["Made possible by", "ERASMUS+ and the European Union"],
-      ["EU-Logo"],
-      [ "Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>" ]
     ]
+    "image": "/public/page-images/eu-logo.png",
+
   }
 ]
