@@ -45,6 +45,9 @@ button {
   color: white;
   cursor: pointer;
   font-size: 14px;
+  a {
+    color: inherit;
+  }
   &:hover {
     color: black;
     background: transparent;
@@ -89,6 +92,7 @@ textarea {
   font-size: 14px;
   font-weight: 900;
   transition-duration: 350ms;
+
   &:hover {
     background-color: lightgray;
     color: $purple;
