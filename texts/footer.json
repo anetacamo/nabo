@@ -2,19 +2,35 @@
   {
     "title": "About Nabø",
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter."
+    "addresses": [
+      ["", "Skabt of vedligeholdtaf"],
+      ["FL-Logo"],
+    ]
+    
   },
   {
     "title": "Contact",
     "addresses": [
-      ["Frontloberne", "Jægegårdsgade 154c", "Aarhus C", "info@frontloberne.dk"]
+      ["<a href='https://www.frontloberne.dk'>Frontløberne</a>", "Jægegårdsgade 154c", "Aarhus C", "<a href='mailto:info@frontloberne.dk'>info@frontloberne.dk</a>"]
     ]
   },
+
   {
-    "title": "engage",
-    "addresses": [
-      ["Should you be on the map?", "Fill this form to join"],
-      ["Do you want this in your city?", "Fork this repo", "Help us set it up"]
+    "title": "Partnered Cities",
+    "bulletlinks": [
+      { "name": "Nabo Tromsø", "link": "www.google.com" },
+      { "name": "Nabo Skandeborg", "link": "www.google.com" }
     ]
+    "addresses": [
+      ["Skal dit projekt være med på kortet?", "<a href='/indsend'>Indsend</a>"],
+      ["Skal din by have et kultur-kort?", "<a href='https://github.com/anetacamo/nabo'>Fork this repo</a>", "Få <a href='https://anetacamo.github.io/#/'>hjælp til setup</a>"]
+    ]
+  },
+  
+  {
+    "title": "Sidst opdateret: 23 August 2023",
+    "text": "Kultur-Kortet er opdateret løbende. Tage kontakt, hvis du ser noge gammelt info."
+
   },
 
   {
@@ -25,24 +41,11 @@
     ]
   },
   {
-    "title": "Partnered cities",
-    "bulletlinks": [
-      { "name": "Nabo Trømso", "link": "www.google.com" },
-      { "name": "Nabo Skandeborg", "link": "www.google.com" },
-      { "name": "Nabo Silkeborg", "link": "www.google.com" }
-    ]
-  },
-  {
     "title": "credits",
     "addresses": [
       ["Made possible by", "ERASMUS+ and the European Union"],
-      ["Logo"],
-      [
-        "© Nabø Aarhus | 2023",
-        "Photo by somebody",
-        "something by somebody",
-        "Code by Aneta Camo"
-      ]
+      ["EU-Logo"],
+      [ "Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>" ]
     ]
   }
 ]
