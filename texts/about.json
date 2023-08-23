@@ -6,9 +6,12 @@
   "sections": [
 
     {
-      "title": "Are you looking to organise a festival?",
-      "text": "If you have a project group or a team of youths who want some input, we would be happy to visit you and make a presentation, facilitate a workshop or put together a longer teaching process. Contact us to learn more.",
-      "buttons": [{ "name": "catering" }, { "name": "accomodation" }],
+      "title": "Are you testing button functionality?",
+      "text": "This is Liam here, playing around with the functionality of buttons on the platform.",
+      "buttons": [
+        { "name": "google", "link": "https://www.google.com" }, 
+        { "name": "english", "link": "/english" }
+      ],
       "orientation": "left"
     },
     {
