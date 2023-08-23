@@ -6,13 +6,14 @@
   "sections": [
 
     {
-      "title": "Are you testing button functionality?",
-      "text": "This is Liam here, playing around with the functionality of buttons on the platform.",
+      "title": "Kender du til noget der skal med på kortet?",
+      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet? \\n Kortet var sidst opdateret 23-Aug-2023",
       "buttons": [
-        { "name": "google", "link": "https://www.google.com" }, 
-        { "name": "english", "link": "/english" }
+        { "name": "indsend", "link": "/indsend" }
       ],
       "orientation": "left"
+      "background": "yellow"
+
     },
     {
       "title": "Or looking for a venue to host your event?",
@@ -32,7 +33,7 @@
       "background": "black"
     },
     {
-      "title": "Hvorfor de kategorier??",
+      "title": "Hvorfor de kategorier?",
       "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
       "background": "white",
       "orientation": "center"
