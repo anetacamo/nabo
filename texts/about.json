@@ -1,5 +1,5 @@
 {
-  "title": "Om Kultur-Kortet Aarhus",
+  "title": "Kultur-Kortet Aarhus",
   "image": "/page-images/about.png",
   "description": "Kultur-Kortet er et samlingssted af ressourcer Aarhusianske kulturskabere kan trække på til at lave udstillinger, spille koncerter, holde workshops, og meget andet.",
   "meta": "",
@@ -32,10 +32,9 @@
       "background": "black"
     },
     {
-      "title": "Or just an individual wanting to attend some workshop?",
-      "text": "We are in eye level and always create fun and action oriented workshops. We can put together workshops in a specific subject or we can create a longer course across different workshops. We adjust our teachings to your wishes and needs. Below this is an overview of some of the subjects, we offer workshops in.",
-      "buttons": [{ "name": "workshops" }, { "name": "workspaces" }],
-      "background": "yellow",
+      "title": "Hvorfor de kategorier??",
+      "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
+      "background": "white",
       "orientation": "center"
     }
   ]
