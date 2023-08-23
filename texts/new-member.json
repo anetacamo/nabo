@@ -17,6 +17,11 @@
       "name": "address"
     },
     {
+      "label": "Latitude",
+      "name": "latitude",
+      "helper": "to get longitude and latitude find yourself at any map app, right click and fill in the coordinates here. center of our map. latitude: 56.1573840, longitude:10.2007413"
+    },
+    {
       "label": "Hjemmeside",
       "name": "link"
     },
@@ -25,13 +30,12 @@
       "name": "billedlink"
     },
     {
-      "label": "Longitude",
-      "name": "longitude"
+      "label": "Billede credit",
+      "name": "credit"
     },
     {
-      "label": "Latitude",
-      "name": "latitude",
-      "helper": "to get longitude and latitude find yourself at any map app, right click and fill in the coordinates here. center of our map. latitude: 56.1573840, longitude:10.2007413"
+      "label": "Longitude",
+      "name": "longitude"
     }
   ],
 

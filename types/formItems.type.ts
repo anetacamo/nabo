@@ -1,6 +1,7 @@
 const sheetNames = [
   "title",
   "supertag",
+  "credit",
   "type",
   "link",
   "address",
