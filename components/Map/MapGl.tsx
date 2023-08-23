@@ -24,7 +24,7 @@ export default function MapGl({ posts }: MapGiProps) {
     zoom: 12,
   });
 
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
 
   // const debouncedHandleMouseEnter = debounce((title) => {
   //   setIsHovered(true);
