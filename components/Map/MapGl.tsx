@@ -53,6 +53,7 @@ export default function MapGl({ posts }: MapGiProps) {
           fontSize: 28,
           letterSpacing: 1,
           lineHeight: 1.2,
+          backgroundColor: "white",
         }}
       >
         <span className="purple">{pagedata.title}</span>

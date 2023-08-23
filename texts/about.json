@@ -4,16 +4,12 @@
   "description": "Kultur-Kortet er et samlingssted af ressourcer Aarhusianske kulturskabere kan trække på til at lave udstillinger, spille koncerter, holde workshops, og meget andet.",
   "meta": "",
   "sections": [
-
     {
       "title": "Kender du til noget der skal med på kortet?",
       "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet? \\n Kortet var sidst opdateret 23-Aug-2023",
-      "buttons": [
-        { "name": "indsend", "link": "/indsend" }
-      ],
-      "orientation": "left"
+      "buttons": [{ "name": "indsend", "link": "/indsend" }],
+      "orientation": "left",
       "background": "yellow"
-
     },
     {
       "title": "Or looking for a venue to host your event?",
