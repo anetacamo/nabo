@@ -8,7 +8,7 @@ import styles from "./MapGl.module.scss";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-import { debounce } from "lodash";
+//import { debounce } from "lodash";
 
 import pagedata from "../../texts/home.json";
 
