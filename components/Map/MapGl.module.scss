@@ -73,3 +73,26 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
     }
   }
 }
+
+.textContainer {
+  position: absolute;
+  z-index: 6;
+  height: 500px;
+  display: flex;
+  right: 0;
+  align-items: center;
+}
+
+.mainTitle {
+  color: black;
+  text-transform: lowercase;
+  background-color: white;
+  padding: 1.5rem;
+  max-width: 500px;
+  border-radius: 8px;
+
+  text-align: right;
+  font-size: 28px;
+  letter-spacing: 1;
+  line-height: 1.2;
+}

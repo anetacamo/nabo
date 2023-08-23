@@ -39,27 +39,13 @@ export default function MapGl({ posts }: MapGiProps) {
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
-      <h2
-        className={styles.mainTitle}
-        style={{
-          position: "absolute",
-          color: "black",
-          top: 185,
-          zIndex: 4,
-          textTransform: "lowercase",
-          maxWidth: 500,
-          right: "2rem",
-          textAlign: "right",
-          fontSize: 28,
-          letterSpacing: 1,
-          lineHeight: 1.2,
-          backgroundColor: "white",
-        }}
-      >
-        <span className="purple">{pagedata.title}</span>
-        <br />
-        {pagedata.description}
-      </h2>
+      <div className={styles.textContainer}>
+        <h2 className={styles.mainTitle}>
+          <span className="purple">{pagedata.title}</span>
+          <br />
+          {pagedata.description}
+        </h2>
+      </div>
       <Map
         style={{ width: "100vw", height: "500px", position: "relative" }}
         {...viewState}
