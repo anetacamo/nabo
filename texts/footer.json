@@ -1,12 +1,9 @@
 [
   {
     "title": "About Nabø",
-    "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter."
-    "addresses": [
-      ["", "Skabt of vedligeholdtaf"],
-      ["FL-Logo"],
-    ]
-    
+    "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter.",
+    "addresses": 
+      ["", "Skabt of vedligeholdtaf","FL-Logo"],    
   },
   {
     "title": "Contact",

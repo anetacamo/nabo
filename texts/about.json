@@ -6,14 +6,14 @@
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet?",
-      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet?<br/><br/>Kortet var sidst opdateret 23-Aug-2023",
+      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet?<br/><br/>Kortet var sidst \\n\\n opdateret \n\n 23-Aug-2023",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
       "background": "yellow"
     },
     {
       "title": "Or looking for a venue to host your event?",
-      "text": "To us, a project isn't just a project, but something that is rooted in a need to create change. Therefore, the meaningful element of the project is the focal point for our teaching and workshops. Projects shouldn’t just be created for the sake of the project - they should create a positive change!",
+      "text": "To us, a project isn't just a project, but something that is rooted in a need to create change. Therefore, the meaningful element of the project is the focal point for our teaching and workshops. Projects shouldn't just be created for the sake of the project - they should create a positive change!",
       "background": "salmon",
       "orientation": "right"
     },
