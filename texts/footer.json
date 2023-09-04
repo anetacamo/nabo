@@ -1,14 +1,22 @@
 [
   {
-    "title": "About Nabø",
+    "title": "Om Kultur Kortet",
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter.",
-    "addresses": 
-      ["", "Skabt of vedligeholdtaf","FL-Logo"],    
+    "addresses": [
+      ["Læs mer", "<a href='/om'>her</a>"],
+      ["", "Skabt of vedligeholdtaf"]
+    ],
+    "image": "/public/page-images/fl-logo.png"
   },
   {
     "title": "Contact",
     "addresses": [
-      ["<a href='https://www.frontloberne.dk'>Frontløberne</a>", "Jægegårdsgade 154c", "Aarhus C", "<a href='mailto:info@frontloberne.dk'>info@frontloberne.dk</a>"]
+      [
+        "<a href='https://www.frontloberne.dk'>Frontløberne</a>",
+        "Jægegårdsgade 154c",
+        "Aarhus C",
+        "<a href='mailto:info@frontloberne.dk'>info@frontloberne.dk</a>"
+      ]
     ]
   },
 
@@ -17,17 +25,23 @@
     "bulletlinks": [
       { "name": "Nabo Tromsø", "link": "www.google.com" },
       { "name": "Nabo Skandeborg", "link": "www.google.com" }
-    ]
+    ],
     "addresses": [
-      ["Skal dit projekt være med på kortet?", "<a href='/indsend'>Indsend</a>"],
-      ["Skal din by have et kultur-kort?", "<a href='https://github.com/anetacamo/nabo'>Fork this repo</a>", "Få <a href='https://anetacamo.github.io/#/'>hjælp til setup</a>"]
+      [
+        "Skal dit projekt være med på kortet?",
+        "<a href='/indsend'>Indsend</a>"
+      ],
+      [
+        "Skal din by have et kultur-kort?",
+        "<a href='https://github.com/anetacamo/nabo'>Fork this repo</a>",
+        "Få <a href='https://anetacamo.github.io/#/'>hjælp til setup</a>"
+      ]
     ]
   },
-  
+
   {
     "title": "Sidst opdateret: 23 August 2023",
     "text": "Kultur-Kortet er opdateret løbende. Tage kontakt, hvis du ser noge gammelt info."
-
   },
 
   {
@@ -40,9 +54,11 @@
   {
     "title": "credits",
     "addresses": [
-      ["Made possible by", "ERASMUS+ and the European Union"],
-      ["EU-Logo"],
-      [ "Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>" ]
-    ]
+      [
+        "Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>"
+      ],
+      ["Made possible by", "ERASMUS+ and the European Union"]
+    ],
+    "image": "/public/page-images/eu-logo.png"
   }
 ]
