@@ -99,7 +99,7 @@ const NewMember = () => {
         <form
           className={styles.form}
           method="POST"
-          action={process.env.REACT_APP_SUBMIT_FORM}
+          action="https://script.google.com/macros/s/AKfycbynyz2uTNn1k4arMg74RHPYguQB2G3LGHdxht9rTsBGKwyWAWaGdSK2ysx-xgh8BQFp/exec"
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
