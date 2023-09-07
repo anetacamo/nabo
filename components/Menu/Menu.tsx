@@ -6,6 +6,7 @@ import Hamburger from "../Hamburger/Hamburger";
 import menuItems from "../../texts/menu.json";
 import { useRouter } from "next/router";
 import SearchField from "../SearchField/SearchField";
+import pagedata from "../../texts/about.json";
 
 interface MenuProps {
   searchQuery?: string;
@@ -32,7 +33,7 @@ export default function Menu({
           <SkipNav />
           <div className="flex">
             <Link href="/">
-              <a className={`${styles.logo} logo h2`}>Kultur-Kortet Århus</a>
+              <a className={`${styles.logo} logo h2`}>{pagedata.title}</a>
             </Link>
 
             {/* <SearchField /> */}

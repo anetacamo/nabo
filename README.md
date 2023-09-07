@@ -1,9 +1,11 @@
+1. duplicate the whole project on the local machine
+2. create new repository
+
 ### TODO
 
 - add version
 - menu needs background
 - active tag should be always visisble
-- optimize search in the bar
 - scss colors name convention
 - change pixels to rem everywhere
 - page slugs in variable
@@ -14,8 +16,6 @@ menu:
 
 ## backlog
 
-- Mini-map showing the location of the resource (if applicable)
-- Move “super tag” and “type” to underneath “title” and increase readability through using same text color.
 - add a suggestion
 - on click show overlapping items in a row
 - show slider on page
