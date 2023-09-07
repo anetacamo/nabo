@@ -1,5 +1,11 @@
 1. duplicate the whole project on the local machine
 2. create new repository
+3. connect to github
+4. add vercel
+5. create the google sheets
+6. link the db
+7. set up the mapbox
+8. set up the form
 
 ### TODO
 
