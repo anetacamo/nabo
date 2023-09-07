@@ -14,25 +14,6 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-black">
-      {/* <div
-        style={{
-          width: "100%",
-          height: 380,
-          position: "relative",
-
-          overflow: "hidden",
-          backgroundColor: "black",
-        }}
-      >
-        <Image
-          src={`/bgs/bg.png`}
-          alt="illustrated background with houses"
-          layout="fill"
-          quality="1"
-          objectFit="cover"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-      </div> */}
       <section className={styles.footer}>
         {sections.map((s, index) => (
           <div className={styles.column} key={index}>
@@ -81,10 +62,6 @@ export default function Footer() {
             )}
 
             <div className="divider" style={{ marginLeft: 0 }}></div>
-            {/* <div style={{ padding: "1.5rem" }}></div>
-            <FontAwesomeIcon icon={faClose} className={`${styles.icon} red `} />
-            <div style={{ padding: "1.5rem" }}></div> */}
-            {/* <FontAwesomeIcon icon={solid("creative-commons")} /> */}
           </div>
         ))}
       </section>

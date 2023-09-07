@@ -12,10 +12,10 @@
     "title": "Contact",
     "addresses": [
       [
-        "<a href='https://www.frontloberne.dk'>Frontløberne</a>",
+        "<a href='https://www.frontloberne.dk' rel='noopener noreferrer'  target='_blank' >Frontløberne</a>",
         "Jægegårdsgade 154c",
         "Aarhus C",
-        "<a href='mailto:info@frontloberne.dk'>info@frontloberne.dk</a>"
+        "<a href='mailto:info@frontloberne.dk' rel='noopener noreferrer' target='_blank' >info@frontloberne.dk</a>"
       ]
     ]
   },
@@ -33,8 +33,8 @@
       ],
       [
         "Skal din by have et kultur-kort?",
-        "<a href='https://github.com/anetacamo/nabo'>Fork this repo</a>",
-        "Få <a href='https://anetacamo.github.io/#/'>hjælp til setup</a>"
+        "<a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a>",
+        "Få <a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>hjælp til setup</a>"
       ]
     ]
   },
@@ -57,7 +57,7 @@
     "addresses": [
       [
         "Code and Design by",
-        "<a href='https://anetacamo.github.io/#/'>Aneta Camo</a>"
+        "<a href='https://anetacamo.github.io/#/' rel='noopener noreferrer'  target='_blank' >Aneta Camo</a>"
       ],
       ["Made possible by", "ERASMUS+ and the European Union"]
     ],

@@ -24,28 +24,8 @@ export default function MapGl({ posts }: MapGiProps) {
     zoom: 12,
   });
 
-  // const [isHovered, setIsHovered] = useState(false);
-
-  // const debouncedHandleMouseEnter = debounce((title) => {
-  //   setIsHovered(true);
-  //   setName(title);
-  // }, 150);
-
-  // const handlOnMouseLeave = () => {
-  //   setIsHovered(false);
-  //   debouncedHandleMouseEnter.cancel();
-  //   setName("");
-  // };
-
   return (
     <div className={`${styles.mapwhole} desktop`}>
-      {/* <div className={styles.textContainer}>
-        <h2 className={styles.mainTitle}>
-          <span className="purple">{pagedata.title}</span>
-          <br />
-          {pagedata.description}
-        </h2>
-      </div> */}
       <Map
         style={{ width: "100vw", height: "500px", position: "relative" }}
         {...viewState}
