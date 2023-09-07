@@ -51,10 +51,30 @@ const NewMember = () => {
 
   //submit event
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // const formEle = document.querySelector("form");
+    // const formDatab = new FormData(formEle);
+    console.log("submit click");
+    console.log(member);
+    console.log(JSON.stringify(member));
     event.preventDefault();
     if (spam !== "") {
       console.log("spam here");
     } else {
+      fetch(
+        "https://script.google.com/macros/s/AKfycbxM0sBh-msG8sd2rGBDk6pXKvECqp_iq_fGSYHH1TcG5lk2Hbm15g7YAQRdxAk7mUv3Zg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: JSON.stringify(member),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       // axios
       //   .post(
       //     "https://sheet.best/api/sheets/fcf501b9-9c62-4b8a-8188-900ed153fa38",
@@ -76,7 +96,11 @@ const NewMember = () => {
       description={pagedata.meta ?? pagedata.description}
     >
       <section>
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form
+          className={styles.form}
+          method="POST"
+          action="https://script.google.com/macros/s/AKfycbzWLjpLYe7Y8GKLi45aQbLjz_BXcAVn8d9qLvS1jJFTHLuQu_8erWlDqMXIZdDPkwV2Ew/exec"
+        >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
 

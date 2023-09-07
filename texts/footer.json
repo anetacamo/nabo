@@ -3,7 +3,7 @@
     "title": "Om Kultur Kortet",
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter.",
     "addresses": [
-      ["Læs mer", "<a href='/om'>her</a>"],
+      ["<a href='/om'>Læs mer her</a>"],
       ["", "Skabt of vedligeholdtaf"]
     ],
     "image": "/public/page-images/fl-logo.png"
@@ -40,7 +40,8 @@
   },
 
   {
-    "title": "Sidst opdateret: 23 August 2023",
+    "title": "Sidst opdateret",
+    "addresses": [["<i>September 6, 2023</i>"]],
     "text": "Kultur-Kortet er opdateret løbende. Tage kontakt, hvis du ser noge gammelt info."
   },
 
@@ -55,7 +56,8 @@
     "title": "credits",
     "addresses": [
       [
-        "Code and Design by <a href='https://anetacamo.github.io/#/'>Aneta Camo</a>"
+        "Code and Design by",
+        "<a href='https://anetacamo.github.io/#/'>Aneta Camo</a>"
       ],
       ["Made possible by", "ERASMUS+ and the European Union"]
     ],

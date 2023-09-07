@@ -6,13 +6,13 @@
   flex-wrap: wrap;
 }
 .column {
-  max-width: calc(25% - 60px);
-  min-width: calc(25% - 60px);
+  max-width: calc(33.3% - 60px);
+  min-width: calc(33.3% - 60px);
   padding-right: 60px;
   &:first-of-type,
   &:nth-of-type(4) {
-    max-width: calc(50% - 60px);
-    min-width: calc(50% - 60px);
+    max-width: calc(33.3% - 60px);
+    min-width: calc(33.3% - 60px);
     @media (max-width: 600px) {
       max-width: 100%;
       min-width: 100%;
@@ -24,6 +24,10 @@
   @media (max-width: 600px) {
     max-width: 100%;
     min-width: 100%;
+  }
+  a {
+    text-decoration: underline;
+    color: $blue;
   }
 }
 

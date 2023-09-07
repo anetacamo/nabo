@@ -1,6 +1,5 @@
 import styles from "./Footer.module.scss";
 import IconHolder from "../IconHolder/IconHolder";
-import menuItems from "../../texts/menu.json";
 import sections from "../../texts/footer.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -45,22 +44,18 @@ export default function Footer() {
                 <IconHolder name={line.name} link={line.link} key={index} />
               ))}
 
-            {index === 0 &&
-              menuItems.map((item, index: number) => (
-                <IconHolder name={item.name} link={item.link} key={index} />
-              ))}
-
             {s.addresses &&
               s.addresses.map((adress) =>
                 adress.map((line, index: number) => (
                   <p
+                    dangerouslySetInnerHTML={{
+                      __html: line,
+                    }}
                     key={index}
                     className={`${styles.line} ${
                       index === 0 && styles.highlighted
                     }`}
-                  >
-                    {line}
-                  </p>
+                  ></p>
                 ))
               )}
 

@@ -6,28 +6,12 @@
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet?",
-      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet?<br/><br/>Kortet var sidst \\n\\n opdateret \n\n 23-Aug-2023",
+      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet?<br/><br/><i>Kortet var sidst opdateret 23-Aug-2023</i>",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
-      "background": "yellow"
+      "background": "darkblue"
     },
-    {
-      "title": "Or looking for a venue to host your event?",
-      "text": "To us, a project isn't just a project, but something that is rooted in a need to create change. Therefore, the meaningful element of the project is the focal point for our teaching and workshops. Projects shouldn't just be created for the sake of the project - they should create a positive change!",
-      "background": "salmon",
-      "orientation": "right"
-    },
-    {
-      "title": "Are you looking to organise a festival?",
-      "text": "If you have a project group or a team of youths who want some input, we would be happy to visit you and make a presentation, facilitate a workshop or put together a longer teaching process. Contact us to learn more.",
-      "buttons": [
-        { "name": "catering", "link": "google.com" },
-        { "name": "accomodation" },
-        { "name": "music" }
-      ],
-      "orientation": "left",
-      "background": "black"
-    },
+
     {
       "title": "Hvorfor de kategorier?",
       "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",

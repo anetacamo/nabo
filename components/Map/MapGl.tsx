@@ -39,13 +39,13 @@ export default function MapGl({ posts }: MapGiProps) {
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
-      <div className={styles.textContainer}>
+      {/* <div className={styles.textContainer}>
         <h2 className={styles.mainTitle}>
           <span className="purple">{pagedata.title}</span>
           <br />
           {pagedata.description}
         </h2>
-      </div>
+      </div> */}
       <Map
         style={{ width: "100vw", height: "500px", position: "relative" }}
         {...viewState}
