@@ -13,32 +13,6 @@
     },
 
     {
-      "title": "Kortets Indhold",
-      "text": "Kultur-Kortet er lavet til kultur skabere i Åårhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. De første ~140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Hvis du ser at det står noge forkert, eller hvis hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, kontakte os via info@frontloberne.dk ",
-      "orientation": "center",
-      "background": "yellow",
-    },
-    
-    {
-      "title": "Kortets format",
-      "text": "Kultur-Kortet var udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejd på projektet! Koden bag Kultur-Kortet er open source og gratis tilgængelig. Hvis du vil have et Kultur-Kort i din by, så kan du finde koden på GitHub. Set det op selv, eller få hjælp fra Aneta.",
-      "buttons": [
-        { "name": "GitHub Repo", "link": "https://github.com/anetacamo/nabo" }
-        { "name": "Få hjælp til setup", "link": "https://anetacamo.github.io/#/" }
-                  ],
-      "orientation": "right",
-      "background": "black"
-    },
-
-    
-    {
-      "title": "Muliggjort af Erasmus+",
-      "text": "Kultur-Kortet var udviklet som en del af Nåbø projektet 2022-2023. Nåbø projektet var et samarbejd mellem Frontløberne i Aarhus, og Tvibit i Tromsø, som skabte ressourcer til ung kulturskabere i de to byer. Tusind tak til Erasmus+ og Den Europæiske Union for deres støtte til Nåbø projektet, og Kultur-Kortet. Finansieret af Den Europæiske Union. Synspunkter og holdninger, der kommer til udtryk, er udelukkende forfatterens/forfatternes og er ikke nøvendigvis udtryk for Den Europæiske Unions eller Det Europæiske Forvaltningsorgan for Uddannelse og Kulturs (EACEA) officielle holdning. Hverken den Europæiske Union eller EACEA kan holdes ansvarlig herfor.",
-      "orientation": "left",
-      "background": "salmon"
-    },
-
-    {
       "title": "Hvorfor de kategorier?",
       "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
       "background": "white",
