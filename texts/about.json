@@ -12,6 +12,18 @@
       "background": "darkblue"
     },
 
+
+    {
+      "title": "Kender du til noget der skal med på kortet?",
+      "image": "public/page-images/DA_FundedbytheEU_RGB_BLACK.png"
+      "text": "Finansieret af Den Europæiske Union. Synspunkter og holdninger, der kommer til udtryk, er udelukkende forfatterens/forfatternes og er ikke nøvendigvis udtryk for Den Europæiske Unions eller Det Europæiske Forvaltningsorgan for Uddannelse og Kulturs (EACEA) officielle holdning. Hverken den Europæiske Union eller EACEA kan holdes ansvarlig herfor.",
+      "orientation": "left",
+      "background": "salmon"
+    },
+
+
+
+    
     {
       "title": "Hvorfor de kategorier?",
       "text": "De ressourcer, vi ønskede at sætte på kortet, er super varierede. De her 8 kategorier er det vi kom frem til. Her kan du læse lidt mer om hver af dem.",
