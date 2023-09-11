@@ -18,6 +18,17 @@
       "orientation": "center",
       "background": "yellow"
     },
+
+    {
+      "title": "Kortets format",
+      "text": "Kultur-Kortet var udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejd på projektet! Koden bag Kultur-Kortet er open source og gratis tilgængelig. Hvis du vil have et Kultur-Kort i din by, så kan du finde koden på GitHub. Set det op selv, eller få hjælp fra Aneta.",
+      "buttons": [
+        { "name": "GitHub Repo", "link": "https://github.com/anetacamo/nabo" }
+        { "name": "Få hjælp til setup", "link": "https://anetacamo.github.io/" }
+                  ],
+      "orientation": "right",
+      "background": "black"
+    },
     
     {
       "title": "Hvorfor de kategorier?",
