@@ -8,8 +8,6 @@ import styles from "./MapGl.module.scss";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-//import { debounce } from "lodash";
-
 import pagedata from "../../texts/home.json";
 
 interface MapGiProps {
@@ -26,6 +24,13 @@ export default function MapGl({ posts }: MapGiProps) {
 
   return (
     <div className={`${styles.mapwhole} desktop`}>
+      <div className={styles.textContainer}>
+        <h2 className={styles.mainTitle}>
+          <span className="purple">{pagedata.title}</span>
+          <br />
+          {pagedata.description}
+        </h2>
+      </div>
       <Map
         style={{ width: "100vw", height: "500px", position: "relative" }}
         {...viewState}
