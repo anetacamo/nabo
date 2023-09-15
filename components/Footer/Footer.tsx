@@ -40,6 +40,18 @@ export default function Footer() {
                 ))
               )}
 
+            {s.image && (
+              <img
+                src={s.image}
+                style={{
+                  maxWidth: 240,
+                  maxHeight: 80,
+                  objectFit: "contain",
+                  marginTop: 24,
+                }}
+              />
+            )}
+
             {index === sections.length - 1 && (
               <div style={{ marginTop: 24 }}>
                 <FontAwesomeIcon

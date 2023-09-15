@@ -6,7 +6,7 @@
       ["<a href='/om'>Læs mer her</a>"],
       ["", "Skabt of vedligeholdtaf"]
     ],
-    "image": "/public/page-images/fl-logo.png"
+    "image": "/page-images/fl-logo.png"
   },
   {
     "title": "Contact",
@@ -61,6 +61,6 @@
       ],
       ["Made possible by", "ERASMUS+ and the European Union"]
     ],
-    "image": "/public/page-images/eu-logo.png"
+    "image": "/page-images/eu-logo.png"
   }
 ]
