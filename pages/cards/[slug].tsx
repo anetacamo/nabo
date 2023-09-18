@@ -47,6 +47,14 @@ export default function SinglePage() {
     );
   }, [blogs, router]);
 
+  const descriptionWithLineBreaks = blog?.description
+    .replace(/\\n/g, "\n")
+    .replace(/\\+/g, "");
+
+  const howtouseWithLineBreaks = blog?.howtouse
+    .replace(/\\n/g, "\n")
+    .replace(/\\+/g, "");
+
   return (
     <DefaultLayout>
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
@@ -86,9 +94,9 @@ export default function SinglePage() {
 
       <section style={{ maxWidth: 600, margin: "auto" }}>
         <h4>Beskrivelse</h4>
-        <p>{blog?.description}</p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{descriptionWithLineBreaks}</p>
         <h4>Hvordan du kan benytte denne ressource</h4>
-        <p>{blog?.howtouse}</p>
+        <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
 
       <section className={`bg-black`}>
