@@ -1,12 +1,12 @@
 {
   "title": "Kultur-Kortet Aarhus",
   "image": "/page-images/about.png",
-  "description": "Kultur-Kortet er et samlingssted/overblik af ressourcer aarhusianske kulturskabere kan trække på til at lave udstillinger, spille koncerter, holde workshops, og meget andet.",
+  "description": "Kultur-Kortet er et overblik af ressourcer aarhusianske kulturskabere kan trække på til at lave udstillinger, spille koncerter, holde workshops, og meget andet.",
   "meta": "",
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet?",
-      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne" <br/><br/><i>Kortet var sidst opdateret 18-sept-2023</i>",
+      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne <br/><br/><i>Kortet var sidst opdateret 18-sept-2023</i>",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
       "background": "darkblue"
