@@ -23,7 +23,7 @@
 
     {
       "title": "Kortets format",
-      "text": "Kultur-Kortet er udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejde på projektet! Koden bag Kultur-Kortet er open source og gratis tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
+      "text": "Kultur-Kortet er udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejde på projektet! Koden bag Kultur-Kortet er open source og tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
       "orientation": "right",
       "background": "black"
     },
