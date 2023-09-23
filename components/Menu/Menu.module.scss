@@ -1,4 +1,5 @@
 @import "../../styles/colors-def.scss";
+@import "../../styles/colors.scss";
 
 .nav {
   padding: 0 2rem;
@@ -52,10 +53,9 @@
   align-items: center;
   width: 100%;
   z-index: 22;
-  .logo,
   .li {
     font-size: 1rem;
-    color: $blue;
+    color: $darkblue;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     &:hover {
@@ -71,9 +71,51 @@
   .li {
     margin-left: 1rem;
   }
-  .logo {
-    @media (max-width: 400px) {
-      max-width: 40px;
-    }
+}
+
+.logoText {
+  line-height: 1.2;
+  font-size: 12px;
+  margin-top: 34px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.logo {
+  color: $darkblue;
+  width: 120px;
+  height: 48px;
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  @media (max-width: 400px) {
+    max-width: 40px;
   }
+
+  img {
+    //max-width: 42px;
+    margin-right: 8px;
+    height: 48px;
+  }
+}
+.dark {
+  @extend .bg-black;
+  .logo {
+    color: white;
+  }
+  img {
+    filter: invert(1);
+  }
+  .li {
+    color: $blue;
+  }
+  // .logoSearch {
+  //   position: absolute;
+  //   top: 1.25rem;
+  // }
+  // .menuItems {
+  //   margin-left: auto;
+  // }
 }

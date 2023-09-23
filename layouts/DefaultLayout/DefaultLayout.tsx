@@ -10,8 +10,9 @@ interface LayoutProps {
   css?: string;
   description?: string;
   searchQuery?: string;
-  onSearchQueryChange?: (e: string) => void;
+  onSearchQueryChange: (e: string) => void;
   menu?: boolean;
+  darkMode?: boolean;
 }
 
 export const DefaultLayout = ({
@@ -22,6 +23,7 @@ export const DefaultLayout = ({
   searchQuery,
   onSearchQueryChange,
   menu,
+  darkMode,
 }: LayoutProps) => {
   return (
     <>
@@ -35,9 +37,13 @@ export const DefaultLayout = ({
         searchQuery={searchQuery}
         onSearchQueryChange={onSearchQueryChange}
         menu={menu}
+        darkMode={darkMode}
       />
 
-      <div id="content" className={`${css} ${styles.content}`}>
+      <div
+        id="content"
+        className={`${css} ${styles.content} ${darkMode && "dark"}`}
+      >
         {children}
       </div>
       <Footer />

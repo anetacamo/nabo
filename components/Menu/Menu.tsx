@@ -12,11 +12,13 @@ interface MenuProps {
   searchQuery?: string;
   menu?: boolean;
   onSearchQueryChange: (e: string) => void;
+  darkMode?: boolean;
 }
 
 export default function Menu({
   searchQuery,
   onSearchQueryChange,
+  darkMode,
   menu,
 }: MenuProps) {
   const [open, setOpen] = useState(false);
@@ -27,13 +29,19 @@ export default function Menu({
     <>
       <nav
         role="navigation"
-        className={`bg-black menu ${styles.nav} ${open && styles.open} `}
+        className={`menu ${styles.nav} ${open && styles.open} ${
+          darkMode && styles.dark
+        } `}
       >
         <div className={styles.header}>
           <SkipNav />
-          <div className="flex">
+          <div className={`flex ${styles.logoSearch}`}>
             <Link href="/">
-              <a className={`${styles.logo} logo h2`}>{pagedata.title}</a>
+              <a className={`${styles.logo} logo`}>
+                {" "}
+                <img src="/page-images/logo.png" />
+                <p className={styles.logoText}>{pagedata.title}</p>
+              </a>
             </Link>
 
             {/* <SearchField /> */}
@@ -45,7 +53,7 @@ export default function Menu({
             )}
           </div>
 
-          <div className="flex desktop">
+          <div className={`flex desktop ${styles.menuItems}`}>
             {menuItems.map((item, index) => (
               <Link href={`${item.link}`} key={index}>
                 <a

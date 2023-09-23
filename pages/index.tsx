@@ -14,9 +14,7 @@ export default function Home() {
   const [category, setCategory] = useState<string>("");
   const [tag, setTag] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
-
   const [entryPerPage, setEntryPerPage] = useState<number>(36);
-
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [filtered, setFiltered] = useState<Blog[]>([]);
 
@@ -90,6 +88,7 @@ export default function Home() {
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
       menu
+      darkMode
     >
       {/* <SearchField
         category={category}
