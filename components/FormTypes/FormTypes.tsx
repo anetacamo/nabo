@@ -8,6 +8,8 @@ interface FormTypesProps {
   memberType?: string;
 }
 
+console.log();
+
 export default function FormTypes({ onMemberSet, memberType }: FormTypesProps) {
   return (
     <div className={`${styles.container} flex-center`}>
@@ -18,7 +20,7 @@ export default function FormTypes({ onMemberSet, memberType }: FormTypesProps) {
               ? `bg-${type.color}`
               : type.color
           } `}
-          onClick={() => onMemberSet(slugify(type.name))}
+          onClick={() => onMemberSet(type?.name)}
           key={index}
         >
           {type?.name && <h4 className={styles.title}>{type?.name}</h4>}

@@ -1,3 +1,48 @@
-$border-width: 3px;
+$border-width: 2px;
+$border-mobile: 1.5px;
+
 $section-padding: 4rem 2rem;
 $section-padding-mobile: 3rem 1.5rem;
+
+$phone: 400px;
+$tablet: 700px;
+
+$tag-margin: 4px;
+
+$font-size-10: 10px;
+$font-size-12: 12px;
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-24: 24px;
+$font-size-32: 32px;
+$font-size-40: 40px;
+
+@mixin border {
+  border-width: $border-width;
+  border-radius: 6px;
+  @media (max-width: $phone) {
+    border-width: $border-mobile;
+    border-radius: 4px;
+  }
+}
+
+@mixin padding {
+  padding: 0 2rem;
+  @media (max-width: $tablet) {
+    padding: 0 1.5rem;
+  }
+  @media (max-width: $phone) {
+    padding: 0 1rem;
+  }
+}
+@mixin section {
+  padding: 4rem 2rem;
+  @media (max-width: $tablet) {
+    padding: 3rem 1.5rem;
+  }
+  @media (max-width: $phone) {
+    padding: 2rem 1rem;
+  }
+}

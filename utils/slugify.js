@@ -16,6 +16,7 @@ export function slugify(text) {
       .replace(/ť/g, "t")
       .replace(/ú/g, "u")
       .replace(/ů/g, "u")
+      .replace(/æ/g, "ae")
       .replace(/ž/g, "z")
       .replace(/\s+/g, "-") // Replace spaces with -
       .replace(/[^\w-]+/g, "") // Remove all non-word chars
