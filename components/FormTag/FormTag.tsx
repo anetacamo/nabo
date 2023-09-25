@@ -30,9 +30,7 @@ export default function FormTag({
       .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
   const uniqueSortedTags = [
-    ...new Set(
-      allTags.map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1))
-    ),
+    ...new Set(allTags.map((tag) => tag.toLowerCase())),
   ].sort();
 
   return (
@@ -62,11 +60,7 @@ export default function FormTag({
         <button
           type="button"
           className={styles.suggestButton}
-          onClick={() =>
-            onSelectChange(
-              inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
-            )
-          }
+          onClick={() => onSelectChange(inputValue.toLowerCase())}
         >
           add
         </button>
