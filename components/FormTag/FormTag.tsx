@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import CardType, { Multiselects } from "../../types/card.type";
 import FormType from "../../types/form.type";
 import TagWithX from "../TagWithX/TagWithX";
@@ -6,7 +6,7 @@ import styles from "./FormTag.module.scss";
 import FormLabel from "../FormLabel/FormLabel";
 
 interface FormTagProps extends FormType {
-  onSelectChange: (event: ChangeEvent<HTMLSelectElement>) => void;
+  onSelectChange: (tag: string) => void;
   onCloseClick: (tag: string) => void;
   blogs?: CardType[];
   memberTags?: string;
@@ -23,12 +23,17 @@ export default function FormTag({
   required,
 }: FormTagProps) {
   const allTags: string[] = [];
+  const [inputValue, setInputValue] = useState("");
   blogs?.map((item) =>
     item[name as keyof Multiselects]
       ?.split(",")
       .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
-  const tagsOnce = [...new Set(allTags)];
+  const uniqueSortedTags = [
+    ...new Set(
+      allTags.map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1))
+    ),
+  ].sort();
 
   return (
     <>
@@ -37,15 +42,34 @@ export default function FormTag({
         <select
           name={name}
           id={name}
-          onChange={onSelectChange}
+          onChange={(e) => onSelectChange(e.target.value)}
           className={styles.input}
         >
-          {tagsOnce?.map((c: string, index: number) => (
+          {uniqueSortedTags?.map((c: string, index: number) => (
             <option value={c} key={index}>
               {c}
             </option>
           ))}
         </select>
+      </div>
+      <div className="flex">
+        <input
+          placeholder="suggest a tag"
+          className={styles.suggestText}
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button
+          type="button"
+          className={styles.suggestButton}
+          onClick={() =>
+            onSelectChange(
+              inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+            )
+          }
+        >
+          add
+        </button>
       </div>
       <div>
         {memberTags
@@ -57,6 +81,7 @@ export default function FormTag({
               )
           )}
       </div>
+
       {helper && <p className={styles.helper}>{helper}</p>}
     </>
   );

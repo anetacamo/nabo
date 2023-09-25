@@ -158,9 +158,7 @@ const NewMember = () => {
               onSelectChange={(e) =>
                 setMember({
                   ...member,
-                  [item.name]: `${member[item.name as keyof CardType]}, ${
-                    e.target.value
-                  }`,
+                  [item.name]: `${member[item.name as keyof CardType]}, ${e}`,
                 })
               }
               onCloseClick={(tag: string) =>
