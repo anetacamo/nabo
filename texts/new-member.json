@@ -31,7 +31,7 @@
     },
     {
       "label": "URL til billede",
-      "name": "billedlink"
+      "name": "image"
     },
     {
       "label": "Billede credit",

@@ -1,12 +1,15 @@
 type CardType = {
   title: string;
   supertag?: string;
-  credit?: string;
   type: string;
+  credit?: string;
+  image?: string;
+
   link?: string;
   address?: string;
   latitude?: number;
   longitude?: number;
+
   tags?: string;
   invisible?: string;
   description: string;
@@ -17,13 +20,16 @@ export type Multiselects = Omit<CardType, "longitude" | "latitude">;
 
 export const emptyMember = {
   title: "",
-  credit: "",
   supertag: "",
-  address: "",
+  type: "",
+  credit: "",
+  image: "",
+
   link: "",
+  address: "",
   latitude: 0,
   longitude: 0,
-  type: "events",
+
   tags: "",
   invisible: "",
   description: "",
