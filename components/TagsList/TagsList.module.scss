@@ -1,4 +1,7 @@
 @import "../../styles/colors-def.scss";
+$tag-margin: 0.25rem;
+$margin: 1.5rem;
+$max-width: 1000px;
 
 .icon {
   width: 20px;
@@ -23,4 +26,8 @@
   @media (max-width: 400px) {
     border-width: 1.5px;
   }
+}
+
+.tags {
+  margin-left: -$tag-margin;
 }

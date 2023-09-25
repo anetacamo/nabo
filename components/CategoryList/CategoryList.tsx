@@ -22,7 +22,7 @@ export default function CategoryList({
   });
 
   return (
-    <div className="tags">
+    <div className={styles.tags}>
       {allCategories.map((tag: string, index: number) => (
         <div
           key={index}

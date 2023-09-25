@@ -12,13 +12,11 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
   height: $icon-size;
   width: $icon-size;
   border-radius: 50%;
-
   position: absolute;
   display: flex;
   align-items: center;
   cursor: pointer;
   transition-duration: 150ms;
-
   &.pointed {
     height: $enlarged-icon-size;
     width: $enlarged-icon-size;
@@ -85,14 +83,16 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
 
 .mainTitle {
   color: black;
-  text-transform: lowercase;
-  background-color: white;
+  //  text-transform: lowercase;
+  //  background-color: white;
   padding: 1.5rem;
   max-width: 500px;
   border-radius: 8px;
-
   text-align: right;
-  font-size: 28px;
-  letter-spacing: 0.2px;
+  font-size: 1.25rem;
+  h1 {
+    line-height: 1.4;
+  }
+  //letter-spacing: 2px;
   line-height: 1.2;
 }

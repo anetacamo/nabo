@@ -7,7 +7,6 @@ import styles from "./DefaultLayout.module.scss";
 interface LayoutProps {
   title?: string;
   children?: ReactNode;
-  css?: string;
   description?: string;
   searchQuery?: string;
   onSearchQueryChange: (e: string) => void;
@@ -18,7 +17,6 @@ interface LayoutProps {
 export const DefaultLayout = ({
   children,
   title,
-  css,
   description,
   searchQuery,
   onSearchQueryChange,
@@ -42,7 +40,7 @@ export const DefaultLayout = ({
 
       <div
         id="content"
-        className={`${css} ${styles.content} ${darkMode && "dark"}`}
+        className={` ${styles.content} ${darkMode && "bg-black dark"}`}
       >
         {children}
       </div>

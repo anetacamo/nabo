@@ -1,3 +1,15 @@
+$max-width: 1000px;
+
+@mixin padding {
+  padding: 0 2rem;
+  @media (max-width: 700px) {
+    padding: 0 1.5rem;
+  }
+  @media (max-width: 400px) {
+    padding: 0 1rem;
+  }
+}
+
 .topMenu {
   top: 0;
   position: fixed;
@@ -5,20 +17,45 @@
   z-index: 3;
   background-color: black;
   margin: 0;
-  //padding: 0;
-  padding: 0 2rem;
-  @media (max-width: 700px) {
-    padding: 0 1.5rem;
-  }
-
-  @media (max-width: 400px) {
-    padding: 0 1rem;
-  }
+  @include padding;
 }
 
 .menuSpace {
   padding: 24px;
-  @media (max-width: 400px) {
-    padding: 8px;
+  @media (max-width: 1200px) {
+    padding: 2px;
+  }
+}
+.menuSpaceFixed {
+  padding: 54px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: black;
+  @media (max-width: 1200px) {
+    padding: 2px;
+  }
+}
+
+.tagsHolder {
+  max-width: $max-width;
+  @media (max-width: 1200px) {
+    max-width: 500px;
+  }
+}
+
+.filtration {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  @include padding;
+  @media (max-width: 1200px) {
+    position: static;
+  }
+  @media (max-width: 800px) {
+    margin-top: 24px;
   }
 }

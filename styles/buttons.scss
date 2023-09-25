@@ -2,15 +2,6 @@ $tag-margin: 0.25rem;
 $margin: 1.5rem;
 $max-width: 1000px;
 
-.tags {
-  max-width: $max-width;
-  margin: $margin - $tag-margin auto;
-  // .bg-chosen {
-  //   color: $blue;
-  //   background-color: transparent;
-  // }
-}
-
 .type {
   //color: white;
   display: inline-block;
@@ -27,7 +18,7 @@ $max-width: 1000px;
     transition-duration: 350ms;
     cursor: pointer;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 1200px) {
     font-size: 10px;
     padding: 4px 6px 3px;
     border-width: 1px;

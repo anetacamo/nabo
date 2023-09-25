@@ -21,27 +21,32 @@ export default function Home() {
   useEffect(() => {
     let unsubscribed = false;
 
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results: ParseResult<Blog>) => {
-          if (!unsubscribed) {
-            setBlogs(
-              results.data.filter(
-                (card: Blog, index: number) => index > 0 && card?.title
-              )
-            );
-            setFiltered(
-              results.data.filter(
-                (card: Blog, index: number) => index > 0 && card?.title
-              )
-            );
-          }
-        },
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
+        );
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const csv = await response.text();
+        const results = Papa.parse<Blog>(csv, { header: true });
+
+        if (!unsubscribed) {
+          const parsedBlogs = results.data.filter(
+            (card: Blog, index: number) => index > 0 && card?.title
+          );
+          setBlogs(parsedBlogs);
+          setFiltered(parsedBlogs);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
-    );
+    };
+
+    fetchData();
 
     return () => {
       unsubscribed = true;
@@ -60,7 +65,7 @@ export default function Home() {
         )
         .filter((blog: Blog) => blog.type?.toLowerCase().includes(category))
     );
-  }, [category, tag, searchQuery]);
+  }, [category, tag, searchQuery, blogs]);
 
   const onCategorySet = (cat: string) => {
     if (category === cat) {
@@ -84,46 +89,42 @@ export default function Home() {
     <DefaultLayout
       title={pagedata.title}
       description={pagedata.meta ?? pagedata.description}
-      css={"bg-black"}
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
       menu
       darkMode
     >
-      {/* <SearchField
-        category={category}
-          searchQuery={searchQuery}
-          onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
-        /> */}
-      <FilterDisplay
-        category={category}
-        onCloseCategoryClick={() => setCategory("")}
-        tag={tag}
-        onCloseTagClick={() => setTag("")}
-        searchQuery={searchQuery}
-        onCloseSearchClick={() => setSearchQuery("")}
-        filteredLength={filtered.length}
-      />
-
-      <div className={styles.menuSpace}></div>
-      <MapGl posts={filtered} />
-      <div className="center" style={{ marginBottom: -20 }}>
-        <CategoryList
-          posts={blogs}
-          onCategoryClick={onCategorySet}
-          category={category}
-        />
-      </div>
-      <div className="center">
-        {blogs.length != filtered.length && (
-          <TagsList
-            posts={filtered}
-            onTagClick={onTagSet}
-            tag={tag}
+      <div className={styles.filtration}>
+        <div className={styles.tagsHolder}>
+          <CategoryList
+            posts={blogs}
+            onCategoryClick={onCategorySet}
             category={category}
           />
-        )}
+          {blogs.length !== filtered.length && (
+            <TagsList
+              posts={filtered}
+              onTagClick={onTagSet}
+              tag={tag}
+              category={category}
+            />
+          )}
+        </div>
+        <FilterDisplay
+          category={category}
+          onCloseCategoryClick={() => setCategory("")}
+          tag={tag}
+          onCloseTagClick={() => setTag("")}
+          searchQuery={searchQuery}
+          onCloseSearchClick={() => setSearchQuery("")}
+          filteredLength={filtered.length}
+        />
       </div>
+
+      <div className={styles.menuSpace}></div>
+      <div className={styles.menuSpaceFixed}></div>
+      <MapGl posts={filtered} />
+
       <section style={{ marginTop: -40 }}>
         <CardsSheets members={filtered.slice(0, entryPerPage)} />
         {entryPerPage < filtered.length && (
