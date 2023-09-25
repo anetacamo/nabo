@@ -1,12 +1,12 @@
 {
   "title": "Kultur Kortet Aarhus",
   "image": "/page-images/about.png",
-  "description": "Kultur-Kortet er et samlingssted af ressourcer Aarhusianske kulturskabere kan trække på til at lave udstillinger, spille koncerter, holde workshops, og meget andet.",
+  "description": "Kultur-Kortet er et overblik af ressourcer aarhusianske kulturskabere kan bruge til at lave udstillinger, spille koncerter, holde workshops og meget andet.",
   "meta": "",
   "sections": [
     {
       "title": "Kender du til noget der skal med på kortet?",
-      "text": "Kortet vedligeholdes af <a href='https://www.frontloberne.dk'>Frontløberne</a> som opdaterer den løbende. Står du for et fælleskab eller andet som du vil have med på kortet?<br/><br/><i>Kortet var sidst opdateret 6-sept-2023</i>",
+      "text": "Kortet vedligeholdes og opdateres løbende af <a href='https://www.frontloberne.dk'>Frontløberne</a>, men vil også meget gerne have dine inputs til tilføjelser til kortet. Tryk på 'indsend' nedenfor og følg ansvisningerne <br/><br/><i>Kortet var sidst opdateret 18-sept-2023</i>",
       "buttons": [{ "name": "indsend", "link": "/indsend" }],
       "orientation": "left",
       "background": "darkblue"
@@ -14,7 +14,7 @@
 
     {
       "title": "Kortets Indhold",
-      "text": "Kultur-Kortet er lavet til kultur skabere i Åårhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. <br/><br/>De første 140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Yderlige tekster er skrevet løbende af ansatte på Frontløberne. <br/><br/>Hvis du ser at det står noge forkert, eller hvis hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have ændret eller fjernet, tage kontakte til os.",
+      "text": "Kultur-Kortet er lavet til kulturskabere i Aarhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. <br/><br/>De første 140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Yderlige tilføjelser er skrevet løbende af Frontløberne. <br/><br/>Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
       "buttons": [{ "name": "Kontakt", "link": "mailto:info@frontloberne.dk" }],
 
       "orientation": "center",
@@ -23,7 +23,7 @@
 
     {
       "title": "Kortets format",
-      "text": "Kultur-Kortet var udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejd på projektet! Koden bag Kultur-Kortet er open source og gratis tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
+      "text": "Kultur-Kortet er udviklet af Aneta Camo, og designet af Aneta Camo og Liam Nilsen. Tusind tak til Aneta, for dit arbejde på projektet! Koden bag Kultur-Kortet er open source og tilgængelig. </br></br>Hvis du vil have et Kultur-Kort i din by, så kan du finde <a href='https://github.com/anetacamo/nabo'>koden på GitHub</a>. </br>Set det op selv, eller <a href='https://anetacamo.github.io/'>få hjælp fra Aneta</a>.",
       "orientation": "right",
       "background": "black"
     },
@@ -31,7 +31,7 @@
     {
       "title": "Muliggjort af Erasmus+",
       "image": "/public/page-images/DA_FundedbytheEU_RGB_BLACK.png",
-      "text": "Kultur-Kortet var udviklet som en del af Nåbø projektet 2022-2023. Nåbø projektet var et samarbejd mellem Frontløberne i Aarhus, og Tvibit i Tromsø, som skabte ressourcer til ung kulturskabere i de to byer. Tusind tak til Erasmus+ og Den Europæiske Union for deres støtte til Nåbø projektet, og Kultur-Kortet. Finansieret af Den Europæiske Union. Synspunkter og holdninger, der kommer til udtryk, er udelukkende forfatterens/forfatternes og er ikke nøvendigvis udtryk for Den Europæiske Unions eller Det Europæiske Forvaltningsorgan for Uddannelse og Kulturs (EACEA) officielle holdning. Hverken den Europæiske Union eller EACEA kan holdes ansvarlig herfor.",
+      "text": "Kultur-Kortet er udviklet som en del af Nåbø projektet 2022-2023. Nåbø projektet er et samarbejde mellem Frontløberne i Aarhus, og Tvibit i Tromsø, som skaber ressourcer til unge kulturskabere i de to byer. Tusind tak til Erasmus+ og Den Europæiske Union for deres støtte til Nåbø projektet, herunder Kultur-Kortet. Finansieret af Den Europæiske Union. Synspunkter og holdninger, der kommer til udtryk, er udelukkende forfatterens/forfatternes og er ikke nøvendigvis udtryk for Den Europæiske Unions eller Det Europæiske Forvaltningsorgan for Uddannelse og Kulturs (EACEA) officielle holdning. Hverken den Europæiske Union eller EACEA kan holdes ansvarlig herfor.",
       "orientation": "left",
       "background": "salmon"
     },

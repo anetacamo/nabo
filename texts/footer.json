@@ -4,7 +4,7 @@
     "text": "Kulturkortet er et samlingssted for ressourcer som kulturskabere i Århus kan trække på til at lave kulturprojekter.",
     "addresses": [
       ["<a href='/om'>Læs mer her</a>"],
-      ["", "Skabt of vedligeholdtaf"]
+      ["", "Skabt of vedligeholdt af"]
     ],
     "image": "/page-images/fl-logo.png"
   },
@@ -34,15 +34,15 @@
       [
         "Skal din by have et kultur-kort?",
         "<a href='https://github.com/anetacamo/nabo' rel='noopener noreferrer'  target='_blank' >Fork this repo</a>",
-        "Få <a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>hjælp til setup</a>"
+        "<a href='mailto:anetacamo@gmail.com' rel='noopener noreferrer' target='_blank'>Få hjælp til setup</a>"
       ]
     ]
   },
 
   {
     "title": "Sidst opdateret",
-    "addresses": [["<i>September 6, 2023</i>"]],
-    "text": "Kultur-Kortet er opdateret løbende. Tage kontakt, hvis du ser noge gammelt info."
+    "addresses": [["<i>September 18, 2023</i>"]],
+    "text": "Kultur-Kortet er opdateret løbende. Tag kontakt, hvis du ser noget gammelt info."
   },
 
   {
