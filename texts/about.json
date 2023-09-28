@@ -14,7 +14,7 @@
 
     {
       "title": "Kortets Indhold",
-      "text": "Kultur-Kortet er lavet til kulturskabere i Aarhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. <br/><br/>De første 140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Yderlige tilføjelser er skrevet løbende af Frontløberne. <br/><br/>Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
+      "text": "Kultur-Kortet er lavet til kulturskabere i Aarhus. Siden det kan være ret svært at finde ud af hvad de forskellige scener, centre, og aktører laver når man er ny i branchen eller ny til byen, så har vi samlet alt på et sted. <br/><br/>De første 140 tekster var skrevet af Lisa Christiane og Line Kjærgaard Hansen - tusind tak til Line og Lisa! Yderlige tilføjelser er skrevet løbende af Frontløberne, eller af folk der indsender ressourcer via <a href='https://www.kultur-kortet.dk/indsend'>indsend</a>. <br/><br/>Hvis du har rettelser eller hvis kortet indeholder oplysninger om dit projekt, som du gerne vil have fjernet, bedes du tage kontakte til os.",
       "buttons": [{ "name": "Kontakt", "link": "mailto:info@frontloberne.dk" }],
 
       "orientation": "center",
