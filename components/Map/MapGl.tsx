@@ -35,7 +35,7 @@ export default function MapGl({ posts }: MapGiProps) {
         maxZoom={17}
         minZoom={12}
         scrollZoom={false}
-        mapStyle={process.env.NEXT_PUBLIC_MAPBOX_STYLE_URL}
+        mapStyle="mapbox://styles/anetahaha/clbeb4ftc002e14p79cgh7e6t"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       >
         <NavigationControl />
