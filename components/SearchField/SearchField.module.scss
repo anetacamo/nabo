@@ -24,6 +24,9 @@
   margin: 0;
   position: relative;
   @include border;
+  @media (max-width: 700px) {
+    margin-left: 2rem;
+  }
   @media (max-width: 400px) {
     width: auto;
   }

@@ -10,16 +10,14 @@ import styles from "./Menu.module.scss";
 
 interface MenuProps {
   searchQuery?: string;
-  onSearchQueryChange: (e: string) => void;
+  onSearchQueryChange?: (e: string) => void;
   darkMode?: boolean;
-  menu?: boolean;
 }
 
 export default function Menu({
   searchQuery,
   onSearchQueryChange,
   darkMode,
-  menu,
 }: MenuProps) {
   const [open, setOpen] = useState(false);
   const { asPath } = useRouter();
@@ -46,7 +44,7 @@ export default function Menu({
             </a>
           </Link>
 
-          {menu && (
+          {onSearchQueryChange && (
             <SearchField
               searchQuery={searchQuery}
               onSearchQueryChange={onSearchQueryChange}

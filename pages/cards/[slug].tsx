@@ -56,7 +56,7 @@ export default function SinglePage() {
     .replace(/\\+/g, "");
 
   return (
-    <DefaultLayout>
+    <DefaultLayout title={blog?.title} description={blog?.description}>
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
           <p className={`${getColor(blog?.type)}`}>
@@ -75,22 +75,7 @@ export default function SinglePage() {
         </div>
       </CrookedImage>
 
-      {blog?.credit && (
-        <p
-          style={{
-            textAlign: "right",
-            marginRight: 12,
-            zIndex: 12,
-            position: "relative",
-            fontSize: 12,
-            color: "gray",
-            marginTop: -24,
-            fontStyle: "italic",
-          }}
-        >
-          Foto: {blog?.credit}
-        </p>
-      )}
+      {blog?.credit && <p className={styles.credit}>Foto: {blog?.credit}</p>}
 
       <section style={{ maxWidth: 600, margin: "auto" }}>
         <h4>Beskrivelse</h4>

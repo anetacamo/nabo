@@ -42,3 +42,4 @@ jspm_packages
 .prettierrc
 
 .env.local
+.env*.local

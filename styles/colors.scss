@@ -75,10 +75,7 @@ $colors: (
 
 @each $name, $value in $colors {
   .border-#{$name} {
-    border: 2px solid $value !important;
-    @media (max-width: 400px) {
-      border-width: 1.5px !important;
-    }
+    border-color: $value !important;
   }
 }
 

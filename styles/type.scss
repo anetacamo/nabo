@@ -1,21 +1,18 @@
+@import "./variables.scss";
+
 .type {
   display: inline-block;
   font-size: 12px;
   margin: $tag-margin;
   text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  padding: 7px 8px 5px 8px;
-  border-radius: 4px;
+  letter-spacing: $letter-spacing-m;
+  padding: 7px 8px 5px;
+  @include border;
   &:hover {
     transition-duration: 350ms;
     cursor: pointer;
   }
   @media (max-width: 1200px) {
-    font-size: 10px;
-    padding: 4px 6px 3px;
-    border-width: 1px;
-    font-weight: 100;
-    margin: 2px;
+    @include type;
   }
 }

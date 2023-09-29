@@ -1,4 +1,5 @@
 @import "../../styles/colors-def.scss";
+@import "../../styles/variables.scss";
 
 .icon {
   width: 12px;
@@ -13,14 +14,12 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
-  //color: white;
   margin-right: 4px;
   margin-bottom: 4px;
-  padding: 5px 8px 4px 8px;
   font-size: 14px;
-  letter-spacing: 1.2px;
+  letter-spacing: $letter-spacing-m;
   border-radius: 3px;
-  //text-transform: uppercase;
+  @include tag-padding;
   &:hover {
     background-color: $purple;
     color: white;
@@ -29,9 +28,8 @@
   @media (max-width: 400px) {
     margin-right: 3px;
     margin-bottom: 3px;
-    padding: 3px 6px 2px;
     font-size: 11px;
-    letter-spacing: 0.6px;
+    letter-spacing: $letter-spacing-s;
     border-radius: 3px;
   }
 }

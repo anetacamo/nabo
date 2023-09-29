@@ -3,7 +3,7 @@ import Section from "../components/Section/Section";
 import TypeCards from "../components/TypeCards/TypeCards";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/english.json";
-import SectionType from "../types/section.type.ts";
+import SectionType from "../types/section.type";
 
 export default function English() {
   return (

@@ -1,5 +1,6 @@
 @import "../../styles/colors-def.scss";
 @import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .nav {
   padding: 0 2rem;
@@ -41,7 +42,6 @@
       .li {
         margin: 8px 0;
         font-size: 32px;
-        font-weight: 400;
       }
     }
   }
@@ -60,6 +60,7 @@
   .li {
     font-size: 1rem;
     color: $darkblue;
+    letter-spacing: $letter-spacing-s;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     &:hover {
@@ -82,8 +83,7 @@
   font-size: 12px;
   margin: 0;
   margin-bottom: -2.5px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: $letter-spacing-m;
   text-transform: uppercase;
   a {
     transition-duration: 350ms;
@@ -98,7 +98,6 @@
   align-items: flex-end;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-
   @media (max-width: 600px) {
     max-width: 80px;
   }

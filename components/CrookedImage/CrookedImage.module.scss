@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .holder {
   @media (max-width: 600px) {
     flex-direction: column;
@@ -36,9 +38,7 @@
 }
 
 .image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  @include full-image;
   @media (max-width: 600px) {
     height: 220px;
   }

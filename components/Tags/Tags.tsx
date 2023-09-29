@@ -12,7 +12,10 @@ export default function Tags({ tags, color }: TagsProps) {
         (tag, index: number) =>
           tag != "" &&
           tag != " " && (
-            <p key={index} className={`${styles.type} bg-colored bg-${color}`}>
+            <p
+              key={index}
+              className={`${styles.type} border-${color} bg-${color}`}
+            >
               {tag.trim()}
             </p>
           )

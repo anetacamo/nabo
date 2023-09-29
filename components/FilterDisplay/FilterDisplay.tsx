@@ -24,10 +24,7 @@ export default function FilterDisplay({
 }: FilterDisplayProps) {
   return (
     <div className={`flex ${styles.searchContainer}`}>
-      <p
-        className={styles.filterText}
-        style={{ margin: 0, marginTop: 4, textAlign: "right" }}
-      >
+      <p className={styles.filterText}>
         {pagedata.filter_showing_all}{" "}
         {category.length === 0 || (
           <TagWithX

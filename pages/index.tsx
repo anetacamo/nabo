@@ -1,4 +1,4 @@
-import Papa, { ParseResult } from "papaparse";
+import Papa from "papaparse";
 import React, { useEffect, useState } from "react";
 import CardsSheets from "../components/CardsSheets/CardsSheets";
 import CategoryList from "../components/CategoryList/CategoryList";
@@ -20,12 +20,9 @@ export default function Home() {
 
   useEffect(() => {
     let unsubscribed = false;
-
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
-        );
+        const response = await fetch(process.env.NEXT_PUBLIC_CARDS_FETCH);
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -78,11 +75,7 @@ export default function Home() {
   };
 
   const onTagSet = (t: string) => {
-    if (tag === t) {
-      setTag("");
-    } else {
-      setTag(t.toLowerCase());
-    }
+    setTag(t === tag ? "" : t.toLowerCase());
   };
 
   return (
@@ -91,7 +84,6 @@ export default function Home() {
       description={pagedata.meta ?? pagedata.description}
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
-      menu
       darkMode
     >
       <div className={styles.filtration}>

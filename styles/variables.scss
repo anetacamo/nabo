@@ -1,3 +1,7 @@
+$letter-spacing-s: 0.6px;
+$letter-spacing-m: 1.2px;
+$letter-spacing-l: 2px;
+
 $border-width: 2px;
 $border-mobile: 1.5px;
 
@@ -8,6 +12,7 @@ $phone: 400px;
 $tablet: 700px;
 
 $tag-margin: 4px;
+$tag-padding: 3px 6px 2px;
 
 $font-size-10: 10px;
 $font-size-12: 12px;
@@ -22,6 +27,7 @@ $font-size-40: 40px;
 @mixin border {
   border-width: $border-width;
   border-radius: 6px;
+  border-style: solid;
   @media (max-width: $phone) {
     border-width: $border-mobile;
     border-radius: 4px;
@@ -44,5 +50,30 @@ $font-size-40: 40px;
   }
   @media (max-width: $phone) {
     padding: 2rem 1rem;
+  }
+}
+@mixin tag-padding {
+  padding: 5px 8px 4px;
+  @media (max-width: $phone) {
+    padding: 3px 6px 2px;
+  }
+}
+
+@mixin full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin type {
+  font-size: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: $tag-padding;
+  letter-spacing: $letter-spacing-m;
+  @include border;
+  @media (max-width: $phone) {
+    margin-left: 0.125rem;
+    margin-bottom: 0.125rem;
   }
 }

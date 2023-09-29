@@ -9,8 +9,8 @@ interface LayoutProps {
   children?: ReactNode;
   description?: string;
   searchQuery?: string;
-  onSearchQueryChange: (e: string) => void;
-  menu?: boolean;
+  onSearchQueryChange?: (e: string) => void;
+
   darkMode?: boolean;
 }
 
@@ -20,7 +20,6 @@ export const DefaultLayout = ({
   description,
   searchQuery,
   onSearchQueryChange,
-  menu,
   darkMode,
 }: LayoutProps) => {
   return (
@@ -34,7 +33,6 @@ export const DefaultLayout = ({
       <Menu
         searchQuery={searchQuery}
         onSearchQueryChange={onSearchQueryChange}
-        menu={menu}
         darkMode={darkMode}
       />
 

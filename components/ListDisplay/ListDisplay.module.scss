@@ -1,4 +1,4 @@
-@import '../../styles/colors-def.scss';
+@import "../../styles/colors-def.scss";
 
 .listContainer {
   max-width: 900;
@@ -12,7 +12,7 @@
   text-transform: lowercase;
   opacity: 0.4;
   font-size: 1rem;
-  letter-spacing: 1px;
+  letter-spacing: $letter-spacing-m;
   @media (max-width: 700px) {
     font-size: 0.8rem;
   }

@@ -83,8 +83,6 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
 
 .mainTitle {
   color: black;
-  //  text-transform: lowercase;
-  //  background-color: white;
   padding: 1.5rem;
   max-width: 500px;
   border-radius: 8px;
@@ -93,6 +91,5 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
   h1 {
     line-height: 1.4;
   }
-  //letter-spacing: 2px;
   line-height: 1.2;
 }

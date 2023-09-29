@@ -8,8 +8,6 @@ interface FormTypesProps {
   memberType?: string;
 }
 
-console.log();
-
 export default function FormTypes({ onMemberSet, memberType }: FormTypesProps) {
   return (
     <div className={`${styles.container} flex-center`}>
