@@ -22,7 +22,9 @@ export default function Home() {
     let unsubscribed = false;
     const fetchData = async () => {
       try {
-        const response = await fetch(process.env.NEXT_PUBLIC_CARDS_FETCH);
+        const response = await fetch(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
