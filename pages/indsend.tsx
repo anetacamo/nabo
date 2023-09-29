@@ -21,17 +21,20 @@ const NewMember = () => {
   const [formReady, setFormReady] = useState(false);
 
   useEffect(() => {
-    Papa.parse(process.env.NEXT_PUBLIC_CARDS_FETCH, {
-      download: true,
-      header: true,
-      complete: (results: ParseResult<any>) => {
-        setBlogs(
-          results.data.filter(
-            (d: CardType, index: number) => index > 0 && d?.title
-          )
-        );
-      },
-    });
+    Papa.parse(
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
+      {
+        download: true,
+        header: true,
+        complete: (results: ParseResult<any>) => {
+          setBlogs(
+            results.data.filter(
+              (d: CardType, index: number) => index > 0 && d?.title
+            )
+          );
+        },
+      }
+    );
   }, []);
 
   useMemo(() => {
@@ -55,7 +58,9 @@ const NewMember = () => {
         <form
           className={styles.form}
           method="POST"
-          action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
+          action={
+            "https://script.google.com/macros/s/AKfycbynyz2uTNn1k4arMg74RHPYguQB2G3LGHdxht9rTsBGKwyWAWaGdSK2ysx-xgh8BQFp/exec"
+          }
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>

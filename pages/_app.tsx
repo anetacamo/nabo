@@ -2,8 +2,6 @@ import { AppProps } from "next/app";
 import "../styles/styles.scss";
 import Script from "next/script";
 
-const measurementId = "G-4HV5H0B5SG";
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
