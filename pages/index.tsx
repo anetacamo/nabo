@@ -1,4 +1,3 @@
-import Papa from "papaparse";
 import React, { useEffect, useState } from "react";
 import CardsSheets from "../components/CardsSheets/CardsSheets";
 import CategoryList from "../components/CategoryList/CategoryList";
@@ -9,61 +8,28 @@ import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
 import Blog from "../types/card.type";
 import styles from "./Home/Home.module.scss";
+import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
 
 export default function Home() {
   const [category, setCategory] = useState<string>("");
   const [tag, setTag] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [entryPerPage, setEntryPerPage] = useState<number>(36);
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [filtered, setFiltered] = useState<Blog[]>([]);
+
+  const { blogs } = useGoogleSheetsData();
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    let unsubscribed = false;
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-
-        const csv = await response.text();
-        const results = Papa.parse<Blog>(csv, { header: true });
-
-        if (!unsubscribed) {
-          const parsedBlogs = results.data.filter(
-            (card: Blog, index: number) => index > 0 && card?.title
-          );
-          setBlogs(parsedBlogs);
-          setFiltered(parsedBlogs);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-
-    return () => {
-      unsubscribed = true;
-    };
-  }, []);
-
-  useEffect(() => {
-    setFiltered(
-      blogs
-        .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
-        .filter(
-          (blog: Blog) =>
-            blog.title?.toLowerCase().includes(searchQuery) ||
-            blog.description?.toLowerCase().includes(searchQuery) ||
-            blog.invisible?.toLowerCase().includes(searchQuery)
-        )
-        .filter((blog: Blog) => blog.type?.toLowerCase().includes(category))
-    );
+    const filtered = blogs
+      .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
+      .filter(
+        (blog: Blog) =>
+          blog.title?.toLowerCase().includes(searchQuery) ||
+          blog.description?.toLowerCase().includes(searchQuery) ||
+          blog.invisible?.toLowerCase().includes(searchQuery)
+      )
+      .filter((blog: Blog) => blog.type?.toLowerCase().includes(category));
+    setFilteredBlogs(filtered);
   }, [category, tag, searchQuery, blogs]);
 
   const onCategorySet = (cat: string) => {
@@ -95,9 +61,9 @@ export default function Home() {
             onCategoryClick={onCategorySet}
             category={category}
           />
-          {blogs.length !== filtered.length && (
+          {blogs.length !== filteredBlogs.length && (
             <TagsList
-              posts={filtered}
+              posts={filteredBlogs}
               onTagClick={onTagSet}
               tag={tag}
               category={category}
@@ -111,23 +77,23 @@ export default function Home() {
           onCloseTagClick={() => setTag("")}
           searchQuery={searchQuery}
           onCloseSearchClick={() => setSearchQuery("")}
-          filteredLength={filtered.length}
+          filteredLength={filteredBlogs.length}
         />
       </div>
 
       <div className={styles.menuSpace}></div>
       <div className={styles.menuSpaceFixed}></div>
-      <MapGl posts={filtered} />
+      <MapGl posts={filteredBlogs} />
 
       <section style={{ marginTop: -40 }}>
-        <CardsSheets members={filtered.slice(0, entryPerPage)} />
-        {entryPerPage < filtered.length && (
+        <CardsSheets members={filteredBlogs.slice(0, entryPerPage)} />
+        {entryPerPage < filteredBlogs.length && (
           <div className="flex-center-hor">
             <button onClick={() => setEntryPerPage(entryPerPage + 36)}>
               {pagedata.load_more_button}
             </button>
             <p className="blue" style={{ marginLeft: 12 }}>
-              showing {entryPerPage} of {filtered.length}
+              showing {entryPerPage} of {filteredBlogs.length}
             </p>
           </div>
         )}

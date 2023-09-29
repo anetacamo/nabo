@@ -1,7 +1,6 @@
 import { faCheck, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Papa, { ParseResult } from "papaparse";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import FormArea from "../components/FormArea/FormArea";
 import FormItem from "../components/FormItem/FormItem";
 import FormSelect from "../components/FormSelect/FormSelect";
@@ -12,30 +11,15 @@ import pagedata from "../texts/new-member.json";
 import CardType, { emptyMember, Multiselects } from "../types/card.type";
 import FormUnit from "../types/form.type";
 import styles from "./NewMember/NewMember.module.scss";
+import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
 
 const NewMember = () => {
   const [member, setMember] = useState<CardType>(emptyMember);
-  const [blogs, setBlogs] = useState<CardType[]>([]);
   const [formSent, setFormSent] = useState(false);
   const [spam, setSpam] = useState("");
   const [formReady, setFormReady] = useState(false);
 
-  useEffect(() => {
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results: ParseResult<any>) => {
-          setBlogs(
-            results.data.filter(
-              (d: CardType, index: number) => index > 0 && d?.title
-            )
-          );
-        },
-      }
-    );
-  }, []);
+  const { blogs } = useGoogleSheetsData();
 
   useMemo(() => {
     if (
@@ -156,11 +140,10 @@ const NewMember = () => {
               }`}
             >
               <span className="flex-center-hor">
-                {formReady ? (
-                  <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-                ) : (
-                  <FontAwesomeIcon icon={faClose} className={styles.icon} />
-                )}
+                <FontAwesomeIcon
+                  icon={formReady ? faCheck : faClose}
+                  className={styles.icon}
+                />
                 {pagedata.submit_button}
               </span>
             </button>

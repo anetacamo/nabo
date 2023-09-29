@@ -1,43 +1,26 @@
 import React from "react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/router";
-
 import { DefaultLayout } from "../../layouts/DefaultLayout/DefaultLayout";
 import CrookedImage from "../../components/CrookedImage/CrookedImage";
 import CardsSheets from "../../components/CardsSheets/CardsSheets";
 import IconHolder from "../../components/IconHolder/IconHolder";
 import Tags from "../../components/Tags/Tags";
-
-import Papa, { ParseResult } from "papaparse";
 import styles from "./card.module.scss";
-
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
-
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
+import useGoogleSheetsData from "../../hooks/useGoogleSheetsData";
 
 export default function SinglePage() {
-  const router = useRouter();
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [blog, setBlog] = useState<Blog>();
+  const { blogs } = useGoogleSheetsData();
 
+  const router = useRouter();
+  const [blog, setBlog] = useState<Blog>();
   const relatedBlogs = blogs.filter(
     (b: Blog) => b.type.split(",")[0] === blog?.type.split(",")[0]
   );
-
-  useEffect(() => {
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results: ParseResult<Blog>) => {
-          setBlogs(results.data.filter((d: Blog) => d?.title));
-        },
-      }
-    );
-  }, []);
 
   const getBlogs = useMemo(() => {
     setBlog(
