@@ -1,11 +1,9 @@
 import Image from "next/image";
 import styles from "./CardsSheets.module.scss";
-
 import Tags from "../Tags/Tags";
 import IconHolder from "../IconHolder/IconHolder";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
-
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 
@@ -25,20 +23,18 @@ export default function CardsSheets(members: { members: Blog[] }) {
           rel="noopener noreferrer"
           className={`${styles.link} border-${getColor(
             post.type
-          )}  bg-hover-${getColor(post.type)}`}
+          )} bg-hover-${getColor(post.type)}`}
         >
           <div
             className={`${styles.image} border-bottom-${getColor(post.type)}`}
           >
             <Image
               src={`/images/${slugify(post?.title)}.jpg`}
-              alt={`${slugify(post?.title)}.jpg`}
+              alt={post?.title}
               layout="fill"
-              quality="1"
               objectFit="cover"
             />
           </div>
-
           {post?.type && (
             <p
               className={`${styles.type} border-${getColor(
@@ -68,7 +64,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
             />
           )}
           {post?.description && (
-            <h5 style={{ marginTop: 12 }}>
+            <h5 className={styles.description}>
               {truncate(post?.description, 150)}
             </h5>
           )}

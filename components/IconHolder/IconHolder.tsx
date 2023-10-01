@@ -4,6 +4,7 @@ import {
   faArrowRight,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { slugify } from "../../utils/slugify";
 
 interface IconHolderProps {

@@ -7,7 +7,7 @@ interface TagsProps {
 
 export default function Tags({ tags, color }: TagsProps) {
   return (
-    <div style={{ marginTop: 16 }}>
+    <div className={styles.container}>
       {tags?.split(",").map(
         (tag, index: number) =>
           tag != "" &&

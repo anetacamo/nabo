@@ -12,6 +12,7 @@ import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import useGoogleSheetsData from "../../hooks/useGoogleSheetsData";
+import data from "../../texts/single-page.json";
 
 export default function SinglePage() {
   const { blogs } = useGoogleSheetsData();
@@ -50,7 +51,7 @@ export default function SinglePage() {
             <IconHolder name={blog?.address} nolink icon={faLocation} />
           )}
           {blog?.link && (
-            <IconHolder name="hjemmeside" link={blog?.link} small />
+            <IconHolder name={data.link} link={blog?.link} small />
           )}
           {blog?.invisible && (
             <Tags tags={blog?.invisible} color={getColor(blog?.type)} />
@@ -60,15 +61,17 @@ export default function SinglePage() {
 
       {blog?.credit && <p className={styles.credit}>Foto: {blog?.credit}</p>}
 
-      <section style={{ maxWidth: 600, margin: "auto" }}>
-        <h4>Beskrivelse</h4>
+      <section className={styles.texts}>
+        <h4>{data.description}</h4>
         <p style={{ whiteSpace: "pre-wrap" }}>{descriptionWithLineBreaks}</p>
-        <h4>Hvordan du kan benytte denne ressource</h4>
+        <h4>{data.hotToUse}</h4>
         <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
 
       <section className={`bg-black`}>
-        <h2>other {blog?.type.split(",")[0]}</h2>
+        <h2>
+          {data.other} {blog?.type.split(",")[0]}
+        </h2>
         {relatedBlogs && <CardsSheets members={relatedBlogs.slice(0, 5)} />}
       </section>
     </DefaultLayout>

@@ -1,9 +1,9 @@
+import Image from "next/image";
 import styles from "./Footer.module.scss";
+
 import IconHolder from "../IconHolder/IconHolder";
 import sections from "../../texts/footer.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// import { faClose } from "@fortawesome/free-solid-svg-icons";
 import {
   faCreativeCommons,
   faCreativeCommonsBy,
@@ -41,15 +41,7 @@ export default function Footer() {
               )}
 
             {s.image && (
-              <img
-                src={s.image}
-                style={{
-                  maxWidth: 240,
-                  maxHeight: 80,
-                  objectFit: "contain",
-                  marginTop: 24,
-                }}
-              />
+              <img src={s.image} className={styles.image} alt={"logo"} />
             )}
 
             {index === sections.length - 1 && (
