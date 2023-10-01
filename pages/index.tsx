@@ -8,7 +8,6 @@ import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
 import Blog from "../types/card.type";
 import styles from "./Home/Home.module.scss";
-//import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
 import Papa from "papaparse";
 
 export async function getStaticProps() {
@@ -69,21 +68,6 @@ export default function Home({ blogs }) {
       darkMode
     >
       <div className={styles.filtration}>
-        <div className={styles.tagsHolder}>
-          <CategoryList
-            posts={blogs}
-            onCategoryClick={onCategorySet}
-            category={category}
-          />
-          {blogs.length !== filteredBlogs.length && (
-            <TagsList
-              posts={filteredBlogs}
-              onTagClick={onTagSet}
-              tag={tag}
-              category={category}
-            />
-          )}
-        </div>
         <FilterDisplay
           category={category}
           onCloseCategoryClick={() => setCategory("")}
@@ -100,6 +84,21 @@ export default function Home({ blogs }) {
       <MapGl posts={filteredBlogs} />
 
       <section style={{ marginTop: -40 }}>
+        <div className={styles.tagsHolder}>
+          <CategoryList
+            posts={blogs}
+            onCategoryClick={onCategorySet}
+            category={category}
+          />
+          {blogs.length !== filteredBlogs.length && (
+            <TagsList
+              posts={filteredBlogs}
+              onTagClick={onTagSet}
+              tag={tag}
+              category={category}
+            />
+          )}
+        </div>
         <CardsSheets members={filteredBlogs.slice(0, entryPerPage)} />
         {entryPerPage < filteredBlogs.length && (
           <div className="flex-center-hor">
