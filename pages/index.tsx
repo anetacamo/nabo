@@ -8,15 +8,29 @@ import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
 import Blog from "../types/card.type";
 import styles from "./Home/Home.module.scss";
-import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
+//import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
+import Papa from "papaparse";
 
-export default function Home() {
+export async function getStaticProps() {
+  const response = await fetch(
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
+  );
+
+  const csv = await response.text();
+  const results = Papa.parse<Blog>(csv, { header: true });
+  const parsedBlogs = results.data.filter(
+    (card: Blog, index: number) => index > 0 && card?.title
+  );
+  return { props: { blogs: parsedBlogs } };
+}
+
+export default function Home({ blogs }) {
   const [category, setCategory] = useState<string>("");
   const [tag, setTag] = useState<string>("");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [entryPerPage, setEntryPerPage] = useState<number>(36);
 
-  const { blogs } = useGoogleSheetsData();
+  //const { blogs } = useGoogleSheetsData();
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
