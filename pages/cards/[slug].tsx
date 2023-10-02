@@ -1,6 +1,4 @@
 import React from "react";
-//import { useState, useMemo } from "react";
-//import { useRouter } from "next/router";
 import { DefaultLayout } from "../../layouts/DefaultLayout/DefaultLayout";
 import CrookedImage from "../../components/CrookedImage/CrookedImage";
 import CardsSheets from "../../components/CardsSheets/CardsSheets";
@@ -11,26 +9,18 @@ import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-//import useGoogleSheetsData from "../../hooks/useGoogleSheetsData";
 import texts from "../../texts/single-page.json";
 import Papa from "papaparse";
+import { fetchGoogleSheetData } from "../../hooks/data";
 
 interface SinglePageProps {
   blog: Blog; // Specify the type of blog here
   relatedBlogs: Blog[]; // Assuming relatedBlogs is an array of Blog objects
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { params: { slug: any } }) {
   const name = context.params.slug;
-  const response = await fetch(
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTEciZaKX8GYkcIPg1k9Qblp4MnPcUbjzAAniBNM3I1jUKvJJ8Jf2wcYGGtT7EtJFhRnPS6YY1mw8bO/pub?output=csv"
-  );
-
-  const csv = await response.text();
-  const results = Papa.parse<Blog>(csv, { header: true });
-  const parsedBlogs = results.data.filter(
-    (card: Blog, index: number) => index > 0 && card?.title
-  );
+  const parsedBlogs = await fetchGoogleSheetData();
 
   const blog = parsedBlogs.filter(
     (card: Blog) => slugify(card?.title) === name
@@ -43,7 +33,6 @@ export async function getServerSideProps(context) {
   );
 
   const relatedBlogs = allRelated.slice(0, 5);
-  console.log(relatedBlogs);
 
   return {
     props: {
@@ -54,22 +43,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
-  //const { blogs } = useGoogleSheetsData();
-
-  //const router = useRouter();
-  //const [blog, setBlog] = useState<Blog>();
-  // const relatedBlogs = blogs.filter(
-  //   (b: Blog) => b.type.split(",")[0] === blog?.type.split(",")[0]
-  // );
-
-  // const getBlogs = useMemo(() => {
-  //   setBlog(
-  //     blogs.filter(
-  //       (card: Blog) => slugify(card?.title) === router.query.slug
-  //     )[0]
-  //   );
-  // }, [blogs, router]);
-
   const descriptionWithLineBreaks = blog?.description
     .replace(/\\n/g, "\n")
     .replace(/\\+/g, "");

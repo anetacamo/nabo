@@ -44,8 +44,13 @@
   margin-right: 0.75rem;
 }
 .image {
-  max-width: 240px;
-  max-height: 80px;
   object-fit: contain;
+  object-position: left;
+}
+
+.imageHolder {
+  max-width: 240px;
+  height: 80px;
   margin-top: 24px;
+  position: relative;
 }

@@ -41,7 +41,14 @@ export default function Footer() {
               )}
 
             {s.image && (
-              <img src={s.image} className={styles.image} alt={"logo"} />
+              <div className={styles.imageHolder}>
+                <Image
+                  className={styles.image}
+                  src={s.image}
+                  alt={"logo"}
+                  layout="fill"
+                />
+              </div>
             )}
 
             {index === sections.length - 1 && (

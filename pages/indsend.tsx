@@ -42,9 +42,7 @@ const NewMember = () => {
         <form
           className={styles.form}
           method="POST"
-          action={
-            "https://script.google.com/macros/s/AKfycbynyz2uTNn1k4arMg74RHPYguQB2G3LGHdxht9rTsBGKwyWAWaGdSK2ysx-xgh8BQFp/exec"
-          }
+          action={process.env.NEXT_PUBLIC_SUBMIT_FORM}
         >
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>

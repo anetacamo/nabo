@@ -33,9 +33,10 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
   .icon {
     filter: brightness(0);
     object-fit: contain;
+    object-position: center;
     width: 1rem;
     height: 1rem;
-    object-position: center;
+
     margin: 0.25rem;
   }
 }

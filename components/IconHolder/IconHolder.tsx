@@ -33,7 +33,7 @@ export default function IconHolder({
       {nolink ? (
         <h5>{name}</h5>
       ) : (
-        <a
+        <div
           href={link ?? slugify(name)}
           target="_blank"
           rel="noopener noreferrer"
@@ -41,9 +41,9 @@ export default function IconHolder({
           {small ? (
             <h5 className={styles.link}>{name}</h5>
           ) : (
-            <li className={styles.link}>{name}</li>
+            <span className={styles.link}>{name}</span>
           )}
-        </a>
+        </div>
       )}
     </div>
   );
