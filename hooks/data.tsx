@@ -8,7 +8,7 @@ export async function fetchGoogleSheetData(): Promise<Blog[]> {
     return cachedData;
   }
 
-  const cardsFetchUrl = process.env.NEXT_PUBLIC_CARDS_FETCH as string;
+  const cardsFetchUrl = process.env.CARDS_FETCH as string;
 
   const response = await fetch(cardsFetchUrl);
 

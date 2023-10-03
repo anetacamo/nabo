@@ -1,10 +1,10 @@
 type CardType = {
+  type: string;
+
   title: string;
   supertag?: string;
-  type: string;
   credit?: string;
   image?: string;
-
   link?: string;
   address?: string;
   latitude?: number;
@@ -12,19 +12,32 @@ type CardType = {
 
   tags?: string;
   invisible?: string;
+
   description: string;
   howtouse?: string;
 };
 
-export type Multiselects = Omit<CardType, "longitude" | "latitude">;
+export type Select = "type";
+export type Inputs =
+  | "title"
+  | "supertag"
+  | "credit"
+  | "image"
+  | "link"
+  | "address"
+  | "latitude"
+  | "longitude"
+  | "email";
+export type MultiSelects = "tags" | "invisible";
+export type TextAreas = "description" | "howtouse";
 
 export const emptyMember = {
+  type: "",
+
   title: "",
   supertag: "",
-  type: "",
   credit: "",
   image: "",
-
   link: "",
   address: "",
   latitude: 0,
@@ -32,6 +45,7 @@ export const emptyMember = {
 
   tags: "",
   invisible: "",
+
   description: "",
   howtouse: "",
 };

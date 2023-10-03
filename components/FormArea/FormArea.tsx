@@ -1,12 +1,6 @@
-import { ChangeEvent } from "react";
-import FormType from "../../types/form.type";
+import { FormTextAreas } from "../../types/form.type";
 import FormLabel from "../FormLabel/FormLabel";
 import styles from "./FormArea.module.scss";
-
-interface FormAreaProps extends FormType {
-  onFieldChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  value: string | number;
-}
 
 export default function FormArea({
   name,
@@ -15,7 +9,7 @@ export default function FormArea({
   value,
   helper,
   required,
-}: FormAreaProps) {
+}: FormTextAreas) {
   return (
     <div>
       <FormLabel name={name} label={label} required={required} />

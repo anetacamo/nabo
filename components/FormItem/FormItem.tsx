@@ -1,14 +1,6 @@
-import { ChangeEvent } from "react";
-import FormType from "../../types/form.type";
+import { FormInputs } from "../../types/form.type";
 import FormLabel from "../FormLabel/FormLabel";
 import styles from "./FormItem.module.scss";
-
-interface FormItemProps extends FormType {
-  onFieldChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  value: string | number;
-  success?: boolean;
-  error?: boolean;
-}
 
 export default function FormItem({
   name,
@@ -19,7 +11,7 @@ export default function FormItem({
   success,
   required,
   error,
-}: FormItemProps) {
+}: FormInputs) {
   return (
     <div className={`${name === "email" && styles.dark}`}>
       <FormLabel name={name} label={label} required={required} />

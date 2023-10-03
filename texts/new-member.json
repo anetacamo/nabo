@@ -13,8 +13,24 @@
       "required": true
     },
     {
+      "label": "Supertag",
+      "name": "supertag"
+    },
+    {
+      "label": "Billede credit",
+      "name": "credit"
+    },
+    {
+      "label": "Hjemmeside",
+      "name": "link"
+    },
+    {
       "label": "Adresse",
       "name": "address"
+    },
+    {
+      "label": "URL til billede",
+      "name": "image"
     },
     {
       "label": "Latitude",
@@ -24,22 +40,6 @@
     {
       "label": "Longitude",
       "name": "longitude"
-    },
-    {
-      "label": "Hjemmeside",
-      "name": "link"
-    },
-    {
-      "label": "URL til billede",
-      "name": "image"
-    },
-    {
-      "label": "Billede credit",
-      "name": "credit"
-    },
-    {
-      "label": "Supertag",
-      "name": "supertag"
     }
   ],
 

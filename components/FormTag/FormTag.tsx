@@ -1,12 +1,12 @@
-import { ChangeEvent, useState } from "react";
-import CardType, { Multiselects } from "../../types/card.type";
-import FormType from "../../types/form.type";
+import { useState } from "react";
+import CardType from "../../types/card.type";
+import { FormMultiSelects } from "../../types/form.type";
 import TagWithX from "../TagWithX/TagWithX";
 import styles from "./FormTag.module.scss";
 import FormLabel from "../FormLabel/FormLabel";
 
-interface FormTagProps extends FormType {
-  onSelectChange: (tag: string) => void;
+interface FormTagProps extends FormMultiSelects {
+  onValueUpdate: (tagList: string) => void;
   onCloseClick: (tag: string) => void;
   blogs?: CardType[];
   memberTags?: string;
@@ -15,17 +15,17 @@ interface FormTagProps extends FormType {
 export default function FormTag({
   name,
   memberTags,
-  onSelectChange,
   onCloseClick,
   blogs,
   label,
   helper,
   required,
+  onValueUpdate,
 }: FormTagProps) {
   const allTags: string[] = [];
   const [inputValue, setInputValue] = useState("");
   blogs?.map((item) =>
-    item[name as keyof Multiselects]
+    item[name]
       ?.split(",")
       .map((t: string) => t != "" && t != " " && allTags.push(t.trim()))
   );
@@ -38,9 +38,9 @@ export default function FormTag({
       <div>
         <FormLabel name={name} label={label} required={required} />
         <select
-          name={name}
-          id={name}
-          onChange={(e) => onSelectChange(e.target.value)}
+          name="optionChoice"
+          id="optionChoice"
+          onChange={(e) => onValueUpdate(e.target.value)}
           className={styles.input}
         >
           {uniqueSortedTags?.map((c: string, index: number) => (
@@ -60,7 +60,7 @@ export default function FormTag({
         <button
           type="button"
           className={styles.suggestButton}
-          onClick={() => onSelectChange(inputValue.toLowerCase())}
+          onClick={() => onValueUpdate(inputValue.toLowerCase())}
         >
           add
         </button>
@@ -75,6 +75,12 @@ export default function FormTag({
               )
           )}
       </div>
+      <input
+        type="hidden"
+        name={name}
+        id={name}
+        value={memberTags} // Set the initial value to the text you want to submit
+      />
 
       {helper && <p className={styles.helper}>{helper}</p>}
     </>

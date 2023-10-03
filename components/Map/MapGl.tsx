@@ -8,11 +8,11 @@ import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import pagedata from "../../texts/home.json";
 
-interface MapGiProps {
+interface MapGlProps {
   posts: Blog[];
 }
 
-export default function MapGl({ posts }: MapGiProps) {
+export default function MapGl({ posts }: MapGlProps) {
   const [name, setName] = useState("");
   const [viewState, setViewState] = useState({
     latitude: 56.15520483651387,

@@ -8,18 +8,40 @@ import FormTag from "../components/FormTag/FormTag";
 import FormTypes from "../components/FormTypes/FormTypes";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/new-member.json";
-import CardType, { emptyMember, Multiselects } from "../types/card.type";
-import FormUnit from "../types/form.type";
-import styles from "./NewMember/NewMember.module.scss";
-import useGoogleSheetsData from "../hooks/useGoogleSheetsData";
+import CardType, {
+  emptyMember,
+  TextAreas,
+  MultiSelects,
+  Inputs,
+  Select,
+} from "../types/card.type";
 
-const NewMember = () => {
-  const [member, setMember] = useState<CardType>(emptyMember);
+import styles from "./NewMember/NewMember.module.scss";
+import { fetchGoogleSheetData } from "../hooks/data";
+
+export async function getStaticProps() {
+  const blogs = await fetchGoogleSheetData();
+
+  return {
+    props: {
+      blogs,
+    },
+  };
+}
+
+interface NewMemberProps {
+  blogs: CardType[]; // Assuming you have a Blog type defined
+  member: CardType;
+  formSent: boolean;
+  spam: string;
+  formReady: boolean;
+}
+
+const NewMember = ({ blogs }: NewMemberProps) => {
+  const [member, setMember] = useState(emptyMember);
   const [formSent, setFormSent] = useState(false);
   const [spam, setSpam] = useState("");
   const [formReady, setFormReady] = useState(false);
-
-  const { blogs } = useGoogleSheetsData();
 
   useMemo(() => {
     if (
@@ -47,16 +69,16 @@ const NewMember = () => {
           <h1>{pagedata.title}</h1>
           <p>{pagedata.description}</p>
 
-          {pagedata.inputs.map((item: FormUnit, index: number) => (
+          {pagedata.inputs.map((item, index: number) => (
             <FormItem
               key={index}
-              name={item.name}
+              name={item.name as Inputs}
               required={item.required}
               label={item.label}
               helper={item.helper}
-              value={member[item.name as keyof CardType] || ""}
+              value={member[item.name as Inputs] || ""}
               onFieldChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setMember({ ...member, [item.name]: e.target.value })
+                setMember({ ...member, [item.name as Inputs]: e.target.value })
               }
             />
           ))}
@@ -71,10 +93,10 @@ const NewMember = () => {
             }
           />
 
-          {pagedata.selects.map((item: FormUnit, index: number) => (
+          {pagedata.selects.map((item, index: number) => (
             <FormSelect
               key={index}
-              name={item.name}
+              name={item.name as Select}
               required={item.required}
               label={item.label}
               helper={item.helper}
@@ -90,24 +112,26 @@ const NewMember = () => {
             onMemberSet={(type) => setMember({ ...member, type: type })}
           />
 
-          {pagedata.multiselects.map((item: FormUnit, index: number) => (
+          {pagedata.multiselects.map((item, index: number) => (
             <FormTag
               key={index}
-              name={item.name}
+              name={item.name as MultiSelects}
               required={item.required}
-              memberTags={member[item.name as keyof Multiselects]}
+              memberTags={member[item.name as MultiSelects]}
               label={item.label}
               helper={item.helper}
-              onSelectChange={(e) =>
+              onValueUpdate={(membertags) =>
                 setMember({
                   ...member,
-                  [item.name]: `${member[item.name as keyof CardType]}, ${e}`,
+                  [item.name]: `${
+                    member[item.name as MultiSelects]
+                  }, ${membertags}`,
                 })
               }
               onCloseClick={(tag: string) =>
                 setMember({
                   ...member,
-                  [item.name]: `${member[item.name as keyof Multiselects]
+                  [item.name]: `${member[item.name as MultiSelects]
                     .split(",")
                     .filter((t: string) => tag !== t)}`,
                 })
@@ -119,10 +143,10 @@ const NewMember = () => {
           {pagedata.textAreas.map((item, index: number) => (
             <FormArea
               key={index}
-              name={item.name}
+              name={item.name as TextAreas}
               required={item.required}
               label={item.label}
-              value={member[item.name as keyof CardType] || ""}
+              value={member[item.name as TextAreas] || ""}
               onFieldChange={(e) =>
                 setMember({ ...member, [item.name]: e.target.value })
               }

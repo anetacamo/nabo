@@ -1,14 +1,8 @@
-import { ChangeEvent } from "react";
 import types from "../../texts/types.json";
 import CategoryType from "../../types/category.type";
-import FormType from "../../types/form.type";
+import { FormSelects } from "../../types/form.type";
 import FormLabel from "../FormLabel/FormLabel";
 import styles from "./FormSelect.module.scss";
-
-interface FormSelectProps extends FormType {
-  onFieldChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
-  chosen?: string;
-}
 
 export default function FormSelect({
   name,
@@ -17,11 +11,10 @@ export default function FormSelect({
   helper,
   chosen,
   required,
-}: FormSelectProps) {
+}: FormSelects) {
   return (
     <div>
       <FormLabel name={name} label={label} required={required} />
-
       <select
         name={name}
         id={name}
