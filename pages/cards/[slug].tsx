@@ -5,13 +5,16 @@ import CardsSheets from "../../components/CardsSheets/CardsSheets";
 import IconHolder from "../../components/IconHolder/IconHolder";
 import Tags from "../../components/Tags/Tags";
 import styles from "./card.module.scss";
-import { faLocation } from "@fortawesome/free-solid-svg-icons";
+import { faLocation, faAsterisk } from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import texts from "../../texts/single-page.json";
+import radioTracks from "../../texts/radioTracks.json";
+
 import Papa from "papaparse";
 import { fetchGoogleSheetData } from "../../hooks/data";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface SinglePageProps {
   blog: Blog; // Specify the type of blog here
@@ -51,6 +54,8 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
     .replace(/\\n/g, "\n")
     .replace(/\\+/g, "");
 
+  const radioTrack = radioTracks.find((radio) => radio.name === blog?.title);
+
   return (
     <DefaultLayout title={blog?.title} description={blog?.description}>
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
@@ -80,6 +85,33 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
         <p style={{ whiteSpace: "pre-wrap" }}>{howtouseWithLineBreaks}</p>
       </section>
 
+      {radioTrack && (
+        <section className={`bg-${getColor(blog?.type)}`}>
+          <h6>
+            radio Sydhavns Bølgen{" "}
+            <FontAwesomeIcon icon={faAsterisk} className={`${styles.icon}`} />{" "}
+            <a
+              href="https://www.sydhavnsboelgen.dk/"
+              rel="noopener noreferrer"
+              target="_blank"
+              style={{ color: "black" }}
+            >
+              {texts.radioAllEpisodes}
+            </a>
+          </h6>
+          <h4>
+            {texts.radioTitle} {blog?.title}!
+          </h4>
+          {/* <p>{`/radio/${slugify(blog?.title)}.mp3`}</p> */}
+          <p style={{ maxWidth: 600, marginBottom: 32 }}>
+            {radioTrack.description || ""}
+          </p>
+          <audio controls>
+            <source src={`/radio/frontlberne.mp3`} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </section>
+      )}
       <section className={`bg-black`}>
         <h2>
           {texts.other} {blog?.type.split(",")[0]}

@@ -28,8 +28,6 @@ export default function CardsSheets(members: { members: Blog[] }) {
         // >
         <Link href={`/cards/${slugify(post.title)}`} key={index}>
           <a
-            target="_blank"
-            rel="noopener noreferrer"
             className={`${styles.link} border-${getColor(
               post.type
             )} bg-hover-${getColor(post.type)}`}
