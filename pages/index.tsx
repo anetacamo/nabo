@@ -59,7 +59,7 @@ export default function Home({ blogs }) {
   return (
     <DefaultLayout
       title={pagedata.title}
-      description={pagedata.meta ?? pagedata.description}
+      description={pagedata.meta || pagedata.description}
       searchQuery={searchQuery}
       onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
       darkMode

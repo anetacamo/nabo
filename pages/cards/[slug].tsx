@@ -57,7 +57,12 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
   const radioTrack = radioTracks.find((radio) => radio.name === blog?.title);
 
   return (
-    <DefaultLayout title={blog?.title} description={blog?.description}>
+    <DefaultLayout
+      title={blog?.title}
+      description={blog?.description}
+      image={slugify(blog?.title)}
+      keywords={blog?.invisible}
+    >
       <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
         <div className={styles.text}>
           <p className={`${getColor(blog?.type)}`}>

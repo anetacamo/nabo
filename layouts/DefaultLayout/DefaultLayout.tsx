@@ -6,6 +6,8 @@ import styles from "./DefaultLayout.module.scss";
 
 interface LayoutProps {
   title?: string;
+  image?: string;
+  keywords?: string;
   children?: ReactNode;
   description?: string;
   searchQuery?: string;
@@ -18,6 +20,8 @@ export const DefaultLayout = ({
   children,
   title,
   description,
+  image,
+  keywords,
   searchQuery,
   onSearchQueryChange,
   darkMode,
@@ -25,9 +29,52 @@ export const DefaultLayout = ({
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{title} | Kultur Kortet Århus</title>
+        <meta
+          name="description"
+          content={
+            description ||
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+          }
+        />
+        <meta
+          name="keywords"
+          content={keywords || "aarhus, culture, map, guide, interactive"}
+        />
+        <meta name="author" content="Aneta Camo" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${title} | Kultur Kortet Århus`} />
+        <meta
+          name="twitter:description"
+          content={
+            description ||
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+          }
+        />
+        <meta
+          name="twitter:image"
+          content={`https://www.kultur-kortet.dk/images/${
+            image ? image : "aa-map"
+          }.jpg`}
+        />{" "}
+        <meta property="og:title" content={`${title} | Kultur Kortet Århus`} />
+        <meta
+          property="og:description"
+          content={
+            description ||
+            "Kort og liste over organisationer, udstillingsteder, venues, eventskabere, fælleskaber, og andre ressourcer i det Aarhusianske kulturmiljø."
+          }
+        />
+        <meta
+          property="og:image"
+          content={`https://www.kultur-kortet.dk/images/${
+            image ? image : "aa-map"
+          }.jpg`}
+        />{" "}
+        {/* URL to an image for sharing */}
+        <meta property="og:url" content="https://www.kultur-kortet.dk/" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Menu
