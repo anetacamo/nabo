@@ -105,7 +105,7 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
             </a>
           </h6>
           <h4>
-            {texts.radioTitle} {blog?.title}!
+            {texts.radioTitle} {blog?.title}
           </h4>
           {/* <p>{`/radio/${slugify(blog?.title)}.mp3`}</p> */}
           <p style={{ maxWidth: 600, marginBottom: 32 }}>
