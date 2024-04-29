@@ -93,7 +93,7 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
       {radioTrack && (
         <section className={`bg-${getColor(blog?.type)}`}>
           <h6>
-            radio Sydhavns Bølgen{" "}
+            Sydhavnsbølgen Community Radio{" "}
             <FontAwesomeIcon icon={faAsterisk} className={`${styles.icon}`} />{" "}
             <a
               href="https://www.sydhavnsboelgen.dk/"
