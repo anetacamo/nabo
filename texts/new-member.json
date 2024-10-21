@@ -13,10 +13,6 @@
       "required": true
     },
     {
-      "label": "Supertag",
-      "name": "supertag"
-    },
-    {
       "label": "Billede credit",
       "name": "credit"
     },
