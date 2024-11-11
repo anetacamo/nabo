@@ -23,8 +23,8 @@
   {
     "title": "Partnered Cities",
     "bulletlinks": [
-      { "name": "Nabo Tromsø", "link": "www.google.com" },
-      { "name": "Nabo Skandeborg", "link": "www.google.com" }
+      { "name": "Kultur-Kortet Tromsø", "link": "https://tromso-nabo.vercel.app/" },
+      { "name": "Kultur-Kortet Helsingør", "link": "https://nabo-helsingor.vercel.app/" }
     ],
     "addresses": [
       [
