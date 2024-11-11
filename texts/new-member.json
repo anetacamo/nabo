@@ -38,18 +38,6 @@
       "required": true
     }
   ],
-  "multiselects": [
-    {
-      "label": "Visible Tags",
-      "name": "tags",
-      "helper": "Visible tags skal være omkring tre, ikke mere end fem. Brug dem så beskrivende som muligt. De kan søges og vises for at hjælpe med at give kontekst og specifik information."
-    },
-    {
-      "label": "Hidden Tags",
-      "name": "invisible",
-      "helper": "Disse tags vil ikke være synlige nogen steder, men de vil komme frem i søgeresultater. Prøv at begrænse dem til 5."
-    }
-  ],
   "textAreas": [
     {
       "label": "Om ressourcen",
