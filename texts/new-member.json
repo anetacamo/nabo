@@ -10,6 +10,7 @@
     {
       "label": "Navn på ressource",
       "name": "title",
+      "helper": "",
       "required": true
     },
     {
