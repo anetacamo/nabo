@@ -112,7 +112,7 @@ const NewMember = ({ blogs }: NewMemberProps) => {
             onMemberSet={(type) => setMember({ ...member, type: type })}
           />
 
-          {pagedata.multiselects.map((item, index: number) => (
+          {pagedata?.multiselects?.map((item, index: number) => (
             <FormTag
               key={index}
               name={item.name as MultiSelects}
