@@ -56,7 +56,7 @@ export const DefaultLayout = ({
           name="twitter:image"
           content={`https://www.kultur-kortet.dk/images/${
             image ? image : "aa-map"
-          }.jpg`}
+          }.webp`}
         />{" "}
         <meta property="og:title" content={`${title} | Kultur Kortet Århus`} />
         <meta

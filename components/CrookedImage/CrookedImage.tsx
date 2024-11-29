@@ -14,7 +14,7 @@ export default function CrookedImage({ children, image }: CrookedImageProps) {
       <div className={styles.imageholder}>
         <div className={styles.border}></div>
         <div className={styles.image}>
-          <Image src={image} alt="blue" layout="fill" objectFit="cover" />
+          <img src={image} alt="blue" />
         </div>
       </div>
     </div>

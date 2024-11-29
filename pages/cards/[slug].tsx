@@ -63,7 +63,7 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
       image={slugify(blog?.title)}
       keywords={blog?.invisible}
     >
-      <CrookedImage image={`/images/${slugify(blog?.title)}.jpg`}>
+      <CrookedImage image={`/images/${slugify(blog?.title)}.webp`}>
         <div className={styles.text}>
           <p className={`${getColor(blog?.type)}`}>
             {blog?.supertag} {blog?.type}
@@ -112,7 +112,10 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
             {radioTrack.description || ""}
           </p>
           <audio controls>
-            <source src={`/radio/${slugify(blog?.title)}.mp3`} type="audio/mpeg" />
+            <source
+              src={`/radio/${slugify(blog?.title)}.mp3`}
+              type="audio/mpeg"
+            />
             Your browser does not support the audio element.
           </audio>
         </section>

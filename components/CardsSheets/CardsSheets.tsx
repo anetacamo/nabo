@@ -36,7 +36,7 @@ export default function CardsSheets(members: { members: Blog[] }) {
               className={`${styles.image} border-bottom-${getColor(post.type)}`}
             >
               <Image
-                src={`/images/${slugify(post?.title)}.jpg`}
+                src={`/images/${slugify(post?.title)}.webp`}
                 alt={post?.title}
                 layout="fill"
                 objectFit="cover"
