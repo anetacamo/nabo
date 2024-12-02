@@ -1,18 +1,13 @@
-import Image from "next/image";
-import styles from "./CardsSheets.module.scss";
-import Tags from "../Tags/Tags";
-import IconHolder from "../IconHolder/IconHolder";
 import { faLocation } from "@fortawesome/free-solid-svg-icons";
-import { slugify } from "../../utils/slugify";
+import Image from "next/image";
+import Link from "next/link";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
-import Link from "next/link";
-
-function truncate(str: string, n: number): string {
-  const shortenedString = str.slice(0, n - 1);
-  const lastIndex = shortenedString.lastIndexOf(" ");
-  return str.length > n ? shortenedString.substring(0, lastIndex) + "..." : str;
-}
+import { truncate } from "../../utils/truncate";
+import { slugify } from "../../utils/slugify";
+import IconHolder from "../IconHolder/IconHolder";
+import Tags from "../Tags/Tags";
+import styles from "./CardsSheets.module.scss";
 
 export default function CardsSheets(members: { members: Blog[] }) {
   return (
