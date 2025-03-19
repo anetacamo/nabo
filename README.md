@@ -43,6 +43,5 @@ git pull origin main --allow-unrelated-histories
 3. #### maintanance.
 
 the google sheets has two sections:
-
 - one sheet with the content already added. That content is directly rendered to the website.
 - One sheet with the submits. This is the submits from the form on the website. This content is not directly rendered, so it can be reviewed and confirmed by moving it to the first sheet.
