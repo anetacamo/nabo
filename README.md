@@ -33,7 +33,7 @@ git pull origin main --allow-unrelated-histories
 7. set up the mapbox
 8. set up the form
    https://github.com/jamiewilson/form-to-google-sheets
-9. change DNS to point to the new site
+9. change DNS to point to the new site.
 
 ### users
 
