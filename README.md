@@ -13,7 +13,7 @@ node version: 20.7.1
 https://github.com/new
 
 2. duplicate the whole project on the local machine
-   rename necessary items, remove + add specific content
+   rename necessary items, remove + add specific contents
 
 3. connect to github
    https://nextjs.org/learn/basics/deploying-nextjs-app/github
