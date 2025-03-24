@@ -24,7 +24,9 @@
     "title": "Partnered Cities",
     "bulletlinks": [
       { "name": "Kultur-Kortet Tromsø", "link": "https://tromso-nabo.vercel.app/" },
-      { "name": "Kultur-Kortet Helsingør", "link": "https://nabo-helsingor.vercel.app/" }
+      { "name": "Kultur-Kortet Helsingør", "link": "https://nabo-helsingor.vercel.app/" },
+      { "name": "Kultur-Kortet Herning", "link": "https://www.herning.kultur-kortet.dk/" }
+
     ],
     "addresses": [
       [
