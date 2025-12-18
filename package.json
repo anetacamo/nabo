@@ -58,5 +58,8 @@
     ],
     "exclude": [],
     "entrypoints": []
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
