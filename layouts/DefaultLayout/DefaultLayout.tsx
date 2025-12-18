@@ -13,7 +13,6 @@ interface LayoutProps {
   description?: string;
   searchQuery?: string;
   onSearchQueryChange?: (e: string) => void;
-
   darkMode?: boolean;
 }
 

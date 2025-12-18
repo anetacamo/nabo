@@ -36,12 +36,10 @@ export default function Menu({
       <div className={styles.header}>
         <SkipNav />
         <div className={`flex ${styles.logoSearch}`}>
-          <Link href="/">
-            <a className={`${styles.logo} logo`}>
-              {" "}
-              <img src="/page-images/logo.png" alt="Logo" />
-              <p className={styles.logoText}>{pagedata.title}</p>
-            </a>
+          <Link href="/" className={`${styles.logo} logo`}>
+            {" "}
+            <img src="/page-images/logo.png" alt="Logo" />
+            <p className={styles.logoText}>{pagedata.title}</p>
           </Link>
 
           {onSearchQueryChange && (
@@ -54,14 +52,14 @@ export default function Menu({
 
         <div className={`flex desktop ${styles.menuItems}`}>
           {menuItems.map(({ name, link }, index) => (
-            <Link href={link} key={index}>
-              <a
-                className={`${styles.li} li ${
-                  asPath.substring(1) === name && styles.chosen
-                }`}
-              >
-                {name}
-              </a>
+            <Link
+              href={link}
+              key={index}
+              className={`${styles.li} li ${
+                asPath.substring(1) === name && styles.chosen
+              }`}
+            >
+              {name}
             </Link>
           ))}
         </div>
@@ -70,14 +68,14 @@ export default function Menu({
 
       <div className={`mobile ${styles.mobmenu}`}>
         {menuItems.map((item, index) => (
-          <Link href={item.link} key={index}>
-            <a
-              className={`${styles.li} li ${
-                asPath.substring(1) === item.name && "chosen"
-              }`}
-            >
-              {item.name}
-            </a>
+          <Link
+            href={item.link}
+            key={index}
+            className={`${styles.li} li ${
+              asPath.substring(1) === item.name && "chosen"
+            }`}
+          >
+            {item.name}
           </Link>
         ))}
       </div>

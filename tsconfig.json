@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5", //generates the code in that ecmascript version. for older browsers
-    "lib": ["dom", "dom.iterable", "esnext"], //default objects like document and dom api are already known to ts. important to run in browser.
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], //default objects like document and dom api are already known to ts. important to run in browser.
     "allowJs": true, // js files will be compiled by ts
     // "sourceMap": true,  // enables typescript files to be visible when checking in browser
     // "outDir": "./dist" location of compiled js files usually in folder called dist. Also replicates the folder structure
@@ -16,7 +20,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "downlevelIteration": true
   },
@@ -27,5 +31,7 @@
     "components/*",
     "constants/formNames.js"
   ],
-  "exclude": ["node_modules"] //excludes files, also from the includes
+  "exclude": [
+    "node_modules"
+  ] //excludes files, also from the includes
 }
