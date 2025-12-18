@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import Footer from "../../components/Footer/Footer";
 import Menu from "../../components/Menu/Menu";
 import styles from "./DefaultLayout.module.scss";
+import { Analytics } from "@vercel/analytics/next";
 
 interface LayoutProps {
   title?: string;
@@ -90,6 +91,7 @@ export const DefaultLayout = ({
         {children}
       </div>
       <Footer />
+      <Analytics />
     </>
   );
 };
