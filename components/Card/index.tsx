@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Card.module.scss";
 import Blog from "../../types/card.type";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface CardProps {
   post: Blog;
@@ -18,6 +18,11 @@ export function Card({ post }: CardProps) {
   const [imageSrc, setImageSrc] = useState(
     `/images/${slugify(post?.title)}.webp`
   );
+
+  useEffect(() => {
+    // Update imageSrc whenever the post changes
+    setImageSrc(`/images/${slugify(post?.title)}.webp`);
+  }, [post]);
 
   return (
     <Link
@@ -30,6 +35,7 @@ export function Card({ post }: CardProps) {
         <Image
           src={imageSrc}
           alt={post?.title}
+          key={imageSrc}
           layout="fill"
           objectFit="cover"
           onError={() => setImageSrc("/bgs/fallback.png")}

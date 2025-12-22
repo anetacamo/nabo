@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "./CrookedImage.module.scss";
 import Image from "next/image";
 
@@ -9,6 +9,10 @@ interface CrookedImageProps {
 
 export default function CrookedImage({ children, image }: CrookedImageProps) {
   const [imgSrc, setImgSrc] = useState(image);
+
+  useEffect(() => {
+    setImgSrc(image);
+  }, [image]);
 
   return (
     <div className={`flex bg-black ${styles.holder}`}>

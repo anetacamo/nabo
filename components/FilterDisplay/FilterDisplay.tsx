@@ -51,7 +51,7 @@ export default function FilterDisplay({
             <TagWithX name={searchQuery} onCloseClick={onCloseSearchClick} />
           </>
         )}
-        <span className="blue">
+        <span className={`blue ${styles.resultCount}`}>
           {" "}
           {filteredLength} {pagedata.results}
         </span>

@@ -5,7 +5,11 @@ import CardsSheets from "../../components/CardsSheets/CardsSheets";
 import IconHolder from "../../components/IconHolder/IconHolder";
 import Tags from "../../components/Tags/Tags";
 import styles from "./card.module.scss";
-import { faLocation, faAsterisk } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLocation,
+  faAsterisk,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { slugify } from "../../utils/slugify";
 import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
@@ -13,10 +17,11 @@ import texts from "../../texts/single-page.json";
 import radioTracks from "../../texts/radioTracks.json";
 import { fetchGoogleSheetData } from "../../hooks/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 interface SinglePageProps {
-  blog: Blog; // Specify the type of blog here
-  relatedBlogs: Blog[]; // Assuming relatedBlogs is an array of Blog objects
+  blog: Blog;
+  relatedBlogs: Blog[];
 }
 
 export async function getServerSideProps(context: {
@@ -124,6 +129,15 @@ export default function SinglePage({ blog, relatedBlogs }: SinglePageProps) {
         <h2>
           {texts.other} {blog?.type.split(",")[0]}
         </h2>
+        <Link
+          href={`/?category=${blog?.type.split(",")[0]}`}
+          className={getColor(blog?.type)}
+        >
+          <p>
+            <FontAwesomeIcon icon={faArrowRight} /> See all posts tagged{" "}
+            {blog?.type.split(",")[0]}{" "}
+          </p>
+        </Link>
 
         {relatedBlogs && relatedBlogs.length > 0 ? (
           <CardsSheets members={relatedBlogs} />

@@ -13,9 +13,8 @@
   [role="button"] {
     font-size: 12px;
     padding: 3px 5px 2px;
-    margin: 0 6px;
+    margin-left: 6px;
   }
-
   @media (max-width: 900px) {
     position: fixed;
     z-index: 3;
@@ -27,4 +26,8 @@
     max-width: 100%;
     top: 54px;
   }
+}
+
+.resultCount {
+  margin-left: 6px;
 }
