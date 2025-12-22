@@ -20,13 +20,10 @@
   min-width: auto;
   border: 2px solid transparent;
   padding: 4px 10px;
-  padding-left: 1.5rem;
+  padding-left: 1.75rem;
   margin: 0;
   position: relative;
   @include border;
-  @media (max-width: 700px) {
-    margin-left: 2rem;
-  }
   @media (max-width: 400px) {
     width: auto;
   }
@@ -51,8 +48,8 @@
 }
 
 .icon {
-  width: 1.25rem;
-  padding-left: 0.5rem;
+  width: 1rem;
+  margin-left: 0.5rem;
   position: absolute;
   z-index: 4;
 }
@@ -62,5 +59,8 @@
   @media (max-width: 400px) {
     margin-left: 1rem;
     margin-right: 0.5rem;
+  }
+  @media (max-width: 700px) {
+    margin-left: 2rem;
   }
 }

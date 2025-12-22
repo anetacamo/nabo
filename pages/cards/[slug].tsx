@@ -11,8 +11,6 @@ import Blog from "../../types/card.type";
 import { getColor } from "../../utils/getColor";
 import texts from "../../texts/single-page.json";
 import radioTracks from "../../texts/radioTracks.json";
-
-import Papa from "papaparse";
 import { fetchGoogleSheetData } from "../../hooks/data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -21,7 +19,9 @@ interface SinglePageProps {
   relatedBlogs: Blog[]; // Assuming relatedBlogs is an array of Blog objects
 }
 
-export async function getServerSideProps(context: { params: { slug: any } }) {
+export async function getServerSideProps(context: {
+  params: { slug: string };
+}) {
   const name = context.params.slug;
   const parsedBlogs = await fetchGoogleSheetData();
 

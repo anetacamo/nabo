@@ -3,12 +3,16 @@ import CardsSheets from "../components/CardsSheets/CardsSheets";
 import CategoryList from "../components/CategoryList/CategoryList";
 import FilterDisplay from "../components/FilterDisplay/FilterDisplay";
 import MapGl from "../components/Map/MapGl";
-import TagsList from "../components/TagsList/TagsList";
 import { DefaultLayout } from "../layouts/DefaultLayout/DefaultLayout";
 import pagedata from "../texts/home.json";
 import Blog from "../types/card.type";
 import styles from "./Home/Home.module.scss";
 import { fetchGoogleSheetData } from "./../hooks/data";
+import { useRouter } from "next/router";
+
+interface HomeProps {
+  blogs: Blog[];
+}
 
 export async function getStaticProps() {
   const blogs = await fetchGoogleSheetData();
@@ -20,58 +24,80 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ blogs }) {
-  const [category, setCategory] = useState<string>("");
-  const [tag, setTag] = useState<string>("");
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [entryPerPage, setEntryPerPage] = useState<number>(36);
+const initialFilters = {
+  category: "",
+  searchQuery: "",
+};
 
-  //const { blogs } = useGoogleSheetsData();
+export default function Home({ blogs }: HomeProps) {
+  const [filters, setFilters] = useState(initialFilters);
+  const [entryPerPage, setEntryPerPage] = useState<number>(36);
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
+  const router = useRouter();
+
+  //if in params - populate the filters from the query params
   useEffect(() => {
-    const filtered = blogs
-      .filter((blog: Blog) => blog.tags?.toLowerCase().includes(tag))
-      .filter(
-        (blog: Blog) =>
-          blog.title?.toLowerCase().includes(searchQuery) ||
-          blog.description?.toLowerCase().includes(searchQuery) ||
-          blog.invisible?.toLowerCase().includes(searchQuery)
-      )
-      .filter((blog: Blog) => blog.type?.toLowerCase().includes(category));
-    setFilteredBlogs(filtered);
-  }, [category, tag, searchQuery, blogs]);
-
-  const onCategorySet = (cat: string) => {
-    if (category === cat) {
-      setCategory("");
-      setTag("");
-    } else {
-      setCategory(cat.toLowerCase());
-      setTag("");
+    if (router.isReady) {
+      const { category = "", search = "" } = router.query;
+      setFilters((prev) => ({
+        ...prev,
+        category: category.toString().toLowerCase(),
+        search: search.toString().toLowerCase(),
+      }));
     }
-  };
+  }, [router.isReady]);
 
-  const onTagSet = (t: string) => {
-    setTag(t === tag ? "" : t.toLowerCase());
+  useEffect(() => {
+    const { category, searchQuery } = filters;
+    const filtered = blogs
+      .filter((blog) =>
+        category ? blog.type?.toLowerCase().includes(category) : true
+      )
+      .filter((blog) =>
+        searchQuery
+          ? blog.title?.toLowerCase().includes(searchQuery) ||
+            blog.description?.toLowerCase().includes(searchQuery) ||
+            blog.invisible?.toLowerCase().includes(searchQuery)
+          : true
+      );
+    setFilteredBlogs(filtered);
+  }, [filters, blogs]);
+
+  const onCategorySet = (category: string) => {
+    const value = category.toLowerCase();
+    const current = router.query.category as string | undefined;
+    setFilters((prev) => ({
+      ...prev,
+      category: prev.category === value ? "" : value,
+    }));
+    router.push(
+      current === value
+        ? router.pathname
+        : { pathname: router.pathname, query: { category: value } }
+    );
   };
 
   return (
     <DefaultLayout
       title={pagedata.title}
       description={pagedata.meta || pagedata.description}
-      searchQuery={searchQuery}
-      onSearchQueryChange={(query) => setSearchQuery(query.toLowerCase())}
+      searchQuery={filters.searchQuery}
+      onSearchQueryChange={(query) =>
+        setFilters((prev) => ({ ...prev, searchQuery: query.toLowerCase() }))
+      }
       darkMode
     >
       <div className={styles.filtration}>
         <FilterDisplay
-          category={category}
-          onCloseCategoryClick={() => setCategory("")}
-          tag={tag}
-          onCloseTagClick={() => setTag("")}
-          searchQuery={searchQuery}
-          onCloseSearchClick={() => setSearchQuery("")}
+          category={filters.category}
+          onCloseCategoryClick={() =>
+            setFilters((prev) => ({ ...prev, category: "" }))
+          }
+          searchQuery={filters.searchQuery}
+          onCloseSearchClick={() =>
+            setFilters((prev) => ({ ...prev, searchQuery: "" }))
+          }
           filteredLength={filteredBlogs.length}
         />
       </div>
@@ -85,16 +111,16 @@ export default function Home({ blogs }) {
           <CategoryList
             posts={blogs}
             onCategoryClick={onCategorySet}
-            category={category}
+            category={filters.category}
           />
-          {blogs.length !== filteredBlogs.length && (
+          {/* {blogs.length !== filteredBlogs.length && (
             <TagsList
               posts={filteredBlogs}
               onTagClick={onTagSet}
               tag={tag}
               category={category}
             />
-          )}
+          )} */}
         </div>
         <CardsSheets members={filteredBlogs.slice(0, entryPerPage)} />
         {entryPerPage < filteredBlogs.length && (

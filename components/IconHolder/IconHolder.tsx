@@ -4,8 +4,8 @@ import {
   faArrowRight,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { slugify } from "../../utils/slugify";
+import Link from "next/link";
 
 interface IconHolderProps {
   name: string;
@@ -24,6 +24,14 @@ export default function IconHolder({
   icon,
   color,
 }: IconHolderProps) {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    if (link) {
+      // Follow the provided link directly
+      e.stopPropagation(); // Prevent Next.js Link from handling the click
+    }
+  };
   return (
     <div className={styles.iconcontainer}>
       <FontAwesomeIcon
@@ -33,15 +41,14 @@ export default function IconHolder({
       {nolink ? (
         <h5>{name}</h5>
       ) : (
-        <a
+        <Link
           href={link ?? slugify(name)}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleLinkClick}
         >
-          <span className={`${styles.link} ${small && styles.small}`}>
-            {name}
-          </span>
-        </a>
+          <h5>{name}</h5>
+        </Link>
       )}
     </div>
   );

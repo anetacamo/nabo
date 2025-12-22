@@ -1,5 +1,6 @@
 import styles from "./CategoryList.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faClose } from "@awesome.me/kit-KIT_CODE/icons/classic/solid";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import CardType from "../../types/card.type";
 import { getColor } from "../../utils/getColor";

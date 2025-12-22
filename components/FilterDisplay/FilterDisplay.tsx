@@ -6,8 +6,8 @@ import styles from "./FilterDisplay.module.scss";
 interface FilterDisplayProps {
   category: string;
   onCloseCategoryClick: (name: string) => void;
-  tag: string;
-  onCloseTagClick: (name: string) => void;
+  tag?: string;
+  onCloseTagClick?: (name: string) => void;
   searchQuery: string;
   onCloseSearchClick: (name: string) => void;
   filteredLength: number;
@@ -33,7 +33,7 @@ export default function FilterDisplay({
             onCloseClick={onCloseCategoryClick}
           />
         )}
-        {tag.length === 0 || (
+        {tag && tag.length > 0 && (
           <>
             {" "}
             {pagedata.filter_tagged}{" "}

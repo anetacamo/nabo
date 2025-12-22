@@ -15,9 +15,8 @@ export default function TypeCards({ en }: TypeCardsProps) {
           <div className={styles.image}>
             <Image
               src={`/categories/${type.color}.png`}
-              alt="blue"
+              alt={type.name || "Category Image"}
               layout="fill"
-              quality="7"
               objectFit="cover"
             />
           </div>

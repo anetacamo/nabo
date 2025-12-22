@@ -20,6 +20,16 @@ export default function MapGl({ posts }: MapGlProps) {
     zoom: 12,
   });
 
+  const [hoveredMarker, setHoveredMarker] = useState<string | null>(null);
+
+  const handleMouseEnter = (title: string) => {
+    setHoveredMarker(title);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredMarker(null);
+  };
+
   return (
     <div className={`${styles.mapwhole} desktop`}>
       <div className={styles.textContainer}>
@@ -47,7 +57,13 @@ export default function MapGl({ posts }: MapGlProps) {
                 key={index}
                 latitude={post.latitude}
                 longitude={post.longitude}
-                style={name === post.title ? { zIndex: 5 } : { zIndex: 1 }}
+                style={
+                  name === post.title || hoveredMarker === post.title
+                    ? { zIndex: 5 }
+                    : { zIndex: 1 }
+                }
+                onMouseEnter={() => handleMouseEnter(post.title)}
+                onMouseLeave={handleMouseLeave}
               >
                 <Link
                   href={`cards/${slugify(post?.title)}`}
@@ -72,7 +88,7 @@ export default function MapGl({ posts }: MapGlProps) {
                         name === post.title ? styles.opened : ""
                       }`}
                     >
-                      {name === post.title ? name : ""}
+                      <b>{name === post.title ? name : ""}</b>
                       <span style={{ color: "black" }}>
                         {" "}
                         {name === post.title ? post.address : ""}

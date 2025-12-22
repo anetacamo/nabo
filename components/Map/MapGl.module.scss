@@ -46,6 +46,7 @@ $extra-margin: ($enlarged-icon-size - $icon-size) / 2;
   opacity: 0;
   background-color: white;
   border-radius: 0.25rem;
+  font-family: "Violet Sans", "violet_sansregular", -apple-system;
 
   &:before {
     content: "";
