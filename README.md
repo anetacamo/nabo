@@ -36,7 +36,6 @@ git pull origin main --allow-unrelated-histories
 9. change DNS to point to the new site
 
 ### users
-
 1. website: set up descriptions & content in the sections
    (this is done by markdown files and raw json data in github)
 2. fill in the google doc sheets
